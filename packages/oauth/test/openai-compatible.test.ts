@@ -1,8 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 
-import {
-  CUSTOM_REGISTRY_DEFAULT_MAX_CONTEXT,
-} from '../src/custom-registry';
+import { CUSTOM_REGISTRY_DEFAULT_MAX_CONTEXT } from '../src/custom-registry';
 import type { ManagedKimiConfigShape } from '../src/managed-kimi-code';
 import {
   applyOpenAiCompatibleProvider,
@@ -24,19 +22,34 @@ function emptyConfig(): ManagedKimiConfigShape {
 }
 
 describe('fetchOpenAiCompatibleModels', () => {
-  it('parses an OpenAI-compatible /models response into ids', async () => {
+  it('parses ids and model metadata from an OpenAI-compatible /models response', async () => {
     const fetchMock = vi.fn(async () =>
       makeModelsResponse([
-        { id: 'gpt-4o', object: 'model' },
+        {
+          id: 'gpt-4o',
+          object: 'model',
+          context_length: 1000000,
+          max_completion_tokens: 384000,
+          supports_tools: true,
+          supports_reasoning: true,
+        },
         { id: 'gpt-4o-mini', object: 'model' },
       ]),
     );
 
-    const ids = await fetchOpenAiCompatibleModels('https://api.example.test/v1', 'sk-key', {
+    const models = await fetchOpenAiCompatibleModels('https://api.example.test/v1', 'sk-key', {
       fetchImpl: fetchMock as unknown as typeof fetch,
     });
 
-    expect(ids).toEqual(['gpt-4o', 'gpt-4o-mini']);
+    expect(models).toEqual([
+      {
+        id: 'gpt-4o',
+        limit: { context: 1000000, output: 384000 },
+        tool_call: true,
+        reasoning: true,
+      },
+      { id: 'gpt-4o-mini' },
+    ]);
     expect(fetchMock).toHaveBeenCalledWith(
       'https://api.example.test/v1/models',
       expect.objectContaining({
@@ -72,11 +85,11 @@ describe('fetchOpenAiCompatibleModels', () => {
       ]),
     );
 
-    const ids = await fetchOpenAiCompatibleModels('https://api.example.test/v1', 'sk-key', {
+    const models = await fetchOpenAiCompatibleModels('https://api.example.test/v1', 'sk-key', {
       fetchImpl: fetchMock as unknown as typeof fetch,
     });
 
-    expect(ids).toEqual(['m1', 'm2']);
+    expect(models.map((m) => m.id)).toEqual(['m1', 'm2']);
   });
 
   it('omits the Authorization header when the apiKey is empty', async () => {
@@ -114,13 +127,16 @@ describe('fetchOpenAiCompatibleModels', () => {
 });
 
 describe('applyOpenAiCompatibleProvider', () => {
-  it('writes the provider and one alias per discovered model id', () => {
+  it('writes the provider and one alias per discovered model, carrying context size and capabilities', () => {
     const config = emptyConfig();
     applyOpenAiCompatibleProvider(config, {
       providerId: 'acme',
       baseUrl: 'https://acme.example.test/v1',
       apiKey: 'sk-acme',
-      modelIds: ['gpt-4o', 'gpt-4o-mini'],
+      models: [
+        { id: 'gpt-4o', limit: { context: 1000000 }, tool_call: true, reasoning: true },
+        { id: 'gpt-4o-mini' },
+      ],
     });
 
     expect(config.providers['acme']).toEqual({
@@ -137,9 +153,15 @@ describe('applyOpenAiCompatibleProvider', () => {
     expect(config.models?.['acme/gpt-4o']).toMatchObject({
       provider: 'acme',
       model: 'gpt-4o',
-      maxContextSize: CUSTOM_REGISTRY_DEFAULT_MAX_CONTEXT,
+      maxContextSize: 1000000,
+      capabilities: ['tool_use', 'thinking'],
     });
-    expect(config.models?.['acme/gpt-4o-mini']).toBeDefined();
+    expect(config.models?.['acme/gpt-4o-mini']).toMatchObject({
+      provider: 'acme',
+      model: 'gpt-4o-mini',
+      maxContextSize: CUSTOM_REGISTRY_DEFAULT_MAX_CONTEXT,
+      capabilities: ['tool_use'],
+    });
   });
 
   it('removes aliases that upstream no longer lists', () => {
@@ -156,7 +178,7 @@ describe('applyOpenAiCompatibleProvider', () => {
       providerId: 'acme',
       baseUrl: 'https://acme.example.test/v1',
       apiKey: 'sk-acme',
-      modelIds: ['gpt-4o'],
+      models: [{ id: 'gpt-4o' }],
     });
 
     expect(config.models?.['acme/gpt-4o']).toBeDefined();
@@ -177,7 +199,7 @@ describe('applyOpenAiCompatibleProvider', () => {
       providerId: 'acme',
       baseUrl: 'https://acme.example.test/v1',
       apiKey: 'sk-acme',
-      modelIds: ['gpt-4o'],
+      models: [{ id: 'gpt-4o' }],
     });
 
     expect(config.models?.['acme/gpt-4o']).toMatchObject({ customField: 'kept' });

@@ -632,17 +632,17 @@ export async function refreshProviderModels(
     if (source === undefined) continue;
 
     try {
-      const modelIds = await fetchOpenAiCompatibleModels(source.url, source.apiKey, {
+      const models = await fetchOpenAiCompatibleModels(source.url, source.apiKey, {
         userAgent: host.userAgent,
       });
-      if (modelIds.length === 0) continue;
+      if (models.length === 0) continue;
 
       const next = structuredClone(config);
       applyOpenAiCompatibleProvider(next, {
         providerId,
         baseUrl: source.url,
         apiKey: source.apiKey,
-        modelIds,
+        models,
       });
       const refreshedAliasKeys = providerRefreshAliasKeys(config, next, providerId, `${providerId}/`);
       restoreProviderAliases(

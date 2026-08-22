@@ -3,6 +3,7 @@ import {
   applyOpenAiCompatibleProvider,
   fetchCustomRegistry,
   fetchOpenAiCompatibleModels,
+  type CustomRegistryModelEntry,
   type CustomRegistrySource,
   type ManagedKimiConfigShape,
 } from '@lcode-cli/lcode-oauth';
@@ -359,15 +360,15 @@ async function handleOpenAiCompatibleProviderAdd(host: SlashCommandHost): Promis
   host.cancelInFlight = cancel;
 
   const spinner = host.showLoginProgressSpinner(`Discovering models from ${details.baseUrl}`);
-  let modelIds: string[];
+  let models: CustomRegistryModelEntry[];
   try {
-    modelIds = await fetchOpenAiCompatibleModels(details.baseUrl, details.apiKey, {
+    models = await fetchOpenAiCompatibleModels(details.baseUrl, details.apiKey, {
       signal: controller.signal,
       userAgent: createKimiCodeUserAgent(),
     });
     spinner.stop({
       ok: true,
-      label: `Found ${String(modelIds.length)} model${modelIds.length === 1 ? '' : 's'}.`,
+      label: `Found ${String(models.length)} model${models.length === 1 ? '' : 's'}.`,
     });
   } catch (error) {
     if (controller.signal.aborted) {
@@ -381,7 +382,7 @@ async function handleOpenAiCompatibleProviderAdd(host: SlashCommandHost): Promis
     if (host.cancelInFlight === cancel) host.cancelInFlight = undefined;
   }
 
-  if (modelIds.length === 0) {
+  if (models.length === 0) {
     host.showError(`No models returned from ${details.baseUrl}/models.`);
     return;
   }
@@ -391,7 +392,7 @@ async function handleOpenAiCompatibleProviderAdd(host: SlashCommandHost): Promis
     providerId,
     baseUrl: details.baseUrl,
     apiKey: details.apiKey,
-    modelIds,
+    models,
   });
   await host.harness.setConfig({
     providers: config.providers,
@@ -400,7 +401,7 @@ async function handleOpenAiCompatibleProviderAdd(host: SlashCommandHost): Promis
 
   await host.authFlow.refreshConfigAfterLogin();
   host.track('connect', { provider: providerId, method: 'discover' });
-  host.showStatus(`Provider added: ${providerId} (${String(modelIds.length)} models).`);
+  host.showStatus(`Provider added: ${providerId} (${String(models.length)} models).`);
 
   const stateModels = await host.harness.getConfig().then((c) => c.models ?? {});
   const mergedModels = { ...stateModels };
