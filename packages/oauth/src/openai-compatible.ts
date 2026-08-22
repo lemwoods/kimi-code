@@ -151,6 +151,14 @@ function toOpenAiCompatibleModelInfo(value: unknown): OpenAiCompatibleModelInfo 
     entry.defaultEffort = defaultEffort;
   }
 
+  // DeepSeek 兼容端点声明 supports_reasoning 但不在 /models 里列出 effort
+  // 级别；此时用一个安全的默认列表，避免 thinking 退化成 boolean "on" 而
+  // 发送出供应商拒绝的 reasoning_effort 值。
+  if (entry.reasoning === true && entry.supportEfforts === undefined) {
+    entry.supportEfforts = ['low', 'medium', 'high', 'xhigh', 'max'];
+    entry.defaultEffort = 'medium';
+  }
+
   return entry;
 }
 

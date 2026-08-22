@@ -1,5 +1,11 @@
 # @lcode-cli/lcode
 
+## 0.39.4
+
+### Patch Changes
+
+- 修复添加自定义供应商时 thinking 退化为无效 effort 值导致请求失败的问题。
+
 ## 0.39.3
 
 ### Patch Changes

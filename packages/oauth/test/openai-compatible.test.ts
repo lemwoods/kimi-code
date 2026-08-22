@@ -48,6 +48,8 @@ describe('fetchOpenAiCompatibleModels', () => {
         maxOutputSize: 384000,
         toolCall: true,
         reasoning: true,
+        supportEfforts: ['low', 'medium', 'high', 'xhigh', 'max'],
+        defaultEffort: 'medium',
       },
       { id: 'gpt-4o-mini' },
     ]);
