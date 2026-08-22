@@ -19,7 +19,6 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
-      id-token: write # Required for NPM Trusted Publishing (OIDC)
     steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -34,10 +33,6 @@ jobs:
         with:
           node-version-file: .nvmrc
           cache: "pnpm"
-          registry-url: "https://registry.npmjs.org"
-
-      - name: Upgrade npm for Trusted Publishing
-        run: npm install -g npm@11
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
