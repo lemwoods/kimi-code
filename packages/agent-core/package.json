@@ -73,11 +73,11 @@
   "dependencies": {
     "@antfu/utils": "^9.3.0",
     "@jsquash/webp": "^1.5.0",
-    "@modelcontextprotocol/sdk": "^1.29.0",
     "@lcode-cli/kaos": "workspace:^",
-    "@lcode-cli/lcode-oauth": "workspace:^",
     "@lcode-cli/kosong": "workspace:^",
+    "@lcode-cli/lcode-oauth": "workspace:^",
     "@lcode-cli/protocol": "workspace:^",
+    "@modelcontextprotocol/sdk": "^1.29.0",
     "@mozilla/readability": "^0.6.0",
     "ajv": "^8.18.0",
     "ajv-formats": "^3.0.1",
