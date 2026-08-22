@@ -138,11 +138,11 @@ describe('kimi web', () => {
       exitSpy.mockRestore();
 
       expect(exitCalls).toEqual([1]);
-      expect(stderr).toContain('`kimi server` has been deprecated and no longer works.');
+      expect(stderr).toContain('`kimi server` 已弃用，不再可用。');
       expect(stderr).toContain('kimi web');
       expect(stderr).toContain('kimi server kill');
       expect(stderr).toContain('0.28.0');
-      expect(stderr).toContain('next major version');
+      expect(stderr).toContain('下一个主版本');
     }
   });
 });
@@ -956,7 +956,7 @@ describe('`kimi web rotate-token`', () => {
 
     const token = readFileSync(join(dir, 'server.token'), 'utf8').trim();
     expect(token.length).toBeGreaterThan(20);
-    expect(stdout).toContain('New server token');
+    expect(stdout).toContain('新的服务器 token');
     expect(stdout).toContain(token);
   });
 
@@ -991,13 +991,13 @@ describe('`kimi web rotate-token`', () => {
     writeSpy.mockRestore();
 
     const token = readFileSync(join(dir, 'server.token'), 'utf8').trim();
-    expect(stdout).toContain('New server token');
+    expect(stdout).toContain('新的服务器 token');
     expect(stdout).toContain(`http://127.0.0.1:58627/#token=${token}`);
     // Token line sits between the note and the links.
-    expect(stdout.indexOf('picks up the new token')).toBeLessThan(
-      stdout.indexOf('New server token'),
+    expect(stdout.indexOf('自动使用新 token')).toBeLessThan(
+      stdout.indexOf('新的服务器 token'),
     );
-    expect(stdout.indexOf('New server token')).toBeLessThan(
+    expect(stdout.indexOf('新的服务器 token')).toBeLessThan(
       stdout.indexOf(`http://127.0.0.1:58627/#token=${token}`),
     );
   });
