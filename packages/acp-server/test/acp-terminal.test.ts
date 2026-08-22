@@ -4,7 +4,7 @@ import type {
   IHostEnvironment,
   Runtime,
   RuntimeProviderHost,
-} from '@moonshot-ai/agent-core-v2';
+} from '@lemwood/agent-core-v2';
 
 import type { IAcpConnection } from '../src/acp-fs/acpConnection';
 import { AcpHostFileSystem } from '../src/acp-fs/acpFsService';

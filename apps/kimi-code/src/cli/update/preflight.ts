@@ -1,7 +1,7 @@
 import { spawn } from 'node:child_process';
 
-import { log, type Logger } from '@moonshot-ai/kimi-code-sdk';
-import type { TelemetryProperties } from '@moonshot-ai/kimi-telemetry';
+import { log, type Logger } from '@lemwood/lcode-sdk';
+import type { TelemetryProperties } from '@lemwood/lcode-telemetry';
 
 import {
   kimiCodeOfficialInstallUrl,
@@ -187,8 +187,8 @@ function resolveInstallSpawn(
 // Built per call: the official-installer URL follows the current region.
 function thirdPartySourceNote(): string {
   return (
-    '\nNote: Third-party sources may lag behind the official release.\n' +
-    `For the latest updates, use the official installer: ${kimiCodeOfficialInstallUrl()}\n`
+    '\n注意：第三方来源可能落后于官方版本。\n' +
+    `要获取最新更新，请使用官方安装程序：${kimiCodeOfficialInstallUrl()}\n`
   );
 }
 
@@ -210,28 +210,28 @@ export function renderManualUpdateMessage(
       sourceDesc = 'homebrew';
       break;
     case 'native':
-      sourceDesc = 'native installer';
+      sourceDesc = '原生安装程序';
       break;
     case 'unsupported':
-      sourceDesc = 'unsupported package manager or layout.';
+      sourceDesc = '不受支持的包管理器或布局。';
       break;
   }
   return (
-    `A newer version of ${NPM_PACKAGE_NAME} is available ` +
-    `(${currentVersion} -> ${target.version}).\n` +
-    `Detected install source: ${sourceDesc}\n` +
-    `To update manually, run: ${installCommand}\n` +
+    `检测到 ${NPM_PACKAGE_NAME} 有新版本可用 ` +
+    `(${currentVersion} -> ${target.version})。\n` +
+    `检测到的安装来源：${sourceDesc}\n` +
+    `手动更新请运行：${installCommand}\n` +
     (source === 'homebrew' ? thirdPartySourceNote() : '')
   );
 }
 
 export function renderInstallSuccessMessage(target: UpdateTarget): string {
-  return `Updated ${NPM_PACKAGE_NAME} to ${target.version}. Restart the CLI to use the new version.\n`;
+  return `已将 ${NPM_PACKAGE_NAME} 更新到 ${target.version}。重启 CLI 以使用新版本。\n`;
 }
 
 function renderBackgroundInstallSuccessNotice(version: string): string {
   const displayVersion = version.startsWith('v') ? version : `v${version}`;
-  return `Kimi Code updated to ${displayVersion}\nChangelog: ${CHANGELOG_URL}\n`;
+  return `lcode 已更新到 ${displayVersion}\n更新日志：${CHANGELOG_URL}\n`;
 }
 
 function refreshInBackground(): void {
@@ -913,7 +913,7 @@ export async function runUpdatePreflight(
       return 'exit';
     } catch (error) {
       stderr.write(
-        `warning: failed to install ${NPM_PACKAGE_NAME}@${userVisibleTarget.version}: ` +
+        `警告：安装 ${NPM_PACKAGE_NAME}@${userVisibleTarget.version} 失败：` +
           `${formatErrorMessage(error)}\n`,
       );
       return 'continue';

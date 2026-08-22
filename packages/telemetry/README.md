@@ -1,4 +1,4 @@
-# @moonshot-ai/kimi-telemetry
+# @lemwood/lcode-telemetry
 
 Shared telemetry infrastructure for Kimi Code.
 

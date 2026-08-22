@@ -1,4 +1,4 @@
-import type { QuestionRequest } from '@moonshot-ai/kimi-code-sdk';
+import type { QuestionRequest } from '@lemwood/lcode-sdk';
 import { describe, expect, it, vi } from 'vitest';
 
 import { QuestionController } from '#/tui/reverse-rpc/question/controller';

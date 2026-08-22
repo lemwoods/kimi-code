@@ -9,7 +9,7 @@ import { mkdtempSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
-import type { createKimiDeviceId as createKimiDeviceIdFn } from '@moonshot-ai/kimi-code-oauth';
+import type { createKimiDeviceId as createKimiDeviceIdFn } from '@lemwood/lcode-oauth';
 import { Command } from 'commander';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
@@ -21,7 +21,7 @@ import type {
   ExportSessionManifest,
   ExportSessionResult,
   SessionSummary,
-} from '@moonshot-ai/kimi-code-sdk';
+} from '@lemwood/lcode-sdk';
 
 let tmp: string;
 
@@ -50,8 +50,8 @@ const mocks = vi.hoisted(() => ({
   harnessCreatesDeviceIdOnConstruction: false,
 }));
 
-vi.mock('@moonshot-ai/kimi-code-sdk', async (importOriginal) => {
-  const actual = await importOriginal<typeof import('@moonshot-ai/kimi-code-sdk')>();
+vi.mock('@lemwood/lcode-sdk', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@lemwood/lcode-sdk')>();
   const createFakeHarness = (options: { readonly homeDir?: string } | undefined) => {
     const homeDir = options?.homeDir ?? '/tmp/kimi-export-home';
     if (mocks.harnessCreatesDeviceIdOnConstruction) {
@@ -83,9 +83,9 @@ vi.mock('@moonshot-ai/kimi-code-sdk', async (importOriginal) => {
   };
 });
 
-vi.mock('@moonshot-ai/kimi-code-oauth', async () => {
-  const actual = await vi.importActual<typeof import('@moonshot-ai/kimi-code-oauth')>(
-    '@moonshot-ai/kimi-code-oauth',
+vi.mock('@lemwood/lcode-oauth', async () => {
+  const actual = await vi.importActual<typeof import('@lemwood/lcode-oauth')>(
+    '@lemwood/lcode-oauth',
   );
   return {
     ...actual,
@@ -94,7 +94,7 @@ vi.mock('@moonshot-ai/kimi-code-oauth', async () => {
   };
 });
 
-vi.mock('@moonshot-ai/kimi-telemetry', () => ({
+vi.mock('@lemwood/lcode-telemetry', () => ({
   initializeTelemetry: mocks.initializeTelemetry,
   shutdownTelemetry: mocks.shutdownTelemetry,
   track: mocks.telemetryTrack,
@@ -342,7 +342,7 @@ describe('kimi export', () => {
     registerExportCommand(program, deps);
 
     const command = program.commands.find((item) => item.name() === 'export');
-    expect(command?.description()).toBe('Export a session as a ZIP archive.');
+    expect(command?.description()).toBe('将会话导出为 ZIP 归档。');
     expect(command?.description()).not.toMatch(/sdk/i);
   });
 

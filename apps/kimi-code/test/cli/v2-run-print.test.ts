@@ -23,7 +23,7 @@ import {
   ITelemetryService,
   type BootstrapInput,
   type Event2,
-} from '@moonshot-ai/agent-core-v2';
+} from '@lemwood/agent-core-v2';
 
 import { runV2Print } from '../../src/cli/v2/run-v2-print';
 
@@ -35,8 +35,8 @@ const mocks = vi.hoisted(() => ({
   createKimiDeviceId: vi.fn(() => 'device-1'),
 }));
 
-vi.mock('@moonshot-ai/agent-core-v2', async (importOriginal) => {
-  const actual = await importOriginal<typeof import('@moonshot-ai/agent-core-v2')>();
+vi.mock('@lemwood/agent-core-v2', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@lemwood/agent-core-v2')>();
   return {
     ...actual,
     bootstrap: mocks.bootstrap,
@@ -44,9 +44,9 @@ vi.mock('@moonshot-ai/agent-core-v2', async (importOriginal) => {
   };
 });
 
-vi.mock('@moonshot-ai/kimi-code-oauth', async () => {
-  const actual = await vi.importActual<typeof import('@moonshot-ai/kimi-code-oauth')>(
-    '@moonshot-ai/kimi-code-oauth',
+vi.mock('@lemwood/lcode-oauth', async () => {
+  const actual = await vi.importActual<typeof import('@lemwood/lcode-oauth')>(
+    '@lemwood/lcode-oauth',
   );
   return {
     ...actual,
@@ -55,15 +55,15 @@ vi.mock('@moonshot-ai/kimi-code-oauth', async () => {
   };
 });
 
-vi.mock('@moonshot-ai/kimi-code-sdk', async (importOriginal) => {
-  const actual = await importOriginal<typeof import('@moonshot-ai/kimi-code-sdk')>();
+vi.mock('@lemwood/lcode-sdk', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@lemwood/lcode-sdk')>();
   return {
     ...actual,
     resolveKimiHome: mocks.resolveKimiHome,
   };
 });
 
-vi.mock('@moonshot-ai/kimi-telemetry', () => ({
+vi.mock('@lemwood/lcode-telemetry', () => ({
   initializeTelemetry: vi.fn(),
   setCrashPhase: vi.fn(),
   shutdownTelemetry: vi.fn(),

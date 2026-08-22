@@ -7,8 +7,8 @@ import {
   type McpServerConfig,
   parseImageDataUrl,
   persistOriginalImage,
-} from '@moonshot-ai/agent-core-v2';
-import type { ToolInputDisplay, ToolResultEvent } from '@moonshot-ai/protocol';
+} from '@lemwood/agent-core-v2';
+import type { ToolInputDisplay, ToolResultEvent } from '@lemwood/protocol';
 
 import { log } from './log';
 import { isHideOutputMarker } from './marker';

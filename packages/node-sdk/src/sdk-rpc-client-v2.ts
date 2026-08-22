@@ -151,22 +151,22 @@ import {
   type AgentContextData,
   type BeginGlobalMcpServerAuthResult,
   type ExperimentalFeatureState,
-} from '@moonshot-ai/agent-core';
-import { encodeWorkDirKey } from '@moonshot-ai/agent-core-v2/_base/utils/workdir-slug';
-import { MCP_SECTION, type McpSection } from '@moonshot-ai/agent-core-v2/app/mcpConfig/configSection';
-import { IAgentIdentity } from '@moonshot-ai/agent-core-v2/app/agentIdentity/agentIdentity';
-import { McpConnectionManager } from '@moonshot-ai/agent-core-v2/mcpCore/connection-manager';
+} from '@lemwood/agent-core';
+import { encodeWorkDirKey } from '@lemwood/agent-core-v2/_base/utils/workdir-slug';
+import { MCP_SECTION, type McpSection } from '@lemwood/agent-core-v2/app/mcpConfig/configSection';
+import { IAgentIdentity } from '@lemwood/agent-core-v2/app/agentIdentity/agentIdentity';
+import { McpConnectionManager } from '@lemwood/agent-core-v2/mcpCore/connection-manager';
 import {
   AlreadyAuthorizedError,
   McpOAuthService,
   type BeginAuthorizationResult,
-} from '@moonshot-ai/agent-core-v2/mcpCore/oauth/service';
-import { createMcpOAuthStore } from '@moonshot-ai/agent-core-v2/app/mcpConfig/oauthStore';
-import { canonicalMcpOAuthResource } from '@moonshot-ai/agent-core-v2/mcpCore/oauth/store';
-import { IAppendLogStore } from '@moonshot-ai/agent-core-v2/persistence/interface/appendLogStore';
-import { IAtomicDocumentStore } from '@moonshot-ai/agent-core-v2/persistence/interface/atomicDocumentStore';
-import { loadMcpServers } from '@moonshot-ai/agent-core-v2/workspace/workspaceMcpConfig/internal/config-loader';
-import type { McpServerConfig as WorkspaceMcpServerConfig } from '@moonshot-ai/agent-core-v2/mcpCore/config-schema';
+} from '@lemwood/agent-core-v2/mcpCore/oauth/service';
+import { createMcpOAuthStore } from '@lemwood/agent-core-v2/app/mcpConfig/oauthStore';
+import { canonicalMcpOAuthResource } from '@lemwood/agent-core-v2/mcpCore/oauth/store';
+import { IAppendLogStore } from '@lemwood/agent-core-v2/persistence/interface/appendLogStore';
+import { IAtomicDocumentStore } from '@lemwood/agent-core-v2/persistence/interface/atomicDocumentStore';
+import { loadMcpServers } from '@lemwood/agent-core-v2/workspace/workspaceMcpConfig/internal/config-loader';
+import type { McpServerConfig as WorkspaceMcpServerConfig } from '@lemwood/agent-core-v2/mcpCore/config-schema';
 import {
   bootstrap,
   DEFAULT_AGENT_PROFILE_NAME,
@@ -246,10 +246,10 @@ import {
   type Scope,
   type ServicesAccessor,
   type SessionSummary as V2SessionSummary,
-} from '@moonshot-ai/agent-core-v2';
-import type { AgentHandle, Klient } from '@moonshot-ai/klient';
-import { createKlient } from '@moonshot-ai/klient/memory';
-import { assertKimiHostIdentity, createKimiDefaultHeaders } from '@moonshot-ai/kimi-code-oauth';
+} from '@lemwood/agent-core-v2';
+import type { AgentHandle, Klient } from '@lemwood/klient';
+import { createKlient } from '@lemwood/klient/memory';
+import { assertKimiHostIdentity, createKimiDefaultHeaders } from '@lemwood/lcode-oauth';
 
 import { KimiAuthFacade } from '#/auth';
 import { KimiHarness } from '#/kimi-harness';

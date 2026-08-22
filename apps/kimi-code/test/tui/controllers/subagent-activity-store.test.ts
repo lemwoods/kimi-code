@@ -1,4 +1,4 @@
-import type { Event } from '@moonshot-ai/kimi-code-sdk';
+import type { Event } from '@lemwood/lcode-sdk';
 import { describe, expect, it } from 'vitest';
 
 import {

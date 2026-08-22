@@ -1,14 +1,14 @@
 import { z } from 'zod';
 
-import { isoDateTimeSchema } from '@moonshot-ai/agent-core-v2/_base/utils/isoDateTime';
+import { isoDateTimeSchema } from '@lemwood/agent-core-v2/_base/utils/isoDateTime';
 import { messageContentSchema } from './message';
 import {
   promptPermissionModeSchema,
   promptThinkingSchema,
-} from '@moonshot-ai/agent-core-v2/app/sessionLegacy/sessionProtocol';
+} from '@lemwood/agent-core-v2/app/sessionLegacy/sessionProtocol';
 
 export { promptPermissionModeSchema, promptThinkingSchema };
-export type { PromptPermissionMode, PromptThinking } from '@moonshot-ai/agent-core-v2/app/sessionLegacy/sessionProtocol';
+export type { PromptPermissionMode, PromptThinking } from '@lemwood/agent-core-v2/app/sessionLegacy/sessionProtocol';
 
 export const promptSkillActivationSchema = z.object({
   name: z.string().min(1),

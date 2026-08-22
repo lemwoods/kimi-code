@@ -12,7 +12,7 @@
  * fallback — `probeDebugSurface` fails the connection with a clear error.
  */
 
-import { createDecorator } from '@moonshot-ai/agent-core-v2/_base/di/instantiation';
+import { createDecorator } from '@lemwood/agent-core-v2/_base/di/instantiation';
 
 import type { ServiceProxy } from './channel';
 import { DEBUG_RPC_BASE, type InspectClient } from './client';

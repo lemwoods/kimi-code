@@ -24,12 +24,12 @@ import {
   type ConfigDiagnostic,
   type Scope,
   type ScopeSeed,
-} from '@moonshot-ai/agent-core-v2';
+} from '@lemwood/agent-core-v2';
 import {
   createKimiDefaultHeaders,
   kimiRegionProfile,
   type KimiHostIdentity,
-} from '@moonshot-ai/kimi-code-oauth';
+} from '@lemwood/lcode-oauth';
 import { createAsyncApiDocument } from './protocol/asyncapi';
 import Fastify, { type FastifyInstance } from 'fastify';
 

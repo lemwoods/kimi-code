@@ -1,5 +1,5 @@
 {
-  "name": "@moonshot-ai/kimi-inspect",
+  "name": "@lemwood/lcode-inspect",
   "version": "0.0.0",
   "private": true,
   "license": "MIT",
@@ -22,8 +22,8 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@moonshot-ai/agent-core-v2": "workspace:^",
-    "@moonshot-ai/transcript": "workspace:^",
+    "@lemwood/agent-core-v2": "workspace:^",
+    "@lemwood/transcript": "workspace:^",
     "@tanstack/react-query": "^5.74.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"

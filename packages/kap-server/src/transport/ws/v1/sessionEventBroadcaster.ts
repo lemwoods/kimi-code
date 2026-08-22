@@ -10,7 +10,7 @@ import type {
   Scope,
   SessionActivityState,
   Workspace,
-} from '@moonshot-ai/agent-core-v2';
+} from '@lemwood/agent-core-v2';
 import {
   IAgentLifecycleService,
   IEventBus,
@@ -20,7 +20,7 @@ import {
   ISessionIndex,
   MAIN_AGENT_ID,
   getLiveSessionById,
-} from '@moonshot-ai/agent-core-v2';
+} from '@lemwood/agent-core-v2';
 import type {
   ConfigWarningItem,
   DiUnitChangedEvent,
@@ -44,7 +44,7 @@ import {
   type TranscriptOpsEvent,
   type TranscriptResetEvent,
   type TranscriptStore,
-} from '@moonshot-ai/transcript';
+} from '@lemwood/transcript';
 
 import { toWireApproval } from '../../../routes/approvals';
 import { toWireQuestion } from '../../../routes/questions';

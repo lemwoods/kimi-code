@@ -5,8 +5,8 @@
  * MUST treat the returned promise as `Promise<never>`.
  */
 
-import { createKimiHarness } from '@moonshot-ai/kimi-code-sdk';
-import type { KimiRegion } from '@moonshot-ai/kimi-code-oauth';
+import { createKimiHarness } from '@lemwood/lcode-sdk';
+import type { KimiRegion } from '@lemwood/lcode-oauth';
 
 import { createKimiCodeHostIdentity } from '#/cli/version';
 import { openUrl } from '#/utils/open-url';
@@ -15,7 +15,7 @@ import { persistedKimiOAuthRef, regionForBareLogin } from '#/utils/region';
 /** Parse a `--region` CLI flag; exits with an actionable message on bad input. */
 export function parseRegionFlag(value: string): KimiRegion {
   if (value !== 'mainland-cn' && value !== 'global') {
-    process.stderr.write(`Invalid --region "${value}" (expected "mainland-cn" or "global").\n`);
+    process.stderr.write(`无效的 --region "${value}"（应为 "mainland-cn" 或 "global"）。\n`);
     process.exit(1);
   }
   return value;
@@ -48,12 +48,12 @@ export async function runLoginFlow(options: { region?: KimiRegion } = {}): Promi
         process.stderr.write(
           [
             '',
-            `Opening browser for Kimi device login: ${url}`,
-            `If the browser did not open, paste the URL above and enter code: ${data.userCode}`,
+            `正在打开浏览器进行 lcode 设备登录：${url}`,
+            `如果浏览器未打开，请粘贴上面的 URL 并输入验证码：${data.userCode}`,
             data.expiresIn !== null && data.expiresIn !== undefined
-              ? `Code expires in ${data.expiresIn}s.`
+              ? `验证码在 ${data.expiresIn} 秒后过期。`
               : undefined,
-            'Waiting for authorization to complete...',
+            '等待授权完成...',
             '',
           ]
             .filter((line): line is string => line !== undefined)
@@ -66,14 +66,14 @@ export async function runLoginFlow(options: { region?: KimiRegion } = {}): Promi
         }
       },
     });
-    process.stderr.write(`Logged in to ${result.providerName}.\n`);
+    process.stderr.write(`已登录 ${result.providerName}。\n`);
     process.exit(0);
   } catch (error) {
     if (controller.signal.aborted) {
-      process.stderr.write('Login cancelled.\n');
+      process.stderr.write('登录已取消。\n');
     } else {
       const message = error instanceof Error ? error.message : String(error);
-      process.stderr.write(`Login failed: ${message}\n`);
+      process.stderr.write(`登录失败：${message}\n`);
     }
     process.exit(1);
   }

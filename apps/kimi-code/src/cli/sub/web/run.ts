@@ -11,8 +11,8 @@
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 
-import { createServerLogger, startServer, type ServerLogger } from '@moonshot-ai/kap-server';
-import { shutdownTelemetry, track } from '@moonshot-ai/kimi-telemetry';
+import { createServerLogger, startServer, type ServerLogger } from '@lemwood/kap-server';
+import { shutdownTelemetry, track } from '@lemwood/lcode-telemetry';
 import chalk from 'chalk';
 import { type Command } from 'commander';
 
@@ -109,51 +109,51 @@ export function buildWebCommand(cmd: Command): Command {
   return cmd
     .option(
       '--port <port>',
-      `Bind port (default ${DEFAULT_SERVER_PORT})`,
+      `绑定端口（默认 ${DEFAULT_SERVER_PORT}）`,
       String(DEFAULT_SERVER_PORT),
     )
     .option(
       '--host [host]',
-      `Bind host. Omit to bind ${DEFAULT_SERVER_HOST} (this machine only); pass --host to bind ${DEFAULT_LAN_HOST} (all interfaces), or --host <host> for a specific host. The bearer token is printed at startup.`,
+      `绑定主机。省略则绑定 ${DEFAULT_SERVER_HOST}（仅本机）；传 --host 绑定 ${DEFAULT_LAN_HOST}（所有网卡），或 --host <host> 绑定指定主机。启动时会打印 bearer token。`,
     )
     .option(
       '--allowed-host <host...>',
-      'Extra Host header value to allow through the DNS-rebinding check. Repeat or comma-separate; a leading dot matches a domain suffix (e.g. .example.com).',
+      '允许通过 DNS-rebinding 检查的额外 Host 头值。可重复或逗号分隔；前导点匹配域名后缀（如 .example.com）。',
     )
     .option(
       '--insecure-no-tls',
-      'Allow a non-loopback bind without a TLS-terminating reverse proxy. Defaults to true; only relevant for non-loopback binds.',
+      '允许非 loopback 绑定而不使用 TLS 反向代理。默认 true；仅对非 loopback 绑定有意义。',
       true,
     )
     .option(
       '--allow-remote-shutdown',
-      'On a non-loopback bind, keep POST /api/v1/shutdown enabled (default: route is disabled → 404).',
+      '非 loopback 绑定时，保持 POST /api/v1/shutdown 可用（默认禁用 → 404）。',
       false,
     )
     .option(
       '--allow-remote-terminals',
-      'On a non-loopback bind, keep the PTY /api/v1/terminals/* routes enabled (default: disabled → 404). Remote shell is high risk.',
+      '非 loopback 绑定时，保持 PTY /api/v1/terminals/* 路由可用（默认禁用 → 404）。远程 shell 风险较高。',
       false,
     )
     .option(
       '--dangerous-bypass-auth',
-      'Disable bearer-token auth on every REST and WebSocket route, and advertise it via /api/v1/meta so the web UI connects without a token. Only use on a trusted network or behind your own authenticating proxy.',
+      '在所有 REST 和 WebSocket 路由上禁用 bearer token 认证，并通过 /api/v1/meta 告知，使 web UI 无需 token 即可连接。仅在可信网络或自有认证代理后使用。',
       false,
     )
     .option(
       '--log-level <level>',
-      `Server log level: ${VALID_LOG_LEVELS.join('|')}. Omit to keep logs off.`,
+      `服务器日志级别：${VALID_LOG_LEVELS.join('|')}。省略则关闭日志。`,
     )
     .option(
       '--debug-endpoints',
-      'Mount /api/v1/debug/* routes for test introspection. OFF by default; production callers leave this unset.',
+      '挂载 /api/v1/debug/* 路由用于测试内省。默认关闭；生产环境保持不设置。',
       false,
     )
     .option(
       '--web-title <title>',
-      'Set a custom browser tab title for this web UI instance (default: "<workspace dir> | Kimi Code").',
+      '为此 web UI 实例设置自定义浏览器标签标题（默认："<工作目录> | lcode"）。',
     )
-    .option('--no-open', 'Do not open the web UI in the default browser.', true)
+    .option('--no-open', '不在默认浏览器中打开 web UI。', true)
     .action(async (opts: WebCliOptions) => {
       try {
         await handleWebCommand(opts);

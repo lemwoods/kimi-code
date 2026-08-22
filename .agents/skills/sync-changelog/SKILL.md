@@ -7,7 +7,7 @@ description: Use after a release succeeds, when maintainers need to sync apps/ki
 
 ## Overview
 
-`kimi-code` uses changesets for versioning. Each package gets its own `CHANGELOG.md`. The user-facing CLI package, `@moonshot-ai/kimi-code`, writes its changelog here:
+`kimi-code` uses changesets for versioning. Each package gets its own `CHANGELOG.md`. The user-facing CLI package, `@lemwood/lcode`, writes its changelog here:
 
 ```text
 apps/kimi-code/CHANGELOG.md
@@ -39,7 +39,7 @@ Core rule: the English docs changelog is the source of truth, and Chinese is tra
 
 Before editing, confirm:
 
-- The released version exists on npm (`npm view @moonshot-ai/kimi-code versions --json`) or has a matching GitHub Release tag.
+- The released version exists on npm (`npm view @lemwood/lcode versions --json`) or has a matching GitHub Release tag.
 - The top of `apps/kimi-code/CHANGELOG.md` is that new version.
 
 If any condition is not true, stop and confirm with the user.
@@ -103,7 +103,7 @@ Changesets may add a `Thanks ...!` credit, but it must be removed every time. Ke
 
 Remove:
 
-- The upstream H1 `# @moonshot-ai/kimi-code` because the docs page already has `# Changelog`.
+- The upstream H1 `# @lemwood/lcode` because the docs page already has `# Changelog`.
 - Changesets subheadings such as `### Patch Changes`, `### Minor Changes`, and `### Major Changes`.
 - PR links such as `[#317](...)`.
 - Commit hash links such as ``[`2f51db4`](...)``.
@@ -111,7 +111,7 @@ Remove:
 
 After stripping, each entry is `- <body text>`.
 
-Drop SDK-only and provider-internal detail. This changelog serves `@moonshot-ai/kimi-code` CLI and web users. Within an entry, keep only what CLI/web users can perceive, and remove sentences that document internals instead of user-visible behavior. Apply this on both the English and Chinese pages:
+Drop SDK-only and provider-internal detail. This changelog serves `@lemwood/lcode` CLI and web users. Within an entry, keep only what CLI/web users can perceive, and remove sentences that document internals instead of user-visible behavior. Apply this on both the English and Chinese pages:
 
 - Drop sentences about how the SDK maps a capability, builds model aliases, or exposes a flag through an API such as `getExperimentalFeatures()` — that belongs in the SDK changelog, not here.
 - Drop provider / wire-format implementation mechanics (XML markers like `<tools_added>`, protocol field explanations, "the wire protocol is unchanged", cache-hit mechanics) unless they are the behavior a user perceives.
@@ -212,7 +212,7 @@ Every version heading must carry its release date in parentheses:
 Take the date from the version's published GitHub Release tag, not from when you run the sync:
 
 ```bash
-git log -1 --format=%cs "@moonshot-ai/kimi-code@<version>"
+git log -1 --format=%cs "@lemwood/lcode@<version>"
 ```
 
 Use the half-width parenthesis form ` (YYYY-MM-DD)` on the English page. Never invent or guess a date; if the tag is missing, stop and confirm with the user.

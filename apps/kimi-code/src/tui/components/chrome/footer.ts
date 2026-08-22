@@ -6,10 +6,10 @@
  *   Line 2: context: N% (tokens/max)
  */
 
-import type { Component } from '@moonshot-ai/pi-tui';
-import { truncateToWidth, visibleWidth } from '@moonshot-ai/pi-tui';
+import type { Component } from '@lemwood/pi-tui';
+import { truncateToWidth, visibleWidth } from '@lemwood/pi-tui';
 import chalk from 'chalk';
-import { effectiveModelAlias } from '@moonshot-ai/kimi-code-sdk';
+import { effectiveModelAlias } from '@lemwood/lcode-sdk';
 
 import { ALL_TIPS, type ToolbarTip } from '#/tui/constant/tips';
 import { isRainbowDancing, renderDanceFooterModel } from '#/tui/easter-eggs/dance';
@@ -122,14 +122,27 @@ function formatGoalBadge(
         : colors.textMuted;
   const turns =
     goal.budget.turnBudget !== null
-      ? `${goal.turnsUsed}/${goal.budget.turnBudget} turns`
-      : `${goal.turnsUsed} ${goal.turnsUsed === 1 ? 'turn' : 'turns'}`;
-  const label = `${goal.status} · ${formatBadgeElapsed(wallClockMs ?? goal.wallClockMs)} · ${turns}`;
+      ? `${goal.turnsUsed}/${goal.budget.turnBudget} 回合`
+      : `${goal.turnsUsed} 回合`;
+  const label = `${goalStatusLabel(goal.status)} · ${formatBadgeElapsed(wallClockMs ?? goal.wallClockMs)} · ${turns}`;
   return (
-    chalk.hex(colors.textMuted)('[goal ') +
+    chalk.hex(colors.textMuted)('[目标 ') +
     chalk.hex(dotColor)('●') +
     chalk.hex(colors.textMuted)(` ${label}]`)
   );
+}
+
+function goalStatusLabel(status: string): string {
+  switch (status) {
+    case 'active':
+      return '进行中';
+    case 'paused':
+      return '已暂停';
+    case 'blocked':
+      return '已阻塞';
+    default:
+      return String(status);
+  }
 }
 
 function formatBadgeElapsed(ms: number): string {
@@ -173,9 +186,9 @@ function shortenCwd(path: string): string {
 function formatContextStatus(usage: number, tokens?: number, maxTokens?: number): string {
   if (maxTokens !== undefined && maxTokens > 0 && tokens !== undefined) {
     const pct = String(usagePercent(tokens, maxTokens));
-    return `context: ${pct}% (${formatTokenCount(tokens)}/${formatTokenCount(maxTokens)})`;
+    return `上下文：${pct}% (${formatTokenCount(tokens)}/${formatTokenCount(maxTokens)})`;
   }
-  return `context: ${String(usagePercentFromRatio(usage))}%`;
+  return `上下文：${String(usagePercentFromRatio(usage))}%`;
 }
 
 export function formatFooterGitBadge(status: GitStatus, colors: ColorPalette): string {
@@ -408,8 +421,8 @@ export class FooterComponent implements Component {
       const thinkingLabel =
         effort !== 'off'
           ? hasEfforts && effort !== 'on'
-            ? ` thinking: ${effort}`
-            : ' thinking'
+            ? ` 思考：${effort}`
+            : ' 思考'
           : '';
       const modelLabel = `${model}${thinkingLabel}`;
       let renderedModelLabel = chalk.hex(colors.text)(modelLabel);
@@ -424,15 +437,13 @@ export class FooterComponent implements Component {
     // apart at a glance.
     const taskBadges: string[] = [];
     if (this.backgroundBashTaskCount > 0) {
-      const noun = this.backgroundBashTaskCount === 1 ? 'task' : 'tasks';
       taskBadges.push(
-        chalk.hex(colors.primary)(`[${String(this.backgroundBashTaskCount)} ${noun} running]`),
+        chalk.hex(colors.primary)(`[${String(this.backgroundBashTaskCount)} 个任务运行中]`),
       );
     }
     if (this.backgroundAgentCount > 0) {
-      const noun = this.backgroundAgentCount === 1 ? 'agent' : 'agents';
       taskBadges.push(
-        chalk.hex(colors.primary)(`[${String(this.backgroundAgentCount)} ${noun} running]`),
+        chalk.hex(colors.primary)(`[${String(this.backgroundAgentCount)} 个 agent 运行中]`),
       );
     }
     slots['tasks'] = taskBadges;

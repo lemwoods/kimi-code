@@ -116,6 +116,7 @@ function createModelCatalogStub(models: Readonly<Record<string, Model>> = {}): I
       throw new Error('not exercised');
     },
     findByName: () => [],
+    listAliases: () => Object.keys(models),
     listModels: () => {
       throw new Error('not exercised');
     },

@@ -1,4 +1,4 @@
-# @moonshot-ai/kimi-code-oauth
+# @lemwood/lcode-oauth
 
 OAuth toolkit for Kimi Code managed authentication.
 

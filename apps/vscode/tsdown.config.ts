@@ -19,12 +19,12 @@ export default defineConfig({
   sourcemap: false,
   plugins: [rawTextPlugin()],
   alias: {
-    '@moonshot-ai/kimi-code-sdk': resolve(root, '../../packages/node-sdk/src/index.ts'),
-    '@moonshot-ai/migration-legacy': resolve(root, '../../packages/migration-legacy/src/index.ts'),
-    '@moonshot-ai/agent-core': resolve(root, '../../packages/agent-core/src/index.ts'),
-    '@moonshot-ai/kaos': resolve(root, '../../packages/kaos/src/index.ts'),
-    '@moonshot-ai/kimi-code-oauth': resolve(root, '../../packages/oauth/src/index.ts'),
-    '@moonshot-ai/kosong': resolve(root, '../../packages/kosong/src/index.ts'),
+    '@lemwood/lcode-sdk': resolve(root, '../../packages/node-sdk/src/index.ts'),
+    '@lemwood/migration-legacy': resolve(root, '../../packages/migration-legacy/src/index.ts'),
+    '@lemwood/agent-core': resolve(root, '../../packages/agent-core/src/index.ts'),
+    '@lemwood/kaos': resolve(root, '../../packages/kaos/src/index.ts'),
+    '@lemwood/lcode-oauth': resolve(root, '../../packages/oauth/src/index.ts'),
+    '@lemwood/kosong': resolve(root, '../../packages/kosong/src/index.ts'),
   },
   define: {
     __EXTENSION_VERSION__: JSON.stringify(pkg.version),
@@ -39,7 +39,7 @@ export default defineConfig({
   },
   deps: {
     onlyBundle: false,
-    alwaysBundle: [/^@moonshot-ai\//, 'zod'],
+    alwaysBundle: [/^@lemwood\//, 'zod'],
     neverBundle: ['vscode'],
   },
   outputOptions: {

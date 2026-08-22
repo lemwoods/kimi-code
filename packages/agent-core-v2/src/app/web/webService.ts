@@ -1,7 +1,7 @@
 import {
   KIMI_CODE_PROVIDER_NAME,
   kimiCodeBaseUrl,
-} from '@moonshot-ai/kimi-code-oauth';
+} from '@lemwood/lcode-oauth';
 import { LifecycleScope } from '#/app/scopes';
 import { ScopeActivation, registerScopedService } from '#/_base/di/scope';
 import { IOAuthService } from '#/app/auth/auth';

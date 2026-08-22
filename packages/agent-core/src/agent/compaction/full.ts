@@ -17,7 +17,7 @@ import {
   APIStatusError,
   createUserMessage,
   isImageFormatError,
-} from '@moonshot-ai/kosong';
+} from '@lemwood/kosong';
 
 import type { Agent } from '..';
 import type { GenerateOptionsWithRequestLogFields } from '../llm-request-logger';

@@ -13,10 +13,10 @@ import { parseRegionFlag, runLoginFlow } from './login-flow';
 export function registerLoginCommand(parent: Command): void {
   parent
     .command('login')
-    .description('Authenticate with Kimi Code CLI via the device-code flow.')
+    .description('通过设备码流程登录 lcode CLI。')
     .option(
       '--region <region>',
-      'Login region: "mainland-cn" (kimi.com) or "global" (kimi.ai).',
+      '登录区域："mainland-cn"（kimi.com）或 "global"（kimi.ai）。',
     )
     .action(async (opts: { region?: string }) => {
       await runLoginFlow({

@@ -12,18 +12,18 @@ import {
   isError2,
   type HostFileStat,
   type Scope,
-} from '@moonshot-ai/agent-core-v2';
+} from '@lemwood/agent-core-v2';
 import {
   fsBrowseQuerySchema,
   fsBrowseResponseSchema,
   fsHomeResponseSchema,
-} from '@moonshot-ai/agent-core-v2/app/hostFolderBrowser/hostFolderBrowser';
+} from '@lemwood/agent-core-v2/app/hostFolderBrowser/hostFolderBrowser';
 import {
   buildEtag,
   FS_BINARY_SAMPLE_BYTES,
   guessMime,
-} from '@moonshot-ai/agent-core-v2/_base/utils/fileMeta';
-import { classifyTextSample } from '@moonshot-ai/agent-core-v2/_base/text/encoding';
+} from '@lemwood/agent-core-v2/_base/utils/fileMeta';
+import { classifyTextSample } from '@lemwood/agent-core-v2/_base/text/encoding';
 import { z } from 'zod';
 
 import { errEnvelope, okEnvelope } from '../envelope';

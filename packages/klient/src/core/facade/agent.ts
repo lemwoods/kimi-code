@@ -8,20 +8,20 @@
  * (`turn.*`, `assistant.delta`, `tool.call.*`, `prompt.completed`, …).
  */
 
-import type { IAgentCommandService } from '@moonshot-ai/agent-core-v2/agent/command/agentCommand';
-import type { IAgentContextMemoryService } from '@moonshot-ai/agent-core-v2/agent/contextMemory/contextMemory';
-import type { IAgentMcpService } from '@moonshot-ai/agent-core-v2/agent/mcp/mcp';
-import type { IAgentRuntimeBindingService } from '@moonshot-ai/agent-core-v2/agent/runtimeBinding/runtimeBinding';
-import type { IAgentPromptService } from '@moonshot-ai/agent-core-v2/agent/prompt/prompt';
-import type { ISessionTokenCountingService } from '@moonshot-ai/agent-core-v2/session/tokenCounting/sessionTokenCounting';
-import type { IAgentPlanService } from '@moonshot-ai/agent-core-v2/features/plan/plan';
-import type { IAgentProfileService } from '@moonshot-ai/agent-core-v2/agent/profile/profile';
-import type { IAgentShellCommandService } from '@moonshot-ai/agent-core-v2/agent/shellCommand/shellCommand';
-import type { IAgentSkillService } from '@moonshot-ai/agent-core-v2/agent/skill/skill';
-import type { IAgentTaskService } from '@moonshot-ai/agent-core-v2/agent/task/task';
-import type { ISessionUsageService } from '@moonshot-ai/agent-core-v2/session/usage/sessionUsage';
-import type { ContentPart } from '@moonshot-ai/agent-core-v2/kosong/contract/message';
-import type { PermissionMode } from '@moonshot-ai/agent-core-v2/agent/permissionPolicy/types';
+import type { IAgentCommandService } from '@lemwood/agent-core-v2/agent/command/agentCommand';
+import type { IAgentContextMemoryService } from '@lemwood/agent-core-v2/agent/contextMemory/contextMemory';
+import type { IAgentMcpService } from '@lemwood/agent-core-v2/agent/mcp/mcp';
+import type { IAgentRuntimeBindingService } from '@lemwood/agent-core-v2/agent/runtimeBinding/runtimeBinding';
+import type { IAgentPromptService } from '@lemwood/agent-core-v2/agent/prompt/prompt';
+import type { ISessionTokenCountingService } from '@lemwood/agent-core-v2/session/tokenCounting/sessionTokenCounting';
+import type { IAgentPlanService } from '@lemwood/agent-core-v2/features/plan/plan';
+import type { IAgentProfileService } from '@lemwood/agent-core-v2/agent/profile/profile';
+import type { IAgentShellCommandService } from '@lemwood/agent-core-v2/agent/shellCommand/shellCommand';
+import type { IAgentSkillService } from '@lemwood/agent-core-v2/agent/skill/skill';
+import type { IAgentTaskService } from '@lemwood/agent-core-v2/agent/task/task';
+import type { ISessionUsageService } from '@lemwood/agent-core-v2/session/usage/sessionUsage';
+import type { ContentPart } from '@lemwood/agent-core-v2/kosong/contract/message';
+import type { PermissionMode } from '@lemwood/agent-core-v2/agent/permissionPolicy/types';
 
 import type { ScopeRef } from '../channel.js';
 import type { ScopedCaller } from './session.js';

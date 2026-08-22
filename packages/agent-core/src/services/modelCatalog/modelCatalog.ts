@@ -6,7 +6,7 @@ import type {
   RefreshOAuthProviderModelsResponse,
   RefreshProviderModelsResponse,
   SetDefaultModelResponse,
-} from '@moonshot-ai/protocol';
+} from '@lemwood/protocol';
 
 export type RefreshProviderModelsScope = 'all' | 'oauth';
 

@@ -28,8 +28,8 @@ import {
   type IAgentScopeHandle,
   type Scope,
   type SessionSummary,
-} from '@moonshot-ai/agent-core-v2';
-import { SessionMetaUpdated } from '@moonshot-ai/agent-core-v2/session/sessionMetadata/sessionMetaEvents';
+} from '@lemwood/agent-core-v2';
+import { SessionMetaUpdated } from '@lemwood/agent-core-v2/session/sessionMetadata/sessionMetaEvents';
 import { ErrorCode } from '../protocol/error-codes';
 import { pageResponseSchema } from '../protocol/pagination';
 import { toProtocolMessage } from '../services/messages/messageProjection';

@@ -3,7 +3,7 @@
  * and tail-preserving truncation used by the chat view's audit panel.
  */
 
-import { EMPTY_AGENT_STATE, type AgentState, type TranscriptTurn } from '@moonshot-ai/transcript';
+import { EMPTY_AGENT_STATE, type AgentState, type TranscriptTurn } from '@lemwood/transcript';
 import { describe, expect, it } from 'vitest';
 
 import { diffValue, type DiffNode } from './diff';

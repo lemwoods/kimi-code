@@ -4,10 +4,10 @@
  * the pattern stays consistent across command-triggered panels.
  */
 
-import type { Component } from '@moonshot-ai/pi-tui';
-import { truncateToWidth, visibleWidth } from '@moonshot-ai/pi-tui';
-import { formatDuration } from '@moonshot-ai/kimi-code-oauth';
-import type { SessionUsage, TokenUsage } from '@moonshot-ai/kimi-code-sdk';
+import type { Component } from '@lemwood/pi-tui';
+import { truncateToWidth, visibleWidth } from '@lemwood/pi-tui';
+import { formatDuration } from '@lemwood/lcode-oauth';
+import type { SessionUsage, TokenUsage } from '@lemwood/lcode-sdk';
 
 import {
   formatTokenCount,

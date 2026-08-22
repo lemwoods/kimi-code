@@ -20,7 +20,7 @@ import {
   ISessionApprovalService,
   ISessionQuestionService,
   getLiveSessionById,
-} from '@moonshot-ai/agent-core-v2';
+} from '@lemwood/agent-core-v2';
 
 import { McpOAuthService } from '../../agent-core/src/mcp/oauth/service';
 

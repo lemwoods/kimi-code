@@ -1,5 +1,5 @@
-import type { ModelAlias } from '@moonshot-ai/kimi-code-sdk';
-import { visibleWidth } from '@moonshot-ai/pi-tui';
+import type { ModelAlias } from '@lemwood/lcode-sdk';
+import { visibleWidth } from '@lemwood/pi-tui';
 import { describe, expect, it, vi } from 'vitest';
 
 import { ModelSelectorComponent } from '#/tui/components/dialogs/model-selector';
@@ -57,9 +57,9 @@ describe('ModelSelectorComponent', () => {
 
     const out = text(picker);
     // Model name on the left, provider on the right, with the current marker.
-    expect(out).toMatch(/❯ Kimi K2\s+Kimi Code ← current/);
+    expect(out).toMatch(/❯ Kimi K2\s+lcode ← current/);
     // Provider is no longer inlined in parentheses next to the name.
-    expect(out).not.toContain('Kimi K2 (Kimi Code)');
+    expect(out).not.toContain('Kimi K2 (lcode)');
   });
 
   it('toggles thinking with Left/Right (not with "/")', () => {

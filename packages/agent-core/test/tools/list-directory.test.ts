@@ -1,4 +1,4 @@
-import type { Kaos } from '@moonshot-ai/kaos';
+import type { Kaos } from '@lemwood/kaos';
 import { describe, expect, it } from 'vitest';
 
 import {

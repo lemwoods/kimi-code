@@ -28,7 +28,7 @@ import {
   type OAuthClientMetadata,
   type OAuthTokens,
 } from '@modelcontextprotocol/sdk/shared/auth.js';
-import { OAuthTokenTransaction } from '@moonshot-ai/kimi-code-oauth';
+import { OAuthTokenTransaction } from '@lemwood/lcode-oauth';
 
 import { JsonFileStore, canonicalMcpOAuthResource, mcpOAuthStoreKey } from './store';
 

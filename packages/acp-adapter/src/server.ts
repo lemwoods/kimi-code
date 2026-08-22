@@ -51,9 +51,9 @@ import type {
   ProviderConfig,
   Session,
   SessionSummary,
-} from '@moonshot-ai/kimi-code-sdk';
-import { log } from '@moonshot-ai/kimi-code-sdk';
-import { LocalKaos, type Kaos } from '@moonshot-ai/kaos';
+} from '@lemwood/lcode-sdk';
+import { log } from '@lemwood/lcode-sdk';
+import { LocalKaos, type Kaos } from '@lemwood/kaos';
 
 import { TERMINAL_AUTH_METHOD, buildTerminalAuthMethod } from './auth-methods';
 import { redirectConsoleToStderr } from './log-guard';

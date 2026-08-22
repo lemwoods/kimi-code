@@ -4,9 +4,9 @@
  * `/api/v2/ws`, so the card refreshes only when Load is clicked.
  */
 
-import { ISessionApprovalService } from '@moonshot-ai/agent-core-v2/session/approval/approval';
-import { ISessionInteractionService } from '@moonshot-ai/agent-core-v2/session/interaction/interaction';
-import { ISessionQuestionService } from '@moonshot-ai/agent-core-v2/session/question/question';
+import { ISessionApprovalService } from '@lemwood/agent-core-v2/session/approval/approval';
+import { ISessionInteractionService } from '@lemwood/agent-core-v2/session/interaction/interaction';
+import { ISessionQuestionService } from '@lemwood/agent-core-v2/session/question/question';
 import { useState } from 'react';
 
 import { useConnection } from '../connection';

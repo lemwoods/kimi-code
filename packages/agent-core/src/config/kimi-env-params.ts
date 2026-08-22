@@ -3,8 +3,8 @@ import {
   type GenerationKwargs,
   KimiChatProvider,
   type ThinkingEffort,
-} from '@moonshot-ai/kosong';
-import { AnthropicChatProvider } from '@moonshot-ai/kosong/providers/anthropic';
+} from '@lemwood/kosong';
+import { AnthropicChatProvider } from '@lemwood/kosong/providers/anthropic';
 
 import { parseFloatEnv } from '#/config/resolve';
 

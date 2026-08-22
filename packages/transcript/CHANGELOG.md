@@ -1,4 +1,4 @@
-# @moonshot-ai/transcript
+# @lemwood/transcript
 
 ## 0.0.1
 

@@ -20,7 +20,7 @@ export function registerWebCommand(program: Command): void {
   const web = buildWebCommand(
     program
       .command('web')
-      .description('Run the local Kimi server and open the web UI.'),
+      .description('运行本地 lcode 服务器并打开 web UI。'),
   );
   registerRotateTokenCommand(web);
   registerDeprecatedServerCommand(program);

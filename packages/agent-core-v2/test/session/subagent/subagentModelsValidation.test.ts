@@ -47,6 +47,7 @@ describe('SessionSubagentModelsValidationService', () => {
         }
         return { id } as Model;
       },
+      listAliases: () => [...modelIds],
     } as unknown as IModelCatalog);
     ix.set(
       ISessionSubagentModelsValidationService,

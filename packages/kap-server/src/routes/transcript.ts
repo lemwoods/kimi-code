@@ -1,4 +1,4 @@
-import { MAIN_AGENT_ID, type Scope } from '@moonshot-ai/agent-core-v2';
+import { MAIN_AGENT_ID, type Scope } from '@lemwood/agent-core-v2';
 import {
   isPlainAgentId,
   paginateTurns,
@@ -12,7 +12,7 @@ import {
   type TranscriptItem,
   type TurnOrigin,
   type TurnState,
-} from '@moonshot-ai/transcript';
+} from '@lemwood/transcript';
 import { z } from 'zod';
 
 import { errEnvelope, okEnvelope } from '../envelope';

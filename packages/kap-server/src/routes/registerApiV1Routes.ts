@@ -1,8 +1,8 @@
-import { IConfigService, type Scope } from '@moonshot-ai/agent-core-v2';
-import { FiberState } from '@moonshot-ai/agent-core-v2/_base/di/fiber';
-import { IFeatureManager } from '@moonshot-ai/agent-core-v2/app/feature/featureManager';
-import { IFlagService } from '@moonshot-ai/agent-core-v2/app/flag/flag';
-import type { KimiHostIdentity } from '@moonshot-ai/kimi-code-oauth';
+import { IConfigService, type Scope } from '@lemwood/agent-core-v2';
+import { FiberState } from '@lemwood/agent-core-v2/_base/di/fiber';
+import { IFeatureManager } from '@lemwood/agent-core-v2/app/feature/featureManager';
+import { IFlagService } from '@lemwood/agent-core-v2/app/flag/flag';
+import type { KimiHostIdentity } from '@lemwood/lcode-oauth';
 import { ulid } from 'ulid';
 
 import { okEnvelope } from '../envelope';

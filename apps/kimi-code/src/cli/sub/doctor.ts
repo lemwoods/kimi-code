@@ -6,7 +6,7 @@ import {
   createKimiConfigRpc,
   type KimiConfigRpc,
   type KimiConfigValidationIssue,
-} from '@moonshot-ai/kimi-code-sdk';
+} from '@lemwood/lcode-sdk';
 import type { Command } from 'commander';
 import { z } from 'zod';
 
@@ -83,23 +83,23 @@ export async function handleDoctor(deps: DoctorDeps, options: DoctorOptions): Pr
 export function registerDoctorCommand(parent: Command, deps?: Partial<DoctorDeps>): void {
   const doctor = parent
     .command('doctor')
-    .description('Validate Kimi Code configuration files.')
+    .description('校验 lcode 配置文件。')
     .action(async () => {
       await runDoctorCommand(deps, {});
     });
 
   doctor
     .command('config')
-    .description('Validate config.toml.')
-    .argument('[path]', 'Validate this file as config.toml instead of the default path.')
+    .description('校验 config.toml。')
+    .argument('[path]', '将该文件作为 config.toml 校验，而非默认路径。')
     .action(async (path: string | undefined) => {
       await runDoctorCommand(deps, { target: 'config', path });
     });
 
   doctor
     .command('tui')
-    .description('Validate tui.toml.')
-    .argument('[path]', 'Validate this file as tui.toml instead of the default path.')
+    .description('校验 tui.toml。')
+    .argument('[path]', '将该文件作为 tui.toml 校验，而非默认路径。')
     .action(async (path: string | undefined) => {
       await runDoctorCommand(deps, { target: 'tui', path });
     });

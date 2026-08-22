@@ -4,7 +4,7 @@ import {
   KIMI_REGION_PROFILES,
   kimiRegionProfile,
   resolveKimiRegion,
-} from '@moonshot-ai/kimi-code-oauth';
+} from '@lemwood/lcode-oauth';
 
 import { isAbortError } from '#/_base/utils/abort';
 import type { IFileSystemStorageService } from '#/persistence/interface/storage';

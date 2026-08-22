@@ -6,7 +6,7 @@
  * auth check, so rotation takes effect without a restart.
  */
 
-import { getLiveServerInstance, rotateServerToken } from '@moonshot-ai/kap-server';
+import { getLiveServerInstance, rotateServerToken } from '@lemwood/kap-server';
 import chalk from 'chalk';
 import type { Command } from 'commander';
 
@@ -19,18 +19,18 @@ export function registerRotateTokenCommand(server: Command): void {
   server
     .command('rotate-token')
     .description(
-      'Generate a new persistent server token; the previous token stops working immediately.',
+      '生成新的持久服务器 token；之前的 token 立即失效。',
     )
     .action(async () => {
       try {
         const token = await rotateServerToken(getDataDir());
         process.stdout.write(
-          'The previous token is now invalid. A running server picks up the new token automatically.\n',
+          '之前的 token 现已失效。正在运行的服务器会自动使用新 token。\n',
         );
 
         // Token in the middle: indented and set off by blank lines (no color
         // highlight), so it is easy to spot without dominating the output.
-        process.stdout.write(`\n  ${chalk.bold('New server token:')} ${token}\n\n`);
+        process.stdout.write(`\n  ${chalk.bold('新的服务器 token：')} ${token}\n\n`);
 
         // Re-print the access links with the new token so the user can
         // reconnect immediately. When a server is running its bind host/port

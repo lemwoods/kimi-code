@@ -1,4 +1,4 @@
-import type { ToolInputDisplay } from "@moonshot-ai/kimi-code-sdk";
+import type { ToolInputDisplay } from "@lemwood/lcode-sdk";
 
 import type { DisplayBlock } from "../../shared/legacy-sdk";
 

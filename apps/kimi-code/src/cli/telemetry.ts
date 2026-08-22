@@ -1,4 +1,4 @@
-import { createKimiDeviceId, KIMI_CODE_PROVIDER_NAME } from '@moonshot-ai/kimi-code-oauth';
+import { createKimiDeviceId, KIMI_CODE_PROVIDER_NAME } from '@lemwood/lcode-oauth';
 import {
   KimiAuthFacade,
   loadRuntimeConfigSafe,
@@ -6,7 +6,7 @@ import {
   resolveKimiHome,
   type KimiConfig,
   type TelemetryClient,
-} from '@moonshot-ai/kimi-code-sdk';
+} from '@lemwood/lcode-sdk';
 
 import type { PromptHarness } from './prompt-session';
 import {
@@ -14,7 +14,7 @@ import {
   setTelemetryContext,
   track,
   withTelemetryContext,
-} from '@moonshot-ai/kimi-telemetry';
+} from '@lemwood/lcode-telemetry';
 
 import { CLI_USER_AGENT_PRODUCT, WEB_UI_MODE } from '#/constant/app';
 import { currentKimiProfile } from '#/utils/region';
@@ -83,7 +83,7 @@ export interface InitializeServerTelemetryOptions {
  * events, …) actually leave the process carrying the enriched context
  * (`app_name` / `version` / `ui_mode` / `model` / platform fields).
  *
- * The returned client wraps the `@moonshot-ai/kimi-telemetry` module
+ * The returned client wraps the `@lemwood/lcode-telemetry` module
  * functions, so the module-level `track` / `withTelemetryContext` (used to
  * fire the startup event) share the same underlying client + sink.
  */

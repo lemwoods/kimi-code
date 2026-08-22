@@ -176,7 +176,7 @@ describe('TowerSpawnTool', () => {
     ix.stub(IFlagService, {
       enabled: (id: string) => id === SECONDARY_MODEL_FLAG_ID && secondaryFlagOn,
     } as unknown as IFlagService);
-    ix.stub(IModelCatalog, { get: () => ({}) } as unknown as IModelCatalog);
+    ix.stub(IModelCatalog, { get: () => ({}), listAliases: () => [] } as unknown as IModelCatalog);
     ix.set(ITowerSpawnTool, new SyncDescriptor(TowerSpawnTool));
   });
 

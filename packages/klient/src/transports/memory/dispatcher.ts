@@ -14,23 +14,23 @@
  * memory behave identically by construction.
  */
 
-import type { ServiceIdentifier } from '@moonshot-ai/agent-core-v2/_base/di/instantiation';
-import type { IAgentScopeHandle } from '@moonshot-ai/agent-core-v2/_base/di/scope';
-import { IWorkspaceInstanceManager } from '@moonshot-ai/agent-core-v2/workspace/workspaceInstance/workspaceInstanceManager';
-import { ISessionManager } from '@moonshot-ai/agent-core-v2/app/sessionManager/sessionManager';
-import { getLiveSessionById } from '@moonshot-ai/agent-core-v2/app/sessionManager/sessionLookup';
-import { IAgentLifecycleService } from '@moonshot-ai/agent-core-v2/session/agentLifecycle/agentLifecycle';
-import { ensureMainAgent } from '@moonshot-ai/agent-core-v2/session/agentLifecycle/mainAgent';
-import { agentContextOf } from '@moonshot-ai/agent-core-v2/agent/scopeContext/scopeContext';
-import { ISessionInteractionService } from '@moonshot-ai/agent-core-v2/session/interaction/interaction';
-import { IEventBus } from '@moonshot-ai/agent-core-v2/app/event/eventBus';
+import type { ServiceIdentifier } from '@lemwood/agent-core-v2/_base/di/instantiation';
+import type { IAgentScopeHandle } from '@lemwood/agent-core-v2/_base/di/scope';
+import { IWorkspaceInstanceManager } from '@lemwood/agent-core-v2/workspace/workspaceInstance/workspaceInstanceManager';
+import { ISessionManager } from '@lemwood/agent-core-v2/app/sessionManager/sessionManager';
+import { getLiveSessionById } from '@lemwood/agent-core-v2/app/sessionManager/sessionLookup';
+import { IAgentLifecycleService } from '@lemwood/agent-core-v2/session/agentLifecycle/agentLifecycle';
+import { ensureMainAgent } from '@lemwood/agent-core-v2/session/agentLifecycle/mainAgent';
+import { agentContextOf } from '@lemwood/agent-core-v2/agent/scopeContext/scopeContext';
+import { ISessionInteractionService } from '@lemwood/agent-core-v2/session/interaction/interaction';
+import { IEventBus } from '@lemwood/agent-core-v2/app/event/eventBus';
 import type {
   FileMeta,
   GetResult,
   SaveOptions,
-} from '@moonshot-ai/agent-core-v2/app/file/fileService';
-import { FileErrors } from '@moonshot-ai/agent-core-v2/app/file/fileService';
-import { Error2, ErrorCodes } from '@moonshot-ai/agent-core-v2/errors';
+} from '@lemwood/agent-core-v2/app/file/fileService';
+import { FileErrors } from '@lemwood/agent-core-v2/app/file/fileService';
+import { Error2, ErrorCodes } from '@lemwood/agent-core-v2/errors';
 
 import { Readable } from 'node:stream';
 

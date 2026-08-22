@@ -12,7 +12,7 @@ installation, configuration, authentication, and session behavior between the
 editor and Kimi Code.
 
 Version `0.6.0` moves the extension into this monorepo under `apps/vscode` and
-runs the stable TypeScript v1 engine through `@moonshot-ai/kimi-code-sdk` in the
+runs the stable TypeScript v1 engine through `@lemwood/lcode-sdk` in the
 VS Code Extension Host. The migration preserves the existing extension ID,
 commands, Webview, and user-visible workflows. It does not redesign the UI or
 introduce unrelated TUI features.
@@ -58,7 +58,7 @@ capabilities exposed by the v1 configuration.
 flowchart LR
   UI["React Webview<br/>browser sandbox"]
   Host["VS Code Extension Host<br/>Node process"]
-  SDK["@moonshot-ai/kimi-code-sdk<br/>KimiHarness and Session"]
+  SDK["@lemwood/lcode-sdk<br/>KimiHarness and Session"]
   Core["v1 agent-core"]
   Home["Kimi Code home<br/>config, auth, MCP, sessions"]
 
@@ -90,8 +90,8 @@ into runtime code or packaging scripts.
 
 ### Package boundaries
 
-- `apps/vscode` depends on `@moonshot-ai/kimi-code-sdk`.
-- `apps/vscode` must not depend directly on `@moonshot-ai/agent-core`.
+- `apps/vscode` depends on `@lemwood/lcode-sdk`.
+- `apps/vscode` must not depend directly on `@lemwood/agent-core`.
 - Core capabilities needed by released clients are exposed through the Node SDK
   and tested at that public boundary.
 - The Webview communicates only through the typed bridge in
@@ -234,7 +234,7 @@ and may require authorization after upgrade.
 
 ## Legacy migration
 
-Migration is opt-in and uses `@moonshot-ai/migration-legacy` for detection and
+Migration is opt-in and uses `@lemwood/migration-legacy` for detection and
 translation. The extension coordinates prompts and reports but does not
 maintain another config/session translator.
 

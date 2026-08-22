@@ -13,7 +13,7 @@
  *    raw REST request/response or WS payload).
  */
 
-import { EMPTY_AGENT_STATE } from '@moonshot-ai/transcript';
+import { EMPTY_AGENT_STATE } from '@lemwood/transcript';
 import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
 
 import { diffValue, type DiffNode } from '../../audit/diff';

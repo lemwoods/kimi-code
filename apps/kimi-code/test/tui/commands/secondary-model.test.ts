@@ -5,7 +5,7 @@
  * Wiring: real command and selector with the SDK/session boundaries stubbed by a small host rig.
  * Run: pnpm -C apps/kimi-code exec vitest run test/tui/commands/secondary-model.test.ts
  */
-import type { ModelAlias } from '@moonshot-ai/kimi-code-sdk';
+import type { ModelAlias } from '@lemwood/lcode-sdk';
 import { describe, expect, it, vi } from 'vitest';
 
 import type { SlashCommandHost } from '#/tui/commands';

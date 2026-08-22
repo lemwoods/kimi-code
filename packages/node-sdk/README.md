@@ -1,4 +1,4 @@
-# @moonshot-ai/kimi-code-sdk
+# @lemwood/lcode-sdk
 
 The TypeScript SDK for Kimi Code
 

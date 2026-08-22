@@ -26,23 +26,23 @@
  * invalidates the `['di']` query prefix).
  */
 
-import type { UnitState } from '@moonshot-ai/agent-core-v2/_base/di/cascadeEngine';
-import type { LedgerEntryInfo } from '@moonshot-ai/agent-core-v2/_base/lifecycle/ledger';
+import type { UnitState } from '@lemwood/agent-core-v2/_base/di/cascadeEngine';
+import type { LedgerEntryInfo } from '@lemwood/agent-core-v2/_base/lifecycle/ledger';
 import {
   IDebugCascadeService,
   type DebugCascadeEntry,
   type DebugPendingGroup,
-} from '@moonshot-ai/agent-core-v2/debug/debugCascade';
-import { IDebugGraphService, type DebugGraph } from '@moonshot-ai/agent-core-v2/debug/debugGraph';
+} from '@lemwood/agent-core-v2/debug/debugCascade';
+import { IDebugGraphService, type DebugGraph } from '@lemwood/agent-core-v2/debug/debugGraph';
 import {
   IDebugEventsService,
   type DebugEventSubscriptions,
-} from '@moonshot-ai/agent-core-v2/features/debugEvents/debugEvents';
+} from '@lemwood/agent-core-v2/features/debugEvents/debugEvents';
 import {
   IDebugLedgerService,
   type DebugLedgerNode,
   type DebugUnit,
-} from '@moonshot-ai/agent-core-v2/debug/debugLedger';
+} from '@lemwood/agent-core-v2/debug/debugLedger';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { useState, type ReactNode } from 'react';
 

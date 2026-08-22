@@ -33,7 +33,7 @@ import {
   sessionMediaOriginalsDir,
   type ISessionScopeHandle,
   type Scope,
-} from '@moonshot-ai/agent-core-v2';
+} from '@lemwood/agent-core-v2';
 import { ErrorCode } from '../protocol/error-codes';
 import { projectPromptContentParts } from '../services/messages/messageProjection';
 import {

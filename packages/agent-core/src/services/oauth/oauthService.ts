@@ -9,14 +9,14 @@ import {
   KIMI_CODE_PROVIDER_NAME,
   OAuthError,
   type DeviceAuthorization,
-} from '@moonshot-ai/kimi-code-oauth';
+} from '@lemwood/lcode-oauth';
 import type {
   OAuthFlowSnapshot,
   OAuthFlowStart,
   OAuthFlowStatus,
   OAuthLoginCancelResponse,
   OAuthLogoutResponse,
-} from '@moonshot-ai/protocol';
+} from '@lemwood/protocol';
 import { ulid } from 'ulid';
 
 import { createManagedAuthFacade, type ServicesAuthFacade } from '../auth/managedAuth';

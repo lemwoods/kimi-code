@@ -9,8 +9,8 @@ import {
   setSessionArchivedBatch,
   type Scope,
   type SessionSummary,
-} from '@moonshot-ai/agent-core-v2';
-import { IGitService, type FsPullRequest } from '@moonshot-ai/agent-core-v2/app/git/git';
+} from '@lemwood/agent-core-v2';
+import { IGitService, type FsPullRequest } from '@lemwood/agent-core-v2/app/git/git';
 import { z } from 'zod';
 
 import { defineRoute } from '../../middleware/defineRoute';

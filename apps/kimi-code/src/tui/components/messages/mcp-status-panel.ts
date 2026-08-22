@@ -1,4 +1,4 @@
-import type { McpServerInfo } from '@moonshot-ai/kimi-code-sdk';
+import type { McpServerInfo } from '@lemwood/lcode-sdk';
 
 import { currentTheme } from '#/tui/theme';
 

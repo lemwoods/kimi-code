@@ -89,29 +89,29 @@
       ];
 
       workspaceNames = [
-        "@moonshot-ai/acp-adapter"
-        "@moonshot-ai/acp-server"
-        "@moonshot-ai/agent-core"
-        "@moonshot-ai/agent-core-v2"
-        "@moonshot-ai/kap-server"
-        "@moonshot-ai/kaos"
-        "@moonshot-ai/kosong"
-        "@moonshot-ai/migration-legacy"
-        "@moonshot-ai/minidb"
-        "@moonshot-ai/kimi-code-sdk"
-        "@moonshot-ai/kimi-code-oauth"
-        "@moonshot-ai/klient"
-        "@moonshot-ai/pi-tui"
-        "@moonshot-ai/protocol"
-        "@moonshot-ai/kimi-telemetry"
-        "@moonshot-ai/transcript"
-        "@moonshot-ai/tree-sitter-bash"
-        "@moonshot-ai/kimi-code"
+        "@lemwood/acp-adapter"
+        "@lemwood/acp-server"
+        "@lemwood/agent-core"
+        "@lemwood/agent-core-v2"
+        "@lemwood/kap-server"
+        "@lemwood/kaos"
+        "@lemwood/kosong"
+        "@lemwood/migration-legacy"
+        "@lemwood/minidb"
+        "@lemwood/lcode-sdk"
+        "@lemwood/lcode-oauth"
+        "@lemwood/klient"
+        "@lemwood/pi-tui"
+        "@lemwood/protocol"
+        "@lemwood/lcode-telemetry"
+        "@lemwood/transcript"
+        "@lemwood/tree-sitter-bash"
+        "@lemwood/lcode"
         "kimi-code"
-        "@moonshot-ai/kimi-inspect"
-        "@moonshot-ai/vis"
-        "@moonshot-ai/vis-server"
-        "@moonshot-ai/vis-web"
+        "@lemwood/lcode-inspect"
+        "@lemwood/vis"
+        "@lemwood/vis-server"
+        "@lemwood/vis-web"
         "kimi-code-docs"
       ];
     in
@@ -205,7 +205,7 @@
               # code-app repo) — verify it is in place before producing the
               # native executable.
               node apps/kimi-code/scripts/check-web-assets.mjs
-              pnpm --filter=@moonshot-ai/kimi-code run build:native:sea
+              pnpm --filter=@lemwood/lcode run build:native:sea
               runHook postBuild
             '';
 

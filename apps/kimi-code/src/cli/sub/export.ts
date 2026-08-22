@@ -12,7 +12,7 @@ import {
   shutdownTelemetry,
   track,
   withTelemetryContext,
-} from '@moonshot-ai/kimi-telemetry';
+} from '@lemwood/lcode-telemetry';
 import {
   createKimiHarness,
   createKimiHarnessV2,
@@ -22,7 +22,7 @@ import {
   type SessionSummary,
   type ShellEnvironment,
   type TelemetryClient,
-} from '@moonshot-ai/kimi-code-sdk';
+} from '@lemwood/lcode-sdk';
 import type { Command } from 'commander';
 
 import { CLI_SHUTDOWN_TIMEOUT_MS, CLI_UI_MODE } from '#/constant/app';
@@ -110,14 +110,14 @@ export async function handleExport(
 export function registerExportCommand(parent: Command, deps?: Partial<ExportDeps>): void {
   parent
     .command('export')
-    .description('Export a session as a ZIP archive.')
-    .option('-o, --output <path>', 'Output ZIP path.')
-    .option('-y, --yes', 'Skip previous-session confirmation.')
+    .description('将会话导出为 ZIP 归档。')
+    .option('-o, --output <path>', '输出 ZIP 路径。')
+    .option('-y, --yes', '跳过上一会话的确认。')
     .option(
       '--no-include-global-log',
-      'Skip bundling the active global diagnostic log (~/.kimi-code/logs/kimi-code.log, not rotated .1 files). By default the global log is included.',
+      '不打包当前全局诊断日志（~/.kimi-code/logs/kimi-code.log，不含轮转的 .1 文件）。默认会包含全局日志。',
     )
-    .argument('[sessionId]', 'Session id to export. Defaults to the most recent session.')
+    .argument('[sessionId]', '要导出的会话 ID，默认使用最近的会话。')
     .action(
       async (
         sessionId: string | undefined,

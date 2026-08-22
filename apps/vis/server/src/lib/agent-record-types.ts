@@ -21,9 +21,9 @@ export type {
   ProcessBackgroundTaskInfo,
   AgentBackgroundTaskInfo,
   QuestionBackgroundTaskInfo,
-} from '@moonshot-ai/agent-core';
-export { AGENT_WIRE_PROTOCOL_VERSION } from '@moonshot-ai/agent-core';
-export type { Message, ContentPart, ToolCall, TokenUsage } from '@moonshot-ai/kosong';
+} from '@lemwood/agent-core';
+export { AGENT_WIRE_PROTOCOL_VERSION } from '@lemwood/agent-core';
+export type { Message, ContentPart, ToolCall, TokenUsage } from '@lemwood/kosong';
 
 // Local bindings for the upstream types referenced by the vis-only DTOs
 // below. The `export type { … }` re-export above forwards the names to
@@ -31,7 +31,7 @@ export type { Message, ContentPart, ToolCall, TokenUsage } from '@moonshot-ai/ko
 import type {
   AgentRecord as UpstreamAgentRecord,
   BackgroundTaskInfo,
-} from '@moonshot-ai/agent-core';
+} from '@lemwood/agent-core';
 
 /**
  * The wire record union vis projects, widened with the v2-engine tower-mode

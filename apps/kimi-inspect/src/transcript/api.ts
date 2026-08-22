@@ -25,7 +25,7 @@ import {
   type TranscriptOperation,
   type TranscriptTask,
   type TranscriptTodo,
-} from '@moonshot-ai/transcript';
+} from '@lemwood/transcript';
 
 type StoredAttachmentSource = Extract<AttachmentSource, { kind: 'file' | 'session_media' }>;
 

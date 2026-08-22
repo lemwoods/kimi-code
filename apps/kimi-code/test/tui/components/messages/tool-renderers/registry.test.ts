@@ -1,4 +1,4 @@
-import type { Component } from '@moonshot-ai/pi-tui';
+import type { Component } from '@lemwood/pi-tui';
 import { describe, expect, it } from 'vitest';
 
 import {

@@ -1,4 +1,4 @@
-# @moonshot-ai/pi-tui
+# @lemwood/pi-tui
 
 ## 0.84.4
 

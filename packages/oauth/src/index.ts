@@ -186,6 +186,18 @@ export type {
   FetchCustomRegistryOptions,
 } from './custom-registry';
 
+export {
+  applyOpenAiCompatibleProvider,
+  fetchOpenAiCompatibleModels,
+  OpenAiCompatibleApiError,
+  readOpenAiCompatibleSource,
+  removeOpenAiCompatibleProvider,
+} from './openai-compatible';
+export type {
+  FetchOpenAiCompatibleModelsOptions,
+  OpenAiCompatibleSource,
+} from './openai-compatible';
+
 export { KimiOAuthToolkit, resolveKimiTokenStorageName } from './toolkit';
 export type {
   AuthManagedUserInfoResult,

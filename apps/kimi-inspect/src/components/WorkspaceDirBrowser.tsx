@@ -14,11 +14,11 @@
 import {
   IHostFolderBrowser,
   type FsBrowseEntry,
-} from '@moonshot-ai/agent-core-v2/app/hostFolderBrowser/hostFolderBrowser';
+} from '@lemwood/agent-core-v2/app/hostFolderBrowser/hostFolderBrowser';
 import {
   IWorkspaceService,
   type Workspace,
-} from '@moonshot-ai/agent-core-v2/app/workspace/workspace';
+} from '@lemwood/agent-core-v2/app/workspace/workspace';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { useState } from 'react';
 

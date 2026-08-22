@@ -9,7 +9,7 @@ import {
   detectMigration,
   shouldSuppressMigration,
   type MigrationPlan,
-} from '@moonshot-ai/migration-legacy';
+} from '@lemwood/migration-legacy';
 
 export interface DetectPendingInput {
   readonly sourceHome: string;

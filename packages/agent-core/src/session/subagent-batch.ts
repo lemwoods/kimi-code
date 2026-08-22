@@ -1,4 +1,4 @@
-import { isProviderRateLimitError, type TokenUsage } from '@moonshot-ai/kosong';
+import { isProviderRateLimitError, type TokenUsage } from '@lemwood/kosong';
 import * as retry from 'retry';
 
 import type {

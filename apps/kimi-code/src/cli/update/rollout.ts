@@ -2,8 +2,8 @@ import { createHash, randomUUID } from 'node:crypto';
 import { appendFile, mkdir, stat, writeFile } from 'node:fs/promises';
 import { dirname } from 'node:path';
 
-import { readKimiDeviceId } from '@moonshot-ai/kimi-code-oauth';
-import { resolveKimiHome } from '@moonshot-ai/kimi-code-sdk';
+import { readKimiDeviceId } from '@lemwood/lcode-oauth';
+import { resolveKimiHome } from '@lemwood/lcode-sdk';
 
 import { getUpdateRolloutLogFile } from '#/utils/paths';
 

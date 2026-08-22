@@ -3,9 +3,9 @@ import {
   getScopedServiceDescriptors,
   IFeatureManager,
   LifecycleScope,
-} from '@moonshot-ai/agent-core-v2';
+} from '@lemwood/agent-core-v2';
 
-import type { Scope, ScopedEntry, ServiceIdentifier } from '@moonshot-ai/agent-core-v2';
+import type { Scope, ScopedEntry, ServiceIdentifier } from '@lemwood/agent-core-v2';
 
 export interface ChannelMethodDescriptor {
   readonly name: string;

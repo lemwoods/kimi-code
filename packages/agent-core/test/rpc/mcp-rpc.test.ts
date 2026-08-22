@@ -4,7 +4,7 @@
  * the extended interfaces (inline-config probe, session-level add), and the
  * push of config / plugin / credential changes into live sessions.
  *
- * Run with `pnpm --filter @moonshot-ai/agent-core exec vitest run test/rpc/mcp-rpc.test.ts`.
+ * Run with `pnpm --filter @lemwood/agent-core exec vitest run test/rpc/mcp-rpc.test.ts`.
  */
 
 import { createServer as createHttpServer, type Server as HttpServer } from 'node:http';

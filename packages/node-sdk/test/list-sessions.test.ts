@@ -16,7 +16,7 @@ import {
   drainSessionIndexMirror,
   ISessionIndex,
   ISessionIndexMirror,
-} from '@moonshot-ai/agent-core-v2';
+} from '@lemwood/agent-core-v2';
 
 import { createKimiHarness, SDKRpcClientV2 } from '#/index';
 import type { KimiError } from '#/index';

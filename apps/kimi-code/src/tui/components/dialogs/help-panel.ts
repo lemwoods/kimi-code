@@ -15,7 +15,7 @@ import {
   decodeKittyPrintable,
   type Focusable,
   truncateToWidth,
-} from '@moonshot-ai/pi-tui';
+} from '@lemwood/pi-tui';
 import { currentTheme } from '#/tui/theme';
 
 export interface KeyboardShortcut {

@@ -17,7 +17,7 @@ import {
   truncateToWidth,
   visibleWidth,
   type Focusable,
-} from '@moonshot-ai/pi-tui';
+} from '@lemwood/pi-tui';
 
 import { currentTheme } from '#/tui/theme';
 

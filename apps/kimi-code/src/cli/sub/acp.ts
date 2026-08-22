@@ -2,7 +2,7 @@
  * `kimi acp` sub-command routing and legacy implementation.
  *
  * By default the command delegates to the agent-core-v2 ACP server. A truthy
- * `KIMI_CODE_LEGACY_FLAG` uses the SDK harness and `@moonshot-ai/acp-adapter`
+ * `KIMI_CODE_LEGACY_FLAG` uses the SDK harness and `@lemwood/acp-adapter`
  * implementation below instead.
  *
  * Wire-up:
@@ -26,8 +26,8 @@ import {
   runAcpServer,
   type AvailableCommand,
   type SlashCommandsSnapshot,
-} from '@moonshot-ai/acp-adapter';
-import { createKimiHarness, type Session, type SkillSummary } from '@moonshot-ai/kimi-code-sdk';
+} from '@lemwood/acp-adapter';
+import { createKimiHarness, type Session, type SkillSummary } from '@lemwood/lcode-sdk';
 
 import { KIMI_CODE_HOME_ENV } from '#/constant/app';
 import { createKimiCodeHostIdentity, getVersion } from '#/cli/version';
@@ -45,13 +45,13 @@ export function registerAcpCommand(parent: Command): void {
 
   parent
     .command('acp')
-    .description('Run kimi-code as an Agent Client Protocol (ACP) server over stdio.')
+    .description('将 lcode 作为 Agent Client Protocol (ACP) 服务器通过 stdio 运行。')
     .option(
       '--login',
-      'Run the device-code login flow then exit (entry point for ACP terminal-auth).',
+      '运行设备码登录流程后退出（ACP 终端认证的入口）。',
       false,
     )
-    .option('--region <region>', 'Login region used together with --login: "mainland-cn" (kimi.com) or "global" (kimi.ai).')
+    .option('--region <region>', '与 --login 一起使用的登录区域："mainland-cn"（kimi.com）或 "global"（kimi.ai）。')
     .action(async (opts: { login?: boolean; region?: string }) => {
       if (opts.login === true) {
         await runLoginFlow({
@@ -120,7 +120,7 @@ export function registerAcpCommand(parent: Command): void {
       };
       try {
         await runAcpServer(harness, {
-          agentInfo: { name: 'Kimi Code CLI', version: getVersion() },
+          agentInfo: { name: 'lcode', version: getVersion() },
           slashCommands: resolveSlashCommands,
           ...(terminalAuthEnv ? { terminalAuthEnv } : {}),
           ...(legacyCommand !== undefined && legacyCommand.length > 0
@@ -129,7 +129,7 @@ export function registerAcpCommand(parent: Command): void {
         });
         process.exit(0);
       } catch (err) {
-        process.stderr.write(`acp server: fatal error: ${String(err)}\n`);
+        process.stderr.write(`acp 服务器：致命错误：${String(err)}\n`);
         process.exit(1);
       }
     });

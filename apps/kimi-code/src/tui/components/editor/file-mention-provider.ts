@@ -8,7 +8,7 @@ import {
   type AutocompleteProvider,
   type AutocompleteSuggestions,
   type SlashCommand,
-} from '@moonshot-ai/pi-tui';
+} from '@lemwood/pi-tui';
 
 import { findInlineSkillTokens } from '../../utils/inline-skill-tokens';
 

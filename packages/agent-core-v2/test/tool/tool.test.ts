@@ -205,6 +205,7 @@ function modelCatalogResolving(...aliases: readonly string[]): IModelCatalog {
       }
       return { id: alias } as Model;
     },
+    listAliases: () => aliases,
     getRequester: (alias: string) => ({
       model: { id: alias } as Model,
       request: async function* () {},

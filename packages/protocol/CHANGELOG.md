@@ -1,4 +1,4 @@
-# @moonshot-ai/protocol
+# @lemwood/protocol
 
 ## 0.5.0
 

@@ -55,22 +55,22 @@ import {
   type LoopRunResult,
   type PrintBackgroundMode,
   type Scope,
-} from '@moonshot-ai/agent-core-v2';
-import { createKimiDefaultHeaders, createKimiDeviceId } from '@moonshot-ai/kimi-code-oauth';
-import type { GoalUpdated } from '@moonshot-ai/agent-core-v2';
-import type { TurnEnded } from '@moonshot-ai/agent-core-v2/agent/loop/turnOps';
+} from '@lemwood/agent-core-v2';
+import { createKimiDefaultHeaders, createKimiDeviceId } from '@lemwood/lcode-oauth';
+import type { GoalUpdated } from '@lemwood/agent-core-v2';
+import type { TurnEnded } from '@lemwood/agent-core-v2/agent/loop/turnOps';
 import type {
   AssistantDelta,
   ThinkingDelta,
   ToolCallDelta,
-} from '@moonshot-ai/agent-core-v2/agent/loop/turnEvents';
-import type { TurnStepRetrying } from '@moonshot-ai/agent-core-v2/agent/stepRetry/stepRetryService';
-import type { HookResult } from '@moonshot-ai/agent-core-v2/features/externalHooks/agent/agentExternalHooksService';
+} from '@lemwood/agent-core-v2/agent/loop/turnEvents';
+import type { TurnStepRetrying } from '@lemwood/agent-core-v2/agent/stepRetry/stepRetryService';
+import type { HookResult } from '@lemwood/agent-core-v2/features/externalHooks/agent/agentExternalHooksService';
 import type {
   ToolCallStarted,
   ToolProgress,
   ToolResultEvent,
-} from '@moonshot-ai/agent-core-v2/agent/toolExecutor/toolExecutorEvents';
+} from '@lemwood/agent-core-v2/agent/toolExecutor/toolExecutorEvents';
 import { resolve } from 'pathe';
 
 import {

@@ -1,5 +1,5 @@
 {
-  "name": "@moonshot-ai/kimi-code-sdk",
+  "name": "@lemwood/lcode-sdk",
   "version": "0.19.1",
   "private": true,
   "description": "TypeScript SDK for the Kimi Code Agent",
@@ -59,12 +59,12 @@
     "zod": "^4.3.6"
   },
   "devDependencies": {
-    "@moonshot-ai/agent-core": "workspace:^",
-    "@moonshot-ai/agent-core-v2": "workspace:^",
-    "@moonshot-ai/kaos": "workspace:^",
-    "@moonshot-ai/kimi-code-oauth": "workspace:^",
-    "@moonshot-ai/klient": "workspace:^",
-    "@moonshot-ai/kosong": "workspace:^",
+    "@lemwood/agent-core": "workspace:^",
+    "@lemwood/agent-core-v2": "workspace:^",
+    "@lemwood/kaos": "workspace:^",
+    "@lemwood/lcode-oauth": "workspace:^",
+    "@lemwood/klient": "workspace:^",
+    "@lemwood/kosong": "workspace:^",
     "@types/yazl": "^2.4.6",
     "jimp": "^1.6.1"
   }

@@ -6,7 +6,7 @@
 
 import { describe, expect, it, vi, beforeEach, afterEach } from 'vitest';
 import { Command } from 'commander';
-import type { KimiConfig } from '@moonshot-ai/kimi-code-sdk';
+import type { KimiConfig } from '@lemwood/lcode-sdk';
 
 import {
   handleCatalogAdd,
@@ -27,8 +27,8 @@ const harnessRouting = vi.hoisted(() => ({
   harness: undefined as unknown,
 }));
 
-vi.mock('@moonshot-ai/kimi-code-sdk', async (importOriginal) => {
-  const actual = await importOriginal<typeof import('@moonshot-ai/kimi-code-sdk')>();
+vi.mock('@lemwood/lcode-sdk', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@lemwood/lcode-sdk')>();
   return {
     ...actual,
     createKimiHarness: (...args: unknown[]) => {
@@ -553,7 +553,7 @@ describe('registerProviderCommand', () => {
     registerProviderCommand(program, deps);
 
     const providerCmd = program.commands.find((c) => c.name() === 'provider');
-    expect(providerCmd?.description()).toMatch(/Manage LLM providers/i);
+    expect(providerCmd?.description()).toMatch(/非交互式管理 LLM 提供商/);
 
     await tryRun(() =>
       program.parseAsync(

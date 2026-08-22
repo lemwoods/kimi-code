@@ -194,6 +194,7 @@ describe('SessionSubagentService planSpawn and spawn', () => {
         }
         return { id: alias } as Model;
       },
+      listAliases: () => [...modelIds],
     } as unknown as IModelCatalog);
     ix.stub(ISessionContext, { _serviceBrand: undefined, cwd: '/repo' } as unknown as ISessionContext);
     ix.stub(ILogService, stubLog());

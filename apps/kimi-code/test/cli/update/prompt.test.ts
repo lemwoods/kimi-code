@@ -10,17 +10,17 @@ import {
 } from '#/cli/update/prompt';
 
 describe('install prompt helpers', () => {
-  it('defaults the selection to "Install update now"', () => {
+  it('默认选中 "立即安装更新"', () => {
     const choices = createInstallPromptChoices({ version: '0.0.2-beta.1' });
 
     expect(getDefaultInstallPromptSelection(choices)).toBe(0);
     expect(choices[0]).toEqual({
       value: 'install',
-      label: 'Install update now (0.0.2-beta.1)',
+      label: '立即安装更新 (0.0.2-beta.1)',
     });
     expect(choices[1]).toEqual({
       value: 'skip',
-      label: 'Continue with current version',
+      label: '继续使用当前版本',
     });
   });
 
@@ -54,7 +54,7 @@ describe('promptForInstallChoice', () => {
     const promptPromise = promptForInstallChoice({
       currentVersion: '0.4.0',
       target: { version: '0.5.0' },
-      installCommand: 'npm install -g @moonshot-ai/kimi-code@0.5.0',
+      installCommand: 'npm install -g @lemwood/lcode@0.5.0',
       installSource: 'npm-global',
       input,
       output,
@@ -67,6 +67,6 @@ describe('promptForInstallChoice', () => {
 
     const rendered = outputChunks.join('');
     expect(rendered).toContain(CHANGELOG_URL);
-    expect(rendered).toContain('View changelog');
+    expect(rendered).toContain('查看更新日志');
   });
 });

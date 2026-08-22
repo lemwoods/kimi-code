@@ -75,8 +75,8 @@ vi.mock("vscode", () => ({
   window: { showWarningMessage: host.showWarningMessage },
 }));
 
-vi.mock("@moonshot-ai/kimi-code-sdk", async (importOriginal) => {
-  const original = await importOriginal<typeof import("@moonshot-ai/kimi-code-sdk")>();
+vi.mock("@lemwood/lcode-sdk", async (importOriginal) => {
+  const original = await importOriginal<typeof import("@lemwood/lcode-sdk")>();
   return {
     ...original,
     createKimiHarness: () => host.createKimiHarness(),

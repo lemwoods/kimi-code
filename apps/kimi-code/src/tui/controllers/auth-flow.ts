@@ -6,7 +6,7 @@ import {
   type OAuthRef,
   type Session,
   type ThinkingEffort,
-} from '@moonshot-ai/kimi-code-sdk';
+} from '@lemwood/lcode-sdk';
 
 import { createKimiCodeUserAgent } from '#/cli/version';
 

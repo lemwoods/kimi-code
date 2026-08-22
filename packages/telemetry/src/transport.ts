@@ -15,7 +15,7 @@ import { isTelemetryPrimitive } from './types';
 
 // Mainland-China telemetry endpoint, mirroring
 // `KIMI_REGION_PROFILES['mainland-cn'].telemetryEndpoint` in
-// `@moonshot-ai/kimi-code-oauth` (the region source of truth). This package
+// `@lemwood/lcode-oauth` (the region source of truth). This package
 // deliberately has no dependency on it — region-aware callers pass `endpoint`
 // explicitly (e.g. through `initializeTelemetry`).
 export const TELEMETRY_ENDPOINT = 'https://telemetry-logs.kimi.com/v1/event';

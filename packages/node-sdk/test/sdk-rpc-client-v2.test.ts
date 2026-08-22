@@ -16,7 +16,7 @@ import {
   FileTokenStorage,
   resolveKimiCodeOAuthRef,
   resolveKimiTokenStorageName,
-} from '@moonshot-ai/kimi-code-oauth';
+} from '@lemwood/lcode-oauth';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import {
@@ -42,7 +42,7 @@ import {
   ISessionManager,
   ISessionTodoService,
   OsProcessErrors,
-} from '@moonshot-ai/agent-core-v2';
+} from '@lemwood/agent-core-v2';
 
 import { McpOAuthService } from '../../agent-core/src/mcp/oauth/service';
 
@@ -52,9 +52,9 @@ import { recordingTelemetry, type TelemetryRecord } from './telemetry';
 
 const hostEnvProbe = vi.hoisted(() => ({ failWithMissingShell: false }));
 
-vi.mock('@moonshot-ai/agent-core-v2/_base/execEnv/environmentProbe', async (importOriginal) => {
+vi.mock('@lemwood/agent-core-v2/_base/execEnv/environmentProbe', async (importOriginal) => {
   const actual = await importOriginal<
-    typeof import('@moonshot-ai/agent-core-v2/_base/execEnv/environmentProbe')
+    typeof import('@lemwood/agent-core-v2/_base/execEnv/environmentProbe')
   >();
   return {
     ...actual,

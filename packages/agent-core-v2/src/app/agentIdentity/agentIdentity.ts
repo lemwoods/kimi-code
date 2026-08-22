@@ -1,4 +1,4 @@
-import { replaceUserAgentProduct } from '@moonshot-ai/kimi-code-oauth';
+import { replaceUserAgentProduct } from '@lemwood/lcode-oauth';
 
 import { createDecorator, type ServiceIdentifier } from '#/_base/di/instantiation';
 

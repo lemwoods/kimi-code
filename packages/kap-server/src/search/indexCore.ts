@@ -8,7 +8,7 @@ import {
   OpTracker,
   TextIndexBuildingError,
   type BatchInputOp,
-} from '@moonshot-ai/minidb';
+} from '@lemwood/minidb';
 
 import { GlobalSearchError, type GlobalSearchIncomplete } from './contract.ts';
 import {

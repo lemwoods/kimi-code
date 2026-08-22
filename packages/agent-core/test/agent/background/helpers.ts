@@ -1,4 +1,4 @@
-import type { KaosProcess } from '@moonshot-ai/kaos';
+import type { KaosProcess } from '@lemwood/kaos';
 import { vi } from 'vitest';
 
 import {

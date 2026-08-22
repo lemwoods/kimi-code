@@ -23,6 +23,11 @@ import {
   getOpenPlatformById,
   isOpenPlatformId,
 } from './open-platform';
+import {
+  applyOpenAiCompatibleProvider,
+  fetchOpenAiCompatibleModels,
+  readOpenAiCompatibleSource,
+} from './openai-compatible';
 import { isRecord } from './utils';
 
 /**
@@ -598,6 +603,69 @@ export async function refreshProviderModels(
           // The v1 `removeProvider` RPC clears `defaultProvider` when it points
           // at this provider; the clone still holds the original value, so
           // write it back — a refresh must not silently drop the fallback.
+          defaultProvider: next['defaultProvider'],
+        });
+        changed.push({
+          providerId,
+          providerName: providerId,
+          added,
+          removed,
+        });
+      }
+    } catch (error) {
+      failed.push({
+        provider: providerId,
+        reason: error instanceof Error ? error.message : String(error),
+      });
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // 2.75. OpenAI-compatible discover providers (GET {baseUrl}/models)
+  // ---------------------------------------------------------------------------
+  for (const providerId of Object.keys(config.providers)) {
+    if (isOpenPlatformId(providerId)) continue;
+    if (targetId !== undefined && targetId !== providerId) continue;
+    const provider = readProvider(config, providerId);
+    if (provider === undefined) continue;
+    const source = readOpenAiCompatibleSource(provider);
+    if (source === undefined) continue;
+
+    try {
+      const modelIds = await fetchOpenAiCompatibleModels(source.url, source.apiKey, {
+        userAgent: host.userAgent,
+      });
+      if (modelIds.length === 0) continue;
+
+      const next = structuredClone(config);
+      applyOpenAiCompatibleProvider(next, {
+        providerId,
+        baseUrl: source.url,
+        apiKey: source.apiKey,
+        modelIds,
+      });
+      const refreshedAliasKeys = providerRefreshAliasKeys(config, next, providerId, `${providerId}/`);
+      restoreProviderAliases(
+        next,
+        preserveUserProviderAliases(config, providerId, refreshedAliasKeys),
+      );
+      restoreDefaultSelection(next, config.defaultModel, config.thinking?.enabled);
+      clampDanglingDefault(next);
+      clearDefaultThinkingWhenDefaultRemoved(next, config.defaultModel);
+
+      if (providerModelsEqual(config, next, providerId, refreshedAliasKeys)) {
+        unchanged.push(providerId);
+      } else {
+        const { added, removed } = computeChanges(
+          collectModelIdsForAliases(config, refreshedAliasKeys),
+          collectModelIdsForAliases(next, refreshedAliasKeys),
+        );
+        await host.removeProvider(providerId);
+        config = await host.setConfig({
+          providers: next.providers,
+          models: next.models,
+          defaultModel: next.defaultModel,
+          thinking: next.thinking,
           defaultProvider: next['defaultProvider'],
         });
         changed.push({

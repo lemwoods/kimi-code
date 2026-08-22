@@ -5,7 +5,7 @@ import {
   writeConfigFile,
   type KimiConfig,
   type OAuthRef,
-} from '@moonshot-ai/agent-core';
+} from '@lemwood/agent-core';
 import {
   applyManagedKimiCodeConfig,
   applyManagedKimiCodeLogoutConfig,
@@ -25,7 +25,7 @@ import {
   type KimiRegion,
   type ManagedKimiConfigShape,
   type OAuthRefreshOutcome,
-} from '@moonshot-ai/kimi-code-oauth';
+} from '@lemwood/lcode-oauth';
 
 import { mapOAuthTokenError } from '#/oauth-error';
 

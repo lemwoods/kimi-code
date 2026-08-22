@@ -64,7 +64,7 @@ jobs:
           cache: pnpm
 
       - run: pnpm install --frozen-lockfile
-      - run: pnpm --filter @moonshot-ai/pi-tui test
+      - run: pnpm --filter @lemwood/pi-tui test
 
   # The VS Code extension suite runs on the default (v2) engine as part of the
   # sharded root run above; this job reruns it on the legacy v1 engine, which
@@ -149,6 +149,6 @@ jobs:
       - name: Typecheck VS Code extension
         run: pnpm --filter kimi-code run typecheck
       - name: Typecheck vis-server
-        run: pnpm --filter @moonshot-ai/vis-server run typecheck
+        run: pnpm --filter @lemwood/vis-server run typecheck
       - name: Typecheck vis-web
-        run: pnpm --filter @moonshot-ai/vis-web run typecheck
+        run: pnpm --filter @lemwood/vis-web run typecheck

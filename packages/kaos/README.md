@@ -1,4 +1,4 @@
-# @moonshot-ai/kaos
+# @lemwood/kaos
 
 Execution environment abstraction used by Kimi Code.
 

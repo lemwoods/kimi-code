@@ -8,7 +8,7 @@ import type {
   MigrationPlan,
   MigrationReport,
   RunMigrationInput,
-} from '@moonshot-ai/migration-legacy';
+} from '@lemwood/migration-legacy';
 
 function makePlan(over: Partial<MigrationPlan> = {}): MigrationPlan {
   return {

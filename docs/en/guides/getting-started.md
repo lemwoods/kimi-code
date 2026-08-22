@@ -44,13 +44,13 @@ Requires Node.js 22.19.0 or later:
 
 ```sh
 node --version
-npm install -g @moonshot-ai/kimi-code
+npm install -g @lemwood/lcode
 ```
 
 Or with pnpm:
 
 ```sh
-pnpm add -g @moonshot-ai/kimi-code
+pnpm add -g @lemwood/lcode
 ```
 
 ## Upgrade and uninstall
@@ -64,13 +64,13 @@ kimi --version
 **Upgrade**: run `kimi upgrade` — the CLI checks for the latest version and presents update options. Choose `Install update now` to upgrade based on your current install source. You can also upgrade directly via the package manager:
 
 ```sh
-npm install -g @moonshot-ai/kimi-code@latest
+npm install -g @lemwood/lcode@latest
 ```
 
 **Uninstall**: if you installed via the script, delete the `kimi` executable. If you installed via npm:
 
 ```sh
-npm uninstall -g @moonshot-ai/kimi-code
+npm uninstall -g @lemwood/lcode
 ```
 
 ## First launch

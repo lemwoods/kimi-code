@@ -5,7 +5,7 @@ import {
   type Logger,
   type ModelProvider,
   type ResolvedRuntimeProvider,
-} from '@moonshot-ai/agent-core';
+} from '@lemwood/agent-core';
 import {
   createKimiDefaultHeaders,
   KIMI_CODE_FLOW_CONFIG,
@@ -16,12 +16,12 @@ import {
   resolveKimiCodeOAuthRef,
   type KimiHostIdentity,
   type ManagedKimiOAuthRef,
-} from '@moonshot-ai/kimi-code-oauth';
+} from '@lemwood/lcode-oauth';
 import type {
   ProviderConfig as KosongProviderConfig,
   ProviderRequestAuth,
-} from '@moonshot-ai/kosong';
-import { APIStatusError, UNKNOWN_CAPABILITY } from '@moonshot-ai/kosong';
+} from '@lemwood/kosong';
+import { APIStatusError, UNKNOWN_CAPABILITY } from '@lemwood/kosong';
 
 import { mapOAuthTokenError } from '#/oauth-error';
 

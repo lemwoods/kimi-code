@@ -14,12 +14,12 @@ import {
   sessionDirOf,
   type Event2,
   type SessionSummary,
-} from '@moonshot-ai/agent-core-v2';
+} from '@lemwood/agent-core-v2';
 import {
   type FsGitStatusResponse,
   type FsPullRequest,
   IGitService,
-} from '@moonshot-ai/agent-core-v2/app/git/git';
+} from '@lemwood/agent-core-v2/app/git/git';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { type RunningServer, startServer } from '../src/start';

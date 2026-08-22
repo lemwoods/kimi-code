@@ -7,8 +7,8 @@ import {
   type PluginInfo,
   type PluginSummary,
   type Session,
-} from '@moonshot-ai/kimi-code-sdk';
-import { Markdown, Spacer } from '@moonshot-ai/pi-tui';
+} from '@lemwood/lcode-sdk';
+import { Markdown, Spacer } from '@lemwood/pi-tui';
 
 import { NO_ACTIVE_SESSION_MESSAGE } from '../constant/kimi-tui';
 import {

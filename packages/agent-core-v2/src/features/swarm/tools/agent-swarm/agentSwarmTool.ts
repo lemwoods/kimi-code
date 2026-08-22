@@ -8,6 +8,7 @@ import { Error2, ErrorCodes } from '#/errors';
 import { toInputJsonSchema } from '#/tool/input-schema';
 import { IConfigService } from '#/app/config/config';
 import { IFlagService } from '#/app/flag/flag';
+import { IModelCatalog } from '#/kosong/model/catalog';
 import { ISessionSwarmService, type SessionSwarmTask } from '#/features/swarm/session/sessionSwarm';
 import { IAgentProfileService } from '#/agent/profile/profile';
 import { IAgentScopeContext } from '#/agent/scopeContext/scopeContext';
@@ -89,6 +90,7 @@ export class AgentSwarmTool implements IAgentSwarmTool {
     @IAgentSwarmService private readonly swarmMode: IAgentSwarmService,
     @IConfigService private readonly config: IConfigService,
     @IFlagService private readonly flags: IFlagService,
+    @IModelCatalog private readonly modelCatalog: IModelCatalog,
     @ISessionSubagentService private readonly subagents: ISessionSubagentService,
     @IAgentProfileService private readonly profile: IAgentProfileService,
   ) {
@@ -103,6 +105,7 @@ export class AgentSwarmTool implements IAgentSwarmTool {
     const modelLines = buildSubagentModelDescriptions(
       this.config,
       this.flags,
+      this.modelCatalog,
       this.profile.data().modelAlias,
     );
     return modelLines === undefined ? description : `${description}\n\n${modelLines}`;

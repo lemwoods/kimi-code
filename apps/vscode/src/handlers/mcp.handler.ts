@@ -3,7 +3,7 @@ import type {
   McpManagedServerInfo,
   McpServerConfig as SdkMcpServerConfig,
   McpTestResult,
-} from "@moonshot-ai/kimi-code-sdk";
+} from "@lemwood/lcode-sdk";
 
 import { Events, Methods } from "../../shared/bridge";
 import {

@@ -14,7 +14,7 @@
 
 import { describe, expect, it } from 'vitest';
 
-import type { ToolCall } from '@moonshot-ai/kosong';
+import type { ToolCall } from '@lemwood/kosong';
 
 import {
   foldAnnouncedToolNames,

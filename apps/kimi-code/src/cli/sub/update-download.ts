@@ -6,7 +6,7 @@
  * place happens on the next startup (see `cli/update/native-swap.ts`).
  */
 
-import { log } from '@moonshot-ai/kimi-code-sdk';
+import { log } from '@lemwood/lcode-sdk';
 
 import {
   readUpdateInstallLockVersion,
@@ -86,7 +86,7 @@ export async function runUpdateDownloadCommand(
   manual: boolean = false,
 ): Promise<number> {
   if (!detectNativeInstall()) {
-    process.stderr.write('error: update download is only available in the native build\n');
+    process.stderr.write('错误：更新下载仅在原生构建中可用\n');
     return 1;
   }
   const out = process.stdout;
@@ -97,11 +97,11 @@ export async function runUpdateDownloadCommand(
       // Another worker is already downloading this exact version: wait for it
       // and adopt its verified result instead of exiting on a maybe.
       out.write(
-        `A download of Kimi Code ${version} is already in progress; waiting for it to finish…\n`,
+        `正在下载 lcode ${version}，等待其完成…\n`,
       );
       const wait = await waitForStagedUpdate(version, process.execPath, manual);
       if (wait.status === 'staged') {
-        out.write(`Kimi Code ${version} is downloaded; it applies on the next start.\n`);
+        out.write(`lcode ${version} 已下载，将在下次启动时生效。\n`);
         return 0;
       }
       // The holder finished without staging (failed or died): take over. The
@@ -114,12 +114,12 @@ export async function runUpdateDownloadCommand(
     }
     if (lock === null) {
       process.stderr.write(
-        `error: another update (${holderVersion ?? 'unknown version'}) is already downloading\n`,
+        `错误：另一个更新（${holderVersion ?? '未知版本'}）正在下载\n`,
       );
       return 1;
     }
   }
-  const label = `Downloading Kimi Code ${version} (${process.platform}-${process.arch})…`;
+  const label = `正在下载 lcode ${version}（${process.platform}-${process.arch}）…`;
   const onProgress = createDownloadProgress(out, label);
   try {
     const result = await stageNativeUpdate({
@@ -130,13 +130,13 @@ export async function runUpdateDownloadCommand(
     });
     if (out.isTTY) out.write('\n');
     if (result.status === 'already-staged') {
-      out.write(`Kimi Code ${version} is already downloaded; it applies on the next start.\n`);
+      out.write(`lcode ${version} 已下载，将在下次启动时生效。\n`);
     }
     return 0;
   } catch (error) {
     if (out.isTTY) out.write('\n');
     const message = error instanceof Error ? error.message : String(error);
-    process.stderr.write(`error: failed to download update ${version}: ${message}\n`);
+    process.stderr.write(`错误：下载更新 ${version} 失败：${message}\n`);
     log.warn('native update download failed', { version, error: message });
     return 1;
   } finally {

@@ -1,12 +1,12 @@
 import type { Logger } from '#/logging/types';
-import type { ProviderConfig as KosongProviderConfig, ModelCapability, ProviderRequestAuth } from '@moonshot-ai/kosong';
+import type { ProviderConfig as KosongProviderConfig, ModelCapability, ProviderRequestAuth } from '@lemwood/kosong';
 import {
   APIStatusError,
   classifyKimiQuotaError,
   getModelCapability,
   UNKNOWN_CAPABILITY,
-} from '@moonshot-ai/kosong';
-import { parseKimiCodeCustomHeaders } from '@moonshot-ai/kimi-code-oauth';
+} from '@lemwood/kosong';
+import { parseKimiCodeCustomHeaders } from '@lemwood/lcode-oauth';
 import {
   effectiveModelAlias,
   type KimiConfig,

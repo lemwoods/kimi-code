@@ -1,4 +1,4 @@
-import type { TUI } from '@moonshot-ai/pi-tui';
+import type { TUI } from '@lemwood/pi-tui';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import {

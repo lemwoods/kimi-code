@@ -1,4 +1,4 @@
-# @moonshot-ai/minidb
+# @lemwood/minidb
 
 ## 0.2.0
 

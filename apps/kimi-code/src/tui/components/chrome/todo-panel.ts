@@ -9,8 +9,8 @@
  * is issued.
  */
 
-import type { Component } from '@moonshot-ai/pi-tui';
-import { truncateToWidth } from '@moonshot-ai/pi-tui';
+import type { Component } from '@lemwood/pi-tui';
+import { truncateToWidth } from '@lemwood/pi-tui';
 import chalk from 'chalk';
 
 import { currentTheme } from '#/tui/theme';
@@ -152,7 +152,7 @@ export class TodoPanelComponent implements Component {
     const c = currentTheme.palette;
     const lines: string[] = [
       chalk.hex(c.border)('─'.repeat(width)),
-      chalk.hex(c.primary).bold('  Todo'),
+      chalk.hex(c.primary).bold('  待办事项'),
     ];
 
     if (this.expanded) {
@@ -161,7 +161,7 @@ export class TodoPanelComponent implements Component {
       }
       if (this.todos.length > MAX_VISIBLE) {
         lines.push(
-          chalk.hex(c.textDim)(`  all ${String(this.todos.length)} items · ctrl+t to collapse`),
+          chalk.hex(c.textDim)(`  全部 ${String(this.todos.length)} 项 · ctrl+t 折叠`),
         );
       }
     } else {
@@ -173,7 +173,7 @@ export class TodoPanelComponent implements Component {
         const distribution = formatHiddenCounts(hiddenCounts);
         const suffix = distribution.length > 0 ? ` (${distribution})` : '';
         lines.push(
-          chalk.hex(c.textDim)(`  … +${hidden} more${suffix} · ctrl+t to expand`),
+          chalk.hex(c.textDim)(`  … 还有 ${hidden} 项${suffix} · ctrl+t 展开`),
         );
       }
     }
@@ -211,9 +211,9 @@ function styleTitle(title: string, status: TodoStatus, colors: ColorPalette): st
 }
 
 const STATUS_LABELS: readonly { status: TodoStatus; label: string }[] = [
-  { status: 'done', label: 'done' },
-  { status: 'in_progress', label: 'in progress' },
-  { status: 'pending', label: 'pending' },
+  { status: 'done', label: '已完成' },
+  { status: 'in_progress', label: '进行中' },
+  { status: 'pending', label: '待处理' },
 ];
 
 export function formatHiddenCounts(counts: Record<TodoStatus, number>): string {

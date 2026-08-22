@@ -2,8 +2,8 @@ import { EventEmitter } from 'node:events';
 import { Readable, type Writable } from 'node:stream';
 
 import { createControlledPromise } from '@antfu/utils';
-import { type Environment, type Kaos, type KaosProcess } from '@moonshot-ai/kaos';
-import type { ModelCapability, ProviderConfig } from '@moonshot-ai/kosong';
+import { type Environment, type Kaos, type KaosProcess } from '@lemwood/kaos';
+import type { ModelCapability, ProviderConfig } from '@lemwood/kosong';
 import { expect, onTestFinished, vi } from 'vitest';
 
 import {

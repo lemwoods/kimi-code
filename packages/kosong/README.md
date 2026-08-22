@@ -1,4 +1,4 @@
-# @moonshot-ai/kosong
+# @lemwood/kosong
 
 LLM abstraction layer used by Kimi Code.
 

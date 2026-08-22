@@ -31,7 +31,7 @@ import type {
   ToolCallRequest,
   ToolCallResponse,
   ToolInputDisplay,
-} from '@moonshot-ai/agent-core';
+} from '@lemwood/agent-core';
 import {
   agentContextOf,
   IAgentLifecycleService,
@@ -48,7 +48,7 @@ import {
   type IDisposable,
   type Interaction,
   type ISessionScopeHandle,
-} from '@moonshot-ai/agent-core-v2';
+} from '@lemwood/agent-core-v2';
 
 import { translateDomainEvent } from '#/v2/event-mapper';
 

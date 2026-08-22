@@ -26,9 +26,9 @@ import {
   type GlobalMcpServerConfig,
   type McpRemoteServerConfig,
   type McpServerConfig,
-} from '@moonshot-ai/agent-core';
-import type { McpConnectionManager } from '@moonshot-ai/agent-core-v2/mcpCore/connection-manager';
-import { atomicWrite } from '@moonshot-ai/agent-core-v2/_base/utils/fs';
+} from '@lemwood/agent-core';
+import type { McpConnectionManager } from '@lemwood/agent-core-v2/mcpCore/connection-manager';
+import { atomicWrite } from '@lemwood/agent-core-v2/_base/utils/fs';
 
 import type {
   AppMcpServerConfig,

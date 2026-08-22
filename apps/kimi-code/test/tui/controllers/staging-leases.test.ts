@@ -1,4 +1,4 @@
-import type { TurnEndedEvent, TurnStartedEvent } from '@moonshot-ai/kimi-code-sdk';
+import type { TurnEndedEvent, TurnStartedEvent } from '@lemwood/lcode-sdk';
 import { describe, expect, it, vi } from 'vitest';
 
 import {

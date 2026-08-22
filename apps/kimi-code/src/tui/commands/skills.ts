@@ -1,4 +1,4 @@
-import type { Session, SkillSummary } from '@moonshot-ai/kimi-code-sdk';
+import type { Session, SkillSummary } from '@lemwood/lcode-sdk';
 
 import type { KimiSlashCommand } from './types';
 

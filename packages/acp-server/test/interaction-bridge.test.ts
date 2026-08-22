@@ -1,7 +1,7 @@
 import type { RequestPermissionResponse } from '@agentclientprotocol/sdk';
-import type { Interaction } from '@moonshot-ai/agent-core-v2';
-import type { SessionHandle } from '@moonshot-ai/klient';
-import type { ToolInputDisplay } from '@moonshot-ai/protocol';
+import type { Interaction } from '@lemwood/agent-core-v2';
+import type { SessionHandle } from '@lemwood/klient';
+import type { ToolInputDisplay } from '@lemwood/protocol';
 import { describe, expect, it } from 'vitest';
 
 import type { AcpClient } from '../src/acp-client';

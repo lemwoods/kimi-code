@@ -115,8 +115,8 @@ const mocks = vi.hoisted(() => {
   };
 });
 
-vi.mock('@moonshot-ai/kimi-code-sdk', async (importOriginal) => {
-  const actual = await importOriginal<typeof import('@moonshot-ai/kimi-code-sdk')>();
+vi.mock('@lemwood/lcode-sdk', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@lemwood/lcode-sdk')>();
   return {
     ...actual,
     createKimiHarness: () => ({
@@ -135,7 +135,7 @@ vi.mock('@moonshot-ai/kimi-code-sdk', async (importOriginal) => {
   };
 });
 
-vi.mock('@moonshot-ai/kimi-telemetry', () => ({
+vi.mock('@lemwood/lcode-telemetry', () => ({
   initializeTelemetry: vi.fn(),
   setCrashPhase: vi.fn(),
   shutdownTelemetry: vi.fn(),

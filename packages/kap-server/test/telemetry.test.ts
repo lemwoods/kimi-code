@@ -13,8 +13,8 @@ import {
   type Scope,
   type ScopeSeed,
   TelemetryService,
-} from '@moonshot-ai/agent-core-v2';
-import { readKimiDeviceId } from '@moonshot-ai/kimi-code-oauth';
+} from '@lemwood/agent-core-v2';
+import { readKimiDeviceId } from '@lemwood/lcode-oauth';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { initializeServerTelemetry, shutdownServerTelemetry } from '../src/services/telemetry';

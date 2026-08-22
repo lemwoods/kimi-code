@@ -3,7 +3,7 @@ import {
   IConfigService,
   IEventService,
   type Scope,
-} from '@moonshot-ai/agent-core-v2';
+} from '@lemwood/agent-core-v2';
 
 import { errEnvelope, okEnvelope } from '../envelope';
 import { requestLog } from '../lib/requestLog';

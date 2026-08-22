@@ -48,7 +48,7 @@ describe('FooterComponent — context NaN resilience', () => {
     const fc = new FooterComponent(baseState({ contextUsage: Number.NaN }));
     const out = strip(fc.render(120).join(''));
     expect(out).not.toMatch(/NaN/);
-    expect(out).toMatch(/context: 0%/);
+    expect(out).toMatch(/上下文：0%/);
   });
 
   it('undefined-ish (coerced) usage → renders 0%', () => {
@@ -57,25 +57,25 @@ describe('FooterComponent — context NaN resilience', () => {
     );
     const out = strip(fc.render(120).join(''));
     expect(out).not.toMatch(/NaN/);
-    expect(out).toMatch(/context: 0%/);
+    expect(out).toMatch(/上下文：0%/);
   });
 
   it('clamps ratios above 1.0 → renders 100%', () => {
     const fc = new FooterComponent(baseState({ contextUsage: 1.5 }));
     const out = strip(fc.render(120).join(''));
-    expect(out).toMatch(/context: 100%/);
+    expect(out).toMatch(/上下文：100%/);
   });
 
   it('ratio 0.427 → renders 43% (ceiled whole percent)', () => {
     const fc = new FooterComponent(baseState({ contextUsage: 0.427 }));
     const out = strip(fc.render(200).join(''));
-    expect(out).toMatch(/context: 43%/);
+    expect(out).toMatch(/上下文：43%/);
   });
 
   it('tiny non-zero usage → renders 1% (ceil floor)', () => {
     const fc = new FooterComponent(baseState({ contextUsage: 0.0004 }));
     const out = strip(fc.render(200).join(''));
-    expect(out).toMatch(/context: 1%/);
+    expect(out).toMatch(/上下文：1%/);
   });
 
   it('valid tokens/maxTokens → percent from tokens, counts in 1024 units', () => {
@@ -87,7 +87,7 @@ describe('FooterComponent — context NaN resilience', () => {
       }),
     );
     const out = strip(fc.render(200).join(''));
-    expect(out).toMatch(/context: 42% \(420k\/1M\)/);
+    expect(out).toMatch(/上下文：42% \(420k\/1M\)/);
   });
 
   it('tokens provided but max=0 → falls back to percent-only, no division-by-zero artefact', () => {
@@ -96,7 +96,7 @@ describe('FooterComponent — context NaN resilience', () => {
     );
     const out = strip(fc.render(200).join(''));
     expect(out).not.toMatch(/Infinity|NaN/);
-    expect(out).toMatch(/context: 0%/);
+    expect(out).toMatch(/上下文：0%/);
     // With maxTokens=0, token-count annotation is suppressed.
     expect(out).not.toMatch(/\(500\//);
   });
@@ -109,15 +109,15 @@ describe('FooterComponent — context NaN resilience', () => {
     const out = strip(footer.render(200).join(''));
     expect(out).toContain('kimi-k2-5');
     expect(out).not.toContain(' k2 ');
-    expect(out).toMatch(/context: 50%/);
+    expect(out).toMatch(/上下文：50%/);
   });
 
   it('shows "thinking" label when thinking is enabled, hides it when disabled', () => {
     const on = new FooterComponent(baseState({ model: 'k2', thinkingEffort: 'on' }));
     const off = new FooterComponent(baseState({ model: 'k2', thinkingEffort: 'off' }));
 
-    expect(strip(on.render(120)[0]!)).toContain('thinking');
-    expect(strip(off.render(120)[0]!)).not.toContain('thinking');
+    expect(strip(on.render(120)[0]!)).toContain('思考');
+    expect(strip(off.render(120)[0]!)).not.toContain('思考');
   });
 
   it('renders transient hints on the context line', () => {
@@ -127,7 +127,7 @@ describe('FooterComponent — context NaN resilience', () => {
 
     const [, line2] = footer.render(120);
     expect(strip(line2 ?? '')).toContain('Press Ctrl-C again to exit');
-    expect(strip(line2 ?? '')).toContain('context: 0%');
+    expect(strip(line2 ?? '')).toContain('上下文：0%');
   });
 
   it('highlights the pull request badge separately from git status text', () => {

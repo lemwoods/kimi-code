@@ -1,4 +1,4 @@
-import { classifyKimiQuotaError } from '@moonshot-ai/kosong';
+import { classifyKimiQuotaError } from '@lemwood/kosong';
 import { describe, expect, it } from 'vitest';
 
 import type { KimiConfig, ModelAlias } from '../../src/config';

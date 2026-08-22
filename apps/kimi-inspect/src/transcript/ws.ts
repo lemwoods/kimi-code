@@ -33,7 +33,7 @@ import {
   transcriptResetEventSchema,
   type AgentTranscriptSnapshot,
   type TranscriptOperation,
-} from '@moonshot-ai/transcript';
+} from '@lemwood/transcript';
 
 import type { WsLike, WsLikeCtor } from '../channel/wsLike';
 

@@ -6,8 +6,8 @@
  * active palette so theme switches take effect on the next render.
  */
 
-import type { Component } from '@moonshot-ai/pi-tui';
-import { truncateToWidth, visibleWidth } from '@moonshot-ai/pi-tui';
+import type { Component } from '@lemwood/pi-tui';
+import { truncateToWidth, visibleWidth } from '@lemwood/pi-tui';
 
 import { currentTheme } from '#/tui/theme';
 
@@ -37,13 +37,13 @@ export class DeviceCodeBoxComponent implements Component {
 
     const titleLine = truncateToWidth(currentTheme.boldFg('textStrong', title), innerWidth, '…');
     const promptLine = truncateToWidth(
-      currentTheme.fg('textDim', 'Visit the URL below in your browser to authorize:'),
+      currentTheme.fg('textDim', '请在浏览器中访问下面的 URL 完成授权：'),
       innerWidth,
       '…',
     );
     const urlLine = truncateToWidth(currentTheme.fg('primary', url), innerWidth, '…');
 
-    const codeLabel = currentTheme.boldFg('textDim', 'Verification code:  ');
+    const codeLabel = currentTheme.boldFg('textDim', '验证码：');
     const codeValue = currentTheme.boldFg('accent', code);
     const codeLine = truncateToWidth(`${codeLabel}${codeValue}`, innerWidth, '…');
 

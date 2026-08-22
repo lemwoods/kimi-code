@@ -19,7 +19,7 @@ import type {
   SessionStatus,
   SessionSummary,
   ThinkingEffort,
-} from "@moonshot-ai/kimi-code-sdk";
+} from "@lemwood/lcode-sdk";
 import { describe, expect, it, vi } from "vitest";
 
 import { Events } from "../shared/bridge";
@@ -36,8 +36,8 @@ const sdkFactories = vi.hoisted(() => {
   };
 });
 
-vi.mock("@moonshot-ai/kimi-code-sdk", async (importOriginal) => {
-  const original = await importOriginal<typeof import("@moonshot-ai/kimi-code-sdk")>();
+vi.mock("@lemwood/lcode-sdk", async (importOriginal) => {
+  const original = await importOriginal<typeof import("@lemwood/lcode-sdk")>();
   return {
     ...original,
     createKimiHarness: sdkFactories.createKimiHarness,

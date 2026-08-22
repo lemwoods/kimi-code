@@ -1,4 +1,4 @@
-import { LocalKaos, type Environment } from '@moonshot-ai/kaos';
+import { LocalKaos, type Environment } from '@lemwood/kaos';
 
 export const TEST_OS_ENV: Environment = {
   osKind: 'Linux',

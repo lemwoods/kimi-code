@@ -27,7 +27,7 @@ import {
   type ModelCapability,
   type StreamDecodeStats,
   type StreamedMessagePart,
-} from '@moonshot-ai/kosong';
+} from '@lemwood/kosong';
 
 import type {
   LLM,

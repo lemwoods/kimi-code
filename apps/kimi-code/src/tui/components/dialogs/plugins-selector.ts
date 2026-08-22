@@ -6,13 +6,13 @@ import {
   truncateToWidth,
   visibleWidth,
   type Focusable,
-} from '@moonshot-ai/pi-tui';
+} from '@lemwood/pi-tui';
 import type {
   CapabilityStatus,
   PluginInfo,
   PluginMcpServerInfo,
   PluginSummary,
-} from '@moonshot-ai/kimi-code-sdk';
+} from '@lemwood/lcode-sdk';
 import chalk from 'chalk';
 
 import { SELECT_POINTER } from '#/tui/constant/symbols';

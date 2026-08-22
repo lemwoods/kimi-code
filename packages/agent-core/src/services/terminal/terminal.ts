@@ -6,7 +6,7 @@ import type {
   Terminal,
   TerminalExitMessage,
   TerminalOutputMessage,
-} from '@moonshot-ai/protocol';
+} from '@lemwood/protocol';
 
 export type TerminalFrame = TerminalOutputMessage | TerminalExitMessage;
 

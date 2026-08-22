@@ -27,7 +27,7 @@ describe('TodoPanelComponent', () => {
     ]);
     const lines = panel.render(80).map(strip);
     const joined = lines.join('\n');
-    expect(joined).toMatch(/Todo/);
+    expect(joined).toMatch(/待办事项/);
     expect(joined).toMatch(/✓ Investigate parser/);
     expect(joined).toMatch(/● Add tests/);
     expect(joined).toMatch(/○ Open PR/);
@@ -72,7 +72,7 @@ describe('TodoPanelComponent', () => {
     const out = strip(panel.render(80).join('\n'));
     expect(out).toMatch(/a/);
     expect(out).toMatch(/e/);
-    expect(out).not.toMatch(/\+\d+ more/);
+    expect(out).not.toMatch(/还有 \d+ 项/);
   });
 
   it('appends "+N more" footer when count > 5', () => {
@@ -87,7 +87,7 @@ describe('TodoPanelComponent', () => {
       { title: 't6', status: 'pending' },
     ]);
     const out = strip(panel.render(80).join('\n'));
-    expect(out).toMatch(/\+2 more/);
+    expect(out).toMatch(/还有 2 项/);
   });
 
   const many = (n: number): TodoItem[] =>
@@ -105,8 +105,8 @@ describe('TodoPanelComponent', () => {
     const panel = new TodoPanelComponent();
     panel.setTodos(many(7));
     const out = strip(panel.render(80).join('\n'));
-    expect(out).toMatch(/\+2 more/);
-    expect(out).toMatch(/ctrl\+t to expand/);
+    expect(out).toMatch(/还有 2 项/);
+    expect(out).toMatch(/ctrl\+t 展开/);
   });
 
   it('collapsed footer shows hidden status distribution', () => {
@@ -120,8 +120,8 @@ describe('TodoPanelComponent', () => {
       ...Array.from({ length: 3 }, (_, i) => ({ title: `p${i}`, status: 'pending' as const })),
     ]);
     const out = strip(panel.render(80).join('\n'));
-    expect(out).toMatch(/\+7 more \(3 done · 1 in progress · 3 pending\)/);
-    expect(out).toMatch(/ctrl\+t to expand/);
+    expect(out).toMatch(/还有 7 项 \(3 已完成 · 1 进行中 · 3 待处理\)/);
+    expect(out).toMatch(/ctrl\+t 展开/);
   });
 
   it('collapsed footer omits zero-count statuses', () => {
@@ -130,9 +130,9 @@ describe('TodoPanelComponent', () => {
       Array.from({ length: 8 }, (_, i) => ({ title: `d${i}`, status: 'done' as const })),
     );
     const out = strip(panel.render(80).join('\n'));
-    expect(out).toMatch(/\+3 more \(3 done\)/);
-    expect(out).not.toMatch(/0 in progress/);
-    expect(out).not.toMatch(/0 pending/);
+    expect(out).toMatch(/还有 3 项 \(3 已完成\)/);
+    expect(out).not.toMatch(/0 进行中/);
+    expect(out).not.toMatch(/0 待处理/);
   });
 
   it('expanded footer does not include status distribution', () => {
@@ -142,8 +142,8 @@ describe('TodoPanelComponent', () => {
     );
     panel.setExpanded(true);
     const out = strip(panel.render(80).join('\n'));
-    expect(out).toMatch(/all 8 items · ctrl\+t to collapse/);
-    expect(out).not.toMatch(/\d+ done ·/);
+    expect(out).toMatch(/全部 8 项 · ctrl\+t 折叠/);
+    expect(out).not.toMatch(/\d+ 已完成 ·/);
   });
 
   it('renders every todo with a collapse hint when expanded', () => {
@@ -153,18 +153,18 @@ describe('TodoPanelComponent', () => {
     const out = strip(panel.render(80).join('\n'));
     expect(out).toMatch(/t0/);
     expect(out).toMatch(/t6/);
-    expect(out).not.toMatch(/\+\d+ more/);
-    expect(out).toMatch(/ctrl\+t to collapse/);
+    expect(out).not.toMatch(/还有 \d+ 项/);
+    expect(out).toMatch(/ctrl\+t 折叠/);
   });
 
   it('toggleExpanded() flips between collapsed and expanded', () => {
     const panel = new TodoPanelComponent();
     panel.setTodos(many(7));
-    expect(strip(panel.render(80).join('\n'))).toMatch(/\+2 more/);
+    expect(strip(panel.render(80).join('\n'))).toMatch(/还有 2 项/);
     panel.toggleExpanded();
-    expect(strip(panel.render(80).join('\n'))).toMatch(/ctrl\+t to collapse/);
+    expect(strip(panel.render(80).join('\n'))).toMatch(/ctrl\+t 折叠/);
     panel.toggleExpanded();
-    expect(strip(panel.render(80).join('\n'))).toMatch(/\+2 more/);
+    expect(strip(panel.render(80).join('\n'))).toMatch(/还有 2 项/);
   });
 
   it('setTodos() keeps the expanded state across list updates', () => {
@@ -182,7 +182,7 @@ describe('TodoPanelComponent', () => {
     ]);
     const out = strip(panel.render(80).join('\n'));
     expect(out).toMatch(/u6/);
-    expect(out).toMatch(/ctrl\+t to collapse/);
+    expect(out).toMatch(/ctrl\+t 折叠/);
   });
 
   it('clear() resets the expanded state', () => {
@@ -191,7 +191,7 @@ describe('TodoPanelComponent', () => {
     panel.setExpanded(true);
     panel.clear();
     panel.setTodos(many(7));
-    expect(strip(panel.render(80).join('\n'))).toMatch(/\+2 more/);
+    expect(strip(panel.render(80).join('\n'))).toMatch(/还有 2 项/);
   });
 });
 
@@ -366,14 +366,14 @@ describe('selectVisibleTodos', () => {
 describe('formatHiddenCounts', () => {
   it('formats all three statuses in done / in progress / pending order', () => {
     expect(formatHiddenCounts({ done: 2, in_progress: 1, pending: 3 })).toBe(
-      '2 done · 1 in progress · 3 pending',
+      '2 已完成 · 1 进行中 · 3 待处理',
     );
   });
 
   it('omits zero-count statuses', () => {
-    expect(formatHiddenCounts({ done: 5, in_progress: 0, pending: 0 })).toBe('5 done');
+    expect(formatHiddenCounts({ done: 5, in_progress: 0, pending: 0 })).toBe('5 已完成');
     expect(formatHiddenCounts({ done: 0, in_progress: 2, pending: 3 })).toBe(
-      '2 in progress · 3 pending',
+      '2 进行中 · 3 待处理',
     );
   });
 

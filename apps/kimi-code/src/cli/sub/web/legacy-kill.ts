@@ -83,7 +83,7 @@ export function registerLegacyKillCommand(server: Command): void {
   server
     .command('kill')
     .description(
-      'Deprecated — stop a server started by a version before 0.28.0 (recorded in the legacy server lock). Servers started by `kimi web` run in the foreground — stop them with Ctrl+C.',
+      '已弃用 —— 停止 0.28.0 之前版本启动的服务器（记录在旧版服务器锁中）。`kimi web` 启动的服务器在前台运行，用 Ctrl+C 停止。',
     )
     // Swallow legacy argument shapes (`kimi server kill <serverId>`, flags):
     // the legacy lock records a single server, so they carry no meaning here.

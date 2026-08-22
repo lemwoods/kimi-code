@@ -17,15 +17,15 @@ import type { Command } from 'commander';
 import { registerLegacyKillCommand } from './legacy-kill';
 
 export const DEPRECATED_SERVER_NOTICE =
-  '`kimi server` has been deprecated and no longer works.\n' +
-  'Use `kimi web` instead — it runs the local server in the foreground and opens the web UI (`--no-open` to skip).\n' +
-  'To stop a server started by a version before 0.28.0, use `kimi server kill`.\n' +
-  'This notice will be removed in the next major version of Kimi Code.\n';
+  '`kimi server` 已弃用，不再可用。\n' +
+  '请改用 `kimi web` —— 它在前台运行本地服务器并打开 web UI（`--no-open` 可跳过）。\n' +
+  '要停止 0.28.0 之前版本启动的服务器，请使用 `kimi server kill`。\n' +
+  '此提示将在 lcode 的下一个主版本中移除。\n';
 
 export function registerDeprecatedServerCommand(program: Command): void {
   const server = program
     .command('server')
-    .description('Deprecated — use `kimi web` instead.')
+    .description('已弃用 —— 请改用 `kimi web`。')
     // Swallow every legacy subcommand/flag (`run`, `kill`, `--port`, …) so
     // they all land in the same notice instead of a commander parse error.
     .allowUnknownOption(true)

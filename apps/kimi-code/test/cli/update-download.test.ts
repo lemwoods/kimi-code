@@ -30,9 +30,9 @@ vi.mock('#/cli/update/native-stage', () => ({
   stagedExePath: mocks.stagedExePath,
 }));
 
-vi.mock('@moonshot-ai/kimi-code-sdk', async () => {
-  const actual = await vi.importActual<typeof import('@moonshot-ai/kimi-code-sdk')>(
-    '@moonshot-ai/kimi-code-sdk',
+vi.mock('@lemwood/lcode-sdk', async () => {
+  const actual = await vi.importActual<typeof import('@lemwood/lcode-sdk')>(
+    '@lemwood/lcode-sdk',
   );
   return {
     ...actual,
@@ -122,7 +122,7 @@ describe('runUpdateDownloadCommand', () => {
     const stderrSpy = vi.spyOn(process.stderr, 'write').mockImplementation(() => true);
     await expect(runUpdateDownloadCommand('0.7.0')).resolves.toBe(1);
     expect(mocks.stageNativeUpdate).not.toHaveBeenCalled();
-    expect(stderrSpy).toHaveBeenCalledWith(expect.stringContaining('native build'));
+    expect(stderrSpy).toHaveBeenCalledWith(expect.stringContaining('仅在原生构建中可用'));
   });
 
   it('waits for and adopts the result when another instance downloads the same version', async () => {
@@ -133,7 +133,7 @@ describe('runUpdateDownloadCommand', () => {
     const stdoutSpy = vi.spyOn(process.stdout, 'write').mockImplementation(() => true);
     await expect(runUpdateDownloadCommand('0.7.0')).resolves.toBe(0);
     expect(mocks.stageNativeUpdate).not.toHaveBeenCalled();
-    expect(stdoutSpy).toHaveBeenCalledWith(expect.stringContaining('already in progress'));
+    expect(stdoutSpy).toHaveBeenCalledWith(expect.stringContaining('等待其完成'));
     // A background waiter's adoption keeps the auto marker.
     expect(mocks.promoteStagedUpdateToManual).not.toHaveBeenCalled();
   });

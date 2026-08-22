@@ -11,9 +11,9 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 const mockLogin = vi.fn();
 
-vi.mock('@moonshot-ai/kimi-code-sdk', async () => {
-  const actual = await vi.importActual<typeof import('@moonshot-ai/kimi-code-sdk')>(
-    '@moonshot-ai/kimi-code-sdk',
+vi.mock('@lemwood/lcode-sdk', async () => {
+  const actual = await vi.importActual<typeof import('@lemwood/lcode-sdk')>(
+    '@lemwood/lcode-sdk',
   );
   return {
     ...actual,
@@ -27,7 +27,7 @@ vi.mock('@moonshot-ai/kimi-code-sdk', async () => {
 
 vi.mock('#/utils/open-url', () => ({ openUrl: vi.fn() }));
 
-import { createKimiHarness } from '@moonshot-ai/kimi-code-sdk';
+import { createKimiHarness } from '@lemwood/lcode-sdk';
 
 import { registerLoginCommand } from '#/cli/sub/login';
 import { openUrl } from '#/utils/open-url';
@@ -63,7 +63,7 @@ describe('kimi login', () => {
 
     const login = program.commands.find((c) => c.name() === 'login');
     expect(login).toBeDefined();
-    expect(login?.description()).toMatch(/[Aa]uthenticat/);
+    expect(login?.description()).toMatch(/登录/);
   });
 
   it('invokes harness.auth.login and exits 0 on success', async () => {

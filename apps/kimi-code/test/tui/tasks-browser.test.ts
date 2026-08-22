@@ -1,5 +1,5 @@
-import type { Terminal } from '@moonshot-ai/pi-tui';
-import type { BackgroundTaskInfo, BackgroundTaskStatus, Event } from '@moonshot-ai/kimi-code-sdk';
+import type { Terminal } from '@lemwood/pi-tui';
+import type { BackgroundTaskInfo, BackgroundTaskStatus, Event } from '@lemwood/lcode-sdk';
 import { describe, expect, it, vi } from 'vitest';
 
 import {

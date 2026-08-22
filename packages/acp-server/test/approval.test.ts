@@ -14,8 +14,8 @@ import {
 } from '../src/approval';
 
 import type { PermissionOption, RequestPermissionResponse } from '@agentclientprotocol/sdk';
-import type { SessionApprovalRequest } from '@moonshot-ai/agent-core-v2';
-import type { ToolInputDisplay } from '@moonshot-ai/protocol';
+import type { SessionApprovalRequest } from '@lemwood/agent-core-v2';
+import type { ToolInputDisplay } from '@lemwood/protocol';
 
 function selected(optionId: string): RequestPermissionResponse {
   return { outcome: { outcome: 'selected', optionId } };

@@ -1,6 +1,6 @@
 /**
  * Bash Parser view — a playground for the App-scope `IBashParserService`
- * (the `bashParser` domain, a thin adapter over `@moonshot-ai/tree-sitter-bash`).
+ * (the `bashParser` domain, a thin adapter over `@lemwood/tree-sitter-bash`).
  *
  *   left:  the bash source textarea plus the parse budget (timeoutMs /
  *          maxNodes, empty = package default); the `examples…` dropdown
@@ -22,7 +22,7 @@ import {
   IBashParserService,
   type BashParseResult,
   type BashSyntaxNode,
-} from '@moonshot-ai/agent-core-v2/app/bashParser/bashParser';
+} from '@lemwood/agent-core-v2/app/bashParser/bashParser';
 
 import { useConnection } from '../connection';
 import { Badge, errorMessage } from '../ui';

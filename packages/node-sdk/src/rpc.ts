@@ -19,8 +19,8 @@ import {
   type ToolCallRequest,
   type ToolCallResponse,
   type SwarmModeTrigger,
-} from '@moonshot-ai/agent-core';
-import type { Kaos } from '@moonshot-ai/kaos';
+} from '@lemwood/agent-core';
+import type { Kaos } from '@lemwood/kaos';
 
 import type { ApprovalHandler, QuestionHandler } from '#/events';
 import type {

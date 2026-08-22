@@ -1,4 +1,4 @@
-import { KIMI_CODE_PROVIDER_NAME } from '@moonshot-ai/kimi-code-oauth';
+import { KIMI_CODE_PROVIDER_NAME } from '@lemwood/lcode-oauth';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { createScopedTestHost } from '#/_base/di/test';
@@ -372,6 +372,66 @@ describe('refreshProviderModels write behavior', () => {
       expect(modelRecords['my-kimi/kimi-k2']?.displayName).toBe('Fresh K2');
       expect(modelRecords['my-kimi/kimi-k2.5']).toBeDefined();
       expect(config.get<string>('defaultModel')).toBe('my-kimi/kimi-k2');
+    } finally {
+      host.dispose();
+    }
+  });
+
+  it('discovers models for an OpenAI-compatible provider from GET /models', async () => {
+    const baseUrl = 'https://acme.example.test/v1';
+    const fetchMock = vi.fn(
+      async () =>
+        new Response(
+          JSON.stringify({
+            data: [{ id: 'gpt-4o' }, { id: 'gpt-4o-mini' }],
+          }),
+          { status: 200, headers: { 'Content-Type': 'application/json' } },
+        ),
+    );
+    vi.stubGlobal('fetch', fetchMock);
+
+    const { host, config, discovery, events, providers, models } = await createHost({
+      providers: {
+        acme: {
+          type: 'openai',
+          baseUrl,
+          apiKey: 'sk-acme',
+          modelSource: 'discover',
+          source: { kind: 'openaiModels', url: baseUrl, apiKey: 'sk-acme' },
+        },
+      },
+      models: {
+        'acme/gpt-4o': { provider: 'acme', model: 'gpt-4o', maxContextSize: 131072 },
+      },
+      defaultModel: 'acme/gpt-4o',
+    });
+    try {
+      const result = await discovery.refreshProviderModels({ scope: 'all' });
+
+      expect(result.failed).toEqual([]);
+      expect(result.changed).toEqual([
+        { provider_id: 'acme', provider_name: 'acme', added: 1, removed: 0 },
+      ]);
+      expect(events.published).toEqual([
+        expect.objectContaining({ type: 'event.model_catalog.changed' }),
+      ]);
+      expect(fetchMock).toHaveBeenCalledWith(
+        `${baseUrl}/models`,
+        expect.objectContaining({
+          headers: expect.objectContaining({ Authorization: 'Bearer sk-acme' }),
+        }),
+      );
+      expect(providers.list()['acme']).toEqual({
+        type: 'openai',
+        baseUrl,
+        apiKey: 'sk-acme',
+        modelSource: 'discover',
+        source: { kind: 'openaiModels', url: baseUrl, apiKey: 'sk-acme' },
+      });
+      const modelRecords = models.list();
+      expect(modelRecords['acme/gpt-4o']).toBeDefined();
+      expect(modelRecords['acme/gpt-4o-mini']).toBeDefined();
+      expect(config.get<string>('defaultModel')).toBe('acme/gpt-4o');
     } finally {
       host.dispose();
     }

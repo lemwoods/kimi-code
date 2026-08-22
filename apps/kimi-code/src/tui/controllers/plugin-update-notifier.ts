@@ -1,4 +1,4 @@
-import type { PluginSummary } from '@moonshot-ai/kimi-code-sdk';
+import type { PluginSummary } from '@lemwood/lcode-sdk';
 
 import { kimiCodePluginMarketplaceUrl } from '#/constant/app';
 import {

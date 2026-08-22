@@ -1,4 +1,4 @@
-import { parseKimiCodeCustomHeaders } from '@moonshot-ai/kimi-code-oauth';
+import { parseKimiCodeCustomHeaders } from '@lemwood/lcode-oauth';
 
 import { Disposable } from '#/_base/di/lifecycle';
 import { LifecycleScope } from '#/app/scopes';
@@ -114,6 +114,10 @@ export class ModelCatalog extends Disposable implements IModelCatalog {
       if (alias) out.push(id);
     }
     return out;
+  }
+
+  listAliases(): readonly string[] {
+    return Object.keys(this.models.list());
   }
 
   private entry(id: string): CatalogEntry {

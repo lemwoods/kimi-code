@@ -1,4 +1,4 @@
-import { visibleWidth } from '@moonshot-ai/pi-tui';
+import { visibleWidth } from '@lemwood/pi-tui';
 import { describe, expect, it } from 'vitest';
 
 import { DeviceCodeBoxComponent } from '#/tui/components/chrome/device-code-box';
@@ -34,7 +34,7 @@ describe('DeviceCodeBoxComponent', () => {
     expect(joined).toContain(url);
     expect(joined).toContain(code);
     expect(joined).toContain(hint);
-    expect(joined).toContain('Verification code');
+    expect(joined).toContain('验证码');
   });
 
   it('truncates long urls when the terminal is narrow', () => {

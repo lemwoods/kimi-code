@@ -16,26 +16,26 @@
  * every Service.
  */
 
-import { IAgentActivityView } from '@moonshot-ai/agent-core-v2/agent/activityView/activityView';
-import { IAgentGoalService } from '@moonshot-ai/agent-core-v2/features/goal/goal';
-import { IAgentMcpService } from '@moonshot-ai/agent-core-v2/agent/mcp/mcp';
-import { IAgentPermissionModeService } from '@moonshot-ai/agent-core-v2/agent/permissionMode/permissionMode';
-import { IAgentPermissionRulesService } from '@moonshot-ai/agent-core-v2/agent/permissionRules/permissionRules';
-import { IAgentPlanService } from '@moonshot-ai/agent-core-v2/features/plan/plan';
-import { IAgentProfileService } from '@moonshot-ai/agent-core-v2/agent/profile/profile';
-import { IAgentSwarmService } from '@moonshot-ai/agent-core-v2/features/swarm/agent/swarm';
-import { IAgentTaskService } from '@moonshot-ai/agent-core-v2/agent/task/task';
-import { IAgentToolRegistryService } from '@moonshot-ai/agent-core-v2/agent/toolRegistry/toolRegistry';
-import { IAuthSummaryService } from '@moonshot-ai/agent-core-v2/app/auth/auth';
-import { IConfigService } from '@moonshot-ai/agent-core-v2/app/config/config';
-import { IFlagService } from '@moonshot-ai/agent-core-v2/app/flag/flag';
-import { IProviderService } from '@moonshot-ai/agent-core-v2/kosong/provider/provider';
-import { ISessionApprovalService } from '@moonshot-ai/agent-core-v2/session/approval/approval';
-import { ISessionInteractionService } from '@moonshot-ai/agent-core-v2/session/interaction/interaction';
-import { ISessionQuestionService } from '@moonshot-ai/agent-core-v2/session/question/question';
-import { ISessionInitService } from '@moonshot-ai/agent-core-v2/features/sessionInit/sessionInit';
-import { ISessionMetadata } from '@moonshot-ai/agent-core-v2/session/sessionMetadata/sessionMetadata';
-import { ISessionWorkspaceContext } from '@moonshot-ai/agent-core-v2/session/workspaceContext/workspaceContext';
+import { IAgentActivityView } from '@lemwood/agent-core-v2/agent/activityView/activityView';
+import { IAgentGoalService } from '@lemwood/agent-core-v2/features/goal/goal';
+import { IAgentMcpService } from '@lemwood/agent-core-v2/agent/mcp/mcp';
+import { IAgentPermissionModeService } from '@lemwood/agent-core-v2/agent/permissionMode/permissionMode';
+import { IAgentPermissionRulesService } from '@lemwood/agent-core-v2/agent/permissionRules/permissionRules';
+import { IAgentPlanService } from '@lemwood/agent-core-v2/features/plan/plan';
+import { IAgentProfileService } from '@lemwood/agent-core-v2/agent/profile/profile';
+import { IAgentSwarmService } from '@lemwood/agent-core-v2/features/swarm/agent/swarm';
+import { IAgentTaskService } from '@lemwood/agent-core-v2/agent/task/task';
+import { IAgentToolRegistryService } from '@lemwood/agent-core-v2/agent/toolRegistry/toolRegistry';
+import { IAuthSummaryService } from '@lemwood/agent-core-v2/app/auth/auth';
+import { IConfigService } from '@lemwood/agent-core-v2/app/config/config';
+import { IFlagService } from '@lemwood/agent-core-v2/app/flag/flag';
+import { IProviderService } from '@lemwood/agent-core-v2/kosong/provider/provider';
+import { ISessionApprovalService } from '@lemwood/agent-core-v2/session/approval/approval';
+import { ISessionInteractionService } from '@lemwood/agent-core-v2/session/interaction/interaction';
+import { ISessionQuestionService } from '@lemwood/agent-core-v2/session/question/question';
+import { ISessionInitService } from '@lemwood/agent-core-v2/features/sessionInit/sessionInit';
+import { ISessionMetadata } from '@lemwood/agent-core-v2/session/sessionMetadata/sessionMetadata';
+import { ISessionWorkspaceContext } from '@lemwood/agent-core-v2/session/workspaceContext/workspaceContext';
 
 /** Loosely-typed view of a scoped service proxy (every member is a remote call). */
 export type AnyService = Record<string, (...args: unknown[]) => Promise<unknown>>;

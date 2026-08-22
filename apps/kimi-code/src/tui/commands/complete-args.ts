@@ -1,4 +1,4 @@
-import type { AutocompleteItem } from '@moonshot-ai/pi-tui';
+import type { AutocompleteItem } from '@lemwood/pi-tui';
 
 /**
  * A completable token (subcommand or flag) for a slash command's argument

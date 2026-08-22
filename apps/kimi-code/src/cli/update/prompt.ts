@@ -32,8 +32,8 @@ export interface InstallPromptOptions {
   readonly output?: NodeJS.WriteStream;
 }
 
-const INSTALL_HINT = 'Install update now';
-const SKIP_HINT = 'Continue with current version';
+const INSTALL_HINT = '立即安装更新';
+const SKIP_HINT = '继续使用当前版本';
 
 export function createInstallPromptChoices(target: UpdateTarget): readonly InstallPromptChoice[] {
   return [
@@ -68,18 +68,18 @@ function renderInstallPrompt(
   const targetVersion = chalk.hex(UPDATE_PROMPT_SUCCESS).bold(options.target.version);
   const sourceLabel = chalk.hex(UPDATE_PROMPT_PRIMARY).bold(options.installSource);
   const command = chalk.hex(UPDATE_PROMPT_PRIMARY)(options.installCommand);
-  const changelogText = chalk.hex(UPDATE_PROMPT_PRIMARY).underline(`View changelog: ${CHANGELOG_URL}`);
+  const changelogText = chalk.hex(UPDATE_PROMPT_PRIMARY).underline(`查看更新日志：${CHANGELOG_URL}`);
   const lines = [
-    chalk.hex(UPDATE_PROMPT_PRIMARY).bold('Kimi Code Update Available'),
-    chalk.hex(UPDATE_PROMPT_MUTED)(`${PRODUCT_NAME} has a newer release ready.`),
+    chalk.hex(UPDATE_PROMPT_PRIMARY).bold('lcode 有可用更新'),
+    chalk.hex(UPDATE_PROMPT_MUTED)(`${PRODUCT_NAME} 有更新版本可用。`),
     `]8;;${CHANGELOG_URL}\\${changelogText}]8;;\\`,
     '',
-    `${label('Current')}  ${currentVersion}`,
-    `${label('Target ')}  ${targetVersion}`,
-    `${label('Source ')}  ${sourceLabel}`,
-    `${label('Command')}  ${command}`,
+    `${label('当前版本')}  ${currentVersion}`,
+    `${label('目标版本')}  ${targetVersion}`,
+    `${label('安装来源')}  ${sourceLabel}`,
+    `${label('更新命令')}  ${command}`,
     '',
-    chalk.hex(UPDATE_PROMPT_MUTED)('↑↓ choose · Enter confirm · Esc continue'),
+    chalk.hex(UPDATE_PROMPT_MUTED)('↑↓ 选择 · Enter 确认 · Esc 继续'),
     '',
   ];
 

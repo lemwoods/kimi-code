@@ -1,13 +1,13 @@
-import type { AgentActivityUpdated } from '@moonshot-ai/agent-core-v2/agent/activityView/activityView';
-import type { ContextSpliced } from '@moonshot-ai/agent-core-v2/agent/contextMemory/contextEvents';
-import type { HookResult } from '@moonshot-ai/agent-core-v2/features/externalHooks/agent/agentExternalHooksService';
+import type { AgentActivityUpdated } from '@lemwood/agent-core-v2/agent/activityView/activityView';
+import type { ContextSpliced } from '@lemwood/agent-core-v2/agent/contextMemory/contextEvents';
+import type { HookResult } from '@lemwood/agent-core-v2/features/externalHooks/agent/agentExternalHooksService';
 import type {
   CompactionBlocked,
   CompactionCancelled,
   CompactionCompleted,
   CompactionStarted,
-} from '@moonshot-ai/agent-core-v2/agent/fullCompaction/compactionOps';
-import type { GoalUpdated } from '@moonshot-ai/agent-core-v2';
+} from '@lemwood/agent-core-v2/agent/fullCompaction/compactionOps';
+import type { GoalUpdated } from '@lemwood/agent-core-v2';
 import type {
   AssistantDelta,
   ThinkingDelta,
@@ -16,43 +16,43 @@ import type {
   TurnStepCompleted,
   TurnStepInterrupted,
   TurnStepStarted,
-} from '@moonshot-ai/agent-core-v2/agent/loop/turnEvents';
-import type { TurnEnded } from '@moonshot-ai/agent-core-v2/agent/loop/turnOps';
-import type { AgentErrorEvent } from '@moonshot-ai/agent-core-v2/agent/mcp/mcpEvents';
-import type { PluginCommandActivated } from '@moonshot-ai/agent-core-v2/agent/pluginCommand/pluginCommand';
-import type { WarningIssued } from '@moonshot-ai/agent-core-v2/agent/profile/profileOps';
+} from '@lemwood/agent-core-v2/agent/loop/turnEvents';
+import type { TurnEnded } from '@lemwood/agent-core-v2/agent/loop/turnOps';
+import type { AgentErrorEvent } from '@lemwood/agent-core-v2/agent/mcp/mcpEvents';
+import type { PluginCommandActivated } from '@lemwood/agent-core-v2/agent/pluginCommand/pluginCommand';
+import type { WarningIssued } from '@lemwood/agent-core-v2/agent/profile/profileOps';
 import type {
   PromptAborted,
   PromptCompleted,
   PromptSteered,
-} from '@moonshot-ai/agent-core-v2/agent/prompt/promptService';
+} from '@lemwood/agent-core-v2/agent/prompt/promptService';
 import type {
   ShellCompleted,
   ShellOutput,
   ShellStarted,
-} from '@moonshot-ai/agent-core-v2/agent/shellCommand/shellCommandService';
-import type { SkillActivated } from '@moonshot-ai/agent-core-v2/agent/skill/skillOps';
-import type { TurnStepRetrying } from '@moonshot-ai/agent-core-v2/agent/stepRetry/stepRetryService';
+} from '@lemwood/agent-core-v2/agent/shellCommand/shellCommandService';
+import type { SkillActivated } from '@lemwood/agent-core-v2/agent/skill/skillOps';
+import type { TurnStepRetrying } from '@lemwood/agent-core-v2/agent/stepRetry/stepRetryService';
 import type {
   TaskNotified,
   TaskStarted,
   TaskTerminatedNotice,
-} from '@moonshot-ai/agent-core-v2/agent/task/taskOps';
+} from '@lemwood/agent-core-v2/agent/task/taskOps';
 import type {
   ToolCallStarted,
   ToolProgress,
   ToolResultEvent,
-} from '@moonshot-ai/agent-core-v2/agent/toolExecutor/toolExecutorEvents';
-import type { AgentStatusUpdated } from '@moonshot-ai/agent-core-v2/agent/usage/usageEvents';
-import type { PlanRevision } from '@moonshot-ai/agent-core-v2/features/plan/planOps';
-import type { SubagentSuspended } from '@moonshot-ai/agent-core-v2/features/swarm/session/sessionSwarmService';
-import type { CronFired } from '@moonshot-ai/agent-core-v2/session/cron/cronOps';
+} from '@lemwood/agent-core-v2/agent/toolExecutor/toolExecutorEvents';
+import type { AgentStatusUpdated } from '@lemwood/agent-core-v2/agent/usage/usageEvents';
+import type { PlanRevision } from '@lemwood/agent-core-v2/features/plan/planOps';
+import type { SubagentSuspended } from '@lemwood/agent-core-v2/features/swarm/session/sessionSwarmService';
+import type { CronFired } from '@lemwood/agent-core-v2/session/cron/cronOps';
 import type {
   SubagentCompleted,
   SubagentFailed,
   SubagentSpawned,
   SubagentStarted,
-} from '@moonshot-ai/agent-core-v2/session/subagent/mirrorAgentRun';
+} from '@lemwood/agent-core-v2/session/subagent/mirrorAgentRun';
 import type {
   AgentRef,
   AgentUsageMeta,
@@ -73,7 +73,7 @@ import type {
   TurnHeader,
   TurnOrigin,
   TurnState,
-} from '@moonshot-ai/transcript';
+} from '@lemwood/transcript';
 
 import { toLegacyPhase } from '../legacyStatus/legacyStatus';
 import { projectPromptContentParts } from '../messages/messageProjection';

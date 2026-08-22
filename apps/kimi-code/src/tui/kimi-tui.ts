@@ -3,8 +3,8 @@ import { writeFileSync } from 'node:fs';
 import { unlink } from 'node:fs/promises';
 import { join } from 'node:path';
 
-import type { DeviceAuthorization } from '@moonshot-ai/kimi-code-oauth';
-import { effectiveModelAlias, log } from '@moonshot-ai/kimi-code-sdk';
+import type { DeviceAuthorization } from '@lemwood/lcode-oauth';
+import { effectiveModelAlias, log } from '@lemwood/lcode-sdk';
 import type {
   ApprovalRequest,
   ApprovalResponse,
@@ -20,8 +20,8 @@ import type {
   TurnEndedEvent,
   TurnStartedEvent,
   WorkspaceTrustInfo,
-} from '@moonshot-ai/kimi-code-sdk';
-import type { MigrationPlan } from '@moonshot-ai/migration-legacy';
+} from '@lemwood/lcode-sdk';
+import type { MigrationPlan } from '@lemwood/migration-legacy';
 import {
   deleteAllKittyImages,
   type Component,
@@ -30,7 +30,7 @@ import {
   Spacer,
   TuiAltScreen,
   TuiMainScreen,
-} from '@moonshot-ai/pi-tui';
+} from '@lemwood/pi-tui';
 import { resolve } from 'pathe';
 
 import type { CLIOptions } from '#/cli/options';

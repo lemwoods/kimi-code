@@ -1,4 +1,4 @@
-import { isDaemonFileUrl } from '@moonshot-ai/kimi-code-sdk';
+import { isDaemonFileUrl } from '@lemwood/lcode-sdk';
 
 export type MediaUrlKind = 'audio' | 'image' | 'video';
 

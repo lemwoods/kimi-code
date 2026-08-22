@@ -15,9 +15,9 @@ import {
   sessionDirOf,
   workspacePersistenceScope,
   type SessionSummary,
-} from '@moonshot-ai/agent-core-v2';
-import { normalizeLiteral, tokenize } from '@moonshot-ai/minidb';
-import type { TranscriptStore } from '@moonshot-ai/transcript';
+} from '@lemwood/agent-core-v2';
+import { normalizeLiteral, tokenize } from '@lemwood/minidb';
+import type { TranscriptStore } from '@lemwood/transcript';
 
 import {
   GlobalSearchError,

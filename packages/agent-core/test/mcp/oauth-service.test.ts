@@ -3,7 +3,7 @@
  * exposes the offline token state, emits credential events, and runs token
  * refreshes single-flight per credential.
  *
- * Run with `pnpm --filter @moonshot-ai/agent-core exec vitest run test/mcp/oauth-service.test.ts`.
+ * Run with `pnpm --filter @lemwood/agent-core exec vitest run test/mcp/oauth-service.test.ts`.
  */
 
 import { createServer as createHttpServer, type Server as HttpServer } from 'node:http';

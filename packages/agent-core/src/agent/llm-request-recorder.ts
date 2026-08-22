@@ -10,7 +10,7 @@
  * `records/types.ts` for the persistence contract.
  */
 
-import { KimiChatProvider, type ChatProvider, type Message, type Tool } from '@moonshot-ai/kosong';
+import { KimiChatProvider, type ChatProvider, type Message, type Tool } from '@lemwood/kosong';
 
 import { parseFloatEnv } from '#/config/resolve';
 import { resolveThinkingKeep } from '#/config/kimi-env-params';

@@ -1,9 +1,11 @@
 import {
   applyCustomRegistryEntries,
+  applyOpenAiCompatibleProvider,
   fetchCustomRegistry,
+  fetchOpenAiCompatibleModels,
   type CustomRegistrySource,
   type ManagedKimiConfigShape,
-} from '@moonshot-ai/kimi-code-oauth';
+} from '@lemwood/lcode-oauth';
 import {
   applyCatalogProvider,
   cascadeSubagentModelPool,
@@ -14,12 +16,16 @@ import {
   SECONDARY_DERIVED_MODEL_ALIAS,
   type Catalog,
   type ThinkingEffort,
-} from '@moonshot-ai/kimi-code-sdk';
+} from '@lemwood/lcode-sdk';
 
 import { createKimiCodeUserAgent } from '#/cli/version';
 import { fetchCatalogOrBuiltIn } from '#/utils/catalog-fetch';
 import { refreshKimiRegion } from '#/utils/region';
 import { ChoicePickerComponent } from '../components/dialogs/choice-picker';
+import {
+  CustomProviderAddDialogComponent,
+  type CustomProviderAddResult,
+} from '../components/dialogs/custom-provider-add';
 import {
   CustomRegistryImportDialogComponent,
   type CustomRegistryImportResult,
@@ -124,6 +130,10 @@ async function handleProviderAdd(host: SlashCommandHost): Promise<void> {
     await handleCatalogProviderAdd(host);
     return;
   }
+  if (source === 'discover') {
+    await handleOpenAiCompatibleProviderAdd(host);
+    return;
+  }
   const handled = await handleCustomRegistryAddViaDialog(host);
   if (!handled) {
     reopenProviderManager(host);
@@ -138,17 +148,20 @@ function reopenProviderManager(host: SlashCommandHost): void {
 
 function promptProviderAddSource(
   host: SlashCommandHost,
-): Promise<'known' | 'custom' | undefined> {
+): Promise<'known' | 'custom' | 'discover' | undefined> {
   return new Promise((resolve) => {
     const picker = new ChoicePickerComponent({
       title: 'Add provider',
       options: [
+        { value: 'discover', label: 'Custom provider (base URL + API key)' },
         { value: 'known', label: 'Known third-party provider' },
         { value: 'custom', label: 'Custom registry (api.json)' },
       ],
       onSelect: (value) => {
         host.restoreEditor();
-        resolve(value === 'known' || value === 'custom' ? value : undefined);
+        resolve(
+          value === 'known' || value === 'custom' || value === 'discover' ? value : undefined,
+        );
       },
       onCancel: () => {
         host.restoreEditor();
@@ -329,6 +342,99 @@ async function setDefaultModel(
   await host.authFlow.refreshConfigAfterLogin();
   host.track('model_switch', { model: alias });
   host.showStatus(`Default model set to ${alias} with thinking ${effort}.`);
+}
+
+async function handleOpenAiCompatibleProviderAdd(host: SlashCommandHost): Promise<void> {
+  const details = await promptCustomProviderDetails(host);
+  if (details === undefined) {
+    reopenProviderManager(host);
+    return;
+  }
+
+  const providerId = details.name.trim();
+  const controller = new AbortController();
+  const cancel = (): void => {
+    controller.abort();
+  };
+  host.cancelInFlight = cancel;
+
+  const spinner = host.showLoginProgressSpinner(`Discovering models from ${details.baseUrl}`);
+  let modelIds: string[];
+  try {
+    modelIds = await fetchOpenAiCompatibleModels(details.baseUrl, details.apiKey, {
+      signal: controller.signal,
+      userAgent: createKimiCodeUserAgent(),
+    });
+    spinner.stop({
+      ok: true,
+      label: `Found ${String(modelIds.length)} model${modelIds.length === 1 ? '' : 's'}.`,
+    });
+  } catch (error) {
+    if (controller.signal.aborted) {
+      spinner.stop({ ok: false, label: 'Aborted.' });
+    } else {
+      spinner.stop({ ok: false, label: 'Failed to discover models.' });
+      host.showError(`Failed to list models: ${formatErrorMessage(error)}`);
+    }
+    return;
+  } finally {
+    if (host.cancelInFlight === cancel) host.cancelInFlight = undefined;
+  }
+
+  if (modelIds.length === 0) {
+    host.showError(`No models returned from ${details.baseUrl}/models.`);
+    return;
+  }
+
+  const config = await host.harness.getConfig();
+  applyOpenAiCompatibleProvider(config as unknown as ManagedKimiConfigShape, {
+    providerId,
+    baseUrl: details.baseUrl,
+    apiKey: details.apiKey,
+    modelIds,
+  });
+  await host.harness.setConfig({
+    providers: config.providers,
+    models: config.models,
+  });
+
+  await host.authFlow.refreshConfigAfterLogin();
+  host.track('connect', { provider: providerId, method: 'discover' });
+  host.showStatus(`Provider added: ${providerId} (${String(modelIds.length)} models).`);
+
+  const stateModels = await host.harness.getConfig().then((c) => c.models ?? {});
+  const mergedModels = { ...stateModels };
+  delete mergedModels[SECONDARY_DERIVED_MODEL_ALIAS];
+
+  const selector = new TabbedModelSelectorComponent({
+    models: mergedModels,
+    currentValue: host.state.appState.model,
+    selectedValue: Object.keys(mergedModels).find((a) => a.startsWith(`${providerId}/`)),
+    currentThinkingEffort: host.state.appState.thinkingEffort,
+    initialTabId: providerId,
+    onSelect: ({ alias, thinking }) => {
+      host.restoreEditor();
+      void setDefaultModel(host, alias, thinking).catch((error: unknown) => {
+        host.showError(`Set default model failed: ${formatErrorMessage(error)}`);
+      });
+    },
+    onCancel: () => {
+      host.restoreEditor();
+    },
+  });
+  host.mountEditorReplacement(selector);
+}
+
+function promptCustomProviderDetails(
+  host: SlashCommandHost,
+): Promise<{ name: string; baseUrl: string; apiKey: string } | undefined> {
+  return new Promise((resolve) => {
+    const dialog = new CustomProviderAddDialogComponent((result: CustomProviderAddResult) => {
+      host.restoreEditor();
+      resolve(result.kind === 'ok' ? result.value : undefined);
+    });
+    host.mountEditorReplacement(dialog);
+  });
 }
 
 async function handleCustomRegistryAddViaDialog(host: SlashCommandHost): Promise<boolean> {

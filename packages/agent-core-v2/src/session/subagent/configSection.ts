@@ -109,7 +109,7 @@ export function isSubagentModelForced(config: IConfigService): boolean {
 export function exposesSubagentModelChoice(config: IConfigService, flags: IFlagService): boolean {
   if (!flags.enabled(SECONDARY_MODEL_FLAG_ID)) return false;
   if (isSubagentModelForced(config)) return false;
-  return resolveSubagentModelPool(config) !== undefined;
+  return true;
 }
 
 export const SECONDARY_MODEL_DEFAULT_MODEL_REQUIRED_MESSAGE =
@@ -216,6 +216,7 @@ export function cascadeSubagentModelPool(
 export function resolveSubagentBinding(
   config: IConfigService,
   flags: IFlagService,
+  modelCatalog: IModelCatalog,
   own: { modelAlias: string; thinkingLevel: string },
   requested?: string,
 ): { model: string; thinking?: string } {
@@ -247,14 +248,26 @@ export function resolveSubagentBinding(
   }
   const pool = enabled ? resolveSubagentModelPool(config) : undefined;
   if (pool === undefined) {
-    if (requested !== undefined) {
+    if (requested === undefined) {
+      return { model: own.modelAlias, thinking: own.thinkingLevel };
+    }
+    if (!enabled) {
       throw new Error2(
         ErrorCodes.CONFIG_INVALID,
-        `Invalid model "${requested}": no [secondary_model.models] pool is configured, so subagents inherit the caller's model (pass "primary" or omit the model parameter).`,
+        `Invalid model "${requested}": the secondary-model experiment is disabled, so subagents inherit the caller's model (pass "primary" or omit the model parameter).`,
         { details: { model: requested } },
       );
     }
-    return { model: own.modelAlias, thinking: own.thinkingLevel };
+    const aliases = modelCatalog.listAliases();
+    if (aliases.includes(requested)) {
+      return { model: requested };
+    }
+    const available = [...aliases, PRIMARY_SUBAGENT_MODEL_CHOICE];
+    throw new Error2(
+      ErrorCodes.CONFIG_INVALID,
+      `Invalid model "${requested}". Available models: ${available.join(', ')}.`,
+      { details: { model: requested, availableModels: available } },
+    );
   }
   if (Object.hasOwn(pool.models, PRIMARY_SUBAGENT_MODEL_CHOICE)) {
     throw new Error2(ErrorCodes.CONFIG_INVALID, SECONDARY_MODEL_PRIMARY_MODEL_RESERVED_MESSAGE, {
@@ -285,10 +298,21 @@ export function resolveSubagentBinding(
 export function buildSubagentModelDescriptions(
   config: IConfigService,
   flags: IFlagService,
+  modelCatalog: IModelCatalog,
   callerModelAlias: string | undefined,
 ): string | undefined {
   if (!exposesSubagentModelChoice(config, flags)) return undefined;
-  const pool = resolveSubagentModelPool(config)!;
+  const pool = resolveSubagentModelPool(config);
+  if (pool === undefined) {
+    const lines = ['Available models (pass via model):'];
+    for (const alias of modelCatalog.listAliases()) {
+      lines.push(alias === callerModelAlias ? `- ${alias} [main model]` : `- ${alias}`);
+    }
+    lines.push(
+      `- ${PRIMARY_SUBAGENT_MODEL_CHOICE}: the main model you are running on, bound with your current thinking level; use it for hard, quality-sensitive subagent tasks`,
+    );
+    return lines.join('\n');
+  }
   const lines = ['Available models (pass via model):'];
   const defaultModel = pool.defaultModel;
   const markersFor = (alias: string): string => {

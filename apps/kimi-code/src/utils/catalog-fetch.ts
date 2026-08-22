@@ -4,7 +4,7 @@ import {
   loadBuiltInCatalog,
   type Catalog,
   type FetchCatalogOptions,
-} from '@moonshot-ai/kimi-code-sdk';
+} from '@lemwood/lcode-sdk';
 
 import { BUILT_IN_CATALOG_JSON } from '#/built-in-catalog';
 

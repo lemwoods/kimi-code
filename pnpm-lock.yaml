@@ -11,10 +11,10 @@ catalogs:
       version: 4.3.6
 
 overrides:
-  kimi-code>@tailwindcss/vite: 4.1.18
+  lcode>@tailwindcss/vite: 4.1.18
   ssh2@1.17.0>cpu-features: '-'
   ssh2@1.17.0>nan: '-'
-  kimi-code>tailwindcss: 4.1.18
+  lcode>tailwindcss: 4.1.18
 
 importers:
 
@@ -74,40 +74,40 @@ importers:
 
   apps/kimi-code:
     devDependencies:
-      '@moonshot-ai/acp-adapter':
+      '@lemwood/acp-adapter':
         specifier: workspace:^
         version: link:../../packages/acp-adapter
-      '@moonshot-ai/acp-server':
+      '@lemwood/acp-server':
         specifier: workspace:^
         version: link:../../packages/acp-server
-      '@moonshot-ai/agent-core-v2':
+      '@lemwood/agent-core-v2':
         specifier: workspace:^
         version: link:../../packages/agent-core-v2
-      '@moonshot-ai/kap-server':
+      '@lemwood/kap-server':
         specifier: workspace:^
         version: link:../../packages/kap-server
-      '@moonshot-ai/kimi-code-oauth':
+      '@lemwood/lcode-oauth':
         specifier: workspace:^
         version: link:../../packages/oauth
-      '@moonshot-ai/kimi-code-sdk':
+      '@lemwood/lcode-sdk':
         specifier: workspace:^
         version: link:../../packages/node-sdk
-      '@moonshot-ai/kimi-telemetry':
+      '@lemwood/lcode-telemetry':
         specifier: workspace:^
         version: link:../../packages/telemetry
-      '@moonshot-ai/migration-legacy':
+      '@lemwood/migration-legacy':
         specifier: workspace:^
         version: link:../../packages/migration-legacy
-      '@moonshot-ai/minidb':
+      '@lemwood/minidb':
         specifier: workspace:^
         version: link:../../packages/minidb
-      '@moonshot-ai/pi-tui':
+      '@lemwood/pi-tui':
         specifier: workspace:^
         version: link:../../packages/pi-tui
-      '@moonshot-ai/vis-server':
+      '@lemwood/vis-server':
         specifier: workspace:^
         version: link:../vis/server
-      '@moonshot-ai/vis-web':
+      '@lemwood/vis-web':
         specifier: workspace:*
         version: link:../vis/web
       '@types/semver':
@@ -159,10 +159,10 @@ importers:
 
   apps/kimi-inspect:
     dependencies:
-      '@moonshot-ai/agent-core-v2':
+      '@lemwood/agent-core-v2':
         specifier: workspace:^
         version: link:../../packages/agent-core-v2
-      '@moonshot-ai/transcript':
+      '@lemwood/transcript':
         specifier: workspace:^
         version: link:../../packages/transcript
       '@tanstack/react-query':
@@ -211,10 +211,10 @@ importers:
       '@hono/node-server':
         specifier: ^1.13.7
         version: 1.19.14(hono@4.12.14)
-      '@moonshot-ai/agent-core':
+      '@lemwood/agent-core':
         specifier: workspace:^
         version: link:../../../packages/agent-core
-      '@moonshot-ai/kosong':
+      '@lemwood/kosong':
         specifier: workspace:^
         version: link:../../../packages/kosong
       hono:
@@ -294,10 +294,10 @@ importers:
       '@fontsource-variable/inter':
         specifier: 5.2.8
         version: 5.2.8
-      '@moonshot-ai/kimi-code-sdk':
+      '@lemwood/lcode-sdk':
         specifier: workspace:^
         version: link:../../packages/node-sdk
-      '@moonshot-ai/migration-legacy':
+      '@lemwood/migration-legacy':
         specifier: workspace:^
         version: link:../../packages/migration-legacy
       '@radix-ui/react-accordion':
@@ -380,8 +380,8 @@ importers:
         version: 5.0.14(@types/react@19.2.14)(immer@11.1.11)(react@19.2.5)(use-sync-external-store@1.6.0(react@19.2.5))
     devDependencies:
       '@tailwindcss/vite':
-        specifier: 4.1.18
-        version: 4.1.18(vite@6.4.2(@types/node@22.19.17)(jiti@2.6.1)(lightningcss@1.32.0)(tsx@4.21.0)(yaml@2.8.3))
+        specifier: ^4.1.4
+        version: 4.2.2(vite@6.4.2(@types/node@22.19.17)(jiti@2.6.1)(lightningcss@1.32.0)(tsx@4.21.0)(yaml@2.8.3))
       '@types/diff':
         specifier: ^8.0.0
         version: 8.0.0
@@ -425,8 +425,8 @@ importers:
         specifier: 1.0.2
         version: 1.0.2
       tailwindcss:
-        specifier: 4.1.18
-        version: 4.1.18
+        specifier: ^4.1.4
+        version: 4.2.2
       vite:
         specifier: ^6.3.3
         version: 6.4.2(@types/node@22.19.17)(jiti@2.6.1)(lightningcss@1.32.0)(tsx@4.21.0)(yaml@2.8.3)
@@ -458,13 +458,13 @@ importers:
       '@agentclientprotocol/sdk':
         specifier: ^0.23.0
         version: 0.23.0(zod@4.3.6)
-      '@moonshot-ai/agent-core':
+      '@lemwood/agent-core':
         specifier: workspace:^
         version: link:../agent-core
-      '@moonshot-ai/kaos':
+      '@lemwood/kaos':
         specifier: workspace:^
         version: link:../kaos
-      '@moonshot-ai/kimi-code-sdk':
+      '@lemwood/lcode-sdk':
         specifier: workspace:^
         version: link:../node-sdk
     devDependencies:
@@ -477,13 +477,13 @@ importers:
       '@agentclientprotocol/sdk':
         specifier: ^1.3.0
         version: 1.3.0(zod@4.3.6)
-      '@moonshot-ai/agent-core-v2':
+      '@lemwood/agent-core-v2':
         specifier: workspace:^
         version: link:../agent-core-v2
-      '@moonshot-ai/klient':
+      '@lemwood/klient':
         specifier: workspace:^
         version: link:../klient
-      '@moonshot-ai/protocol':
+      '@lemwood/protocol':
         specifier: workspace:^
         version: link:../protocol
 
@@ -495,21 +495,21 @@ importers:
       '@jsquash/webp':
         specifier: ^1.5.0
         version: 1.5.0
+      '@lemwood/kaos':
+        specifier: workspace:^
+        version: link:../kaos
+      '@lemwood/kosong':
+        specifier: workspace:^
+        version: link:../kosong
+      '@lemwood/lcode-oauth':
+        specifier: workspace:^
+        version: link:../oauth
+      '@lemwood/protocol':
+        specifier: workspace:^
+        version: link:../protocol
       '@modelcontextprotocol/sdk':
         specifier: ^1.29.0
         version: 1.29.0(zod@4.3.6)
-      '@moonshot-ai/kaos':
-        specifier: workspace:^
-        version: link:../kaos
-      '@moonshot-ai/kimi-code-oauth':
-        specifier: workspace:^
-        version: link:../oauth
-      '@moonshot-ai/kosong':
-        specifier: workspace:^
-        version: link:../kosong
-      '@moonshot-ai/protocol':
-        specifier: workspace:^
-        version: link:../protocol
       '@mozilla/readability':
         specifier: ^0.6.0
         version: 0.6.0
@@ -631,21 +631,21 @@ importers:
       '@jsquash/webp':
         specifier: ^1.5.0
         version: 1.5.0
+      '@lemwood/lcode-oauth':
+        specifier: workspace:^
+        version: link:../oauth
+      '@lemwood/minidb':
+        specifier: workspace:^
+        version: link:../minidb
+      '@lemwood/protocol':
+        specifier: workspace:^
+        version: link:../protocol
+      '@lemwood/tree-sitter-bash':
+        specifier: workspace:^
+        version: link:../tree-sitter-bash
       '@modelcontextprotocol/sdk':
         specifier: ^1.29.0
         version: 1.29.0(zod@4.3.6)
-      '@moonshot-ai/kimi-code-oauth':
-        specifier: workspace:^
-        version: link:../oauth
-      '@moonshot-ai/minidb':
-        specifier: workspace:^
-        version: link:../minidb
-      '@moonshot-ai/protocol':
-        specifier: workspace:^
-        version: link:../protocol
-      '@moonshot-ai/tree-sitter-bash':
-        specifier: workspace:^
-        version: link:../tree-sitter-bash
       '@mozilla/readability':
         specifier: ^0.6.0
         version: 0.6.0
@@ -771,16 +771,16 @@ importers:
       '@fastify/swagger':
         specifier: ^9.7.0
         version: 9.7.0
-      '@moonshot-ai/agent-core-v2':
+      '@lemwood/agent-core-v2':
         specifier: workspace:^
         version: link:../agent-core-v2
-      '@moonshot-ai/kimi-code-oauth':
+      '@lemwood/lcode-oauth':
         specifier: workspace:^
         version: link:../oauth
-      '@moonshot-ai/minidb':
+      '@lemwood/minidb':
         specifier: workspace:*
         version: link:../minidb
-      '@moonshot-ai/transcript':
+      '@lemwood/transcript':
         specifier: workspace:^
         version: link:../transcript
       bcryptjs:
@@ -823,14 +823,14 @@ importers:
 
   packages/klient:
     dependencies:
-      '@moonshot-ai/agent-core-v2':
+      '@lemwood/agent-core-v2':
         specifier: workspace:^
         version: link:../agent-core-v2
       zod:
         specifier: 'catalog:'
         version: 4.3.6
     devDependencies:
-      '@moonshot-ai/protocol':
+      '@lemwood/protocol':
         specifier: workspace:^
         version: link:../protocol
       '@types/ws':
@@ -870,7 +870,7 @@ importers:
 
   packages/migration-legacy:
     dependencies:
-      '@moonshot-ai/agent-core':
+      '@lemwood/agent-core':
         specifier: workspace:^
         version: link:../agent-core
       smol-toml:
@@ -880,7 +880,7 @@ importers:
         specifier: ^4.3.6
         version: 4.3.6
     devDependencies:
-      '@moonshot-ai/kaos':
+      '@lemwood/kaos':
         specifier: workspace:^
         version: link:../kaos
 
@@ -901,24 +901,24 @@ importers:
         specifier: ^4.3.6
         version: 4.3.6
     devDependencies:
-      '@moonshot-ai/agent-core':
+      '@lemwood/agent-core':
         specifier: workspace:^
         version: link:../agent-core
-      '@moonshot-ai/agent-core-v2':
+      '@lemwood/agent-core-v2':
         specifier: workspace:^
         version: link:../agent-core-v2
-      '@moonshot-ai/kaos':
+      '@lemwood/kaos':
         specifier: workspace:^
         version: link:../kaos
-      '@moonshot-ai/kimi-code-oauth':
-        specifier: workspace:^
-        version: link:../oauth
-      '@moonshot-ai/klient':
+      '@lemwood/klient':
         specifier: workspace:^
         version: link:../klient
-      '@moonshot-ai/kosong':
+      '@lemwood/kosong':
         specifier: workspace:^
         version: link:../kosong
+      '@lemwood/lcode-oauth':
+        specifier: workspace:^
+        version: link:../oauth
       '@types/yazl':
         specifier: ^2.4.6
         version: 2.4.6
@@ -13291,7 +13291,7 @@ snapshots:
       obug: 2.1.1
       std-env: 4.0.0
       tinyrainbow: 3.1.0
-      vitest: 4.1.4(@types/node@22.19.17)(@vitest/coverage-v8@4.1.4)(jsdom@25.0.1)(msw@2.15.0(@types/node@22.19.17)(typescript@6.0.2))(vite@8.0.8(@types/node@22.19.17)(esbuild@0.27.7)(jiti@2.6.1)(tsx@4.21.0)(yaml@2.8.3))
+      vitest: 4.1.4(@types/node@22.19.17)(@vitest/coverage-v8@4.1.4)(jsdom@25.0.1)(msw@2.15.0(@types/node@22.19.17)(typescript@6.0.2))(vite@6.4.2(@types/node@22.19.17)(jiti@2.6.1)(lightningcss@1.32.0)(tsx@4.21.0)(yaml@2.8.3))
 
   '@vitest/expect@4.1.4':
     dependencies:

@@ -6,7 +6,7 @@
  * core payloads into these shapes for panel components.
  */
 
-import type { QuestionAnswerMethod } from '@moonshot-ai/kimi-code-sdk';
+import type { QuestionAnswerMethod } from '@lemwood/lcode-sdk';
 
 // ── Display blocks (approval panel) ──────────────────────────────────
 

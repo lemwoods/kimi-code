@@ -11,9 +11,9 @@ import type {
   ILogService,
   ISessionIndex,
   SessionSummary,
-} from '@moonshot-ai/agent-core-v2';
-import { MiniDb } from '@moonshot-ai/minidb';
-import { TranscriptStore, type TranscriptOperation } from '@moonshot-ai/transcript';
+} from '@lemwood/agent-core-v2';
+import { MiniDb } from '@lemwood/minidb';
+import { TranscriptStore, type TranscriptOperation } from '@lemwood/transcript';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import type { SyncSessionInput } from '../../src/search/indexCore';

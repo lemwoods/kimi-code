@@ -20,14 +20,14 @@
  * derives from transcript state (`meta.activity` / running turns).
  */
 
-import { IAgentLoopService } from '@moonshot-ai/agent-core-v2/agent/loop/loop';
-import { IAgentPromptService } from '@moonshot-ai/agent-core-v2/agent/prompt/prompt';
-import { ISessionApprovalService } from '@moonshot-ai/agent-core-v2/session/approval/approval';
+import { IAgentLoopService } from '@lemwood/agent-core-v2/agent/loop/loop';
+import { IAgentPromptService } from '@lemwood/agent-core-v2/agent/prompt/prompt';
+import { ISessionApprovalService } from '@lemwood/agent-core-v2/session/approval/approval';
 import {
   ISessionQuestionService,
   type QuestionItem,
   type QuestionRequest,
-} from '@moonshot-ai/agent-core-v2/session/question/question';
+} from '@lemwood/agent-core-v2/session/question/question';
 import {
   EMPTY_AGENT_STATE,
   itemId,
@@ -46,7 +46,7 @@ import {
   type TranscriptUsage,
   type TurnOrigin,
   type TurnState,
-} from '@moonshot-ai/transcript';
+} from '@lemwood/transcript';
 import {
   createContext,
   useCallback,

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import type { PromptPart } from '@moonshot-ai/kimi-code-sdk';
+import type { PromptPart } from '@lemwood/lcode-sdk';
 
 import type { SteerInputItem } from '#/tui/types';
 import { combineSteerInput } from '#/tui/utils/steer-input';

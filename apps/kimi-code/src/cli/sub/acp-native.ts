@@ -14,7 +14,7 @@
  *    reads from, and `process.argv[1]` is advertised as the legacy
  *    `_meta['terminal-auth'].command` fallback.
  *
- * `@moonshot-ai/acp-server` (and its `agent-core-v2` engine) is loaded via a
+ * `@lemwood/acp-server` (and its `agent-core-v2` engine) is loaded via a
  * lazy dynamic import so parsing the CLI does not initialize the ACP engine —
  * mirroring the `kimi server run` v2 routing in `#/cli/sub/server/run.ts`.
  */
@@ -30,13 +30,13 @@ import { parseRegionFlag, runLoginFlow } from './login-flow';
 export function registerNativeAcpCommand(parent: Command): void {
   parent
     .command('acp')
-    .description('Run kimi-code as an Agent Client Protocol (ACP) server over stdio.')
+    .description('将 lcode 作为 Agent Client Protocol (ACP) 服务器通过 stdio 运行。')
     .option(
       '--login',
-      'Run the device-code login flow then exit (entry point for ACP terminal-auth).',
+      '运行设备码登录流程后退出（ACP 终端认证的入口）。',
       false,
     )
-    .option('--region <region>', 'Login region used together with --login: "mainland-cn" (kimi.com) or "global" (kimi.ai).')
+    .option('--region <region>', '与 --login 一起使用的登录区域："mainland-cn"（kimi.com）或 "global"（kimi.ai）。')
     .action(async (opts: { login?: boolean; region?: string }) => {
       if (opts.login === true) {
         await runLoginFlow({
@@ -57,10 +57,10 @@ export function registerNativeAcpCommand(parent: Command): void {
       // path to this very binary so the client can spawn it for login.
       const legacyCommand = process.argv[1];
       try {
-        const { runAcpServer } = await import('@moonshot-ai/acp-server');
+        const { runAcpServer } = await import('@lemwood/acp-server');
         await runAcpServer({
           homeDir: getDataDir(),
-          agentInfo: { name: 'Kimi Code CLI', version: getVersion() },
+          agentInfo: { name: 'lcode', version: getVersion() },
           ...(terminalAuthEnv ? { terminalAuthEnv } : {}),
           ...(legacyCommand !== undefined && legacyCommand.length > 0
             ? { terminalAuthLegacyCommand: legacyCommand }
@@ -68,7 +68,7 @@ export function registerNativeAcpCommand(parent: Command): void {
         });
         process.exit(0);
       } catch (error) {
-        process.stderr.write(`acp server: fatal error: ${String(error)}\n`);
+        process.stderr.write(`acp 服务器：致命错误：${String(error)}\n`);
         process.exit(1);
       }
     });

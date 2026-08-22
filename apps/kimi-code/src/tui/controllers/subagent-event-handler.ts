@@ -1,8 +1,8 @@
 import type {
   BackgroundTaskInfo,
   Event,
-} from '@moonshot-ai/kimi-code-sdk';
-import type { Component } from '@moonshot-ai/pi-tui';
+} from '@lemwood/lcode-sdk';
+import type { Component } from '@lemwood/pi-tui';
 
 import {
   AgentSwarmProgressComponent,

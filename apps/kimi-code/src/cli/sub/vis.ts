@@ -5,7 +5,7 @@
  * visualizer server (auto-picking a free port by default), prints the URL,
  * optionally opens the browser (with an optional session deep-link), then
  * waits for Ctrl-C and shuts the server down. The visualizer server itself
- * lives in `@moonshot-ai/vis-server`.
+ * lives in `@lemwood/vis-server`.
  */
 
 import type { Command } from 'commander';
@@ -103,11 +103,11 @@ export async function handleVis(deps: VisDeps, opts: VisOptions): Promise<void> 
 export function registerVisCommand(parent: Command, overrides?: Partial<VisDeps>): void {
   parent
     .command('vis')
-    .description('Launch the session visualizer in your browser.')
-    .option('--port <number>', 'Port to bind. Default: auto-pick a free port.')
-    .option('--host <host>', 'Host to bind. Default: 127.0.0.1.')
-    .option('--no-open', 'Do not open the browser automatically.')
-    .argument('[sessionId]', 'Open directly to this session.')
+    .description('在浏览器中启动会话可视化工具。')
+    .option('--port <number>', '要绑定的端口，默认自动选择一个空闲端口。')
+    .option('--host <host>', '要绑定的主机，默认 127.0.0.1。')
+    .option('--no-open', '不自动打开浏览器。')
+    .argument('[sessionId]', '直接打开该会话。')
     .action(
       async (
         sessionId: string | undefined,
@@ -131,7 +131,7 @@ function createDefaultVisDeps(overrides: Partial<VisDeps> = {}): VisDeps {
       overrides.startVisServer ??
       (async (opts) => {
         // Dynamic import keeps the vis server (and Hono) out of the hot path.
-        const { startVisServer } = await import('@moonshot-ai/vis-server/start');
+        const { startVisServer } = await import('@lemwood/vis-server/start');
         return startVisServer(opts);
       }),
     // `openUrl` is a synchronous fire-and-forget; adapt it to the async dep.

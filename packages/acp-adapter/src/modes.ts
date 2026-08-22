@@ -16,7 +16,7 @@
  */
 
 import type { SessionMode } from '@agentclientprotocol/sdk';
-import type { PermissionMode } from '@moonshot-ai/kimi-code-sdk';
+import type { PermissionMode } from '@lemwood/lcode-sdk';
 
 /**
  * Canonical 4-mode taxonomy (PLAN D9). Order matters: the array

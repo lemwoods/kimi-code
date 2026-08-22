@@ -2,11 +2,11 @@ import {
   KIMI_CODE_PROVIDER_NAME,
   resolveKimiCodeOAuthKey,
   resolveKimiCodeOAuthRef,
-} from '@moonshot-ai/kimi-code-oauth';
+} from '@lemwood/lcode-oauth';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { refreshAllProviderModels } from '../../../src/tui/utils/refresh-providers';
-import type { KimiConfig } from '@moonshot-ai/kimi-code-sdk';
+import type { KimiConfig } from '@lemwood/lcode-sdk';
 
 type FetchMock = (
   input: Parameters<typeof fetch>[0],

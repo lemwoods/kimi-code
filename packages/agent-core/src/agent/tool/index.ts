@@ -1,5 +1,5 @@
 import { uniq } from '@antfu/utils';
-import type { ChatProvider, Tool } from '@moonshot-ai/kosong';
+import type { ChatProvider, Tool } from '@lemwood/kosong';
 import picomatch from 'picomatch';
 
 import type { Agent } from '..';

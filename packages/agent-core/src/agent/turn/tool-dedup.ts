@@ -1,4 +1,4 @@
-import type { ContentPart } from '@moonshot-ai/kosong';
+import type { ContentPart } from '@lemwood/kosong';
 
 import type { TelemetryClient } from '../../telemetry';
 import type { LLMRequestTrace } from '../../loop/llm';

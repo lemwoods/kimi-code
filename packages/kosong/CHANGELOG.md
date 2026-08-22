@@ -1,4 +1,4 @@
-# @moonshot-ai/kosong
+# @lemwood/kosong
 
 ## 0.5.5
 

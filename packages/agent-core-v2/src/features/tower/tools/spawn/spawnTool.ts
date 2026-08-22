@@ -165,6 +165,7 @@ export class TowerSpawnTool implements ITowerSpawnTool {
             : resolveSubagentBinding(
                 this.config,
                 this.flags,
+                this.modelCatalog,
                 { modelAlias: own.modelAlias, thinkingLevel: own.thinkingLevel },
                 args.kind === 'reviewer' ? 'primary' : undefined,
               );

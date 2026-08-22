@@ -1,4 +1,4 @@
-import { CURSOR_MARKER } from '@moonshot-ai/pi-tui';
+import { CURSOR_MARKER } from '@lemwood/pi-tui';
 import chalk from 'chalk';
 import { beforeAll, describe, expect, it } from 'vitest';
 

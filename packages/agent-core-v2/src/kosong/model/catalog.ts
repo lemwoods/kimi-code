@@ -184,6 +184,8 @@ export interface IModelCatalog {
   ping(id: string): Promise<ModelPingResult>;
   findByName(name: string): readonly string[];
 
+  listAliases(): readonly string[];
+
   listModels(): Promise<readonly ModelCatalogItem[]>;
   listProviders(): Promise<readonly ProviderCatalogItem[]>;
   getProvider(providerId: string): Promise<ProviderCatalogItem>;

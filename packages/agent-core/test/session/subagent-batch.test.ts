@@ -1,5 +1,5 @@
 import { createControlledPromise } from '@antfu/utils';
-import { APIProviderRateLimitError } from '@moonshot-ai/kosong';
+import { APIProviderRateLimitError } from '@lemwood/kosong';
 import { describe, expect, it, vi } from 'vitest';
 
 import {

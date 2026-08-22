@@ -18,7 +18,7 @@ import {
   fetchCustomRegistry,
   type CustomRegistrySource,
   type ManagedKimiConfigShape,
-} from '@moonshot-ai/kimi-code-oauth';
+} from '@lemwood/lcode-oauth';
 import {
   applyCatalogProvider,
   catalogProviderModels,
@@ -31,7 +31,7 @@ import {
   type CatalogProviderEntry,
   type KimiConfig,
   type KimiHarness,
-} from '@moonshot-ai/kimi-code-sdk';
+} from '@lemwood/lcode-sdk';
 import type { Command } from 'commander';
 
 import { createKimiCodeHostIdentity, createKimiCodeUserAgent } from '#/cli/version';
@@ -454,7 +454,7 @@ async function loadCatalogOrExit(deps: ProviderDeps, url: string): Promise<Catal
 export function registerProviderCommand(parent: Command, deps?: Partial<ProviderDeps>): void {
   const provider = parent
     .command('provider')
-    .description('Manage LLM providers non-interactively.');
+    .description('非交互式管理 LLM 提供商。');
 
   // Last-resort boundary: handlers report expected failures themselves, but
   // anything that escapes (e.g. a config write rejected because config.toml
@@ -476,8 +476,8 @@ export function registerProviderCommand(parent: Command, deps?: Partial<Provider
 
   provider
     .command('add <url>')
-    .description('Import every provider listed in a custom registry (api.json).')
-    .option('--api-key <key>', 'Registry API key. Falls back to KIMI_REGISTRY_API_KEY.')
+    .description('导入自定义注册表（api.json）中列出的所有提供商。')
+    .option('--api-key <key>', '注册表 API 密钥，回退到 KIMI_REGISTRY_API_KEY。')
     .action(async (url: string, options: { apiKey?: string }) => {
       const resolved = resolveDeps(deps);
       await runAction(resolved, () => handleProviderAdd(resolved, url, { apiKey: options.apiKey }));
@@ -485,7 +485,7 @@ export function registerProviderCommand(parent: Command, deps?: Partial<Provider
 
   provider
     .command('remove <providerId>')
-    .description('Remove a provider and every model alias that referenced it.')
+    .description('移除提供商及其所有引用的模型别名。')
     .action(async (providerId: string) => {
       const resolved = resolveDeps(deps);
       await runAction(resolved, () => handleProviderRemove(resolved, providerId));
@@ -493,8 +493,8 @@ export function registerProviderCommand(parent: Command, deps?: Partial<Provider
 
   provider
     .command('list')
-    .description('Show configured providers and their model counts.')
-    .option('--json', 'Emit the raw providers/models config as JSON.', false)
+    .description('显示已配置的提供商及其模型数量。')
+    .option('--json', '以 JSON 输出原始提供商/模型配置。', false)
     .action(async (options: { json?: boolean }) => {
       const resolved = resolveDeps(deps);
       await runAction(resolved, () => handleProviderList(resolved, { json: options.json === true }));
@@ -502,14 +502,14 @@ export function registerProviderCommand(parent: Command, deps?: Partial<Provider
 
   const catalog = provider
     .command('catalog')
-    .description('Discover and import providers from the public models.dev catalog.');
+    .description('从公共 models.dev 目录发现并导入提供商。');
 
   catalog
     .command('list [providerId]')
-    .description('List providers in the catalog, or models when a providerId is given.')
-    .option('--filter <substring>', 'Case-insensitive id/name substring filter.')
-    .option('--url <url>', `Override catalog URL. Defaults to ${DEFAULT_CATALOG_URL}.`)
-    .option('--json', 'Emit the matching catalog slice as JSON.', false)
+    .description('列出目录中的提供商，给定 providerId 时列出模型。')
+    .option('--filter <substring>', '大小写不敏感的 id/名称子串过滤。')
+    .option('--url <url>', `覆盖目录 URL，默认 ${DEFAULT_CATALOG_URL}。`)
+    .option('--json', '以 JSON 输出匹配的目录片段。', false)
     .action(
       async (
         providerId: string | undefined,
@@ -528,14 +528,14 @@ export function registerProviderCommand(parent: Command, deps?: Partial<Provider
 
   catalog
     .command('add <providerId>')
-    .description('Import a known provider from the catalog by id.')
-    .option('--api-key <key>', 'API key for the provider. Falls back to KIMI_REGISTRY_API_KEY.')
-    .option('--default-model <modelId>', 'Mark the imported model as default_model after import.')
+    .description('按 id 从目录导入已知提供商。')
+    .option('--api-key <key>', '提供商的 API 密钥，回退到 KIMI_REGISTRY_API_KEY。')
+    .option('--default-model <modelId>', '导入后将导入的模型标记为 default_model。')
     .option(
       '--base-url <url>',
-      'Override the catalog endpoint. Required when the catalog declares none (or an env placeholder).',
+      '覆盖目录端点。当目录未声明（或为环境变量占位符）时必需。',
     )
-    .option('--url <url>', `Override catalog URL. Defaults to ${DEFAULT_CATALOG_URL}.`)
+    .option('--url <url>', `覆盖目录 URL，默认 ${DEFAULT_CATALOG_URL}。`)
     .action(
       async (
         providerId: string,

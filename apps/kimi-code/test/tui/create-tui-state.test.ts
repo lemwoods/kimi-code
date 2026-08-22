@@ -1,7 +1,7 @@
 
 import { describe, it, expect, vi } from 'vitest';
 
-import { TuiAltScreen, TuiMainScreen } from '@moonshot-ai/pi-tui';
+import { TuiAltScreen, TuiMainScreen } from '@lemwood/pi-tui';
 
 import { createTUIState, type KimiTUIOptions } from '#/tui/kimi-tui';
 import type { AppState } from '#/tui/types';
