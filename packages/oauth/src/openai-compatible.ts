@@ -1,10 +1,5 @@
 import { readApiErrorMessage } from './api-error';
-import {
-  capabilitiesFromCustomEntry,
-  CUSTOM_REGISTRY_DEFAULT_CAPABILITIES,
-  CUSTOM_REGISTRY_DEFAULT_MAX_CONTEXT,
-  type CustomRegistryModelEntry,
-} from './custom-registry';
+import { CUSTOM_REGISTRY_DEFAULT_MAX_CONTEXT } from './custom-registry';
 import type { ManagedKimiConfigShape, ManagedKimiModelAlias } from './managed-kimi-code';
 import { CUSTOM_REGISTRY_MODEL_FIELDS, mergeRefreshedModelAlias } from './model-alias-merge';
 import { isRecord } from './utils';
@@ -25,6 +20,17 @@ export interface FetchOpenAiCompatibleModelsOptions {
   readonly signal?: AbortSignal;
   readonly fetchImpl?: typeof fetch;
   readonly userAgent?: string;
+}
+
+export interface OpenAiCompatibleModelInfo {
+  readonly id: string;
+  readonly displayName?: string;
+  readonly maxContextSize?: number;
+  readonly maxOutputSize?: number;
+  readonly toolCall?: boolean;
+  readonly reasoning?: boolean;
+  readonly supportEfforts?: readonly string[];
+  readonly defaultEffort?: string;
 }
 
 export class OpenAiCompatibleApiError extends Error {
@@ -51,15 +57,15 @@ export function readOpenAiCompatibleSource(
 
 /**
  * 从 OpenAI 兼容的 `GET {baseUrl}/models` 端点列出模型。
- * `data[].id` 是唯一必填字段；当服务器同时返回上下文大小、工具使用、
- * 思考能力或努力级别（使用常见的 OpenAI 兼容字段名）时，这些信息会被
- * 一并保留，从而用真实的限额配置模型别名，而不是保守默认值。
+ * `data[].id` 是唯一必填字段；当服务器同时返回上下文大小、输出上限、
+ * 工具使用、思考能力或努力级别（使用常见的 OpenAI 兼容字段名）时，
+ * 这些信息会被一并保留，从而用真实的限额配置模型别名，而不是保守默认值。
  */
 export async function fetchOpenAiCompatibleModels(
   baseUrl: string,
   apiKey: string,
   options: FetchOpenAiCompatibleModelsOptions = {},
-): Promise<CustomRegistryModelEntry[]> {
+): Promise<OpenAiCompatibleModelInfo[]> {
   const { signal, fetchImpl = fetch, userAgent } = options;
   const headers: Record<string, string> = { Accept: 'application/json' };
   if (userAgent !== undefined) headers['User-Agent'] = userAgent;
@@ -82,9 +88,9 @@ export async function fetchOpenAiCompatibleModels(
     throw new Error(`Unexpected models response for ${baseUrl}.`);
   }
 
-  const entries: CustomRegistryModelEntry[] = [];
+  const entries: OpenAiCompatibleModelInfo[] = [];
   for (const item of payload['data']) {
-    const entry = toOpenAiCompatibleModelEntry(item);
+    const entry = toOpenAiCompatibleModelInfo(item);
     if (entry !== undefined && !entries.some((e) => e.id === entry.id)) {
       entries.push(entry);
     }
@@ -92,68 +98,57 @@ export async function fetchOpenAiCompatibleModels(
   return entries;
 }
 
-function toOpenAiCompatibleModelEntry(value: unknown): CustomRegistryModelEntry | undefined {
+function toOpenAiCompatibleModelInfo(value: unknown): OpenAiCompatibleModelInfo | undefined {
   if (!isRecord(value)) return undefined;
   const id = value['id'];
   if (typeof id !== 'string' || id.length === 0) return undefined;
 
   const entry: {
     id: string;
-    name?: string;
-    limit?: { context?: number; output?: number };
-    tool_call?: boolean;
+    displayName?: string;
+    maxContextSize?: number;
+    maxOutputSize?: number;
+    toolCall?: boolean;
     reasoning?: boolean;
-    modalities?: { input?: string[]; output?: string[] };
-    support_efforts?: readonly string[];
-    default_effort?: string;
+    supportEfforts?: readonly string[];
+    defaultEffort?: string;
   } = { id };
 
   const displayName = value['display_name'] ?? value['name'];
   if (typeof displayName === 'string' && displayName.length > 0) {
-    entry.name = displayName;
+    entry.displayName = displayName;
   }
 
-  const context = pickPositiveInteger(
+  const maxContextSize = pickPositiveInteger(
     value['context_length'],
     value['max_context_length'],
     value['context_window'],
   );
-  const output = pickPositiveInteger(
+  if (maxContextSize !== undefined) entry.maxContextSize = maxContextSize;
+
+  const maxOutputSize = pickPositiveInteger(
     value['max_completion_tokens'],
     value['max_output_tokens'],
-    value['max_tokens'],
   );
-  if (context !== undefined || output !== undefined) {
-    entry.limit = {
-      ...(context !== undefined ? { context } : {}),
-      ...(output !== undefined ? { output } : {}),
-    };
-  }
+  if (maxOutputSize !== undefined) entry.maxOutputSize = maxOutputSize;
 
   const supportsTools = value['supports_tools'] ?? value['supports_tool_use'] ?? value['tool_call'];
-  if (typeof supportsTools === 'boolean') entry.tool_call = supportsTools;
+  if (typeof supportsTools === 'boolean') entry.toolCall = supportsTools;
 
   const supportsReasoning =
     value['supports_reasoning'] ?? value['supports_thinking'] ?? value['reasoning'];
   if (typeof supportsReasoning === 'boolean') entry.reasoning = supportsReasoning;
 
-  const supportsVision = value['supports_vision'] ?? value['supports_image_in'];
-  if (supportsVision === true) {
-    entry.modalities = {
-      input: [...(entry.modalities?.input ?? []), 'image'],
-    };
-  }
-
   const thinkEfforts = parseThinkEfforts(value['think_efforts']);
   const supportEfforts =
     parseStringArray(value['valid_efforts'] ?? value['support_efforts']) ??
     thinkEfforts.supportEfforts;
-  if (supportEfforts !== undefined) entry.support_efforts = supportEfforts;
+  if (supportEfforts !== undefined) entry.supportEfforts = supportEfforts;
 
   const defaultEffort =
     typeof value['default_effort'] === 'string' ? value['default_effort'] : thinkEfforts.defaultEffort;
   if (defaultEffort !== undefined && defaultEffort.length > 0) {
-    entry.default_effort = defaultEffort;
+    entry.defaultEffort = defaultEffort;
   }
 
   return entry;
@@ -199,7 +194,7 @@ export function applyOpenAiCompatibleProvider(
     readonly providerId: string;
     readonly baseUrl: string;
     readonly apiKey: string;
-    readonly models: readonly CustomRegistryModelEntry[];
+    readonly models: readonly OpenAiCompatibleModelInfo[];
   },
 ): void {
   const providerKey = input.providerId;
@@ -227,20 +222,17 @@ export function applyOpenAiCompatibleProvider(
 
   for (const model of input.models) {
     const aliasKey = `${providerKey}/${model.id}`;
-    const maxContextSize = resolveMaxContextSize(model);
-    const capabilities = resolveCapabilities(model);
-    const displayName =
-      typeof model.name === 'string' && model.name.length > 0 ? model.name : model.id;
     const existing = isRecord(existingModels[aliasKey]) ? existingModels[aliasKey] : {};
 
     const remoteAlias: ManagedKimiModelAlias = {
       provider: providerKey,
       model: model.id,
-      maxContextSize,
-      capabilities,
-      displayName,
-      ...(model.support_efforts !== undefined ? { supportEfforts: model.support_efforts } : {}),
-      ...(model.default_effort !== undefined ? { defaultEffort: model.default_effort } : {}),
+      maxContextSize: model.maxContextSize ?? CUSTOM_REGISTRY_DEFAULT_MAX_CONTEXT,
+      capabilities: resolveCapabilities(model),
+      displayName: model.displayName ?? model.id,
+      ...(model.maxOutputSize !== undefined ? { maxOutputSize: model.maxOutputSize } : {}),
+      ...(model.supportEfforts !== undefined ? { supportEfforts: model.supportEfforts } : {}),
+      ...(model.defaultEffort !== undefined ? { defaultEffort: model.defaultEffort } : {}),
     };
     existingModels[aliasKey] = mergeRefreshedModelAlias(
       existing,
@@ -252,32 +244,14 @@ export function applyOpenAiCompatibleProvider(
   config.models = existingModels;
 }
 
-function resolveMaxContextSize(model: CustomRegistryModelEntry): number {
-  const context = model.limit?.context;
-  const output = model.limit?.output;
-  if (typeof context === 'number' && Number.isInteger(context) && context > 0) {
-    return context;
+function resolveCapabilities(model: OpenAiCompatibleModelInfo): string[] {
+  const caps = new Set<string>();
+  if (model.toolCall === true) caps.add('tool_use');
+  if (model.reasoning === true || (model.supportEfforts?.length ?? 0) > 0) {
+    caps.add('thinking');
   }
-  if (typeof output === 'number' && Number.isInteger(output) && output > 0) {
-    return output;
-  }
-  return CUSTOM_REGISTRY_DEFAULT_MAX_CONTEXT;
-}
-
-function resolveCapabilities(model: CustomRegistryModelEntry): string[] {
-  if (hasRichCapabilityHints(model)) {
-    return capabilitiesFromCustomEntry(model);
-  }
-  return [...CUSTOM_REGISTRY_DEFAULT_CAPABILITIES];
-}
-
-function hasRichCapabilityHints(model: CustomRegistryModelEntry): boolean {
-  return (
-    typeof model.tool_call === 'boolean' ||
-    typeof model.reasoning === 'boolean' ||
-    model.modalities !== undefined ||
-    model.support_efforts !== undefined
-  );
+  if (caps.size > 0) return [...caps];
+  return ['tool_use'];
 }
 
 export function removeOpenAiCompatibleProvider(

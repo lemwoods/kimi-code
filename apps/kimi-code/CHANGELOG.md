@@ -1,5 +1,11 @@
 # @lcode-cli/lcode
 
+## 0.39.3
+
+### Patch Changes
+
+- 修复添加自定义供应商时未解析模型输出上限（max_completion_tokens）的问题，避免 max_tokens 超出供应商限制导致请求失败。
+
 ## 0.39.2
 
 ### Patch Changes

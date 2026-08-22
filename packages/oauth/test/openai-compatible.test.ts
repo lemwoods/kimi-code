@@ -22,7 +22,7 @@ function emptyConfig(): ManagedKimiConfigShape {
 }
 
 describe('fetchOpenAiCompatibleModels', () => {
-  it('parses ids and model metadata from an OpenAI-compatible /models response', async () => {
+  it('parses ids, context size, output size, and capabilities', async () => {
     const fetchMock = vi.fn(async () =>
       makeModelsResponse([
         {
@@ -44,8 +44,9 @@ describe('fetchOpenAiCompatibleModels', () => {
     expect(models).toEqual([
       {
         id: 'gpt-4o',
-        limit: { context: 1000000, output: 384000 },
-        tool_call: true,
+        maxContextSize: 1000000,
+        maxOutputSize: 384000,
+        toolCall: true,
         reasoning: true,
       },
       { id: 'gpt-4o-mini' },
@@ -127,14 +128,20 @@ describe('fetchOpenAiCompatibleModels', () => {
 });
 
 describe('applyOpenAiCompatibleProvider', () => {
-  it('writes the provider and one alias per discovered model, carrying context size and capabilities', () => {
+  it('writes the provider and one alias per model, carrying context and output sizes', () => {
     const config = emptyConfig();
     applyOpenAiCompatibleProvider(config, {
       providerId: 'acme',
       baseUrl: 'https://acme.example.test/v1',
       apiKey: 'sk-acme',
       models: [
-        { id: 'gpt-4o', limit: { context: 1000000 }, tool_call: true, reasoning: true },
+        {
+          id: 'gpt-4o',
+          maxContextSize: 1000000,
+          maxOutputSize: 384000,
+          toolCall: true,
+          reasoning: true,
+        },
         { id: 'gpt-4o-mini' },
       ],
     });
@@ -154,6 +161,7 @@ describe('applyOpenAiCompatibleProvider', () => {
       provider: 'acme',
       model: 'gpt-4o',
       maxContextSize: 1000000,
+      maxOutputSize: 384000,
       capabilities: ['tool_use', 'thinking'],
     });
     expect(config.models?.['acme/gpt-4o-mini']).toMatchObject({

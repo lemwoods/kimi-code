@@ -3,9 +3,9 @@ import {
   applyOpenAiCompatibleProvider,
   fetchCustomRegistry,
   fetchOpenAiCompatibleModels,
-  type CustomRegistryModelEntry,
   type CustomRegistrySource,
   type ManagedKimiConfigShape,
+  type OpenAiCompatibleModelInfo,
 } from '@lcode-cli/lcode-oauth';
 import {
   applyCatalogProvider,
@@ -360,7 +360,7 @@ async function handleOpenAiCompatibleProviderAdd(host: SlashCommandHost): Promis
   host.cancelInFlight = cancel;
 
   const spinner = host.showLoginProgressSpinner(`Discovering models from ${details.baseUrl}`);
-  let models: CustomRegistryModelEntry[];
+  let models: OpenAiCompatibleModelInfo[];
   try {
     models = await fetchOpenAiCompatibleModels(details.baseUrl, details.apiKey, {
       signal: controller.signal,

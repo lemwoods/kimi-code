@@ -195,6 +195,7 @@ export {
 } from './openai-compatible';
 export type {
   FetchOpenAiCompatibleModelsOptions,
+  OpenAiCompatibleModelInfo,
   OpenAiCompatibleSource,
 } from './openai-compatible';
 
