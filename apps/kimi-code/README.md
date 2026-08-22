@@ -81,8 +81,8 @@ Take a look at this project and explain the main directories.
 
 ## Repository & Issues
 
-- Source: https://github.com/MoonshotAI/kimi-code
-- Issues: https://github.com/MoonshotAI/kimi-code/issues
+- Source: https://github.com/lemwoods/kimi-code
+- Issues: https://github.com/lemwoods/kimi-code/issues
 - Security: see SECURITY.md in the main repository
 
 ## License
