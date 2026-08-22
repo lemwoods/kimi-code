@@ -138,9 +138,9 @@ describe('kimi web', () => {
       exitSpy.mockRestore();
 
       expect(exitCalls).toEqual([1]);
-      expect(stderr).toContain('`kimi server` 已弃用，不再可用。');
-      expect(stderr).toContain('kimi web');
-      expect(stderr).toContain('kimi server kill');
+      expect(stderr).toContain('`lcode server` 已弃用，不再可用。');
+      expect(stderr).toContain('lcode web');
+      expect(stderr).toContain('lcode server kill');
       expect(stderr).toContain('0.28.0');
       expect(stderr).toContain('下一个主版本');
     }

@@ -1,5 +1,11 @@
 # @lcode-cli/lcode
 
+## 0.39.1
+
+### Patch Changes
+
+- Rename the CLI command from kimi to lcode.
+
 ## 0.39.0
 
 ### Minor Changes
