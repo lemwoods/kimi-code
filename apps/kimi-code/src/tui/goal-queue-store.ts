@@ -4,7 +4,7 @@ import { dirname, join } from 'node:path';
 import {
   ErrorCodes,
   KimiError,
-} from '@lemwood/lcode-sdk';
+} from '@lcode-cli/lcode-sdk';
 
 const GOAL_QUEUE_FILE = 'upcoming-goals.json';
 const GOAL_QUEUE_VERSION = 1;

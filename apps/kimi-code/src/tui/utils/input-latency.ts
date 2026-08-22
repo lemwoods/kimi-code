@@ -16,7 +16,7 @@
 
 import { appendFileSync, mkdirSync } from 'node:fs';
 import path from 'node:path';
-import type { Component, TUI } from '@lemwood/pi-tui';
+import type { Component, TUI } from '@lcode-cli/pi-tui';
 
 /** Rolling sample cap for the percentile window. */
 const MAX_SAMPLES = 500;

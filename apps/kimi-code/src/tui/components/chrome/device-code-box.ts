@@ -6,8 +6,8 @@
  * active palette so theme switches take effect on the next render.
  */
 
-import type { Component } from '@lemwood/pi-tui';
-import { truncateToWidth, visibleWidth } from '@lemwood/pi-tui';
+import type { Component } from '@lcode-cli/pi-tui';
+import { truncateToWidth, visibleWidth } from '@lcode-cli/pi-tui';
 
 import { currentTheme } from '#/tui/theme';
 

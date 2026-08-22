@@ -9,7 +9,7 @@ import { ulid } from 'ulid';
 
 import { Disposable, InstantiationType, registerSingleton } from '../../di';
 
-import type { FileMeta } from '@lemwood/protocol';
+import type { FileMeta } from '@lcode-cli/protocol';
 import { IEnvironmentService } from '../environment/environment';
 
 import { ILogService } from '../logger/logger';

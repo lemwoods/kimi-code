@@ -8,7 +8,7 @@
  * everywhere: ↑/↓, PgUp/PgDn, and search editing.
  */
 
-import { fuzzyFilter, Key, matchesKey } from '@lemwood/pi-tui';
+import { fuzzyFilter, Key, matchesKey } from '@lcode-cli/pi-tui';
 
 import { pageView, type PageView } from './paging';
 import { isPrintableChar, printableChar } from './printable-key';

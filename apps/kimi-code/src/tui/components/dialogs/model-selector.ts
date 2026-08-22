@@ -1,4 +1,4 @@
-import { effectiveModelAlias, type ModelAlias, type ThinkingEffort } from '@lemwood/lcode-sdk';
+import { effectiveModelAlias, type ModelAlias, type ThinkingEffort } from '@lcode-cli/lcode-sdk';
 import {
   Container,
   Key,
@@ -7,7 +7,7 @@ import {
   visibleWidth,
   wrapTextWithAnsi,
   type Focusable,
-} from '@lemwood/pi-tui';
+} from '@lcode-cli/pi-tui';
 
 import { DEFAULT_OAUTH_PROVIDER_NAME, PRODUCT_NAME } from '#/constant/app';
 import { CURRENT_MARK, SELECT_POINTER } from '#/tui/constant/symbols';

@@ -14,7 +14,7 @@ import {
   type Event,
   type KimiHarness,
   type Session,
-} from "@lemwood/lcode-sdk";
+} from "@lcode-cli/lcode-sdk";
 import { afterEach, describe, expect, it } from "vitest";
 
 import {

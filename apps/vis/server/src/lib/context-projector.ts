@@ -7,7 +7,7 @@ import {
   renderToolResultForModel,
   selectCompactionUserMessages,
   selectRecentUserMessages,
-} from '@lemwood/agent-core';
+} from '@lcode-cli/agent-core';
 import type {
   ContentPart,
   ContextMessage,

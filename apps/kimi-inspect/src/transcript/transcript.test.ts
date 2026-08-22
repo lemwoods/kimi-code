@@ -1,6 +1,6 @@
 /**
  * Transcript glue-layer tests — the app's own REST/WS/store plumbing. The L2
- * reducer semantics themselves are covered by `@lemwood/transcript`'s own
+ * reducer semantics themselves are covered by `@lcode-cli/transcript`'s own
  * test suite and are intentionally not re-tested here.
  */
 
@@ -11,7 +11,7 @@ import {
   type TranscriptTurn,
   type TurnHeader,
   type TurnState,
-} from '@lemwood/transcript';
+} from '@lcode-cli/transcript';
 import { describe, expect, it, vi } from 'vitest';
 
 import type { WsLike } from '../channel/wsLike';

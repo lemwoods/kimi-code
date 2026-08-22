@@ -4,7 +4,7 @@ import {
   shutdownTelemetry,
   track,
   withTelemetryContext,
-} from '@lemwood/lcode-telemetry';
+} from '@lcode-cli/lcode-telemetry';
 import chalk from 'chalk';
 import {
   createKimiHarness,
@@ -13,7 +13,7 @@ import {
   type GoalSnapshot,
   type SessionStatus,
   type TelemetryClient,
-} from '@lemwood/lcode-sdk';
+} from '@lcode-cli/lcode-sdk';
 import { resolve } from 'pathe';
 
 import { CLI_SHUTDOWN_TIMEOUT_MS, PROMPT_CLEANUP_TIMEOUT_MS } from '#/constant/app';

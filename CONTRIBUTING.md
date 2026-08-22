@@ -28,7 +28,7 @@ This is a pnpm monorepo. The most relevant entry points are:
 - `apps/kimi-code` — CLI / TUI
 - `apps/vscode` — VS Code extension
 - `apps/vis` — session debug visualizer
-- `packages/node-sdk` — public TypeScript SDK (`@lemwood/lcode-sdk`)
+- `packages/node-sdk` — public TypeScript SDK (`@lcode-cli/lcode-sdk`)
 - `packages/agent-core-v2` — the agent engine (v2, DI Scope architecture); `packages/agent-core` is v1 and being phased out
 - `packages/klient`, `kap-server`, `protocol`, `transcript`, `kosong`, `kaos`, `oauth`, `telemetry` — internal engine packages
 - `docs/` — VitePress bilingual docs site

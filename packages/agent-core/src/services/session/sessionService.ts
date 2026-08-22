@@ -22,7 +22,7 @@ import {
   type SessionWarning,
   type UndoSessionRequest,
   type UndoSessionResponse,
-} from '@lemwood/protocol';
+} from '@lcode-cli/protocol';
 
 import { IApprovalService } from '../approval/approval';
 import { ICoreProcessService } from '../coreProcess/coreProcess';

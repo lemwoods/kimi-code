@@ -1,4 +1,4 @@
-import type { ContentPart, Message, ToolCall } from '@lemwood/kosong';
+import type { ContentPart, Message, ToolCall } from '@lcode-cli/kosong';
 import { describe, expect, it } from 'vitest';
 
 import {

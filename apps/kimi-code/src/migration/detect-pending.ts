@@ -9,7 +9,7 @@ import {
   detectMigration,
   shouldSuppressMigration,
   type MigrationPlan,
-} from '@lemwood/migration-legacy';
+} from '@lcode-cli/migration-legacy';
 
 export interface DetectPendingInput {
   readonly sourceHome: string;

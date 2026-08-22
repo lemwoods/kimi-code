@@ -1,7 +1,7 @@
 import { readFile } from 'node:fs/promises';
 import { homedir } from 'node:os';
 
-import { parseAgentFileText, resolveAgentPath } from '@lemwood/lcode-sdk';
+import { parseAgentFileText, resolveAgentPath } from '@lcode-cli/lcode-sdk';
 
 import type { CLIOptions } from './options';
 

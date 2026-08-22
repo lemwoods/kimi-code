@@ -2,7 +2,7 @@
  * Renders a user message in the transcript.
  */
 
-import { Spacer, Text, truncateToWidth, visibleWidth, type Component } from '@lemwood/pi-tui';
+import { Spacer, Text, truncateToWidth, visibleWidth, type Component } from '@lcode-cli/pi-tui';
 
 import { ImageThumbnail } from '#/tui/components/media/image-thumbnail';
 import { USER_MESSAGE_BULLET } from '#/tui/constant/symbols';

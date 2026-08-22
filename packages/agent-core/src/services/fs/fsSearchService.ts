@@ -13,7 +13,7 @@ import type {
   FsSearchHit,
   FsSearchRequest,
   FsSearchResponse,
-} from '@lemwood/protocol';
+} from '@lcode-cli/protocol';
 import ignore, { type Ignore } from 'ignore';
 
 import { ISessionService } from '../session/session';

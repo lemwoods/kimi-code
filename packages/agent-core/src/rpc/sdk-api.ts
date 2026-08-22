@@ -1,4 +1,4 @@
-import type { ContentPart } from '@lemwood/kosong';
+import type { ContentPart } from '@lcode-cli/kosong';
 
 import type { RPCMethods } from './client';
 import type { AgentEvent, ToolInputDisplay } from './events';

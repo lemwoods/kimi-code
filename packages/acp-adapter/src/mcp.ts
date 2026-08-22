@@ -26,8 +26,8 @@
  */
 
 import type { McpServer, McpServerStdio } from '@agentclientprotocol/sdk';
-import type { McpServerConfig } from '@lemwood/agent-core';
-import { log } from '@lemwood/lcode-sdk';
+import type { McpServerConfig } from '@lcode-cli/agent-core';
+import { log } from '@lcode-cli/lcode-sdk';
 
 /**
  * Convert an ACP `McpServer[]` into the kernel-native

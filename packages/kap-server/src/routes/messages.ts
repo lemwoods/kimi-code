@@ -1,4 +1,4 @@
-import { type Scope } from '@lemwood/agent-core-v2';
+import { type Scope } from '@lcode-cli/agent-core-v2';
 import { ErrorCode } from '../protocol/error-codes';
 import { messageRoleSchema } from '../protocol/message';
 import { getMessageResponseSchema, listMessagesResponseSchema } from '../protocol/rest-message';

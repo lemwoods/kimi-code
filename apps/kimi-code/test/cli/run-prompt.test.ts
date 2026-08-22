@@ -9,7 +9,7 @@ import { mkdtemp, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
-import type { createKimiDeviceId as createKimiDeviceIdFn } from '@lemwood/lcode-oauth';
+import type { createKimiDeviceId as createKimiDeviceIdFn } from '@lcode-cli/lcode-oauth';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { runPrompt } from '#/cli/run-prompt';
@@ -127,8 +127,8 @@ const mocks = vi.hoisted(() => {
   };
 });
 
-vi.mock('@lemwood/lcode-sdk', async (importOriginal) => {
-  const actual = await importOriginal<typeof import('@lemwood/lcode-sdk')>();
+vi.mock('@lcode-cli/lcode-sdk', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@lcode-cli/lcode-sdk')>();
   return {
     ...actual,
     resolveKimiHome: mocks.resolveKimiHome,
@@ -156,9 +156,9 @@ vi.mock('@lemwood/lcode-sdk', async (importOriginal) => {
   };
 });
 
-vi.mock('@lemwood/lcode-oauth', async () => {
-  const actual = await vi.importActual<typeof import('@lemwood/lcode-oauth')>(
-    '@lemwood/lcode-oauth',
+vi.mock('@lcode-cli/lcode-oauth', async () => {
+  const actual = await vi.importActual<typeof import('@lcode-cli/lcode-oauth')>(
+    '@lcode-cli/lcode-oauth',
   );
   return {
     ...actual,
@@ -167,7 +167,7 @@ vi.mock('@lemwood/lcode-oauth', async () => {
   };
 });
 
-vi.mock('@lemwood/lcode-telemetry', () => ({
+vi.mock('@lcode-cli/lcode-telemetry', () => ({
   initializeTelemetry: mocks.initializeTelemetry,
   setCrashPhase: mocks.setCrashPhase,
   shutdownTelemetry: mocks.shutdownTelemetry,

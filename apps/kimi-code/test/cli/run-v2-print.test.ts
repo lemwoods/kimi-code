@@ -1,4 +1,4 @@
-import { PRINT_WAIT_CEILING_S_DEFAULT } from '@lemwood/agent-core-v2';
+import { PRINT_WAIT_CEILING_S_DEFAULT } from '@lcode-cli/agent-core-v2';
 import { describe, expect, it, vi } from 'vitest';
 
 import {

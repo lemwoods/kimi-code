@@ -4,7 +4,7 @@
 
 import { Disposable, InstantiationType, registerSingleton } from '../../di';
 import type { KimiConfig } from '../../config';
-import type { AuthSummary } from '@lemwood/protocol';
+import type { AuthSummary } from '@lcode-cli/protocol';
 import { createManagedAuthFacade, type ServicesAuthFacade } from '../auth/managedAuth';
 import { IEnvironmentService } from '../environment/environment';
 import { ICoreProcessService } from '../coreProcess/coreProcess';
@@ -15,7 +15,7 @@ import {
   AuthModelNotResolvedError,
 } from './authSummary';
 
-/** Wire name of the OAuth-managed provider (`@lemwood/lcode-oauth`'s `KIMI_CODE_PROVIDER_NAME`). */
+/** Wire name of the OAuth-managed provider (`@lcode-cli/lcode-oauth`'s `KIMI_CODE_PROVIDER_NAME`). */
 const MANAGED_PROVIDER_NAME = 'managed:kimi-code';
 
 export class AuthSummaryService

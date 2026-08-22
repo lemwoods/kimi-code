@@ -44,13 +44,13 @@ import { copyFileSync, mkdirSync, readdirSync, statSync, unlinkSync, writeFileSy
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
-import type { PromptPart, Session } from '@lemwood/lcode-sdk';
+import type { PromptPart, Session } from '@lcode-cli/lcode-sdk';
 import {
   buildDaemonFileUrl,
   buildImageCompressionCaption,
   buildMediaPathTag,
   sessionMediaOriginalsDir,
-} from '@lemwood/lcode-sdk';
+} from '@lcode-cli/lcode-sdk';
 
 import { getCacheDir } from '#/utils/paths';
 

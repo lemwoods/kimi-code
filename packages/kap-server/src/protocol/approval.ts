@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import { isoDateTimeSchema } from '@lemwood/agent-core-v2/_base/utils/isoDateTime';
+import { isoDateTimeSchema } from '@lcode-cli/agent-core-v2/_base/utils/isoDateTime';
 
 export const approvalDecisionSchema = z.enum(['approved', 'rejected', 'cancelled']);
 export type ApprovalDecision = z.infer<typeof approvalDecisionSchema>;

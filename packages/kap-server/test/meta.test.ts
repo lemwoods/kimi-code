@@ -2,8 +2,8 @@ import { mkdtemp, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
-import { IFeatureManager } from '@lemwood/agent-core-v2/app/feature/featureManager';
-import { getFeatureRecipes } from '@lemwood/agent-core-v2/features/featureRegistry';
+import { IFeatureManager } from '@lcode-cli/agent-core-v2/app/feature/featureManager';
+import { getFeatureRecipes } from '@lcode-cli/agent-core-v2/features/featureRegistry';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { type RunningServer, startServer } from '../src/start';

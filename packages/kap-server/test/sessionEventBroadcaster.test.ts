@@ -11,7 +11,7 @@ import type {
   SessionActivityCause,
   SessionActivityChangedEvent,
   SessionActivityState,
-} from '@lemwood/agent-core-v2';
+} from '@lcode-cli/agent-core-v2';
 import {
   IAgentActivityView,
   LifecycleScope,
@@ -35,8 +35,8 @@ import {
   makeAgentScopeContext,
   SessionInteractionService,
   StateRegistry,
-} from '@lemwood/agent-core-v2';
-import { TurnStarted } from '@lemwood/agent-core-v2/agent/loop/turnEvents';
+} from '@lcode-cli/agent-core-v2';
+import { TurnStarted } from '@lcode-cli/agent-core-v2/agent/loop/turnEvents';
 import type { AgentEvent } from '../src/transport/ws/v1/events';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 

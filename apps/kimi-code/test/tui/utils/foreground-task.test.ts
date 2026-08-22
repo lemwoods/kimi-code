@@ -1,4 +1,4 @@
-import type { BackgroundTaskInfo } from '@lemwood/lcode-sdk';
+import type { BackgroundTaskInfo } from '@lcode-cli/lcode-sdk';
 import { describe, expect, it } from 'vitest';
 
 import { pickForegroundTask, pickForegroundTasks } from '@/tui/utils/foreground-task';

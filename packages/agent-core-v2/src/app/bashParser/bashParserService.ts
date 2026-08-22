@@ -1,5 +1,5 @@
-import { parse } from '@lemwood/tree-sitter-bash';
-import type { SyntaxNode } from '@lemwood/tree-sitter-bash';
+import { parse } from '@lcode-cli/tree-sitter-bash';
+import type { SyntaxNode } from '@lcode-cli/tree-sitter-bash';
 import { LifecycleScope } from '#/app/scopes';
 import { registerScopedService, ScopeActivation } from '#/_base/di/scope';
 

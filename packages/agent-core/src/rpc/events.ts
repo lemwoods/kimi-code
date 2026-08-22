@@ -1,4 +1,4 @@
-export { MCP_OAUTH_AUTHORIZATION_URL_TOOL_UPDATE } from '@lemwood/protocol';
+export { MCP_OAUTH_AUTHORIZATION_URL_TOOL_UPDATE } from '@lcode-cli/protocol';
 
 export type {
   AgentEvent,
@@ -48,6 +48,6 @@ export type {
   TurnStepStartedEvent,
   UsageStatus,
   WarningEvent,
-} from '@lemwood/protocol';
+} from '@lcode-cli/protocol';
 
 export type { KimiErrorPayload } from '../errors';

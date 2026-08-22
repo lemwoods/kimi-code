@@ -3,7 +3,7 @@ import type {
   McpManagedServerInfo,
   McpServerConfig as SdkMcpServerConfig,
   McpTestResult,
-} from "@lemwood/lcode-sdk";
+} from "@lcode-cli/lcode-sdk";
 
 import { Events, Methods } from "../../shared/bridge";
 import {

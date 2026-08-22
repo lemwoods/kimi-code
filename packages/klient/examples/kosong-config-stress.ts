@@ -34,11 +34,11 @@ import { join } from 'node:path';
 import { EXAMPLE_CLIENT_IDENTITY } from './identity.js';
 
 
-import { bootstrap, logSeed, resolveLoggingConfig } from '@lemwood/agent-core-v2';
-import { IConfigService } from '@lemwood/agent-core-v2/app/config/config';
-import { IKosongConfigService } from '@lemwood/agent-core-v2/app/kosongConfig/kosongConfig';
-import { type Klient } from '@lemwood/klient';
-import { createKlient } from '@lemwood/klient/memory';
+import { bootstrap, logSeed, resolveLoggingConfig } from '@lcode-cli/agent-core-v2';
+import { IConfigService } from '@lcode-cli/agent-core-v2/app/config/config';
+import { IKosongConfigService } from '@lcode-cli/agent-core-v2/app/kosongConfig/kosongConfig';
+import { type Klient } from '@lcode-cli/klient';
+import { createKlient } from '@lcode-cli/klient/memory';
 
 function assert(cond: boolean, message: string): asserts cond {
   if (!cond) throw new Error(`assertion failed: ${message}`);

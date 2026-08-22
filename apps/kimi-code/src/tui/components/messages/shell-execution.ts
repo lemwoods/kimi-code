@@ -1,5 +1,5 @@
-import type { Component } from '@lemwood/pi-tui';
-import { Container, Text } from '@lemwood/pi-tui';
+import type { Component } from '@lcode-cli/pi-tui';
+import { Container, Text } from '@lcode-cli/pi-tui';
 
 import { currentTheme } from '#/tui/theme';
 import type { ToolCallBlockData, ToolResultBlockData } from '#/tui/types';

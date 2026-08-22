@@ -1,5 +1,5 @@
 {
-  "name": "@lemwood/klient",
+  "name": "@lcode-cli/klient",
   "version": "0.1.2",
   "private": true,
   "description": "Kimi client SDK — contract-driven facade over agent-core-v2, routable over ipc or in-memory transports.",
@@ -43,11 +43,11 @@
     "docker:e2e": "bash scripts/run-docker-e2e.sh"
   },
   "dependencies": {
-    "@lemwood/agent-core-v2": "workspace:^",
+    "@lcode-cli/agent-core-v2": "workspace:^",
     "zod": "catalog:"
   },
   "devDependencies": {
-    "@lemwood/protocol": "workspace:^",
+    "@lcode-cli/protocol": "workspace:^",
     "@types/ws": "^8.18.0",
     "ulid": "^3.0.1",
     "ws": "^8.18.0"

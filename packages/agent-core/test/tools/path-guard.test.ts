@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import type { Environment, ShellPathBridge } from '@lemwood/kaos';
+import type { Environment, ShellPathBridge } from '@lcode-cli/kaos';
 
 import {
   canonicalizePath,

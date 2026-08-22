@@ -1,4 +1,4 @@
-import type { Kaos } from '@lemwood/kaos';
+import type { Kaos } from '@lcode-cli/kaos';
 import { describe, expect, it, vi } from 'vitest';
 
 import {

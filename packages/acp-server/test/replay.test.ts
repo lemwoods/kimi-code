@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest';
 import { projectHistoryToSessionUpdates } from '../src/replay';
 
 import type { SessionNotification } from '@agentclientprotocol/sdk';
-import type { ContextMessage } from '@lemwood/agent-core-v2';
+import type { ContextMessage } from '@lcode-cli/agent-core-v2';
 
 const SESSION_ID = 'session_test';
 

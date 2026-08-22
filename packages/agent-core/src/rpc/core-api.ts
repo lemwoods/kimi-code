@@ -22,8 +22,8 @@ import type { SessionMeta } from '#/session';
 import type { GlobalMcpServerConfig } from '#/mcp/global-config';
 import type { McpServerConfigView } from '#/mcp/config-view';
 import type { McpRegistryPluginOrigin, McpServerSource } from '#/mcp/registry';
-import type { ContentPart } from '@lemwood/kosong';
-import type { SessionWarning } from '@lemwood/protocol';
+import type { ContentPart } from '@lcode-cli/kosong';
+import type { SessionWarning } from '@lcode-cli/protocol';
 
 import type { PluginCommandDef, PluginInfo, PluginSummary, ReloadSummary } from '#/plugin';
 import type { UsageStatus } from './events';

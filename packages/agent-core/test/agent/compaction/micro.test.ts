@@ -1,4 +1,4 @@
-import type { ContentPart, Message } from '@lemwood/kosong';
+import type { ContentPart, Message } from '@lcode-cli/kosong';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import type { AgentRecord } from '../../../src/agent';

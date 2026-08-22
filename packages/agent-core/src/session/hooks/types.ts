@@ -1,4 +1,4 @@
-import type { ContentPart } from '@lemwood/kosong';
+import type { ContentPart } from '@lcode-cli/kosong';
 
 export const HOOK_EVENT_TYPES = [
   'PreToolUse',

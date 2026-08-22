@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
-import { isoDateTimeSchema } from '@lemwood/agent-core-v2/_base/utils/isoDateTime';
-import type { TurnEndReason } from '@lemwood/agent-core-v2/agent/loop/turnEvents';
+import { isoDateTimeSchema } from '@lcode-cli/agent-core-v2/_base/utils/isoDateTime';
+import type { TurnEndReason } from '@lcode-cli/agent-core-v2/agent/loop/turnEvents';
 import type {
   BundledSkillActivation,
   CompactionSummaryOrigin,
@@ -17,15 +17,15 @@ import type {
   SystemTriggerOrigin,
   TaskOrigin,
   UserPromptOrigin,
-} from '@lemwood/agent-core-v2/agent/contextMemory/types';
+} from '@lcode-cli/agent-core-v2/agent/contextMemory/types';
 import { messageContentSchema } from './message';
-import type { HookResultPayload } from '@lemwood/agent-core-v2/features/externalHooks/agent/agentExternalHooksService';
+import type { HookResultPayload } from '@lcode-cli/agent-core-v2/features/externalHooks/agent/agentExternalHooksService';
 import type {
   CompactionBlockedPayload,
   CompactionCompletedPayload,
   CompactionStartedPayload,
-} from '@lemwood/agent-core-v2/agent/fullCompaction/compactionOps';
-import type { CompactionResult } from '@lemwood/agent-core-v2/agent/fullCompaction/types';
+} from '@lcode-cli/agent-core-v2/agent/fullCompaction/compactionOps';
+import type { CompactionResult } from '@lcode-cli/agent-core-v2/agent/fullCompaction/types';
 import type {
   GoalActor,
   GoalBudgetLimits,
@@ -36,7 +36,7 @@ import type {
   GoalSnapshot,
   GoalStatus,
   GoalToolResult,
-} from '@lemwood/agent-core-v2';
+} from '@lcode-cli/agent-core-v2';
 import type {
   AssistantDeltaPayload,
   ThinkingDeltaPayload,
@@ -44,41 +44,41 @@ import type {
   TurnStepCompletedPayload,
   TurnStepInterruptedPayload,
   TurnStepStartedPayload,
-} from '@lemwood/agent-core-v2/agent/loop/turnEvents';
+} from '@lcode-cli/agent-core-v2/agent/loop/turnEvents';
 import type {
   McpServerStatusEventPayload,
   McpServerStatusPayload,
   ToolListUpdatedPayload,
   ToolListUpdatedReason,
-} from '@lemwood/agent-core-v2/agent/mcp/mcpEvents';
-import type { McpOAuthAuthorizationUrlUpdateData } from '@lemwood/agent-core-v2/agent/mcp/tools/auth';
-import type { PermissionMode } from '@lemwood/agent-core-v2/agent/permissionPolicy/types';
-import type { WarningEvent } from '@lemwood/agent-core-v2/agent/profile/profileService';
-import type { PluginCommandActivatedPayload } from '@lemwood/agent-core-v2/agent/pluginCommand/pluginCommand';
+} from '@lcode-cli/agent-core-v2/agent/mcp/mcpEvents';
+import type { McpOAuthAuthorizationUrlUpdateData } from '@lcode-cli/agent-core-v2/agent/mcp/tools/auth';
+import type { PermissionMode } from '@lcode-cli/agent-core-v2/agent/permissionPolicy/types';
+import type { WarningEvent } from '@lcode-cli/agent-core-v2/agent/profile/profileService';
+import type { PluginCommandActivatedPayload } from '@lcode-cli/agent-core-v2/agent/pluginCommand/pluginCommand';
 import type {
   ShellCompletedPayload,
   ShellOutputPayload,
   ShellStartedPayload,
-} from '@lemwood/agent-core-v2/agent/shellCommand/shellCommandService';
+} from '@lcode-cli/agent-core-v2/agent/shellCommand/shellCommandService';
 
-import type { TurnStepRetryingPayload } from '@lemwood/agent-core-v2/agent/stepRetry/stepRetryService';
-import type { AgentTaskStatus } from '@lemwood/agent-core-v2/agent/task/types';
+import type { TurnStepRetryingPayload } from '@lcode-cli/agent-core-v2/agent/stepRetry/stepRetryService';
+import type { AgentTaskStatus } from '@lcode-cli/agent-core-v2/agent/task/types';
 import type {
   ToolCallStartedPayload,
   ToolProgressPayload,
   ToolResultEventPayload,
-} from '@lemwood/agent-core-v2/agent/toolExecutor/toolExecutorEvents';
-import type { UsageStatus } from '@lemwood/agent-core-v2/agent/usage/usage';
-import type { FinishReason } from '@lemwood/agent-core-v2/kosong/contract/provider';
-import type { TokenUsage } from '@lemwood/agent-core-v2/kosong/contract/usage';
+} from '@lcode-cli/agent-core-v2/agent/toolExecutor/toolExecutorEvents';
+import type { UsageStatus } from '@lcode-cli/agent-core-v2/agent/usage/usage';
+import type { FinishReason } from '@lcode-cli/agent-core-v2/kosong/contract/provider';
+import type { TokenUsage } from '@lcode-cli/agent-core-v2/kosong/contract/usage';
 import type {
   SubagentCompletedPayload,
   SubagentFailedPayload,
   SubagentSpawnedPayload,
   SubagentStartedPayload,
-} from '@lemwood/agent-core-v2/session/subagent/mirrorAgentRun';
-import type { SubagentSuspendedPayload } from '@lemwood/agent-core-v2/features/swarm/session/sessionSwarmService';
-import type { ToolUpdate } from '@lemwood/agent-core-v2/tool/toolContract';
+} from '@lcode-cli/agent-core-v2/session/subagent/mirrorAgentRun';
+import type { SubagentSuspendedPayload } from '@lcode-cli/agent-core-v2/features/swarm/session/sessionSwarmService';
+import type { ToolUpdate } from '@lcode-cli/agent-core-v2/tool/toolContract';
 
 import { ToolInputDisplaySchema } from './display';
 import { configResponseSchema } from './rest-config';

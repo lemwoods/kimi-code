@@ -1,4 +1,4 @@
-import { isDaemonFileUrl } from '@lemwood/lcode-sdk';
+import { isDaemonFileUrl } from '@lcode-cli/lcode-sdk';
 
 export type MediaUrlKind = 'audio' | 'image' | 'video';
 

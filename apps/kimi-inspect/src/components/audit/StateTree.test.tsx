@@ -7,7 +7,7 @@
  *  2. Whole-subtree adds expand into fully fielded, indented tree rows.
  */
 
-import { EMPTY_AGENT_STATE, type AgentState, type TranscriptTurn } from '@lemwood/transcript';
+import { EMPTY_AGENT_STATE, type AgentState, type TranscriptTurn } from '@lcode-cli/transcript';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { describe, expect, it } from 'vitest';
 

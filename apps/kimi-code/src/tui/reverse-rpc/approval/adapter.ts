@@ -1,4 +1,4 @@
-import type { ApprovalRequest, ApprovalResponse, ToolInputDisplay } from '@lemwood/lcode-sdk';
+import type { ApprovalRequest, ApprovalResponse, ToolInputDisplay } from '@lcode-cli/lcode-sdk';
 
 import type { ApprovalPanelResponse } from '#/tui/components/dialogs/approval-panel';
 import { goalStartOptions } from '#/tui/components/dialogs/goal-start-permission-prompt';

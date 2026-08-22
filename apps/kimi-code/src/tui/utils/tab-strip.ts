@@ -8,7 +8,7 @@
  * visible, framed by `<`/`>` markers.
  */
 
-import { visibleWidth } from '@lemwood/pi-tui';
+import { visibleWidth } from '@lcode-cli/pi-tui';
 import chalk from 'chalk';
 
 import type { ColorPalette } from '#/tui/theme/colors';

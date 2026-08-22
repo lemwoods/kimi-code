@@ -27,15 +27,15 @@
 
 import { createDecorator } from '../../di';
 import type { Event } from '../../base/common/event';
-import type { Event as ProtocolEvent } from '@lemwood/protocol';
+import type { Event as ProtocolEvent } from '@lcode-cli/protocol';
 
 /**
  * Naming convention inside this file:
  *
- * - `Event` (from `@lemwood/agent-core/base/common/event`) — the generic
+ * - `Event` (from `@lcode-cli/agent-core/base/common/event`) — the generic
  *   VSCode-style emitter accessor type. `Event<T>` is the listener-tuple
  *   type used to declare `readonly onDidXxx: Event<T>`.
- * - `ProtocolEvent` (alias of `@lemwood/protocol`'s `Event`) — the
+ * - `ProtocolEvent` (alias of `@lcode-cli/protocol`'s `Event`) — the
  *   wire-level event union published through the bus. Aliased here because
  *   the top-level `Event` symbol must refer to the emitter type so the
  *   accessor declarations read naturally (`Event<ProtocolEvent>` not

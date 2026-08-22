@@ -1,10 +1,10 @@
-import { Spacer } from '@lemwood/pi-tui';
+import { Spacer } from '@lcode-cli/pi-tui';
 import type {
   Event,
   KimiHarness,
   Session,
   TurnEndedEvent,
-} from '@lemwood/lcode-sdk';
+} from '@lcode-cli/lcode-sdk';
 
 import { NO_ACTIVE_SESSION_MESSAGE } from '../constant/kimi-tui';
 import { BtwPanelComponent } from '../components/panes/btw-panel';

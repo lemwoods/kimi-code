@@ -5,8 +5,8 @@ import {
   truncateToWidth,
   visibleWidth,
   type Focusable,
-} from '@lemwood/pi-tui';
-import type { ExperimentalFeatureState } from '@lemwood/lcode-sdk';
+} from '@lcode-cli/pi-tui';
+import type { ExperimentalFeatureState } from '@lcode-cli/lcode-sdk';
 
 import { SELECT_POINTER } from '#/tui/constant/symbols';
 import { currentTheme } from '#/tui/theme';

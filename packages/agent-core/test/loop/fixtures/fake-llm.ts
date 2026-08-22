@@ -5,7 +5,7 @@ import {
   type TextPart,
   type ThinkPart,
   type TokenUsage,
-} from '@lemwood/kosong';
+} from '@lcode-cli/kosong';
 
 import type {
   LLM,

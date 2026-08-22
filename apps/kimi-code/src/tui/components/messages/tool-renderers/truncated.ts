@@ -1,4 +1,4 @@
-import { Text, truncateToWidth, type Component } from '@lemwood/pi-tui';
+import { Text, truncateToWidth, type Component } from '@lcode-cli/pi-tui';
 
 import { currentTheme } from '#/tui/theme';
 import type { ColorPalette } from '#/tui/theme/colors';

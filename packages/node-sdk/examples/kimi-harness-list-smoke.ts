@@ -3,7 +3,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { setTimeout as delay } from 'node:timers/promises';
 
-import { createKimiHarness } from '@lemwood/lcode-sdk';
+import { createKimiHarness } from '@lcode-cli/lcode-sdk';
 
 import { smokeIdentityFromEnv } from './runtime-smoke-helpers';
 

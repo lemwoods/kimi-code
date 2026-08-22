@@ -1,6 +1,6 @@
 /**
  * `#/utils/plugin-marketplace` — CLI-side wrapper over the shared plugin
- * marketplace client/parser (`@lemwood/agent-core-v2`,
+ * marketplace client/parser (`@lcode-cli/agent-core-v2`,
  * `app/plugin/marketplace`). The shared module owns catalog reading, the
  * lenient entry normalization, source resolution, and version derivation;
  * this wrapper adds only the CLI's configured-source resolution (option →
@@ -19,7 +19,7 @@ import {
   type MarketplaceLocation,
   type PluginMarketplace,
   type PluginMarketplaceEntry,
-} from '@lemwood/agent-core-v2/app/plugin/marketplace';
+} from '@lcode-cli/agent-core-v2/app/plugin/marketplace';
 
 import {
   KIMI_CODE_PLUGIN_MARKETPLACE_URL_ENV,
@@ -33,7 +33,7 @@ export {
   type PluginMarketplaceEntry,
   type PluginMarketplaceTier,
   type MarketplaceUpdateStatus,
-} from '@lemwood/agent-core-v2/app/plugin/marketplace';
+} from '@lcode-cli/agent-core-v2/app/plugin/marketplace';
 
 export interface LoadPluginMarketplaceOptions {
   readonly workDir: string;

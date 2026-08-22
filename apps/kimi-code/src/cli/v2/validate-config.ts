@@ -30,14 +30,14 @@ import {
   ConfigRegistry,
   type AnyEnvBindings,
   type EnvBinding,
-} from '@lemwood/agent-core-v2';
-import { collectKeyDeprecations } from '@lemwood/agent-core-v2/app/config/deprecations';
+} from '@lcode-cli/agent-core-v2';
+import { collectKeyDeprecations } from '@lcode-cli/agent-core-v2/app/config/deprecations';
 import {
   camelToSnake,
   describeTomlSyntaxError,
   isPlainObject,
   transformTomlData,
-} from '@lemwood/agent-core-v2/app/config/toml';
+} from '@lcode-cli/agent-core-v2/app/config/toml';
 
 /**
  * Top-level domains the v2 engine reads via `IConfigService.get` / `inspect`

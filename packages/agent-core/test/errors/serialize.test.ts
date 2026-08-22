@@ -1,4 +1,4 @@
-import { APIProviderQuotaExhaustedError, APIStatusError } from '@lemwood/kosong';
+import { APIProviderQuotaExhaustedError, APIStatusError } from '@lcode-cli/kosong';
 import { describe, expect, it } from 'vitest';
 
 import { toKimiErrorPayload } from '#/errors/serialize';

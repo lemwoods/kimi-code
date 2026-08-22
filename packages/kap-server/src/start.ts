@@ -24,12 +24,12 @@ import {
   type ConfigDiagnostic,
   type Scope,
   type ScopeSeed,
-} from '@lemwood/agent-core-v2';
+} from '@lcode-cli/agent-core-v2';
 import {
   createKimiDefaultHeaders,
   kimiRegionProfile,
   type KimiHostIdentity,
-} from '@lemwood/lcode-oauth';
+} from '@lcode-cli/lcode-oauth';
 import { createAsyncApiDocument } from './protocol/asyncapi';
 import Fastify, { type FastifyInstance } from 'fastify';
 

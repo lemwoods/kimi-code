@@ -19,9 +19,9 @@ import {
   type WriteTextFileRequest,
   type WriteTextFileResponse,
 } from '@agentclientprotocol/sdk';
-import type { KimiHarness, Session } from '@lemwood/lcode-sdk';
-import { log } from '@lemwood/lcode-sdk';
-import type { McpServerConfig } from '@lemwood/agent-core';
+import type { KimiHarness, Session } from '@lcode-cli/lcode-sdk';
+import { log } from '@lcode-cli/lcode-sdk';
+import type { McpServerConfig } from '@lcode-cli/agent-core';
 
 import { acpMcpServersToConfigs } from '../src/mcp';
 import { AcpServer } from '../src/server';

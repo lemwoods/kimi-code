@@ -1,4 +1,4 @@
-import type { BackgroundTaskInfo, BackgroundTaskStatus } from '@lemwood/lcode-sdk';
+import type { BackgroundTaskInfo, BackgroundTaskStatus } from '@lcode-cli/lcode-sdk';
 import { describe, expect, it } from 'vitest';
 
 import { formatBackgroundTaskTranscript } from '@/tui/utils/background-task-status';

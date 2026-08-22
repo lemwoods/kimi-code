@@ -5,7 +5,7 @@
 import { Readable } from 'node:stream';
 import type { Writable } from 'node:stream';
 
-import type { KaosProcess } from '@lemwood/kaos';
+import type { KaosProcess } from '@lcode-cli/kaos';
 import { describe, expect, it, vi } from 'vitest';
 
 import { BackgroundTaskPersistence } from '../../../src/agent/background';

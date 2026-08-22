@@ -3,7 +3,7 @@
  * (global) and plugin manifests (plugin, read-only, effective config) into
  * one management-plane view.
  *
- * Run with `pnpm --filter @lemwood/agent-core exec vitest run test/mcp/registry.test.ts`.
+ * Run with `pnpm --filter @lcode-cli/agent-core exec vitest run test/mcp/registry.test.ts`.
  */
 
 import { mkdir, mkdtemp, realpath, writeFile } from 'node:fs/promises';

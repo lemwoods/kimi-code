@@ -11,8 +11,8 @@ import {
   type IAgentScopeHandle,
   type Interaction,
   type ISessionScopeHandle,
-} from '@lemwood/agent-core-v2';
-import type { AgentDescriptor, TranscriptChangeEvent, TranscriptStore } from '@lemwood/transcript';
+} from '@lcode-cli/agent-core-v2';
+import type { AgentDescriptor, TranscriptChangeEvent, TranscriptStore } from '@lcode-cli/transcript';
 
 import {
   AgentTranscriptProjector,

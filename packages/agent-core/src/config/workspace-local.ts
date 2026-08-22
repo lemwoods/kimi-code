@@ -1,4 +1,4 @@
-import type { Kaos } from '@lemwood/kaos';
+import type { Kaos } from '@lcode-cli/kaos';
 import { dirname, isAbsolute, join, normalize, resolve } from 'pathe';
 import { parse as parseToml, stringify as stringifyToml } from 'smol-toml';
 import { z } from 'zod';

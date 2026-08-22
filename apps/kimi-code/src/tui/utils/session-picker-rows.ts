@@ -1,4 +1,4 @@
-import type { SessionSummary } from '@lemwood/lcode-sdk';
+import type { SessionSummary } from '@lcode-cli/lcode-sdk';
 
 import type { SessionRow } from '#/tui/components/dialogs/session-picker';
 

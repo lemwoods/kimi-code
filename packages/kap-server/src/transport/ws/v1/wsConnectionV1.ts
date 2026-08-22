@@ -7,7 +7,7 @@ import {
   detachGrades,
   transcriptSubscribeV2PayloadSchema,
   type TranscriptGradeSpec,
-} from '@lemwood/transcript';
+} from '@lcode-cli/transcript';
 import { ulid } from 'ulid';
 import type { RawData, WebSocket } from 'ws';
 

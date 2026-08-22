@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 
-import type { WorkspaceTrustMcpServerInfo } from '@lemwood/lcode-sdk';
+import type { WorkspaceTrustMcpServerInfo } from '@lcode-cli/lcode-sdk';
 
 import { TrustPromptComponent } from '#/tui/components/dialogs/trust-prompt';
 

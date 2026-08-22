@@ -11,7 +11,7 @@ import { noopTelemetryClient, type TelemetryClient } from '../../telemetry';
 import {
   createKimiDefaultHeaders,
   type KimiHostIdentity,
-} from '@lemwood/lcode-oauth';
+} from '@lcode-cli/lcode-oauth';
 
 import { createManagedAuthFacade } from '../auth/managedAuth';
 import { BridgeClientAPI } from './coreProcessClient';

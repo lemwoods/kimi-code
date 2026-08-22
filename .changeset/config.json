@@ -7,10 +7,10 @@
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
   "ignore": [
-    "@lemwood/vis",
-    "@lemwood/vis-server",
-    "@lemwood/vis-web",
-    "@lemwood/lcode-inspect"
+    "@lcode-cli/vis",
+    "@lcode-cli/vis-server",
+    "@lcode-cli/vis-web",
+    "@lcode-cli/lcode-inspect"
   ],
   "snapshot": {
     "useCalculatedVersion": true,

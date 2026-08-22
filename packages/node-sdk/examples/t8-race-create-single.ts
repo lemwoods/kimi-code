@@ -1,5 +1,5 @@
 // One creator: meant to run twice as separate processes simultaneously.
-import { createKimiHarness } from '@lemwood/lcode-sdk';
+import { createKimiHarness } from '@lcode-cli/lcode-sdk';
 
 const workDir = process.argv[2]!;
 const homeDir = process.argv[3]!;

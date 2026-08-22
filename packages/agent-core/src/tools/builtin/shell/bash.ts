@@ -22,7 +22,7 @@
  *     foreground runs pass a callback to collect chunks for this call.
  */
 
-import { getShellPathBridge, type Kaos, type KaosProcess } from '@lemwood/kaos';
+import { getShellPathBridge, type Kaos, type KaosProcess } from '@lcode-cli/kaos';
 import { z } from 'zod';
 
 import { ProcessBackgroundTask, type BackgroundManager } from '../../../agent/background';

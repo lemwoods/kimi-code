@@ -11,7 +11,7 @@ import { Readable } from 'node:stream';
 import type { Writable } from 'node:stream';
 import { join } from 'pathe';
 
-import type { KaosProcess } from '@lemwood/kaos';
+import type { KaosProcess } from '@lcode-cli/kaos';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { ProcessBackgroundTask, type BackgroundManager } from '../../../src/agent/background';

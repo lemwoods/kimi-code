@@ -1,5 +1,5 @@
-import { Text, visibleWidth } from '@lemwood/pi-tui';
-import type { TUI } from '@lemwood/pi-tui';
+import { Text, visibleWidth } from '@lcode-cli/pi-tui';
+import type { TUI } from '@lcode-cli/pi-tui';
 
 import {
   BRAILLE_SPINNER_FRAMES,

@@ -1,4 +1,4 @@
-import type * as KosongModule from '@lemwood/kosong';
+import type * as KosongModule from '@lcode-cli/kosong';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { createKimiHarness, type KimiError } from '#/index';
@@ -10,7 +10,7 @@ const fakeProviderState = vi.hoisted(() => ({
   responseText: 'steer response',
 }));
 
-vi.mock('@lemwood/kosong', async (importOriginal) => {
+vi.mock('@lcode-cli/kosong', async (importOriginal) => {
   const actual = await importOriginal<typeof KosongModule>();
   return {
     ...actual,

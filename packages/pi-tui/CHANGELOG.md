@@ -1,4 +1,4 @@
-# @lemwood/pi-tui
+# @lcode-cli/pi-tui
 
 ## 0.84.4
 

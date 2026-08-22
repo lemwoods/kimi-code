@@ -3,8 +3,8 @@ import { tmpdir } from 'node:os';
 import { join } from 'pathe';
 
 import { testKaos } from '../fixtures/test-kaos';
-import type { ProviderConfig, ToolCall } from '@lemwood/kosong';
-import type { Kaos, StatResult } from '@lemwood/kaos';
+import type { ProviderConfig, ToolCall } from '@lcode-cli/kosong';
+import type { Kaos, StatResult } from '@lcode-cli/kaos';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import type { Agent, AgentOptions } from '../../src/agent';

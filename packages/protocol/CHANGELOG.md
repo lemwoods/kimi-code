@@ -1,4 +1,4 @@
-# @lemwood/protocol
+# @lcode-cli/protocol
 
 ## 0.5.0
 

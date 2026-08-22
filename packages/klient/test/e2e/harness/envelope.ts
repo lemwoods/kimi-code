@@ -5,7 +5,7 @@
  * Mirrors `packages/protocol/src/envelope.ts` so the server's wire shape and
  * this client's parsing stay in lockstep.
  */
-import { ErrorCode, ErrorCodeReason, type Envelope } from '@lemwood/protocol';
+import { ErrorCode, ErrorCodeReason, type Envelope } from '@lcode-cli/protocol';
 
 /**
  * Thrown when an HTTP call lands but `envelope.code !== 0`.

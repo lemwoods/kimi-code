@@ -1,10 +1,10 @@
-# @lemwood/lcode-oauth
+# @lcode-cli/lcode-oauth
 
 ## 0.4.0
 
 ### Minor Changes
 
-- [#2885](https://github.com/MoonshotAI/kimi-code/pull/2885) [`4a93f70`](https://github.com/MoonshotAI/kimi-code/commit/4a93f70aa2cf5f70a88b4f8eeb2e409aab2c8f59) Thanks [@liruifengv](https://github.com/liruifengv)! - Add a browser-safe `./device` subpath export exposing the device-code flow's pure-fetch HTTP wrappers and flow config, so browser bundles can run OAuth sign-in without pulling in Node-only modules. Import from `@lemwood/lcode-oauth/device`.
+- [#2885](https://github.com/MoonshotAI/kimi-code/pull/2885) [`4a93f70`](https://github.com/MoonshotAI/kimi-code/commit/4a93f70aa2cf5f70a88b4f8eeb2e409aab2c8f59) Thanks [@liruifengv](https://github.com/liruifengv)! - Add a browser-safe `./device` subpath export exposing the device-code flow's pure-fetch HTTP wrappers and flow config, so browser bundles can run OAuth sign-in without pulling in Node-only modules. Import from `@lcode-cli/lcode-oauth/device`.
 
 ### Patch Changes
 

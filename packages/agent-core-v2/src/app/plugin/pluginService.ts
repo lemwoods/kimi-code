@@ -1,4 +1,4 @@
-import { KIMI_CODE_PROVIDER_NAME } from '@lemwood/lcode-oauth';
+import { KIMI_CODE_PROVIDER_NAME } from '@lcode-cli/lcode-oauth';
 
 import { Service } from '#/_base/di/service';
 import { Emitter, type Event } from '#/_base/event';

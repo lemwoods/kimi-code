@@ -11,8 +11,8 @@
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 
-import { createServerLogger, startServer, type ServerLogger } from '@lemwood/kap-server';
-import { shutdownTelemetry, track } from '@lemwood/lcode-telemetry';
+import { createServerLogger, startServer, type ServerLogger } from '@lcode-cli/kap-server';
+import { shutdownTelemetry, track } from '@lcode-cli/lcode-telemetry';
 import chalk from 'chalk';
 import { type Command } from 'commander';
 

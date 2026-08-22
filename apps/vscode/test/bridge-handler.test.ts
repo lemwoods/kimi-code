@@ -75,8 +75,8 @@ vi.mock("vscode", () => ({
   window: { showWarningMessage: host.showWarningMessage },
 }));
 
-vi.mock("@lemwood/lcode-sdk", async (importOriginal) => {
-  const original = await importOriginal<typeof import("@lemwood/lcode-sdk")>();
+vi.mock("@lcode-cli/lcode-sdk", async (importOriginal) => {
+  const original = await importOriginal<typeof import("@lcode-cli/lcode-sdk")>();
   return {
     ...original,
     createKimiHarness: () => host.createKimiHarness(),

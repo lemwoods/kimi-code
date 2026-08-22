@@ -1,4 +1,4 @@
-import type { KimiConfig } from '@lemwood/lcode-sdk';
+import type { KimiConfig } from '@lcode-cli/lcode-sdk';
 
 import { currentTheme, lightColors } from '#/tui/theme';
 import { loadTuiConfig, type TuiConfig } from '../config';

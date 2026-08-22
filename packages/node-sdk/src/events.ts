@@ -3,12 +3,12 @@ import type {
   ApprovalResponse,
   QuestionRequest,
   QuestionResult,
-} from '@lemwood/agent-core';
+} from '@lcode-cli/agent-core';
 
 // Event union plus shared fields/payloads used across event families.
-export type { KimiErrorPayload, Event } from '@lemwood/agent-core';
+export type { KimiErrorPayload, Event } from '@lcode-cli/agent-core';
 
-export { MCP_OAUTH_AUTHORIZATION_URL_TOOL_UPDATE } from '@lemwood/agent-core';
+export { MCP_OAUTH_AUTHORIZATION_URL_TOOL_UPDATE } from '@lcode-cli/agent-core';
 
 // Session lifecycle/status events and their status payload.
 export type {
@@ -20,7 +20,7 @@ export type {
   ErrorEvent,
   WarningEvent,
   UsageStatus,
-} from '@lemwood/agent-core';
+} from '@lcode-cli/agent-core';
 
 // Turn and step lifecycle events plus the turn-ending reason enum.
 export type {
@@ -31,14 +31,14 @@ export type {
   TurnStepRetryingEvent,
   TurnStepInterruptedEvent,
   TurnEndReason,
-} from '@lemwood/agent-core';
+} from '@lcode-cli/agent-core';
 
 // Streaming content and hook-result events.
 export type {
   AssistantDeltaEvent,
   HookResultEvent,
   ThinkingDeltaEvent,
-} from '@lemwood/agent-core';
+} from '@lcode-cli/agent-core';
 
 // Tool-call events and incremental progress payloads.
 export type {
@@ -50,7 +50,7 @@ export type {
   ToolCallResponse,
   ToolUpdate,
   McpOAuthAuthorizationUrlUpdateData,
-} from '@lemwood/agent-core';
+} from '@lcode-cli/agent-core';
 
 // MCP tool-list and server status events.
 export type {
@@ -58,7 +58,7 @@ export type {
   ToolListUpdatedReason,
   McpServerStatusEvent,
   McpServerStatusPayload,
-} from '@lemwood/agent-core';
+} from '@lcode-cli/agent-core';
 
 // Approval reverse-RPC request and response/display payloads.
 export type {
@@ -67,7 +67,7 @@ export type {
   ApprovalScope,
   ApprovalResponse,
   ToolInputDisplay,
-} from '@lemwood/agent-core';
+} from '@lcode-cli/agent-core';
 
 // Question reverse-RPC request and answer payloads.
 export type {
@@ -78,7 +78,7 @@ export type {
   QuestionAnswers,
   QuestionResponse,
   QuestionResult,
-} from '@lemwood/agent-core';
+} from '@lcode-cli/agent-core';
 
 // Subagent lifecycle events.
 export type {
@@ -87,7 +87,7 @@ export type {
   SubagentSuspendedEvent,
   SubagentCompletedEvent,
   SubagentFailedEvent,
-} from '@lemwood/agent-core';
+} from '@lcode-cli/agent-core';
 
 // Compaction lifecycle events and compaction result payload.
 export type {
@@ -96,16 +96,16 @@ export type {
   CompactionCancelledEvent,
   CompactionCompletedEvent,
   CompactionResult,
-} from '@lemwood/agent-core';
+} from '@lcode-cli/agent-core';
 
 // Background task lifecycle events emitted by the BPM. Covers both
 // bash (`bash-*`) and agent (`agent-*`) tasks under one wire format.
 export type {
   BackgroundTaskStartedEvent,
   BackgroundTaskTerminatedEvent,
-} from '@lemwood/agent-core';
+} from '@lcode-cli/agent-core';
 
-export type { CronFiredEvent } from '@lemwood/agent-core';
+export type { CronFiredEvent } from '@lcode-cli/agent-core';
 
 export type MaybePromise<T> = T | Promise<T>;
 

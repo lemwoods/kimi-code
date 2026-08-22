@@ -1,4 +1,4 @@
-import { createKimiHarness, type Event, type Session } from '@lemwood/lcode-sdk';
+import { createKimiHarness, type Event, type Session } from '@lcode-cli/lcode-sdk';
 
 import { smokeIdentityFromEnv } from './runtime-smoke-helpers';
 

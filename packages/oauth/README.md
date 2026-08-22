@@ -1,4 +1,4 @@
-# @lemwood/lcode-oauth
+# @lcode-cli/lcode-oauth
 
 OAuth toolkit for Kimi Code managed authentication.
 

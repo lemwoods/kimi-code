@@ -1,8 +1,8 @@
 export {
   ToolInputDisplaySchema,
   ToolResultDisplaySchema,
-} from '@lemwood/protocol';
+} from '@lcode-cli/protocol';
 export type {
   ToolInputDisplay,
   ToolResultDisplay,
-} from '@lemwood/protocol';
+} from '@lcode-cli/protocol';

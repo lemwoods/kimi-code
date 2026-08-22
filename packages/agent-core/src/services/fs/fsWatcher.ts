@@ -2,7 +2,7 @@ import type { FSWatcher } from 'chokidar';
 
 import { createDecorator } from '../../di';
 
-import type { FsChangeEntry } from '@lemwood/protocol';
+import type { FsChangeEntry } from '@lcode-cli/protocol';
 
 export class FsWatchLimitError extends Error {
   readonly connectionId: string;

@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 import chalk from 'chalk';
-import type { CapabilityStatus, PluginSummary } from '@lemwood/lcode-sdk';
+import type { CapabilityStatus, PluginSummary } from '@lcode-cli/lcode-sdk';
 
 import {
   PluginInstallTrustConfirmComponent,

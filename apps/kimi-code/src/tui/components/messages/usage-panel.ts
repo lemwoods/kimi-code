@@ -4,10 +4,10 @@
  * the pattern stays consistent across command-triggered panels.
  */
 
-import type { Component } from '@lemwood/pi-tui';
-import { truncateToWidth, visibleWidth } from '@lemwood/pi-tui';
-import { formatDuration } from '@lemwood/lcode-oauth';
-import type { SessionUsage, TokenUsage } from '@lemwood/lcode-sdk';
+import type { Component } from '@lcode-cli/pi-tui';
+import { truncateToWidth, visibleWidth } from '@lcode-cli/pi-tui';
+import { formatDuration } from '@lcode-cli/lcode-oauth';
+import type { SessionUsage, TokenUsage } from '@lcode-cli/lcode-sdk';
 
 import {
   formatTokenCount,

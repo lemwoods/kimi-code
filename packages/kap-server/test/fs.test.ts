@@ -2,9 +2,9 @@ import { chmod, mkdir, mkdtemp, rm, symlink, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
-import { IModelCatalog, IWorkspaceInstanceManager } from '@lemwood/agent-core-v2';
-import { HostFileSystem } from '@lemwood/agent-core-v2/os/backends/node-local/hostFsService';
-import { FakeRuntime } from '@lemwood/agent-core-v2/runtime/fakeRuntime';
+import { IModelCatalog, IWorkspaceInstanceManager } from '@lcode-cli/agent-core-v2';
+import { HostFileSystem } from '@lcode-cli/agent-core-v2/os/backends/node-local/hostFsService';
+import { FakeRuntime } from '@lcode-cli/agent-core-v2/runtime/fakeRuntime';
 import { ErrorCode } from '../src/protocol/error-codes';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 

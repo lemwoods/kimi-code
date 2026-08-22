@@ -1,5 +1,5 @@
-import type { Component } from '@lemwood/pi-tui';
-import { visibleWidth, wrapTextWithAnsi } from '@lemwood/pi-tui';
+import type { Component } from '@lcode-cli/pi-tui';
+import { visibleWidth, wrapTextWithAnsi } from '@lcode-cli/pi-tui';
 
 import { currentTheme } from '#/tui/theme';
 import type { BannerState } from '#/tui/types';

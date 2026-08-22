@@ -106,7 +106,7 @@ async function collectAssetRoot({
 
 export async function collectWebAssets({ appRoot, target }) {
   const buildCommand =
-    'pnpm --filter @lemwood/kimi-web run build && pnpm --filter @lemwood/lcode run build';
+    'pnpm --filter @lcode-cli/kimi-web run build && pnpm --filter @lcode-cli/lcode run build';
   return collectAssetRoot({
     appRoot,
     target,

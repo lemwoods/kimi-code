@@ -1,4 +1,4 @@
-import type { Scope } from '@lemwood/agent-core-v2';
+import type { Scope } from '@lcode-cli/agent-core-v2';
 
 import { registerBusinessSnapshotRoutes } from './businessSnapshotRoutes';
 import { describeAllChannels, resolveAnyScopedServiceId } from './channelRegistry';

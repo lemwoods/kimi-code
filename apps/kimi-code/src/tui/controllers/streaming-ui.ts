@@ -1,4 +1,4 @@
-import type { Session } from '@lemwood/lcode-sdk';
+import type { Session } from '@lcode-cli/lcode-sdk';
 
 import { AgentGroupComponent } from '../components/messages/agent-group';
 import { AssistantMessageComponent } from '../components/messages/assistant-message';

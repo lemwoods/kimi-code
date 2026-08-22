@@ -6,7 +6,7 @@ import type {
   RefreshOAuthProviderModelsResponse,
   RefreshProviderModelsResponse,
   SetDefaultModelResponse,
-} from '@lemwood/protocol';
+} from '@lcode-cli/protocol';
 
 export type RefreshProviderModelsScope = 'all' | 'oauth';
 

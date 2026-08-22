@@ -1,5 +1,5 @@
 // Micro compaction is disabled; ContentPart is no longer referenced here.
-// import type { ContentPart } from '@lemwood/kosong';
+// import type { ContentPart } from '@lcode-cli/kosong';
 
 import type { Agent } from '..';
 import type { ContextMessage } from '../context';

@@ -5,9 +5,9 @@ import {
   truncateToWidth,
   wrapTextWithAnsi,
   type Focusable,
-} from '@lemwood/pi-tui';
+} from '@lcode-cli/pi-tui';
 
-import type { ThinkingEffort } from '@lemwood/lcode-sdk';
+import type { ThinkingEffort } from '@lcode-cli/lcode-sdk';
 
 import { currentTheme } from '#/tui/theme';
 

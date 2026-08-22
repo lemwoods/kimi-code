@@ -1,8 +1,8 @@
-# @lemwood/lcode
+# @lcode-cli/lcode
 
 > The Starting Point for Next-Gen Agents
 
-[![npm](https://img.shields.io/npm/v/@lemwood/lcode)](https://www.npmjs.com/package/@lemwood/lcode) [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)  [![Docs](https://img.shields.io/badge/docs-online-blue)](https://moonshotai.github.io/kimi-code/en/)
+[![npm](https://img.shields.io/npm/v/@lcode-cli/lcode)](https://www.npmjs.com/package/@lcode-cli/lcode) [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)  [![Docs](https://img.shields.io/badge/docs-online-blue)](https://moonshotai.github.io/kimi-code/en/)
 
 ## What is lcode CLI
 
@@ -37,13 +37,13 @@ kimi --version
 If you prefer npm, use Node.js 22.19.0 or later:
 
 ```sh
-npm install -g @lemwood/lcode
+npm install -g @lcode-cli/lcode
 ```
 
 Or with pnpm:
 
 ```sh
-pnpm add -g @lemwood/lcode
+pnpm add -g @lcode-cli/lcode
 ```
 
 For upgrade and uninstall instructions, see the [Getting Started guide](https://moonshotai.github.io/kimi-code/en/guides/getting-started).

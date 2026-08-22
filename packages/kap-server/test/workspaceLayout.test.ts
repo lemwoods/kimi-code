@@ -7,7 +7,7 @@ import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import {
   IAgentLifecycleService,
   getLiveSessionById,
-} from '@lemwood/agent-core-v2';
+} from '@lcode-cli/agent-core-v2';
 
 import { type RunningServer, startServer } from '../src/start';
 import { authHeaders } from './helpers/auth';

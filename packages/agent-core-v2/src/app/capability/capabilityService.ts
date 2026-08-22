@@ -1,6 +1,6 @@
 import { homedir } from 'node:os';
 
-import { KIMI_CODE_PROVIDER_NAME, resolveKimiRegion } from '@lemwood/lcode-oauth';
+import { KIMI_CODE_PROVIDER_NAME, resolveKimiRegion } from '@lcode-cli/lcode-oauth';
 
 import { LifecycleScope } from '#/app/scopes';
 import { ScopeActivation, registerScopedService } from '#/_base/di/scope';

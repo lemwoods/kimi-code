@@ -17,7 +17,7 @@ import {
   APIStatusError,
   createUserMessage,
   isImageFormatError,
-} from '@lemwood/kosong';
+} from '@lcode-cli/kosong';
 
 import type { Agent } from '..';
 import type { GenerateOptionsWithRequestLogFields } from '../llm-request-logger';

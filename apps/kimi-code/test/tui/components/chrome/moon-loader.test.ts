@@ -1,4 +1,4 @@
-import type { TUI } from '@lemwood/pi-tui';
+import type { TUI } from '@lcode-cli/pi-tui';
 import { afterEach, describe, expect, it } from 'vitest';
 
 import { MoonLoader } from '#/tui/components/chrome/moon-loader';

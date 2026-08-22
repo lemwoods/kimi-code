@@ -10,8 +10,8 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { setTimeout as delay } from 'node:timers/promises';
 
-import { KIMI_CODE_PLATFORM } from '@lemwood/lcode-oauth';
-import type * as KosongModule from '@lemwood/kosong';
+import { KIMI_CODE_PLATFORM } from '@lcode-cli/lcode-oauth';
+import type * as KosongModule from '@lcode-cli/kosong';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { createKimiHarness, type Event, type KimiHarness } from '#/index';
@@ -27,7 +27,7 @@ const fakeProviderState = vi.hoisted(() => ({
   responseText: 'hello from fake provider',
 }));
 
-vi.mock('@lemwood/kosong', async (importOriginal) => {
+vi.mock('@lcode-cli/kosong', async (importOriginal) => {
   const actual = await importOriginal<typeof KosongModule>();
   return {
     ...actual,

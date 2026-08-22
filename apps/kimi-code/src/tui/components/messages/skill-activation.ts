@@ -12,7 +12,7 @@
  * metadata.
  */
 
-import { Container, Text, Spacer } from '@lemwood/pi-tui';
+import { Container, Text, Spacer } from '@lcode-cli/pi-tui';
 
 import { currentTheme } from '#/tui/theme';
 import type { SkillActivationTrigger } from '#/tui/types';

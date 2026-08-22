@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import type { ContentPart, ToolCall } from '@lemwood/lcode-sdk';
-import type { ContextMessage, PromptOrigin } from '@lemwood/lcode-sdk';
+import type { ContentPart, ToolCall } from '@lcode-cli/lcode-sdk';
+import type { ContextMessage, PromptOrigin } from '@lcode-cli/lcode-sdk';
 
 import {
   buildExportMarkdown,

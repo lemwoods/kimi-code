@@ -21,14 +21,14 @@ import {
   IWorkspaceInstanceManager,
   IWorkspaceService,
   getLiveSessionById,
-} from '@lemwood/agent-core-v2';
+} from '@lcode-cli/agent-core-v2';
 import type {
   AgentRuntimeBindingSnapshot,
   ServiceIdentifier,
   SessionWorkspaceAssociationSnapshot,
   WorkspaceInstanceSnapshot,
-} from '@lemwood/agent-core-v2';
-import { FakeRuntime } from '@lemwood/agent-core-v2/runtime/fakeRuntime';
+} from '@lcode-cli/agent-core-v2';
+import { FakeRuntime } from '@lcode-cli/agent-core-v2/runtime/fakeRuntime';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 
 import { type RunningServer, startServer } from '../src/start';

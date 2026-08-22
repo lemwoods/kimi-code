@@ -10,11 +10,11 @@
  * pegged CPU in long sessions.
  *
  * Run:
- *   pnpm --filter @lemwood/lcode exec vitest bench test/tui/tui-frame.bench.ts
+ *   pnpm --filter @lcode-cli/lcode exec vitest bench test/tui/tui-frame.bench.ts
  */
 
-import type { Component, Terminal } from '@lemwood/pi-tui';
-import { TuiMainScreen } from '@lemwood/pi-tui';
+import type { Component, Terminal } from '@lcode-cli/pi-tui';
+import { TuiMainScreen } from '@lcode-cli/pi-tui';
 import { bench, describe } from 'vitest';
 
 const WIDTH = 120;

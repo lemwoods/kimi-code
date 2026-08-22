@@ -6,7 +6,7 @@
  * Path access policy is resolved before any Kaos I/O.
  */
 
-import type { Kaos } from '@lemwood/kaos';
+import type { Kaos } from '@lcode-cli/kaos';
 import { dirname } from 'pathe';
 import { z } from 'zod';
 

@@ -1,4 +1,4 @@
-import type { ChatProvider, ModelCapability } from '@lemwood/kosong';
+import type { ChatProvider, ModelCapability } from '@lcode-cli/kosong';
 
 /** Completion-token budget for the next LLM request. */
 export interface CompletionBudgetConfig {

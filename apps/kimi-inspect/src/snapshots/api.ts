@@ -3,7 +3,7 @@ import type {
   SessionWorkspaceAssociationSnapshot,
   WorkspaceInstanceSnapshot,
   WorkspaceInstancesSnapshot,
-} from '@lemwood/agent-core-v2';
+} from '@lcode-cli/agent-core-v2';
 
 import { DEBUG_RPC_BASE, type InspectClient } from '../channel';
 import { RPCError } from '../channel/errors';

@@ -9,8 +9,8 @@
  * is issued.
  */
 
-import type { Component } from '@lemwood/pi-tui';
-import { truncateToWidth } from '@lemwood/pi-tui';
+import type { Component } from '@lcode-cli/pi-tui';
+import { truncateToWidth } from '@lcode-cli/pi-tui';
 import chalk from 'chalk';
 
 import { currentTheme } from '#/tui/theme';

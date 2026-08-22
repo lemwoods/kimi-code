@@ -1,4 +1,4 @@
-import type { ModelCapability, ProviderConfig } from '@lemwood/kosong';
+import type { ModelCapability, ProviderConfig } from '@lcode-cli/kosong';
 
 export interface AgentConfigData {
   cwd: string;

@@ -12,7 +12,7 @@ import {
   shutdownTelemetry,
   track,
   withTelemetryContext,
-} from '@lemwood/lcode-telemetry';
+} from '@lcode-cli/lcode-telemetry';
 import {
   createKimiHarness,
   createKimiHarnessV2,
@@ -22,7 +22,7 @@ import {
   type SessionSummary,
   type ShellEnvironment,
   type TelemetryClient,
-} from '@lemwood/lcode-sdk';
+} from '@lcode-cli/lcode-sdk';
 import type { Command } from 'commander';
 
 import { CLI_SHUTDOWN_TIMEOUT_MS, CLI_UI_MODE } from '#/constant/app';

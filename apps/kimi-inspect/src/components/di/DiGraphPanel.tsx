@@ -27,8 +27,8 @@
  *
  * Pure React + Tailwind, no graph or layout library.
  */
-import type { UnitState } from '@lemwood/agent-core-v2/_base/di/cascadeEngine';
-import type { DebugGraph, DebugGraphNode } from '@lemwood/agent-core-v2/debug/debugGraph';
+import type { UnitState } from '@lcode-cli/agent-core-v2/_base/di/cascadeEngine';
+import type { DebugGraph, DebugGraphNode } from '@lcode-cli/agent-core-v2/debug/debugGraph';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 const STATE_COLORS: Record<UnitState | 'none', string> = {

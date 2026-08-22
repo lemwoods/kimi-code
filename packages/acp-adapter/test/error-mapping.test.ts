@@ -21,7 +21,7 @@ import {
   type KimiErrorPayload,
   type KimiHarness,
   type Session,
-} from '@lemwood/lcode-sdk';
+} from '@lcode-cli/lcode-sdk';
 
 import { turnEndReasonToStopReason } from '../src/events-map';
 import { AcpServer } from '../src/server';

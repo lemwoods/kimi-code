@@ -74,40 +74,40 @@ importers:
 
   apps/kimi-code:
     devDependencies:
-      '@lemwood/acp-adapter':
+      '@lcode-cli/acp-adapter':
         specifier: workspace:^
         version: link:../../packages/acp-adapter
-      '@lemwood/acp-server':
+      '@lcode-cli/acp-server':
         specifier: workspace:^
         version: link:../../packages/acp-server
-      '@lemwood/agent-core-v2':
+      '@lcode-cli/agent-core-v2':
         specifier: workspace:^
         version: link:../../packages/agent-core-v2
-      '@lemwood/kap-server':
+      '@lcode-cli/kap-server':
         specifier: workspace:^
         version: link:../../packages/kap-server
-      '@lemwood/lcode-oauth':
+      '@lcode-cli/lcode-oauth':
         specifier: workspace:^
         version: link:../../packages/oauth
-      '@lemwood/lcode-sdk':
+      '@lcode-cli/lcode-sdk':
         specifier: workspace:^
         version: link:../../packages/node-sdk
-      '@lemwood/lcode-telemetry':
+      '@lcode-cli/lcode-telemetry':
         specifier: workspace:^
         version: link:../../packages/telemetry
-      '@lemwood/migration-legacy':
+      '@lcode-cli/migration-legacy':
         specifier: workspace:^
         version: link:../../packages/migration-legacy
-      '@lemwood/minidb':
+      '@lcode-cli/minidb':
         specifier: workspace:^
         version: link:../../packages/minidb
-      '@lemwood/pi-tui':
+      '@lcode-cli/pi-tui':
         specifier: workspace:^
         version: link:../../packages/pi-tui
-      '@lemwood/vis-server':
+      '@lcode-cli/vis-server':
         specifier: workspace:^
         version: link:../vis/server
-      '@lemwood/vis-web':
+      '@lcode-cli/vis-web':
         specifier: workspace:*
         version: link:../vis/web
       '@types/semver':
@@ -159,10 +159,10 @@ importers:
 
   apps/kimi-inspect:
     dependencies:
-      '@lemwood/agent-core-v2':
+      '@lcode-cli/agent-core-v2':
         specifier: workspace:^
         version: link:../../packages/agent-core-v2
-      '@lemwood/transcript':
+      '@lcode-cli/transcript':
         specifier: workspace:^
         version: link:../../packages/transcript
       '@tanstack/react-query':
@@ -211,10 +211,10 @@ importers:
       '@hono/node-server':
         specifier: ^1.13.7
         version: 1.19.14(hono@4.12.14)
-      '@lemwood/agent-core':
+      '@lcode-cli/agent-core':
         specifier: workspace:^
         version: link:../../../packages/agent-core
-      '@lemwood/kosong':
+      '@lcode-cli/kosong':
         specifier: workspace:^
         version: link:../../../packages/kosong
       hono:
@@ -294,10 +294,10 @@ importers:
       '@fontsource-variable/inter':
         specifier: 5.2.8
         version: 5.2.8
-      '@lemwood/lcode-sdk':
+      '@lcode-cli/lcode-sdk':
         specifier: workspace:^
         version: link:../../packages/node-sdk
-      '@lemwood/migration-legacy':
+      '@lcode-cli/migration-legacy':
         specifier: workspace:^
         version: link:../../packages/migration-legacy
       '@radix-ui/react-accordion':
@@ -458,13 +458,13 @@ importers:
       '@agentclientprotocol/sdk':
         specifier: ^0.23.0
         version: 0.23.0(zod@4.3.6)
-      '@lemwood/agent-core':
+      '@lcode-cli/agent-core':
         specifier: workspace:^
         version: link:../agent-core
-      '@lemwood/kaos':
+      '@lcode-cli/kaos':
         specifier: workspace:^
         version: link:../kaos
-      '@lemwood/lcode-sdk':
+      '@lcode-cli/lcode-sdk':
         specifier: workspace:^
         version: link:../node-sdk
     devDependencies:
@@ -477,13 +477,13 @@ importers:
       '@agentclientprotocol/sdk':
         specifier: ^1.3.0
         version: 1.3.0(zod@4.3.6)
-      '@lemwood/agent-core-v2':
+      '@lcode-cli/agent-core-v2':
         specifier: workspace:^
         version: link:../agent-core-v2
-      '@lemwood/klient':
+      '@lcode-cli/klient':
         specifier: workspace:^
         version: link:../klient
-      '@lemwood/protocol':
+      '@lcode-cli/protocol':
         specifier: workspace:^
         version: link:../protocol
 
@@ -495,16 +495,16 @@ importers:
       '@jsquash/webp':
         specifier: ^1.5.0
         version: 1.5.0
-      '@lemwood/kaos':
+      '@lcode-cli/kaos':
         specifier: workspace:^
         version: link:../kaos
-      '@lemwood/kosong':
+      '@lcode-cli/kosong':
         specifier: workspace:^
         version: link:../kosong
-      '@lemwood/lcode-oauth':
+      '@lcode-cli/lcode-oauth':
         specifier: workspace:^
         version: link:../oauth
-      '@lemwood/protocol':
+      '@lcode-cli/protocol':
         specifier: workspace:^
         version: link:../protocol
       '@modelcontextprotocol/sdk':
@@ -631,16 +631,16 @@ importers:
       '@jsquash/webp':
         specifier: ^1.5.0
         version: 1.5.0
-      '@lemwood/lcode-oauth':
+      '@lcode-cli/lcode-oauth':
         specifier: workspace:^
         version: link:../oauth
-      '@lemwood/minidb':
+      '@lcode-cli/minidb':
         specifier: workspace:^
         version: link:../minidb
-      '@lemwood/protocol':
+      '@lcode-cli/protocol':
         specifier: workspace:^
         version: link:../protocol
-      '@lemwood/tree-sitter-bash':
+      '@lcode-cli/tree-sitter-bash':
         specifier: workspace:^
         version: link:../tree-sitter-bash
       '@modelcontextprotocol/sdk':
@@ -771,16 +771,16 @@ importers:
       '@fastify/swagger':
         specifier: ^9.7.0
         version: 9.7.0
-      '@lemwood/agent-core-v2':
+      '@lcode-cli/agent-core-v2':
         specifier: workspace:^
         version: link:../agent-core-v2
-      '@lemwood/lcode-oauth':
+      '@lcode-cli/lcode-oauth':
         specifier: workspace:^
         version: link:../oauth
-      '@lemwood/minidb':
+      '@lcode-cli/minidb':
         specifier: workspace:*
         version: link:../minidb
-      '@lemwood/transcript':
+      '@lcode-cli/transcript':
         specifier: workspace:^
         version: link:../transcript
       bcryptjs:
@@ -823,14 +823,14 @@ importers:
 
   packages/klient:
     dependencies:
-      '@lemwood/agent-core-v2':
+      '@lcode-cli/agent-core-v2':
         specifier: workspace:^
         version: link:../agent-core-v2
       zod:
         specifier: 'catalog:'
         version: 4.3.6
     devDependencies:
-      '@lemwood/protocol':
+      '@lcode-cli/protocol':
         specifier: workspace:^
         version: link:../protocol
       '@types/ws':
@@ -870,7 +870,7 @@ importers:
 
   packages/migration-legacy:
     dependencies:
-      '@lemwood/agent-core':
+      '@lcode-cli/agent-core':
         specifier: workspace:^
         version: link:../agent-core
       smol-toml:
@@ -880,7 +880,7 @@ importers:
         specifier: ^4.3.6
         version: 4.3.6
     devDependencies:
-      '@lemwood/kaos':
+      '@lcode-cli/kaos':
         specifier: workspace:^
         version: link:../kaos
 
@@ -901,22 +901,22 @@ importers:
         specifier: ^4.3.6
         version: 4.3.6
     devDependencies:
-      '@lemwood/agent-core':
+      '@lcode-cli/agent-core':
         specifier: workspace:^
         version: link:../agent-core
-      '@lemwood/agent-core-v2':
+      '@lcode-cli/agent-core-v2':
         specifier: workspace:^
         version: link:../agent-core-v2
-      '@lemwood/kaos':
+      '@lcode-cli/kaos':
         specifier: workspace:^
         version: link:../kaos
-      '@lemwood/klient':
+      '@lcode-cli/klient':
         specifier: workspace:^
         version: link:../klient
-      '@lemwood/kosong':
+      '@lcode-cli/kosong':
         specifier: workspace:^
         version: link:../kosong
-      '@lemwood/lcode-oauth':
+      '@lcode-cli/lcode-oauth':
         specifier: workspace:^
         version: link:../oauth
       '@types/yazl':

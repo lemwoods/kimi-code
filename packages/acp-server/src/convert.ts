@@ -7,8 +7,8 @@ import {
   type McpServerConfig,
   parseImageDataUrl,
   persistOriginalImage,
-} from '@lemwood/agent-core-v2';
-import type { ToolInputDisplay, ToolResultEvent } from '@lemwood/protocol';
+} from '@lcode-cli/agent-core-v2';
+import type { ToolInputDisplay, ToolResultEvent } from '@lcode-cli/protocol';
 
 import { log } from './log';
 import { isHideOutputMarker } from './marker';

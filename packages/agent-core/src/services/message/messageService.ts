@@ -27,7 +27,7 @@ import type { SessionSummary } from '../../rpc';
 import type {
   Message,
   PageResponse,
-} from '@lemwood/protocol';
+} from '@lcode-cli/protocol';
 
 import { ICoreProcessService } from '../coreProcess/coreProcess';
 import { SessionNotFoundError } from '../session/session';

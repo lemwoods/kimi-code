@@ -8,8 +8,8 @@
  * (a viewer opened from another viewer).
  */
 
-import type { Component, TUI } from '@lemwood/pi-tui';
-import { TuiAltScreen } from '@lemwood/pi-tui';
+import type { Component, TUI } from '@lcode-cli/pi-tui';
+import { TuiAltScreen } from '@lcode-cli/pi-tui';
 
 /** Restore data for a screen takeover; opaque to callers. */
 export type ScreenTakeover =

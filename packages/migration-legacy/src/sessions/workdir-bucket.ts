@@ -1,6 +1,6 @@
 import { createHash } from 'node:crypto';
 
-import { encodeWorkDirKey } from '@lemwood/agent-core/session/store';
+import { encodeWorkDirKey } from '@lcode-cli/agent-core/session/store';
 
 /**
  * Bucket directory name `wd_<slug>_<hash12>` for a workdir path.

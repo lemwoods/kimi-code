@@ -1,4 +1,4 @@
-import { visibleWidth, type TUI } from '@lemwood/pi-tui';
+import { visibleWidth, type TUI } from '@lcode-cli/pi-tui';
 import chalk from 'chalk';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 

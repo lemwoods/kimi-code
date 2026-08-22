@@ -14,7 +14,7 @@
 import { mkdirSync } from 'node:fs';
 import process from 'node:process';
 
-import { createKimiHarness, type Event } from '@lemwood/lcode-sdk';
+import { createKimiHarness, type Event } from '@lcode-cli/lcode-sdk';
 import { describe, expect, test } from 'vitest';
 
 import { createKimiCodeHostIdentity, getVersion } from '#/cli/version';

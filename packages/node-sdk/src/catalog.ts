@@ -1,4 +1,4 @@
-import type { KimiConfig, ModelAlias } from '@lemwood/agent-core';
+import type { KimiConfig, ModelAlias } from '@lcode-cli/agent-core';
 import {
   catalogBaseUrl,
   catalogProviderModels,
@@ -11,7 +11,7 @@ import {
   type CatalogProviderEntry,
   type ModelCapability,
   type ProviderType,
-} from '@lemwood/kosong';
+} from '@lcode-cli/kosong';
 
 export { catalogBaseUrl, catalogProviderModels, inferWireType, resolveCatalogImport };
 export type { CatalogImportInvalidReason, CatalogImportResolution };

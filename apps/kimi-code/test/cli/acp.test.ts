@@ -2,7 +2,7 @@
  * `kimi acp`
  *
  * Verifies that the ACP sub-command is registered on the program and
- * that the action wires the harness into `@lemwood/acp-adapter`'s
+ * that the action wires the harness into `@lcode-cli/acp-adapter`'s
  * `runAcpServer` (the real server is stubbed so the test doesn't
  * actually take over stdio).
  */
@@ -13,12 +13,12 @@ import { join } from 'node:path';
 import { Command } from 'commander';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
-vi.mock('@lemwood/acp-adapter', () => ({
+vi.mock('@lcode-cli/acp-adapter', () => ({
   ACP_BUILTIN_SLASH_COMMANDS: [],
   runAcpServer: vi.fn(async () => undefined),
 }));
 
-import { runAcpServer } from '@lemwood/acp-adapter';
+import { runAcpServer } from '@lcode-cli/acp-adapter';
 
 import { registerAcpCommand } from '#/cli/sub/acp';
 
@@ -142,7 +142,7 @@ describe('kimi acp', () => {
     // `importOriginal` preserves the other named exports (`ErrorCodes`, etc.)
     // that constant/app.ts depends on at module load.
     const loginStub = vi.fn(async () => ({ providerName: 'kimi-code' }));
-    vi.doMock(import('@lemwood/lcode-sdk'), async (importOriginal) => {
+    vi.doMock(import('@lcode-cli/lcode-sdk'), async (importOriginal) => {
       const actual = await importOriginal();
       return {
         ...actual,
@@ -166,7 +166,7 @@ describe('kimi acp', () => {
       expect(runAcpServer).not.toHaveBeenCalled();
       expect(exitSpy).toHaveBeenCalledWith(0);
     } finally {
-      vi.doUnmock('@lemwood/lcode-sdk');
+      vi.doUnmock('@lcode-cli/lcode-sdk');
       vi.resetModules();
     }
   });

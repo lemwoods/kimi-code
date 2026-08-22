@@ -1,4 +1,4 @@
-import { parseKimiCodeCustomHeaders } from '@lemwood/lcode-oauth';
+import { parseKimiCodeCustomHeaders } from '@lcode-cli/lcode-oauth';
 
 import { Disposable } from '#/_base/di/lifecycle';
 import { LifecycleScope } from '#/app/scopes';

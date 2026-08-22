@@ -9,8 +9,8 @@ import {
   resumeSessionById,
   type PermissionMode,
   type Scope,
-} from '@lemwood/agent-core-v2';
-import type { SessionAgentConfigPartial } from '@lemwood/agent-core-v2/app/sessionLegacy/sessionProtocol';
+} from '@lcode-cli/agent-core-v2';
+import type { SessionAgentConfigPartial } from '@lcode-cli/agent-core-v2/app/sessionLegacy/sessionProtocol';
 
 import { ensureMainAgent } from '../transport/mainAgent';
 

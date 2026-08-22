@@ -2,7 +2,7 @@ import {
   KIMI_CODE_PROVIDER_NAME,
   kimiCodeBaseUrl,
   type BearerTokenProvider,
-} from '@lemwood/lcode-oauth';
+} from '@lcode-cli/lcode-oauth';
 import { LifecycleScope } from '#/app/scopes';
 import { ScopeActivation, registerScopedService } from '#/_base/di/scope';
 import { IOAuthService } from '#/app/auth/auth';

@@ -3,8 +3,8 @@ import { writeFileSync } from 'node:fs';
 import { unlink } from 'node:fs/promises';
 import { join } from 'node:path';
 
-import type { DeviceAuthorization } from '@lemwood/lcode-oauth';
-import { effectiveModelAlias, log } from '@lemwood/lcode-sdk';
+import type { DeviceAuthorization } from '@lcode-cli/lcode-oauth';
+import { effectiveModelAlias, log } from '@lcode-cli/lcode-sdk';
 import type {
   ApprovalRequest,
   ApprovalResponse,
@@ -20,8 +20,8 @@ import type {
   TurnEndedEvent,
   TurnStartedEvent,
   WorkspaceTrustInfo,
-} from '@lemwood/lcode-sdk';
-import type { MigrationPlan } from '@lemwood/migration-legacy';
+} from '@lcode-cli/lcode-sdk';
+import type { MigrationPlan } from '@lcode-cli/migration-legacy';
 import {
   deleteAllKittyImages,
   type Component,
@@ -30,7 +30,7 @@ import {
   Spacer,
   TuiAltScreen,
   TuiMainScreen,
-} from '@lemwood/pi-tui';
+} from '@lcode-cli/pi-tui';
 import { resolve } from 'pathe';
 
 import type { CLIOptions } from '#/cli/options';

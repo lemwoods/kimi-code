@@ -5,7 +5,7 @@
 
 import * as pathe from 'pathe';
 
-import type { Kaos } from '@lemwood/kaos';
+import type { Kaos } from '@lcode-cli/kaos';
 
 const S_IFMT = 0o170000;
 const S_IFDIR = 0o040000;

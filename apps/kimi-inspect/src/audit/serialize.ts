@@ -14,7 +14,7 @@ import type {
   TranscriptMeta,
   TranscriptTask,
   TranscriptTodo,
-} from '@lemwood/transcript';
+} from '@lcode-cli/transcript';
 
 /** Plain-object view of an `AgentState` (Maps/Sets unwrapped). */
 export interface SerializedAgentState {

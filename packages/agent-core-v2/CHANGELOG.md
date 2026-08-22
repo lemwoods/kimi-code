@@ -1,4 +1,4 @@
-# @lemwood/agent-core-v2
+# @lcode-cli/agent-core-v2
 
 ## 0.4.1
 
@@ -17,7 +17,7 @@
 - [#2911](https://github.com/MoonshotAI/kimi-code/pull/2911) [`249d8fa`](https://github.com/MoonshotAI/kimi-code/commit/249d8faa3447427665185a900926d048213d2ac7) Thanks [@7Sageer](https://github.com/7Sageer)! - Normalize provider tool call ids at the LLM ingestion boundary (`ToolCallIdNormalizer` in `llmRequester`): self-hosted endpoints may renumber ids per response, and a repeated id corrupted every downstream keying — dropped tool results in context rebuild, `duplicate_tool_call_dropped` in the strict projector, merged transcript frames, misrouted approvals. The first occurrence passes through unchanged; later ones are rewritten to a readable `<id>__<n>` suffix, kept consistent between streamed deltas and the finalized message, logged for provenance, and rolled back when the attempt fails so projection retries re-stream under the same ids. Interaction ids are additionally minted engine-side (`approval_<uuid>` / `question_<uuid>` / `user_tool_<uuid>`) instead of deriving from the provider toolCallId.
 
 - Updated dependencies [[`6be2697`](https://github.com/MoonshotAI/kimi-code/commit/6be26978b123bacf1c5ebce52bbeb6f7b7ff0629), [`4a93f70`](https://github.com/MoonshotAI/kimi-code/commit/4a93f70aa2cf5f70a88b4f8eeb2e409aab2c8f59)]:
-  - @lemwood/lcode-oauth@0.4.0
+  - @lcode-cli/lcode-oauth@0.4.0
 
 ## 0.3.2
 
@@ -40,7 +40,7 @@
 ### Patch Changes
 
 - Updated dependencies [[`40172c7`](https://github.com/MoonshotAI/kimi-code/commit/40172c7ca96ca981b043b793588dd32e898979fa)]:
-  - @lemwood/lcode-oauth@0.3.0
+  - @lcode-cli/lcode-oauth@0.3.0
 
 ## 0.2.0
 
@@ -69,7 +69,7 @@
 - [#1735](https://github.com/MoonshotAI/kimi-code/pull/1735) [`ce0e3ce`](https://github.com/MoonshotAI/kimi-code/commit/ce0e3ceb04223bdaad8e8931bad46eff561055b6) Thanks [@7Sageer](https://github.com/7Sageer)! - Warn when a tool allow/deny list entry can never match any tool, for example a misspelled name (v2 engine only).
 
 - Updated dependencies [[`ce0e3ce`](https://github.com/MoonshotAI/kimi-code/commit/ce0e3ceb04223bdaad8e8931bad46eff561055b6), [`ce0e3ce`](https://github.com/MoonshotAI/kimi-code/commit/ce0e3ceb04223bdaad8e8931bad46eff561055b6), [`a3699dd`](https://github.com/MoonshotAI/kimi-code/commit/a3699dd6aa7b41efd3129a117007d195282379fd)]:
-  - @lemwood/protocol@0.5.0
+  - @lcode-cli/protocol@0.5.0
 
 ## 0.1.2
 
@@ -82,7 +82,7 @@
 ### Patch Changes
 
 - Updated dependencies [[`44f3341`](https://github.com/MoonshotAI/kimi-code/commit/44f334191989183d21920f6867c405581347c748), [`44f3341`](https://github.com/MoonshotAI/kimi-code/commit/44f334191989183d21920f6867c405581347c748), [`44f3341`](https://github.com/MoonshotAI/kimi-code/commit/44f334191989183d21920f6867c405581347c748), [`44f3341`](https://github.com/MoonshotAI/kimi-code/commit/44f334191989183d21920f6867c405581347c748)]:
-  - @lemwood/minidb@0.2.0
+  - @lcode-cli/minidb@0.2.0
 
 ## 0.1.0
 
@@ -143,4 +143,4 @@
 - [#1441](https://github.com/MoonshotAI/kimi-code/pull/1441) [`ceb158d`](https://github.com/MoonshotAI/kimi-code/commit/ceb158dc54586f254819edbc83c27e21dca1ecf6) Thanks [@sailist](https://github.com/sailist)! - Report `video_upload` telemetry for ReadMediaFile video uploads — outcome, byte size, mime type, duration, and model/protocol tags; a failing telemetry sink never affects the upload.
 
 - Updated dependencies [[`ceb158d`](https://github.com/MoonshotAI/kimi-code/commit/ceb158dc54586f254819edbc83c27e21dca1ecf6), [`0303b82`](https://github.com/MoonshotAI/kimi-code/commit/0303b82c3e691836163ecf906febfb6324c81d74)]:
-  - @lemwood/protocol@0.4.0
+  - @lcode-cli/protocol@0.4.0

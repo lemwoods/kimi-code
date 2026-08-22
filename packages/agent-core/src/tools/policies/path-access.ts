@@ -19,7 +19,7 @@ import {
   translateShellDrivePath,
   type Kaos,
   type ShellPathBridge,
-} from '@lemwood/kaos';
+} from '@lcode-cli/kaos';
 
 import type { WorkspaceConfig } from '../support/workspace';
 import { isSensitiveFile } from './sensitive';

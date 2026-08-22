@@ -26,7 +26,7 @@ import {
   agentContextOf,
   getLiveSessionById,
   resumeSessionById,
-} from '@lemwood/agent-core-v2';
+} from '@lcode-cli/agent-core-v2';
 import { sessionSnapshotResponseSchema } from '../src/protocol/rest-snapshot';
 import { emptySessionUsage } from '../src/protocol/session';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';

@@ -16,7 +16,7 @@ import type {
   DebugEventBusSnapshot,
   DebugEventSubscription,
   DebugEventSubscriptions,
-} from '@lemwood/agent-core-v2/features/debugEvents/debugEvents';
+} from '@lcode-cli/agent-core-v2/features/debugEvents/debugEvents';
 
 import { Badge } from '../../ui';
 

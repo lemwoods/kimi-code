@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
 import { isoDateTimeSchema } from '#/_base/utils/isoDateTime';
-import { kimiRegionSchema } from '@lemwood/lcode-oauth';
+import { kimiRegionSchema } from '@lcode-cli/lcode-oauth';
 
 export const oauthFlowStatusEnum = z.enum([
   'pending',
@@ -140,4 +140,4 @@ export type ManagedUsageResult = z.infer<typeof managedUsageResultSchema>;
 export {
   managedUserInfoResultSchema,
   type ManagedUserInfoResult,
-} from '@lemwood/lcode-oauth';
+} from '@lcode-cli/lcode-oauth';

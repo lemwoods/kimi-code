@@ -1,4 +1,4 @@
-import { LocalKaos } from '@lemwood/kaos';
+import { LocalKaos } from '@lcode-cli/kaos';
 
 import type { AgentReplayRecord } from '../../rpc/resumed';
 import { Agent } from '../index';

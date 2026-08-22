@@ -10,7 +10,7 @@ import { mkdtemp, mkdir, readFile, readdir, rm, stat, symlink, writeFile } from 
 import { join } from "node:path";
 import { tmpdir } from "node:os";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import type { Event, Session } from "@lemwood/lcode-sdk";
+import type { Event, Session } from "@lcode-cli/lcode-sdk";
 import type * as vscode from "vscode";
 import { Methods } from "../shared/bridge";
 import { BridgeHandler } from "../src/bridge-handler";
@@ -133,8 +133,8 @@ vi.mock("vscode", () => ({
   },
 }));
 
-vi.mock("@lemwood/lcode-sdk", async (importOriginal) => {
-  const original = await importOriginal<typeof import("@lemwood/lcode-sdk")>();
+vi.mock("@lcode-cli/lcode-sdk", async (importOriginal) => {
+  const original = await importOriginal<typeof import("@lcode-cli/lcode-sdk")>();
   return {
     ...original,
     createKimiHarness: () => ({

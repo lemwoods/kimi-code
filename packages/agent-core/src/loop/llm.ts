@@ -15,7 +15,7 @@ import type {
   TokenUsage,
   Tool,
   ToolCall,
-} from '@lemwood/kosong';
+} from '@lcode-cli/kosong';
 
 export interface ToolCallDelta {
   readonly toolCallId: string;

@@ -1,4 +1,4 @@
-import type { ToolInputDisplay } from '@lemwood/agent-core';
+import type { ToolInputDisplay } from '@lcode-cli/agent-core';
 
 import { normalizeContentPart, type NormalizedContentPart } from './content-part.js';
 

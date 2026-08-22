@@ -16,7 +16,7 @@ import type {
   PermissionOption,
   RequestPermissionResponse,
 } from '@agentclientprotocol/sdk';
-import type { QuestionAnswers, QuestionItem } from '@lemwood/agent-core-v2';
+import type { QuestionAnswers, QuestionItem } from '@lcode-cli/agent-core-v2';
 
 /**
  * `optionId` namespace for the AskUserQuestion bridge.

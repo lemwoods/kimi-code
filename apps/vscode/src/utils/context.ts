@@ -1,5 +1,5 @@
 import * as vscode from "vscode";
-import type { KimiHarness } from "@lemwood/lcode-sdk";
+import type { KimiHarness } from "@lcode-cli/lcode-sdk";
 
 export async function updateLoginContext(harness: KimiHarness): Promise<boolean> {
   const status = await harness.auth.status();

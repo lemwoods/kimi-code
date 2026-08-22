@@ -11,12 +11,12 @@
  * transcript grows.
  *
  * Run:
- *   pnpm --filter @lemwood/lcode exec vitest bench test/tui/render-memo.bench.ts
+ *   pnpm --filter @lcode-cli/lcode exec vitest bench test/tui/render-memo.bench.ts
  */
 
 import { bench, describe } from 'vitest';
 
-import type { Component } from '@lemwood/pi-tui';
+import type { Component } from '@lcode-cli/pi-tui';
 
 import { GutterContainer } from '#/tui/components/chrome/gutter-container';
 import { AssistantMessageComponent } from '#/tui/components/messages/assistant-message';

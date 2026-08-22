@@ -7,7 +7,7 @@ import {
   IFileService,
   ISessionManager,
   ISessionMediaStore,
-} from '@lemwood/agent-core-v2';
+} from '@lcode-cli/agent-core-v2';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 
 import { type RunningServer, startServer } from '../src/start';

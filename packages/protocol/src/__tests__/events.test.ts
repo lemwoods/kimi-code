@@ -21,7 +21,7 @@ type _AssertToolInputDisplayNonNever = ToolInputDisplay extends never ? never : 
 const _assertDisplay: _AssertToolInputDisplayNonNever = true;
 
 const packageRoot = fileURLToPath(new URL('../..', import.meta.url));
-const sdkPackageName = ['@lemwood', 'lcode-sdk'].join('/');
+const sdkPackageName = ['@lcode-cli', 'lcode-sdk'].join('/');
 
 function readPackageFiles(): string {
   const files = ['package.json', ...sourceFiles(join(packageRoot, 'src'))];

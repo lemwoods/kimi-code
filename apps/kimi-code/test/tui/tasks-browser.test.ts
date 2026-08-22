@@ -1,5 +1,5 @@
-import type { Terminal } from '@lemwood/pi-tui';
-import type { BackgroundTaskInfo, BackgroundTaskStatus, Event } from '@lemwood/lcode-sdk';
+import type { Terminal } from '@lcode-cli/pi-tui';
+import type { BackgroundTaskInfo, BackgroundTaskStatus, Event } from '@lcode-cli/lcode-sdk';
 import { describe, expect, it, vi } from 'vitest';
 
 import {

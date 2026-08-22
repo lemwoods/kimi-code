@@ -4,8 +4,8 @@ import { once } from 'node:events';
 import { dirname, join } from 'node:path';
 import { Worker } from 'node:worker_threads';
 
-import { MiniDb } from '@lemwood/minidb';
-import { getSearchWorkerRuntimeState } from '@lemwood/kap-server/search-worker-runtime';
+import { MiniDb } from '@lcode-cli/minidb';
+import { getSearchWorkerRuntimeState } from '@lcode-cli/kap-server/search-worker-runtime';
 
 import {
   getEmbeddedNativeAssetManifest,
@@ -13,7 +13,7 @@ import {
   getNativePackageRoot,
 } from './native-assets';
 
-const smokePackages = ['@mariozechner/clipboard', '@lemwood/pi-tui'];
+const smokePackages = ['@mariozechner/clipboard', '@lcode-cli/pi-tui'];
 
 function smokePiTuiNativeLoad(): void {
   const platform = process.platform;

@@ -44,7 +44,7 @@ jobs:
           echo "KIMI_CODE_BUILT_IN_CATALOG_FILE=$CATALOG_FILE" >> "$GITHUB_ENV"
 
       - name: Build Kimi Code package
-        run: pnpm --filter @lemwood/lcode run build
+        run: pnpm --filter @lcode-cli/lcode run build
 
       - name: Publish pkg.pr.new preview
         run: pnpm exec pkg-pr-new publish --bin --commentWithSha --packageManager=pnpm,npm --no-template './apps/kimi-code'

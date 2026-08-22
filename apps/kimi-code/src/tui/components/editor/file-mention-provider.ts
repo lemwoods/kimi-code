@@ -8,7 +8,7 @@ import {
   type AutocompleteProvider,
   type AutocompleteSuggestions,
   type SlashCommand,
-} from '@lemwood/pi-tui';
+} from '@lcode-cli/pi-tui';
 
 import { findInlineSkillTokens } from '../../utils/inline-skill-tokens';
 

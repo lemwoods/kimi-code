@@ -6,10 +6,10 @@
  *   Line 2: context: N% (tokens/max)
  */
 
-import type { Component } from '@lemwood/pi-tui';
-import { truncateToWidth, visibleWidth } from '@lemwood/pi-tui';
+import type { Component } from '@lcode-cli/pi-tui';
+import { truncateToWidth, visibleWidth } from '@lcode-cli/pi-tui';
 import chalk from 'chalk';
-import { effectiveModelAlias } from '@lemwood/lcode-sdk';
+import { effectiveModelAlias } from '@lcode-cli/lcode-sdk';
 
 import { ALL_TIPS, type ToolbarTip } from '#/tui/constant/tips';
 import { isRainbowDancing, renderDanceFooterModel } from '#/tui/easter-eggs/dance';

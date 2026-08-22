@@ -1,8 +1,8 @@
-import { IConfigService, type Scope } from '@lemwood/agent-core-v2';
-import { FiberState } from '@lemwood/agent-core-v2/_base/di/fiber';
-import { IFeatureManager } from '@lemwood/agent-core-v2/app/feature/featureManager';
-import { IFlagService } from '@lemwood/agent-core-v2/app/flag/flag';
-import type { KimiHostIdentity } from '@lemwood/lcode-oauth';
+import { IConfigService, type Scope } from '@lcode-cli/agent-core-v2';
+import { FiberState } from '@lcode-cli/agent-core-v2/_base/di/fiber';
+import { IFeatureManager } from '@lcode-cli/agent-core-v2/app/feature/featureManager';
+import { IFlagService } from '@lcode-cli/agent-core-v2/app/flag/flag';
+import type { KimiHostIdentity } from '@lcode-cli/lcode-oauth';
 import { ulid } from 'ulid';
 
 import { okEnvelope } from '../envelope';

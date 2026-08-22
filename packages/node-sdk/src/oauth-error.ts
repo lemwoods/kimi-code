@@ -1,9 +1,9 @@
-import { ErrorCodes, KimiError } from '@lemwood/agent-core';
+import { ErrorCodes, KimiError } from '@lcode-cli/agent-core';
 import {
   OAuthConnectionError,
   OAuthUnauthorizedError,
   RetryableRefreshError,
-} from '@lemwood/lcode-oauth';
+} from '@lcode-cli/lcode-oauth';
 
 /**
  * Classify an OAuth token-fetch failure into the public {@link KimiError}

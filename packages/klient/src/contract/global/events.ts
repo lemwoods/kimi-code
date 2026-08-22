@@ -8,11 +8,11 @@
 
 import { z } from 'zod';
 
-import type { ConfigChangedEvent } from '@lemwood/agent-core-v2/app/config/config';
-import type { ModelsChangedEvent } from '@lemwood/agent-core-v2/kosong/model/model';
-import type { ProvidersChangedEvent } from '@lemwood/agent-core-v2/kosong/provider/provider';
-import type { ReloadSummary } from '@lemwood/agent-core-v2/app/plugin/types';
-import type { IOAuthService } from '@lemwood/agent-core-v2/app/auth/auth';
+import type { ConfigChangedEvent } from '@lcode-cli/agent-core-v2/app/config/config';
+import type { ModelsChangedEvent } from '@lcode-cli/agent-core-v2/kosong/model/model';
+import type { ProvidersChangedEvent } from '@lcode-cli/agent-core-v2/kosong/provider/provider';
+import type { ReloadSummary } from '@lcode-cli/agent-core-v2/app/plugin/types';
+import type { IOAuthService } from '@lcode-cli/agent-core-v2/app/auth/auth';
 
 import { stringDeltaSchema } from '../helpers.js';
 import type { EventRegistration } from '../types.js';

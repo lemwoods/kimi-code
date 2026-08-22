@@ -12,7 +12,7 @@ import type {
   PromptSteerResult,
   PromptSubmitResult,
   PromptThinking,
-} from '@lemwood/protocol';
+} from '@lcode-cli/protocol';
 import type { PermissionMode } from '../../agent/permission';
 import { ulid } from 'ulid';
 

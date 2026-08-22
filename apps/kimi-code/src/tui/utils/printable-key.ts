@@ -20,7 +20,7 @@
  * `tui/components/**` and rejects bare-literal comparisons.
  */
 
-import { decodeKittyPrintable } from '@lemwood/pi-tui';
+import { decodeKittyPrintable } from '@lcode-cli/pi-tui';
 
 export function printableChar(data: string): string {
   return decodeKittyPrintable(data) ?? data;

@@ -25,7 +25,7 @@ import {
   type TranscriptOperation,
   type TranscriptTask,
   type TranscriptTodo,
-} from '@lemwood/transcript';
+} from '@lcode-cli/transcript';
 
 type StoredAttachmentSource = Extract<AttachmentSource, { kind: 'file' | 'session_media' }>;
 

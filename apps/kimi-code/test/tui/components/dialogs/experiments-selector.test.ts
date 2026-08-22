@@ -1,4 +1,4 @@
-import type { ExperimentalFeatureState } from '@lemwood/lcode-sdk';
+import type { ExperimentalFeatureState } from '@lcode-cli/lcode-sdk';
 import { describe, expect, it, vi } from 'vitest';
 
 import {

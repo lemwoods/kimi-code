@@ -1,4 +1,4 @@
-import { Error2, ErrorCodes } from '@lemwood/agent-core-v2';
+import { Error2, ErrorCodes } from '@lcode-cli/agent-core-v2';
 import { ErrorCode } from '../src/protocol/error-codes';
 import { describe, expect, it } from 'vitest';
 

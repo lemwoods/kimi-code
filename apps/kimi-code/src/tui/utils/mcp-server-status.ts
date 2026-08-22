@@ -1,4 +1,4 @@
-import type { McpServerInfo, McpServerStatusEvent } from '@lemwood/lcode-sdk';
+import type { McpServerInfo, McpServerStatusEvent } from '@lcode-cli/lcode-sdk';
 
 export type McpServerStatusSnapshot = McpServerInfo | McpServerStatusEvent['server'];
 

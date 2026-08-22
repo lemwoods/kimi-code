@@ -3,14 +3,14 @@ import { Readable } from 'node:stream';
 import {
   ISessionMediaStore,
   type SessionMediaFile,
-} from '@lemwood/agent-core-v2/agent/media/sessionMediaStore';
+} from '@lcode-cli/agent-core-v2/agent/media/sessionMediaStore';
 import {
   FileErrors,
   IFileService,
   isFileError,
-} from '@lemwood/agent-core-v2/app/file/fileService';
-import { resumeSessionById } from '@lemwood/agent-core-v2/app/sessionManager/sessionLookup';
-import type { Scope } from '@lemwood/agent-core-v2/_base/di/scope';
+} from '@lcode-cli/agent-core-v2/app/file/fileService';
+import { resumeSessionById } from '@lcode-cli/agent-core-v2/app/sessionManager/sessionLookup';
+import type { Scope } from '@lcode-cli/agent-core-v2/_base/di/scope';
 import { z } from 'zod';
 
 import { buildContentDisposition } from '../lib/contentDisposition';

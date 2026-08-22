@@ -6,7 +6,7 @@
  * auth check, so rotation takes effect without a restart.
  */
 
-import { getLiveServerInstance, rotateServerToken } from '@lemwood/kap-server';
+import { getLiveServerInstance, rotateServerToken } from '@lcode-cli/kap-server';
 import chalk from 'chalk';
 import type { Command } from 'commander';
 

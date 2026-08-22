@@ -3,8 +3,8 @@ import os from 'node:os';
 import path from 'node:path';
 import { Readable, type Writable } from 'node:stream';
 
-import { LocalKaos } from '@lemwood/kaos';
-import type { Kaos, KaosProcess, StatResult } from '@lemwood/kaos';
+import { LocalKaos } from '@lcode-cli/kaos';
+import type { Kaos, KaosProcess, StatResult } from '@lcode-cli/kaos';
 import { afterEach, beforeAll, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import {

@@ -1,4 +1,4 @@
-import { IWorkspaceService, type Workspace } from '@lemwood/agent-core-v2/app/workspace/workspace';
+import { IWorkspaceService, type Workspace } from '@lcode-cli/agent-core-v2/app/workspace/workspace';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { useEffect, useState } from 'react';
 

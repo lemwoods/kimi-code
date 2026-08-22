@@ -1,5 +1,5 @@
-import type { KimiHostIdentity } from '@lemwood/lcode-oauth';
-import { type KimiHarness, type Session, type Event } from '@lemwood/lcode-sdk';
+import type { KimiHostIdentity } from '@lcode-cli/lcode-oauth';
+import { type KimiHarness, type Session, type Event } from '@lcode-cli/lcode-sdk';
 
 export function smokeIdentityFromEnv(): KimiHostIdentity {
   const version = process.env['KIMI_CODE_SMOKE_VERSION'];

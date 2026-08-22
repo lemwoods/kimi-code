@@ -10,8 +10,8 @@
  * sees the actual error message, not a synthetic summary.
  */
 
-import type { Component } from '@lemwood/pi-tui';
-import { Text } from '@lemwood/pi-tui';
+import type { Component } from '@lcode-cli/pi-tui';
+import { Text } from '@lcode-cli/pi-tui';
 import chalk from 'chalk';
 
 import { renderTruncated } from './truncated';

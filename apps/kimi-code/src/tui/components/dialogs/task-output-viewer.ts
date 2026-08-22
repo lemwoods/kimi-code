@@ -17,8 +17,8 @@ import {
   truncateToWidth,
   visibleWidth,
   type Focusable,
-} from '@lemwood/pi-tui';
-import type { BackgroundTaskInfo, BackgroundTaskStatus } from '@lemwood/lcode-sdk';
+} from '@lcode-cli/pi-tui';
+import type { BackgroundTaskInfo, BackgroundTaskStatus } from '@lcode-cli/lcode-sdk';
 
 import { currentTheme } from '#/tui/theme';
 import { printableChar } from '@/tui/utils/printable-key';

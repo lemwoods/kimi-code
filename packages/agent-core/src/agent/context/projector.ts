@@ -1,6 +1,6 @@
 import { createHash } from 'node:crypto';
 
-import type { ContentPart, Message, TextPart } from '@lemwood/kosong';
+import type { ContentPart, Message, TextPart } from '@lcode-cli/kosong';
 
 import { ErrorCodes, KimiError } from '../../errors';
 import { renderToolResultForModel } from './tool-result-render';

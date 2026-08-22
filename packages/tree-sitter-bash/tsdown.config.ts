@@ -7,7 +7,7 @@ export default defineConfig({
   outDir: 'dist',
   clean: true,
   deps: {
-    alwaysBundle: [/^@lemwood\//],
+    alwaysBundle: [/^@lcode-cli\//],
     neverBundle: [],
   },
 });

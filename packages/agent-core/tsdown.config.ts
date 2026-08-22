@@ -12,9 +12,9 @@ export default defineConfig({
   deps: {
     alwaysBundle: ['picomatch'],
     neverBundle: [
-      '@lemwood/kosong',
-      '@lemwood/kaos',
-      '@lemwood/lcode-oauth',
+      '@lcode-cli/kosong',
+      '@lcode-cli/kaos',
+      '@lcode-cli/lcode-oauth',
     ],
   },
 });

@@ -5,7 +5,7 @@ import {
   kimiCodeToolsUrl,
   parseKimiCodeCustomHeaders,
   resolveKimiCodeRuntimeAuth,
-} from '@lemwood/lcode-oauth';
+} from '@lcode-cli/lcode-oauth';
 
 import { ScopeActivation, registerScopedService } from '#/_base/di/scope';
 import { LifecycleScope } from '#/app/scopes';

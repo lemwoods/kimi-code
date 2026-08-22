@@ -11,7 +11,7 @@
  * context; the TUI only consumes the `plugin_command.activated` event.
  */
 
-import { Container, Text, Spacer } from '@lemwood/pi-tui';
+import { Container, Text, Spacer } from '@lcode-cli/pi-tui';
 
 import { currentTheme } from '#/tui/theme';
 

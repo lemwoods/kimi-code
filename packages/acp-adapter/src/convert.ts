@@ -10,7 +10,7 @@ import {
   type TelemetryClient,
   type ToolInputDisplay,
   type ToolResultEvent,
-} from '@lemwood/lcode-sdk';
+} from '@lcode-cli/lcode-sdk';
 
 import { isHideOutputMarker } from './marker';
 

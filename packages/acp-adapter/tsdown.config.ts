@@ -9,10 +9,10 @@ export default defineConfig({
   deps: {
     neverBundle: [
       '@agentclientprotocol/sdk',
-      '@lemwood/agent-core',
-      '@lemwood/lcode-sdk',
-      '@lemwood/kosong',
-      '@lemwood/kaos',
+      '@lcode-cli/agent-core',
+      '@lcode-cli/lcode-sdk',
+      '@lcode-cli/kosong',
+      '@lcode-cli/kaos',
     ],
   },
 });

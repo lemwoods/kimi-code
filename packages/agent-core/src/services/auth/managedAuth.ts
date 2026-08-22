@@ -12,7 +12,7 @@ import {
   type KimiHostIdentity,
   type KimiOAuthLoginOptions,
   type ManagedKimiConfigShape,
-} from '@lemwood/lcode-oauth';
+} from '@lcode-cli/lcode-oauth';
 
 import type { IEnvironmentService } from '../environment/environment';
 

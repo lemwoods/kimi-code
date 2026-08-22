@@ -6,7 +6,7 @@
 
 import { describe, expect, it, vi, beforeEach, afterEach } from 'vitest';
 import { Command } from 'commander';
-import type { KimiConfig } from '@lemwood/lcode-sdk';
+import type { KimiConfig } from '@lcode-cli/lcode-sdk';
 
 import {
   handleCatalogAdd,
@@ -27,8 +27,8 @@ const harnessRouting = vi.hoisted(() => ({
   harness: undefined as unknown,
 }));
 
-vi.mock('@lemwood/lcode-sdk', async (importOriginal) => {
-  const actual = await importOriginal<typeof import('@lemwood/lcode-sdk')>();
+vi.mock('@lcode-cli/lcode-sdk', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@lcode-cli/lcode-sdk')>();
   return {
     ...actual,
     createKimiHarness: (...args: unknown[]) => {

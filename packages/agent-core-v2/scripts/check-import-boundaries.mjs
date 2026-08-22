@@ -5,7 +5,7 @@
  * Enforces two rules over `packages/agent-core-v2/src/**` (and the v1-import
  * ban over `test/**` too):
  *
- *  1. **No v1 imports** — v2 must never `import '@lemwood/agent-core'`
+ *  1. **No v1 imports** — v2 must never `import '@lcode-cli/agent-core'`
  *     (or any subpath). v2 ports logic; it never depends on v1.
  *  2. **Kosong layering** — the `src/kosong/{contract,protocol,provider,model}`
  *     subtree has strict internal rules:
@@ -28,8 +28,8 @@
  *     refactor phases add them).
  *
  * Intra-package relative imports, `#/`-alias imports, and the package's
- * self-reference (`@lemwood/agent-core-v2/<path>` → `src/<path>`) are
- * resolved against `src/`. Sibling packages (`@lemwood/*` other than v1)
+ * self-reference (`@lcode-cli/agent-core-v2/<path>` → `src/<path>`) are
+ * resolved against `src/`. Sibling packages (`@lcode-cli/*` other than v1)
  * and third-party imports are out of scope (except for the kosong purity
  * bans above).
  *
@@ -45,8 +45,8 @@ const PKG_ROOT = resolve(__dirname, '..');
 export const SRC_ROOT = join(PKG_ROOT, 'src');
 const TEST_ROOT = join(PKG_ROOT, 'test');
 
-const V1_PACKAGE = '@lemwood/agent-core';
-const SELF_PACKAGE_PREFIX = '@lemwood/agent-core-v2/';
+const V1_PACKAGE = '@lcode-cli/agent-core';
+const SELF_PACKAGE_PREFIX = '@lcode-cli/agent-core-v2/';
 
 /**
  * Scope directories introduced by the `src/{scope}/{domain}` layout. A path's
@@ -188,7 +188,7 @@ function resolveIntraV2(specifier, fromFile) {
   if (specifier.startsWith('#/')) {
     return join(SRC_ROOT, specifier.slice(2));
   }
-  // The package's legal self-reference: `@lemwood/agent-core-v2/x` maps
+  // The package's legal self-reference: `@lcode-cli/agent-core-v2/x` maps
   // to `src/x` via the `./*` export.
   if (specifier.startsWith(SELF_PACKAGE_PREFIX)) {
     return join(SRC_ROOT, specifier.slice(SELF_PACKAGE_PREFIX.length));

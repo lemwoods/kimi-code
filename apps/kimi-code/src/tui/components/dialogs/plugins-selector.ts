@@ -6,13 +6,13 @@ import {
   truncateToWidth,
   visibleWidth,
   type Focusable,
-} from '@lemwood/pi-tui';
+} from '@lcode-cli/pi-tui';
 import type {
   CapabilityStatus,
   PluginInfo,
   PluginMcpServerInfo,
   PluginSummary,
-} from '@lemwood/lcode-sdk';
+} from '@lcode-cli/lcode-sdk';
 import chalk from 'chalk';
 
 import { SELECT_POINTER } from '#/tui/constant/symbols';

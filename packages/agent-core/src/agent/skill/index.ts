@@ -1,7 +1,7 @@
 import { randomUUID } from 'node:crypto';
 
 import type { ActivateSkillPayload } from '#/rpc';
-import type { ContentPart } from '@lemwood/kosong';
+import type { ContentPart } from '@lcode-cli/kosong';
 
 import type { Agent } from '..';
 import { ErrorCodes, KimiError } from '#/errors';

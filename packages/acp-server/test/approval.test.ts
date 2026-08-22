@@ -14,8 +14,8 @@ import {
 } from '../src/approval';
 
 import type { PermissionOption, RequestPermissionResponse } from '@agentclientprotocol/sdk';
-import type { SessionApprovalRequest } from '@lemwood/agent-core-v2';
-import type { ToolInputDisplay } from '@lemwood/protocol';
+import type { SessionApprovalRequest } from '@lcode-cli/agent-core-v2';
+import type { ToolInputDisplay } from '@lcode-cli/protocol';
 
 function selected(optionId: string): RequestPermissionResponse {
   return { outcome: { outcome: 'selected', optionId } };

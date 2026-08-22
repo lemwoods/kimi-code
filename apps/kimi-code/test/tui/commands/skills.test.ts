@@ -1,5 +1,5 @@
 import { buildSkillSlashCommands, isUserActivatableSkill } from '#/tui/commands/index';
-import type { SkillSummary } from '@lemwood/lcode-sdk';
+import type { SkillSummary } from '@lcode-cli/lcode-sdk';
 import { describe, expect, it } from 'vitest';
 
 function skill(

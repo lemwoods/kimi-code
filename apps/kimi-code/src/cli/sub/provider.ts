@@ -18,7 +18,7 @@ import {
   fetchCustomRegistry,
   type CustomRegistrySource,
   type ManagedKimiConfigShape,
-} from '@lemwood/lcode-oauth';
+} from '@lcode-cli/lcode-oauth';
 import {
   applyCatalogProvider,
   catalogProviderModels,
@@ -31,7 +31,7 @@ import {
   type CatalogProviderEntry,
   type KimiConfig,
   type KimiHarness,
-} from '@lemwood/lcode-sdk';
+} from '@lcode-cli/lcode-sdk';
 import type { Command } from 'commander';
 
 import { createKimiCodeHostIdentity, createKimiCodeUserAgent } from '#/cli/version';

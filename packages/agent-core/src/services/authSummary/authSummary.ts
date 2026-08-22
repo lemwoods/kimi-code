@@ -28,7 +28,7 @@
  */
 
 import { createDecorator } from '../../di';
-import type { AuthSummary } from '@lemwood/protocol';
+import type { AuthSummary } from '@lcode-cli/protocol';
 
 export interface IAuthSummaryService {
   readonly _serviceBrand: undefined;

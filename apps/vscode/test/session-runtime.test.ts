@@ -16,7 +16,7 @@ import type {
   QuestionRequest,
   Session,
   SessionSummary,
-} from "@lemwood/lcode-sdk";
+} from "@lcode-cli/lcode-sdk";
 import { describe, expect, it } from "vitest";
 
 import { Events } from "../shared/bridge";

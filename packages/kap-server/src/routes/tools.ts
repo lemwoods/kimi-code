@@ -9,7 +9,7 @@ import {
   type Scope,
   type ToolInfo,
   type ToolSource,
-} from '@lemwood/agent-core-v2';
+} from '@lcode-cli/agent-core-v2';
 
 import { errEnvelope, okEnvelope } from '../envelope';
 import { defineRoute } from '../middleware/defineRoute';

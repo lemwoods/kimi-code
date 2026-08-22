@@ -6,7 +6,7 @@
  * and final `TurnResult` mapping. One-step execution lives in `turn-step.ts`.
  */
 
-import { addUsage, emptyUsage, type TokenUsage } from '@lemwood/kosong';
+import { addUsage, emptyUsage, type TokenUsage } from '@lcode-cli/kosong';
 
 import type { Logger } from '#/logging/types';
 

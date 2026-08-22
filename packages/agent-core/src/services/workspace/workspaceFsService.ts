@@ -6,7 +6,7 @@ import { dirname, isAbsolute, join } from 'node:path';
 
 import { Disposable, InstantiationType, registerSingleton } from '../../di';
 
-import type { FsBrowseEntry, FsBrowseResponse, FsHomeResponse } from '@lemwood/protocol';
+import type { FsBrowseEntry, FsBrowseResponse, FsHomeResponse } from '@lcode-cli/protocol';
 
 import { IWorkspaceRegistry } from './workspaceRegistry';
 import {

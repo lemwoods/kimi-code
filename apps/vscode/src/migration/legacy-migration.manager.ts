@@ -9,7 +9,7 @@ import {
   type MigrationPlan,
   type MigrationReport,
   type MigrationScope,
-} from "@lemwood/migration-legacy";
+} from "@lcode-cli/migration-legacy";
 
 const FULL_MIGRATION_SCOPE = {
   config: true,

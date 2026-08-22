@@ -1,4 +1,4 @@
-import { createKimiHarness } from '@lemwood/lcode-sdk';
+import { createKimiHarness } from '@lcode-cli/lcode-sdk';
 
 import {
   smokeIdentityFromEnv,

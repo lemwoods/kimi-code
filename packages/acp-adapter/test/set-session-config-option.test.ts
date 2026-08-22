@@ -19,7 +19,7 @@ import type {
   KimiHarness,
   PermissionMode,
   Session,
-} from '@lemwood/lcode-sdk';
+} from '@lcode-cli/lcode-sdk';
 
 import { AcpServer } from '../src/server';
 import { AUTHED_STATUS, makeModelsMap } from './_helpers/harness-stubs';

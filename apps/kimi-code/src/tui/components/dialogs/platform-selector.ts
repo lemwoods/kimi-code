@@ -1,4 +1,4 @@
-import { OPEN_PLATFORMS } from '@lemwood/lcode-oauth';
+import { OPEN_PLATFORMS } from '@lcode-cli/lcode-oauth';
 
 import { KIMI_CODE_GLOBAL_PLATFORM_VALUE } from '#/utils/region';
 

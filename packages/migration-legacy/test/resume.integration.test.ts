@@ -17,9 +17,9 @@
  *   - `SessionStore` (constructor: `new SessionStore(homeDir)`)
  *   - `SessionStore.list({ workDir })`
  *   - `encodeWorkDirKey` / `normalizeWorkDir`
- *     all from `@lemwood/agent-core/session/store`.
+ *     all from `@lcode-cli/agent-core/session/store`.
  *   - `Session` (constructor + `resume()` + `getReadyAgent()`), from
- *     `@lemwood/agent-core`; `localKaos` from `@lemwood/kaos`. After
+ *     `@lcode-cli/agent-core`; `localKaos` from `@lcode-cli/kaos`. After
  *     `resume()`, `session.getReadyAgent('main').context.messages` exposes the
  *     replayed message history.
  */
@@ -33,9 +33,9 @@ import {
   SessionStore,
   encodeWorkDirKey,
   normalizeWorkDir,
-} from '@lemwood/agent-core/session/store/index';
-import { Session, type SDKSessionRPC } from '@lemwood/agent-core';
-import { LocalKaos } from '@lemwood/kaos';
+} from '@lcode-cli/agent-core/session/store/index';
+import { Session, type SDKSessionRPC } from '@lcode-cli/agent-core';
+import { LocalKaos } from '@lcode-cli/kaos';
 
 import { migrateOneSession, type MigrateOneResult } from '../src/sessions/migrate-one.js';
 import { computeWorkdirBucket } from '../src/sessions/workdir-bucket.js';

@@ -1,9 +1,9 @@
-import { visibleWidth } from '@lemwood/pi-tui';
+import { visibleWidth } from '@lcode-cli/pi-tui';
 import { describe, expect, it } from 'vitest';
 
 import { SwarmModeMarkerComponent } from '#/tui/components/messages/swarm-markers';
 import { buildGoalMarker, GoalMarkerComponent } from '#/tui/components/messages/goal-markers';
-import type { GoalChange } from '@lemwood/lcode-sdk';
+import type { GoalChange } from '@lcode-cli/lcode-sdk';
 
 const ANSI_SGR = /\[[0-9;]*m/g;
 function strip(lines: string[]): string {

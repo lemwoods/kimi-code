@@ -1,4 +1,4 @@
-import type { Message } from '@lemwood/kosong';
+import type { Message } from '@lcode-cli/kosong';
 
 import type {
   LoopContentPartEvent,

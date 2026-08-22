@@ -1,7 +1,7 @@
 import {
   MCP_OAUTH_AUTHORIZATION_URL_TOOL_UPDATE,
   type ToolUpdate,
-} from '@lemwood/lcode-sdk';
+} from '@lcode-cli/lcode-sdk';
 import { describe, expect, it, vi } from 'vitest';
 
 import {

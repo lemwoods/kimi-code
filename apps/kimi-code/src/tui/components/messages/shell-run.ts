@@ -1,4 +1,4 @@
-import { Container, Text } from '@lemwood/pi-tui';
+import { Container, Text } from '@lcode-cli/pi-tui';
 
 import { SHELL_OUTPUT_PREVIEW_LINES } from '#/tui/constant/rendering';
 import { currentTheme } from '#/tui/theme';

@@ -24,7 +24,7 @@ import {
   truncateToWidth,
   visibleWidth,
   type Focusable,
-} from '@lemwood/pi-tui';
+} from '@lcode-cli/pi-tui';
 
 import { highlightLines, langFromPath } from '#/tui/components/media/code-highlight';
 import { renderDiffLinesClustered } from '#/tui/components/media/diff-preview';

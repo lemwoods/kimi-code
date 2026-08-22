@@ -19,7 +19,7 @@ import {
   registerScopedService,
   ScopeActivation,
   type ServiceIdentifier,
-} from '@lemwood/agent-core-v2';
+} from '@lcode-cli/agent-core-v2';
 
 /**
  * Narrow ACP-client file surface the ACP-backed `IHostFileSystem` needs.

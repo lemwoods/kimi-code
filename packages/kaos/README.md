@@ -1,4 +1,4 @@
-# @lemwood/kaos
+# @lcode-cli/kaos
 
 Execution environment abstraction used by Kimi Code.
 

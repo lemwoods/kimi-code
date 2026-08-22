@@ -14,7 +14,7 @@ import {
   type StreamedMessage,
   type StreamedMessagePart,
   type ToolCall,
-} from '@lemwood/kosong';
+} from '@lcode-cli/kosong';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import type { KimiConfig } from '../../../src/config';

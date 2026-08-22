@@ -1,14 +1,14 @@
-# @lemwood/lcode
+# @lcode-cli/lcode
 
 ## 0.39.0
 
 ### Minor Changes
 
-- [`6b05276`](https://github.com/lemwoods/kimi-code/commit/6b0527630c2d8bb3c941b1e0e7669cb929356970) Thanks [@lemwoods](https://github.com/lemwoods)! - Add a "Custom provider" option that connects any OpenAI-compatible provider by base URL and API key, with its models discovered automatically.
+- [`6b05276`](https://github.com/lemwoods/kimi-code/commit/6b0527630c2d8bb3c941b1e0e7669cb929356970) Thanks [@lcode-clis](https://github.com/lemwoods)! - Add a "Custom provider" option that connects any OpenAI-compatible provider by base URL and API key, with its models discovered automatically.
 
 - [#3007](https://github.com/MoonshotAI/kimi-code/pull/3007) [`f6736d7`](https://github.com/lemwoods/kimi-code/commit/f6736d7c0de609d44ed1cb761cfe9f195c4d94fb) Thanks [@7Sageer](https://github.com/7Sageer)! - Add an optional ‎`fork` parameter to the subagent and swarm tools that starts the subagent with a snapshot of the calling agent’s conversation history instead of an empty context. Experimental: enable it by setting `KIMI_CODE_EXPERIMENTAL_SUBAGENT_FORK=true` or `subagent_fork = true` under `[experimental]` in config.toml.
 
-- [`6b05276`](https://github.com/lemwoods/kimi-code/commit/6b0527630c2d8bb3c941b1e0e7669cb929356970) Thanks [@lemwoods](https://github.com/lemwoods)! - Subagents can use any configured model when the secondary-model experiment is enabled.
+- [`6b05276`](https://github.com/lemwoods/kimi-code/commit/6b0527630c2d8bb3c941b1e0e7669cb929356970) Thanks [@lcode-clis](https://github.com/lemwoods)! - Subagents can use any configured model when the secondary-model experiment is enabled.
 
 ### Patch Changes
 
@@ -16,7 +16,7 @@
 
 - [#3136](https://github.com/MoonshotAI/kimi-code/pull/3136) [`e9a99e5`](https://github.com/lemwoods/kimi-code/commit/e9a99e5ec6843b590c44c63c3d604702c24b1bca) Thanks [@wbxl2000](https://github.com/wbxl2000)! - Add the Tencent CloudBase plugin to the curated marketplace.
 
-- [`6b05276`](https://github.com/lemwoods/kimi-code/commit/6b0527630c2d8bb3c941b1e0e7669cb929356970) Thanks [@lemwoods](https://github.com/lemwoods)! - Rename the CLI to lcode and display its interface in Simplified Chinese.
+- [`6b05276`](https://github.com/lemwoods/kimi-code/commit/6b0527630c2d8bb3c941b1e0e7669cb929356970) Thanks [@lcode-clis](https://github.com/lemwoods)! - Rename the CLI to lcode and display its interface in Simplified Chinese.
 
 - [#2200](https://github.com/MoonshotAI/kimi-code/pull/2200) [`30e7f62`](https://github.com/lemwoods/kimi-code/commit/30e7f62d2c2c2fdaef785c544a47d0ade3e9788f) Thanks [@wszqkzqk](https://github.com/wszqkzqk)! - Fix file tools and shell working directories failing to resolve Git Bash paths such as /c/Users or /tmp on Windows.
 
@@ -288,7 +288,7 @@
 
 - [#2843](https://github.com/MoonshotAI/kimi-code/pull/2843) [`c212ae9`](https://github.com/MoonshotAI/kimi-code/commit/c212ae9715371c0d7939c15e664acbe0d7cf7fc3) Thanks [@sailist](https://github.com/sailist)! - Show project MCP launch targets in the workspace trust prompt, default to declining trust, and resolve fd and stty binaries to absolute paths so untrusted workspaces cannot plant bare-name executables before confirmation.
 
-  `@lemwood/lcode-sdk` contract change: `WorkspaceTrustInfo.gatedMcpServers` now carries structured `WorkspaceTrustMcpServerInfo` records (`name`, `transport`, and `command`/`args`/`cwd` or `url`) instead of plain strings, so SDK consumers rendering a trust prompt can show the full launch target.
+  `@lcode-cli/lcode-sdk` contract change: `WorkspaceTrustInfo.gatedMcpServers` now carries structured `WorkspaceTrustMcpServerInfo` records (`name`, `transport`, and `command`/`args`/`cwd` or `url`) instead of plain strings, so SDK consumers rendering a trust prompt can show the full launch target.
 
 - [#2856](https://github.com/MoonshotAI/kimi-code/pull/2856) [`504e629`](https://github.com/MoonshotAI/kimi-code/commit/504e6292ede448367d1341751f9f98b24cc2994f) Thanks [@pvzheroes125](https://github.com/pvzheroes125)! - Refresh active MCP connections after OAuth credentials are added or reset.
 
@@ -2073,7 +2073,7 @@
 
 ### Minor Changes
 
-- [#368](https://github.com/MoonshotAI/kimi-code/pull/368) [`3eafa79`](https://github.com/MoonshotAI/kimi-code/commit/3eafa79f39c06b67d18bd2c1fd5321d2d889ed90) - Add `@lemwood/acp-adapter` and the `kimi acp` subcommand: kimi-code now speaks [Agent Client Protocol 0.23](https://agentclientprotocol.com/) over stdio so IDEs (Zed, JetBrains AI Chat, custom clients) can drive sessions directly — coverage matrix, Zed configuration and breaking pre-release notes are in [kimi acp Subcommand Page](https://moonshotai.github.io/kimi-code/en/reference/kimi-acp.html).
+- [#368](https://github.com/MoonshotAI/kimi-code/pull/368) [`3eafa79`](https://github.com/MoonshotAI/kimi-code/commit/3eafa79f39c06b67d18bd2c1fd5321d2d889ed90) - Add `@lcode-cli/acp-adapter` and the `kimi acp` subcommand: kimi-code now speaks [Agent Client Protocol 0.23](https://agentclientprotocol.com/) over stdio so IDEs (Zed, JetBrains AI Chat, custom clients) can drive sessions directly — coverage matrix, Zed configuration and breaking pre-release notes are in [kimi acp Subcommand Page](https://moonshotai.github.io/kimi-code/en/reference/kimi-acp.html).
 
 - [#338](https://github.com/MoonshotAI/kimi-code/pull/338) [`ba7dd73`](https://github.com/MoonshotAI/kimi-code/commit/ba7dd736a3b295b2a29c229a944208c232d51458) - Add `/btw` for side-channel conversations without steering the active main turn.
 

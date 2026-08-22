@@ -13,7 +13,7 @@ import { mkdtempSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { Readable, type Writable } from 'node:stream';
 
-import type { KaosProcess } from '@lemwood/kaos';
+import type { KaosProcess } from '@lcode-cli/kaos';
 import { join } from 'pathe';
 import { describe, expect, it, vi } from 'vitest';
 

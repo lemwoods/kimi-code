@@ -13,8 +13,8 @@ import {
   type Scope,
   type ScopeSeed,
   TelemetryService,
-} from '@lemwood/agent-core-v2';
-import { readKimiDeviceId } from '@lemwood/lcode-oauth';
+} from '@lcode-cli/agent-core-v2';
+import { readKimiDeviceId } from '@lcode-cli/lcode-oauth';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { initializeServerTelemetry, shutdownServerTelemetry } from '../src/services/telemetry';

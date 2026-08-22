@@ -1,7 +1,7 @@
 /**
  * Agent turn integration contracts through the public RPC harness. Provider
  * generation and host-executed user tools are the only external boundaries.
- * Run with: pnpm --filter @lemwood/agent-core test -- turn.test.ts
+ * Run with: pnpm --filter @lcode-cli/agent-core test -- turn.test.ts
  */
 
 import { existsSync, mkdtempSync } from 'node:fs';
@@ -10,7 +10,7 @@ import { join } from 'pathe';
 import { setTimeout as delay } from 'node:timers/promises';
 import { Readable, type Writable } from 'node:stream';
 
-import type { Kaos, KaosProcess } from '@lemwood/kaos';
+import type { Kaos, KaosProcess } from '@lcode-cli/kaos';
 import { createControlledPromise } from '@antfu/utils';
 import {
   APIConnectionError,
@@ -23,7 +23,7 @@ import {
   type Message,
   type ModelCapability,
   type ToolCall,
-} from '@lemwood/kosong';
+} from '@lcode-cli/kosong';
 import { describe, expect, it, afterEach, vi } from 'vitest';
 
 import { HookEngine } from '../../src/session/hooks';

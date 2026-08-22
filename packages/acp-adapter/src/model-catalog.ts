@@ -3,7 +3,7 @@
  * config snapshot into a flat list of selectable models for the ACP
  * `configOptions` picker (`packages/acp-adapter/src/config-options.ts`).
  *
- * Used to live inside `@lemwood/lcode-sdk` as
+ * Used to live inside `@lcode-cli/lcode-sdk` as
  * `KimiHarness.listAvailableModels()`; moved here so the SDK keeps a
  * minimal surface and ACP-specific heuristics (thinking-capability
  * derivation, the toggleable-models allow-list) stay scoped to the
@@ -31,8 +31,8 @@
  * declare `protocol`.
  */
 
-import { effectiveModelAlias, type ProviderType } from '@lemwood/agent-core';
-import type { KimiHarness, ModelAlias } from '@lemwood/lcode-sdk';
+import { effectiveModelAlias, type ProviderType } from '@lcode-cli/agent-core';
+import type { KimiHarness, ModelAlias } from '@lcode-cli/lcode-sdk';
 
 /**
  * One catalog row per configured model alias, suitable for an ACP

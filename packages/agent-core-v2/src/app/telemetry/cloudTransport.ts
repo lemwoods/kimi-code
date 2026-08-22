@@ -4,7 +4,7 @@ import {
   KIMI_REGION_PROFILES,
   kimiRegionProfile,
   resolveKimiRegion,
-} from '@lemwood/lcode-oauth';
+} from '@lcode-cli/lcode-oauth';
 
 import { isAbortError } from '#/_base/utils/abort';
 import type { IFileSystemStorageService } from '#/persistence/interface/storage';

@@ -13,7 +13,7 @@
  * rows) survives tab switches.
  */
 
-import { IAgentStateService } from '@lemwood/agent-core-v2/agent/state/agentState';
+import { IAgentStateService } from '@lcode-cli/agent-core-v2/agent/state/agentState';
 import { useState } from 'react';
 
 import type { AuditTrail } from '../audit/trail';

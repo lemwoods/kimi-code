@@ -4,7 +4,7 @@ import {
   type ChatProvider,
   type ModelCapability,
   type ProviderConfig,
-} from '@lemwood/kosong';
+} from '@lcode-cli/kosong';
 
 import {
   applyAnthropicThinkingKeep,

@@ -1,4 +1,4 @@
-import type { BackgroundTaskInfo } from '@lemwood/lcode-sdk';
+import type { BackgroundTaskInfo } from '@lcode-cli/lcode-sdk';
 
 function isDetachableForegroundTask(t: BackgroundTaskInfo): boolean {
   return (

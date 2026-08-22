@@ -2,7 +2,7 @@
  * `kimi acp` sub-command routing and legacy implementation.
  *
  * By default the command delegates to the agent-core-v2 ACP server. A truthy
- * `KIMI_CODE_LEGACY_FLAG` uses the SDK harness and `@lemwood/acp-adapter`
+ * `KIMI_CODE_LEGACY_FLAG` uses the SDK harness and `@lcode-cli/acp-adapter`
  * implementation below instead.
  *
  * Wire-up:
@@ -26,8 +26,8 @@ import {
   runAcpServer,
   type AvailableCommand,
   type SlashCommandsSnapshot,
-} from '@lemwood/acp-adapter';
-import { createKimiHarness, type Session, type SkillSummary } from '@lemwood/lcode-sdk';
+} from '@lcode-cli/acp-adapter';
+import { createKimiHarness, type Session, type SkillSummary } from '@lcode-cli/lcode-sdk';
 
 import { KIMI_CODE_HOME_ENV } from '#/constant/app';
 import { createKimiCodeHostIdentity, getVersion } from '#/cli/version';

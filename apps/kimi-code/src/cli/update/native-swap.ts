@@ -23,7 +23,7 @@ import { basename, dirname, join } from 'node:path';
 
 import { gt } from 'semver';
 
-import { log } from '@lemwood/lcode-sdk';
+import { log } from '@lcode-cli/lcode-sdk';
 
 import {
   KIMI_CODE_NATIVE_STAGED_STATE_FILE_NAME,

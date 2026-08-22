@@ -7,7 +7,7 @@ import type {
   KimiConfigPatch,
   SetKimiConfigPayload,
 } from '../../src';
-import { KIMI_CODE_PROVIDER_NAME } from '@lemwood/lcode-oauth';
+import { KIMI_CODE_PROVIDER_NAME } from '@lcode-cli/lcode-oauth';
 
 import {
   type ICoreProcessService,
@@ -20,7 +20,7 @@ import {
 } from '../../src/services';
 import type { ServicesAuthFacade } from '../../src/services/auth/managedAuth';
 import type { IEventService } from '../../src/services/event/event';
-import type { Event as ProtocolEvent } from '@lemwood/protocol';
+import type { Event as ProtocolEvent } from '@lcode-cli/protocol';
 
 afterEach(() => {
   vi.unstubAllGlobals();

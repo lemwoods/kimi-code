@@ -20,8 +20,8 @@ import type {
   QuestionRequest,
   SessionApprovalRequest as ApprovalRequest,
   SessionApprovalResponse as ApprovalResponse,
-} from '@lemwood/agent-core-v2';
-import type { IDisposable, SessionHandle } from '@lemwood/klient';
+} from '@lcode-cli/agent-core-v2';
+import type { IDisposable, SessionHandle } from '@lcode-cli/klient';
 
 import type { AcpClient } from './acp-client';
 

@@ -8,7 +8,7 @@
  * referenced.
  */
 
-import { inputTotal } from '@lemwood/kosong';
+import { inputTotal } from '@lcode-cli/kosong';
 import { describe, expect, it } from 'vitest';
 
 import { ErrorCodes, KimiError } from '../../src/errors';

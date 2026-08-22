@@ -6,7 +6,7 @@ import type {
   ResumedAgentState,
   Session,
   ToolCall,
-} from '@lemwood/lcode-sdk';
+} from '@lcode-cli/lcode-sdk';
 
 import { ToolCallComponent } from '../components/messages/tool-call';
 import { ShellRunComponent } from '../components/messages/shell-run';

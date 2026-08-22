@@ -5,5 +5,5 @@ export default defineConfig({
   format: ['esm'],
   outDir: 'dist',
   clean: true,
-  external: ['@lemwood/agent-core', '@lemwood/kosong', '@lemwood/kaos'],
+  external: ['@lcode-cli/agent-core', '@lcode-cli/kosong', '@lcode-cli/kaos'],
 });

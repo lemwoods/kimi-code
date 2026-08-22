@@ -6,7 +6,7 @@
  * site links, telemetry. The OAuth login flow itself does NOT read this — it
  * takes explicit hosts; this cache is for everything derived afterwards.
  *
- * Resolution lives in `@lemwood/lcode-oauth` (see `resolveKimiRegion`);
+ * Resolution lives in `@lcode-cli/lcode-oauth` (see `resolveKimiRegion`);
  * this module only adds the one thing that package deliberately does not own:
  * reading the persisted login's oauth ref (credential key + `oauthHost`) out
  * of config.toml, synchronously, via the SDK's safe config reader. First call
@@ -14,14 +14,14 @@
  * ref.
  */
 
-import { loadRuntimeConfigSafe, resolveConfigPath } from '@lemwood/lcode-sdk';
+import { loadRuntimeConfigSafe, resolveConfigPath } from '@lcode-cli/lcode-sdk';
 import {
   KIMI_CODE_OAUTH_KEY,
   KIMI_REGION_PROFILES,
   resolveKimiRegion,
   type KimiRegion,
   type KimiRegionProfile,
-} from '@lemwood/lcode-oauth';
+} from '@lcode-cli/lcode-oauth';
 
 // Same value as DEFAULT_OAUTH_PROVIDER_NAME in '#/constant/app' — inlined here
 // to keep the import one-directional (constant/app derives URLs from this

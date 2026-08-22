@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import { isoDateTimeSchema } from '@lemwood/agent-core-v2/_base/utils/isoDateTime';
+import { isoDateTimeSchema } from '@lcode-cli/agent-core-v2/_base/utils/isoDateTime';
 
 export const connectionSchema = z.object({
   id: z.string().min(1),

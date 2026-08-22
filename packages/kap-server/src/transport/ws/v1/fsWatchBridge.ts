@@ -7,11 +7,11 @@ import {
   IWorkspaceInstanceManager,
   getLiveSessionById,
   type Scope,
-} from '@lemwood/agent-core-v2';
-import type { Runtime, RuntimeLease } from '@lemwood/agent-core-v2/runtime/runtime';
-import { RuntimeWorkspaceView } from '@lemwood/agent-core-v2/runtime/runtimeWorkspaceView';
-import type { IHostFsWatchHandle, HostFsChange } from '@lemwood/agent-core-v2/os/interface/hostFsWatch';
-import type { FsChangeEntry, FsChangeEvent } from '@lemwood/agent-core-v2/workspace/workspaceFs/fsWatch';
+} from '@lcode-cli/agent-core-v2';
+import type { Runtime, RuntimeLease } from '@lcode-cli/agent-core-v2/runtime/runtime';
+import { RuntimeWorkspaceView } from '@lcode-cli/agent-core-v2/runtime/runtimeWorkspaceView';
+import type { IHostFsWatchHandle, HostFsChange } from '@lcode-cli/agent-core-v2/os/interface/hostFsWatch';
+import type { FsChangeEntry, FsChangeEvent } from '@lcode-cli/agent-core-v2/workspace/workspaceFs/fsWatch';
 
 import type { EventEnvelope, JournalLogger } from './sessionEventJournal';
 

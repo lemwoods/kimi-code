@@ -1,4 +1,4 @@
-import type { GoalSnapshot } from '@lemwood/lcode-sdk';
+import type { GoalSnapshot } from '@lcode-cli/lcode-sdk';
 
 import { formatTokenCount } from '#/utils/usage/usage-format';
 

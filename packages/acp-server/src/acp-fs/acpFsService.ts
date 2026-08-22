@@ -25,7 +25,7 @@ import {
   LifecycleScope,
   registerScopedService,
   ScopeActivation,
-} from '@lemwood/agent-core-v2';
+} from '@lcode-cli/agent-core-v2';
 
 import { IAcpConnection } from './acpConnection';
 

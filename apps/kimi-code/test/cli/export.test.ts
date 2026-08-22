@@ -9,7 +9,7 @@ import { mkdtempSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
-import type { createKimiDeviceId as createKimiDeviceIdFn } from '@lemwood/lcode-oauth';
+import type { createKimiDeviceId as createKimiDeviceIdFn } from '@lcode-cli/lcode-oauth';
 import { Command } from 'commander';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
@@ -21,7 +21,7 @@ import type {
   ExportSessionManifest,
   ExportSessionResult,
   SessionSummary,
-} from '@lemwood/lcode-sdk';
+} from '@lcode-cli/lcode-sdk';
 
 let tmp: string;
 
@@ -50,8 +50,8 @@ const mocks = vi.hoisted(() => ({
   harnessCreatesDeviceIdOnConstruction: false,
 }));
 
-vi.mock('@lemwood/lcode-sdk', async (importOriginal) => {
-  const actual = await importOriginal<typeof import('@lemwood/lcode-sdk')>();
+vi.mock('@lcode-cli/lcode-sdk', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@lcode-cli/lcode-sdk')>();
   const createFakeHarness = (options: { readonly homeDir?: string } | undefined) => {
     const homeDir = options?.homeDir ?? '/tmp/kimi-export-home';
     if (mocks.harnessCreatesDeviceIdOnConstruction) {
@@ -83,9 +83,9 @@ vi.mock('@lemwood/lcode-sdk', async (importOriginal) => {
   };
 });
 
-vi.mock('@lemwood/lcode-oauth', async () => {
-  const actual = await vi.importActual<typeof import('@lemwood/lcode-oauth')>(
-    '@lemwood/lcode-oauth',
+vi.mock('@lcode-cli/lcode-oauth', async () => {
+  const actual = await vi.importActual<typeof import('@lcode-cli/lcode-oauth')>(
+    '@lcode-cli/lcode-oauth',
   );
   return {
     ...actual,
@@ -94,7 +94,7 @@ vi.mock('@lemwood/lcode-oauth', async () => {
   };
 });
 
-vi.mock('@lemwood/lcode-telemetry', () => ({
+vi.mock('@lcode-cli/lcode-telemetry', () => ({
   initializeTelemetry: mocks.initializeTelemetry,
   shutdownTelemetry: mocks.shutdownTelemetry,
   track: mocks.telemetryTrack,

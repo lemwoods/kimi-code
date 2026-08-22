@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
-import type { Component, Terminal } from '@lemwood/pi-tui';
-import { Text, TuiAltScreen, TuiMainScreen } from '@lemwood/pi-tui';
+import type { Component, Terminal } from '@lcode-cli/pi-tui';
+import { Text, TuiAltScreen, TuiMainScreen } from '@lcode-cli/pi-tui';
 
 import { beginScreenTakeover, endScreenTakeover } from '#/tui/utils/screen-takeover';
 

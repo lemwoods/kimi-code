@@ -11,7 +11,7 @@
     "paths": {
       "@/*": ["./src/*"],
       "shared/*": ["./shared/*"],
-      "@lemwood/lcode-sdk": ["../../packages/node-sdk/src/index.ts"]
+      "@lcode-cli/lcode-sdk": ["../../packages/node-sdk/src/index.ts"]
     }
   },
   "include": ["src/**/*", "shared/**/*", "test/**/*"],

@@ -13,7 +13,7 @@ import {
   type ContentPart,
   type Message,
   type TokenUsage,
-} from '@lemwood/kosong';
+} from '@lcode-cli/kosong';
 import { basename } from 'pathe';
 
 import type { Agent } from '..';

@@ -1,6 +1,6 @@
 import { join } from 'node:path';
 
-import { FileTokenStorage, type TokenInfo } from '@lemwood/lcode-oauth';
+import { FileTokenStorage, type TokenInfo } from '@lcode-cli/lcode-oauth';
 import { afterEach, describe, expect, it } from 'vitest';
 
 import { createKimiHarness, type KimiError, type KimiHarness } from '#/index';

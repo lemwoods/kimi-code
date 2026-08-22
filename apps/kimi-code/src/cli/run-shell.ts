@@ -10,14 +10,14 @@ import {
   type KimiHarness,
   type KimiHarnessOptions,
   type TelemetryClient,
-} from '@lemwood/lcode-sdk';
+} from '@lcode-cli/lcode-sdk';
 import {
   setCrashPhase,
   setTelemetryContext,
   shutdownTelemetry,
   track,
   withTelemetryContext,
-} from '@lemwood/lcode-telemetry';
+} from '@lcode-cli/lcode-telemetry';
 
 import { CLI_SHUTDOWN_TIMEOUT_MS, CLI_UI_MODE } from '#/constant/app';
 import { detectPendingMigration } from '#/migration/index';

@@ -14,8 +14,8 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { getLiveSessionById, IAgentLifecycleService, IEventBus } from '@lemwood/agent-core-v2';
-import { ToolProgress } from '@lemwood/agent-core-v2/agent/toolExecutor/toolExecutorEvents';
+import { getLiveSessionById, IAgentLifecycleService, IEventBus } from '@lcode-cli/agent-core-v2';
+import { ToolProgress } from '@lcode-cli/agent-core-v2/agent/toolExecutor/toolExecutorEvents';
 import { afterEach, describe, expect, it } from 'vitest';
 
 import { mapPromptLaunchError } from '../src/session';

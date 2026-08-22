@@ -1,4 +1,4 @@
-import type { Environment } from '@lemwood/kaos';
+import type { Environment } from '@lcode-cli/kaos';
 import { z } from 'zod';
 
 import type { SkillRegistry } from '../agent/skill/types';

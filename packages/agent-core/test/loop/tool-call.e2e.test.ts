@@ -8,7 +8,7 @@
  * while dispatching terminal events in provider order.
  */
 
-import type { ContentPart } from '@lemwood/kosong';
+import type { ContentPart } from '@lcode-cli/kosong';
 import { describe, expect, it } from 'vitest';
 
 import { ToolAccesses } from '../../src/loop';

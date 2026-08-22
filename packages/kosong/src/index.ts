@@ -92,6 +92,6 @@ export {
 /**
  * Concrete provider adapters stay off the root barrel because their SDK type
  * graphs pollute downstream declaration bundles. Import them from subpaths:
- * `@lemwood/kosong/providers/kimi`,
- * `@lemwood/kosong/providers/openai-legacy`, etc.
+ * `@lcode-cli/kosong/providers/kimi`,
+ * `@lcode-cli/kosong/providers/openai-legacy`, etc.
  */

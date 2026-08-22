@@ -1,4 +1,4 @@
-import { classifyKimiQuotaError } from '@lemwood/kosong';
+import { classifyKimiQuotaError } from '@lcode-cli/kosong';
 import { describe, expect, it } from 'vitest';
 
 import type { KimiConfig, ModelAlias } from '../../src/config';

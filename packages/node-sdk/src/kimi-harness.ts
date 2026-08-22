@@ -1,11 +1,11 @@
-import type { Kaos } from '@lemwood/kaos';
+import type { Kaos } from '@lcode-cli/kaos';
 import {
   ErrorCodes,
   KimiError,
   ImageLimits,
   withTelemetryContext,
   type ExperimentalFeatureState,
-} from '@lemwood/agent-core';
+} from '@lcode-cli/agent-core';
 
 import { capabilityRpc, Session } from '#/session';
 import type { KimiAuthFacade } from '#/auth';

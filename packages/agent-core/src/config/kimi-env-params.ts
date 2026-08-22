@@ -3,8 +3,8 @@ import {
   type GenerationKwargs,
   KimiChatProvider,
   type ThinkingEffort,
-} from '@lemwood/kosong';
-import { AnthropicChatProvider } from '@lemwood/kosong/providers/anthropic';
+} from '@lcode-cli/kosong';
+import { AnthropicChatProvider } from '@lcode-cli/kosong/providers/anthropic';
 
 import { parseFloatEnv } from '#/config/resolve';
 

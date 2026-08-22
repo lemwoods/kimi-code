@@ -1,5 +1,5 @@
-import type { Component } from '@lemwood/pi-tui';
-import { Spacer, Text, visibleWidth } from '@lemwood/pi-tui';
+import type { Component } from '@lcode-cli/pi-tui';
+import { Spacer, Text, visibleWidth } from '@lcode-cli/pi-tui';
 
 import { STATUS_BULLET } from '#/tui/constant/symbols';
 import { currentTheme } from '#/tui/theme';

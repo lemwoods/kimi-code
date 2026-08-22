@@ -8,10 +8,10 @@ import {
   ISessionManager,
   ISessionMcpHandle,
   IWorkspaceInstanceManager,
-} from '@lemwood/agent-core-v2';
+} from '@lcode-cli/agent-core-v2';
 import { afterEach, describe, expect, it } from 'vitest';
 
-import type { SessionSummary } from '@lemwood/klient';
+import type { SessionSummary } from '@lcode-cli/klient';
 
 import { filterSessionSummariesByCwd } from '../src/server';
 import { createTestClient, type TestClient } from './_helpers/acpClient';

@@ -8,7 +8,7 @@ import {
   log,
   resolveGlobalLogPath,
   resolveKimiHome,
-} from '@lemwood/lcode-sdk';
+} from '@lcode-cli/lcode-sdk';
 
 type MarkerLevel = 'error' | 'warn';
 

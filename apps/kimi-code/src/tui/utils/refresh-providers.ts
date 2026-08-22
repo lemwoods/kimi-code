@@ -4,8 +4,8 @@ import {
   type RefreshProviderOptions,
   type RefreshProviderScope,
   type RefreshResult,
-} from '@lemwood/lcode-oauth';
-import type { KimiConfig, KimiConfigPatch, OAuthRef } from '@lemwood/lcode-sdk';
+} from '@lcode-cli/lcode-oauth';
+import type { KimiConfig, KimiConfigPatch, OAuthRef } from '@lcode-cli/lcode-sdk';
 
 /**
  * CLI-side host for provider-model refresh. Kept on the SDK's full config types
@@ -25,7 +25,7 @@ export type { ProviderChange, RefreshProviderOptions, RefreshProviderScope, Refr
 
 /**
  * Refresh remote model metadata for the configured providers. Thin adapter over
- * the shared `refreshProviderModels` orchestrator in `@lemwood/lcode-oauth`
+ * the shared `refreshProviderModels` orchestrator in `@lcode-cli/lcode-oauth`
  * (which is also what the daemon's scheduled/manual refresh uses).
  */
 export async function refreshAllProviderModels(

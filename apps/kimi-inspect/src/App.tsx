@@ -19,7 +19,7 @@
  * chat timeline.
  */
 
-import { ISessionManager } from '@lemwood/agent-core-v2/app/sessionManager/sessionManager';
+import { ISessionManager } from '@lcode-cli/agent-core-v2/app/sessionManager/sessionManager';
 import { useEffect, useState } from 'react';
 
 import type { AuditTrail } from './audit/trail';

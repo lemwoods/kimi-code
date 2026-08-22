@@ -1,5 +1,5 @@
-import { IAuthLegacyService, type Scope } from '@lemwood/agent-core-v2';
-import { authSummarySchema } from '@lemwood/agent-core-v2/app/authLegacy/authLegacy';
+import { IAuthLegacyService, type Scope } from '@lcode-cli/agent-core-v2';
+import { authSummarySchema } from '@lcode-cli/agent-core-v2/app/authLegacy/authLegacy';
 
 import { okEnvelope } from '../envelope';
 import { defineRoute } from '../middleware/defineRoute';

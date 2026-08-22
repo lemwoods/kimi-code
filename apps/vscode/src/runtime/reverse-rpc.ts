@@ -5,7 +5,7 @@ import type {
   ApprovalResponse as CoreApprovalResponse,
   QuestionRequest,
   QuestionResult,
-} from "@lemwood/lcode-sdk";
+} from "@lcode-cli/lcode-sdk";
 
 import type { ApprovalResponse, QuestionRequest as LegacyQuestionRequest } from "../../shared/legacy-sdk";
 import { describeToolDisplay, toLegacyDisplay } from "./tool-display";

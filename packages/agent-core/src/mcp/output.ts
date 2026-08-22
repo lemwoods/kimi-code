@@ -27,7 +27,7 @@
  * helpers stay private so callers cannot bypass the limits.
  */
 
-import type { ContentPart } from '@lemwood/kosong';
+import type { ContentPart } from '@lcode-cli/kosong';
 
 import type { TelemetryClient } from '#/telemetry';
 

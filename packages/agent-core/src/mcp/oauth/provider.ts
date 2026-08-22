@@ -28,7 +28,7 @@ import {
   type OAuthClientMetadata,
   type OAuthTokens,
 } from '@modelcontextprotocol/sdk/shared/auth.js';
-import { OAuthTokenTransaction } from '@lemwood/lcode-oauth';
+import { OAuthTokenTransaction } from '@lcode-cli/lcode-oauth';
 
 import { JsonFileStore, canonicalMcpOAuthResource, mcpOAuthStoreKey } from './store';
 

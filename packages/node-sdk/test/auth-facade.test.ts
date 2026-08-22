@@ -13,7 +13,7 @@ import {
   resolveKimiCodeOAuthKey,
   resolveKimiTokenStorageName,
   type TokenInfo,
-} from '@lemwood/lcode-oauth';
+} from '@lcode-cli/lcode-oauth';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { createKimiHarness, ErrorCodes, KimiError } from '#/index';

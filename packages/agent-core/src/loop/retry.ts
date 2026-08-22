@@ -1,6 +1,6 @@
 import { sleep } from '@antfu/utils';
 
-import { APIStatusError } from '@lemwood/kosong';
+import { APIStatusError } from '@lcode-cli/kosong';
 import type { Logger } from '#/logging/types';
 
 import { abortable } from '../utils/abort';

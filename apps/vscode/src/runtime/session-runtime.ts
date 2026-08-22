@@ -5,7 +5,7 @@ import {
   type PromptInput,
   type Session,
   type SessionSummary,
-} from "@lemwood/lcode-sdk";
+} from "@lcode-cli/lcode-sdk";
 
 import type { ContentPart as LegacyContentPart, ApprovalResponse } from "../../shared/legacy-sdk";
 import { Events } from "../../shared/bridge";

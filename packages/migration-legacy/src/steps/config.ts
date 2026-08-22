@@ -6,8 +6,8 @@ import {
   ModelAliasSchema,
   ProviderConfigSchema,
   transformTomlData,
-} from '@lemwood/agent-core';
-import { FLAG_DEFINITIONS } from '@lemwood/agent-core/flags/registry';
+} from '@lcode-cli/agent-core';
+import { FLAG_DEFINITIONS } from '@lcode-cli/agent-core/flags/registry';
 import { atomicWrite } from '../atomic-write.js';
 import { DEFAULT_CONFIG_FILE_TEXT, isTuiStubOrMissing } from '../stub-detect.js';
 import {

@@ -32,7 +32,7 @@
  *    so its raw `<system>` markup never renders in the UI.
  */
 
-import type { ContentPart } from '@lemwood/kosong';
+import type { ContentPart } from '@lcode-cli/kosong';
 
 import type { TelemetryClient } from '#/telemetry';
 

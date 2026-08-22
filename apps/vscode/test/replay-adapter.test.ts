@@ -11,7 +11,7 @@ import type {
   ResumedAgentState,
   ResumedSessionState,
   ToolCall,
-} from "@lemwood/lcode-sdk";
+} from "@lcode-cli/lcode-sdk";
 import { describe, expect, it } from "vitest";
 
 import {

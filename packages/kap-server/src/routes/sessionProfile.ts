@@ -5,9 +5,9 @@ import {
   ISessionMetadata,
   resumeSessionById,
   type Scope,
-} from '@lemwood/agent-core-v2';
-import type { SessionWireFields } from '@lemwood/agent-core-v2/app/sessionLegacy/sessionLegacy';
-import type { UpdateSessionProfileRequest } from '@lemwood/agent-core-v2/app/sessionLegacy/sessionProtocol';
+} from '@lcode-cli/agent-core-v2';
+import type { SessionWireFields } from '@lcode-cli/agent-core-v2/app/sessionLegacy/sessionLegacy';
+import type { UpdateSessionProfileRequest } from '@lcode-cli/agent-core-v2/app/sessionLegacy/sessionProtocol';
 
 export async function updateSessionProfile(
   core: Scope,

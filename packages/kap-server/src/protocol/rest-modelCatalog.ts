@@ -1,10 +1,10 @@
 import { z } from 'zod';
 
-import { PROVIDER_ID_PATTERN } from '@lemwood/agent-core-v2';
+import { PROVIDER_ID_PATTERN } from '@lcode-cli/agent-core-v2';
 import {
   modelCatalogItemSchema,
   providerCatalogItemSchema,
-} from '@lemwood/agent-core-v2/kosong/model/catalog';
+} from '@lcode-cli/agent-core-v2/kosong/model/catalog';
 
 export const listModelsResponseSchema = z.object({
   items: z.array(modelCatalogItemSchema),

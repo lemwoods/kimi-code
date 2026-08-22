@@ -1,4 +1,4 @@
-import { createToolMessage, type ContentPart, type Message } from '@lemwood/kosong';
+import { createToolMessage, type ContentPart, type Message } from '@lcode-cli/kosong';
 
 import type { Agent } from '..';
 import { ErrorCodes, KimiError } from '../../errors';

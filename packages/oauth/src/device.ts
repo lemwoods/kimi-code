@@ -1,5 +1,5 @@
 /**
- * Browser-safe entry for the device-code flow (`@lemwood/lcode-oauth/device`).
+ * Browser-safe entry for the device-code flow (`@lcode-cli/lcode-oauth/device`).
  *
  * The package root re-exports `OAuthManager`, token storage, and the identity
  * helpers, which pull in `node:fs` / `node:os` / `proper-lockfile` — fine for

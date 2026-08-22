@@ -6,7 +6,7 @@
  * place happens on the next startup (see `cli/update/native-swap.ts`).
  */
 
-import { log } from '@lemwood/lcode-sdk';
+import { log } from '@lcode-cli/lcode-sdk';
 
 import {
   readUpdateInstallLockVersion,

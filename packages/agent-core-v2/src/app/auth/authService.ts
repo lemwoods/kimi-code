@@ -21,7 +21,7 @@ import {
   type DeviceAuthorization,
   type KimiRegion,
   type ManagedKimiConfigShape,
-} from '@lemwood/lcode-oauth';
+} from '@lcode-cli/lcode-oauth';
 import type {
   OAuthFlowSnapshot,
   OAuthFlowStart,

@@ -6,7 +6,7 @@ import {
   createKimiConfigRpc,
   type KimiConfigRpc,
   type KimiConfigValidationIssue,
-} from '@lemwood/lcode-sdk';
+} from '@lcode-cli/lcode-sdk';
 import type { Command } from 'commander';
 import { z } from 'zod';
 

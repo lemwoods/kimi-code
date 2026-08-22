@@ -5,8 +5,8 @@
  * MUST treat the returned promise as `Promise<never>`.
  */
 
-import { createKimiHarness } from '@lemwood/lcode-sdk';
-import type { KimiRegion } from '@lemwood/lcode-oauth';
+import { createKimiHarness } from '@lcode-cli/lcode-sdk';
+import type { KimiRegion } from '@lcode-cli/lcode-oauth';
 
 import { createKimiCodeHostIdentity } from '#/cli/version';
 import { openUrl } from '#/utils/open-url';

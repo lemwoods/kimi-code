@@ -12,7 +12,7 @@ import {
   type IDisposable,
   type Scope,
   type SessionMeta,
-} from '@lemwood/agent-core-v2';
+} from '@lcode-cli/agent-core-v2';
 import {
   TranscriptStore,
   foldWireRecordFacts,
@@ -26,7 +26,7 @@ import {
   type TranscriptOperation,
   type TranscriptTaskRef,
   type TranscriptTurn,
-} from '@lemwood/transcript';
+} from '@lcode-cli/transcript';
 
 import { readWireRecords } from './wireRecords';
 import {

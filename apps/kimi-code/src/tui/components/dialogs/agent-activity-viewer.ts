@@ -22,8 +22,8 @@ import {
   type Terminal,
   truncateToWidth,
   visibleWidth,
-} from '@lemwood/pi-tui';
-import type { BackgroundTaskInfo } from '@lemwood/lcode-sdk';
+} from '@lcode-cli/pi-tui';
+import type { BackgroundTaskInfo } from '@lcode-cli/lcode-sdk';
 
 import { MESSAGE_INDENT } from '#/tui/constant/rendering';
 import { STATUS_BULLET } from '#/tui/constant/symbols';

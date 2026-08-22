@@ -30,7 +30,7 @@ import type {
   SessionSummary,
   TelemetryProperties,
   Unsubscribe,
-} from '@lemwood/lcode-sdk';
+} from '@lcode-cli/lcode-sdk';
 
 export interface PromptHarness {
   readonly homeDir: string;

@@ -5,7 +5,7 @@ import {
   type Logger,
   type ModelProvider,
   type ResolvedRuntimeProvider,
-} from '@lemwood/agent-core';
+} from '@lcode-cli/agent-core';
 import {
   createKimiDefaultHeaders,
   KIMI_CODE_FLOW_CONFIG,
@@ -16,12 +16,12 @@ import {
   resolveKimiCodeOAuthRef,
   type KimiHostIdentity,
   type ManagedKimiOAuthRef,
-} from '@lemwood/lcode-oauth';
+} from '@lcode-cli/lcode-oauth';
 import type {
   ProviderConfig as KosongProviderConfig,
   ProviderRequestAuth,
-} from '@lemwood/kosong';
-import { APIStatusError, UNKNOWN_CAPABILITY } from '@lemwood/kosong';
+} from '@lcode-cli/kosong';
+import { APIStatusError, UNKNOWN_CAPABILITY } from '@lcode-cli/kosong';
 
 import { mapOAuthTokenError } from '#/oauth-error';
 

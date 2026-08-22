@@ -1,4 +1,4 @@
-import type { Terminal } from '@lemwood/pi-tui';
+import type { Terminal } from '@lcode-cli/pi-tui';
 import { describe, expect, it } from 'vitest';
 
 import {

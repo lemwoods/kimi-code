@@ -1,4 +1,4 @@
-import type { HookResultEvent } from '@lemwood/lcode-sdk';
+import type { HookResultEvent } from '@lcode-cli/lcode-sdk';
 
 export function formatHookResultMarkdown(event: HookResultEvent): string {
   return `*${formatHookResultTitle(event)}*\n\n${formatHookResultBody(event)}`;

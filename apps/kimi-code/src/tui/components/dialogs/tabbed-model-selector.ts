@@ -13,14 +13,14 @@
  * AskUserQuestion dialog's tab strip) — see .agents/skills/write-tui/DESIGN.md.
  */
 
-import type { ModelAlias } from '@lemwood/lcode-sdk';
+import type { ModelAlias } from '@lcode-cli/lcode-sdk';
 import {
   Container,
   Key,
   matchesKey,
   truncateToWidth,
   type Focusable,
-} from '@lemwood/pi-tui';
+} from '@lcode-cli/pi-tui';
 
 import { currentTheme } from '#/tui/theme';
 import { renderTabStrip } from '#/tui/utils/tab-strip';

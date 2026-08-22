@@ -4,7 +4,7 @@
  * Exercises the real connection manager and Session while stdio/HTTP MCP
  * processes provide the external boundary; timeout forwarding tests stub only
  * the MCP SDK client boundary. Run with `pnpm --filter
- * @lemwood/agent-core exec vitest run test/mcp/connection-manager.test.ts`.
+ * @lcode-cli/agent-core exec vitest run test/mcp/connection-manager.test.ts`.
  */
 
 import { realpathSync } from 'node:fs';
@@ -15,7 +15,7 @@ import { setTimeout as sleep } from 'node:timers/promises';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 import { testKaos } from '../fixtures/test-kaos';
-import type { ProviderConfig } from '@lemwood/kosong';
+import type { ProviderConfig } from '@lcode-cli/kosong';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { randomUUID } from 'node:crypto';

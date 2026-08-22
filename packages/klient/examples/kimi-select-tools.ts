@@ -57,21 +57,21 @@ import { EXAMPLE_CLIENT_IDENTITY } from './identity.js';
 
 import type { AddressInfo } from 'node:net';
 
-import { bootstrap, logSeed, resolveLoggingConfig } from '@lemwood/agent-core-v2';
-import { IConfigService } from '@lemwood/agent-core-v2/app/config/config';
-import { renderLoadableToolsAnnouncement } from '@lemwood/agent-core-v2/agent/toolSelect/dynamicTools';
-import { UNKNOWN_CAPABILITY } from '@lemwood/agent-core-v2/kosong/contract/capability';
-import type { Message } from '@lemwood/agent-core-v2/kosong/contract/message';
-import type { Tool } from '@lemwood/agent-core-v2/kosong/contract/tool';
-import type { AuthProvider, Model } from '@lemwood/agent-core-v2/kosong/model/catalog';
-import { IModelCatalog } from '@lemwood/agent-core-v2/kosong/model/catalog';
+import { bootstrap, logSeed, resolveLoggingConfig } from '@lcode-cli/agent-core-v2';
+import { IConfigService } from '@lcode-cli/agent-core-v2/app/config/config';
+import { renderLoadableToolsAnnouncement } from '@lcode-cli/agent-core-v2/agent/toolSelect/dynamicTools';
+import { UNKNOWN_CAPABILITY } from '@lcode-cli/agent-core-v2/kosong/contract/capability';
+import type { Message } from '@lcode-cli/agent-core-v2/kosong/contract/message';
+import type { Tool } from '@lcode-cli/agent-core-v2/kosong/contract/tool';
+import type { AuthProvider, Model } from '@lcode-cli/agent-core-v2/kosong/model/catalog';
+import { IModelCatalog } from '@lcode-cli/agent-core-v2/kosong/model/catalog';
 import type {
   ModelRequestInput,
   ModelRequester,
-} from '@lemwood/agent-core-v2/kosong/model/modelRequester';
-import { ModelRequesterImpl } from '@lemwood/agent-core-v2/kosong/model/modelRequesterImpl';
-import { IProtocolAdapterRegistry } from '@lemwood/agent-core-v2/kosong/protocol/protocol';
-import { ProtocolAdapterRegistry } from '@lemwood/agent-core-v2/kosong/provider/protocolAdapterRegistry';
+} from '@lcode-cli/agent-core-v2/kosong/model/modelRequester';
+import { ModelRequesterImpl } from '@lcode-cli/agent-core-v2/kosong/model/modelRequesterImpl';
+import { IProtocolAdapterRegistry } from '@lcode-cli/agent-core-v2/kosong/protocol/protocol';
+import { ProtocolAdapterRegistry } from '@lcode-cli/agent-core-v2/kosong/provider/protocolAdapterRegistry';
 
 function assert(cond: boolean, message: string): asserts cond {
   if (!cond) throw new Error(`assertion failed: ${message}`);

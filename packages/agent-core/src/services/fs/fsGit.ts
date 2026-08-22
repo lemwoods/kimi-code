@@ -9,7 +9,7 @@ import type {
   FsGitStatus,
   FsGitStatusRequest,
   FsGitStatusResponse,
-} from '@lemwood/protocol';
+} from '@lcode-cli/protocol';
 
 export class FsGitUnavailableError extends Error {
   readonly cwd: string;

@@ -36,8 +36,8 @@ import { join } from 'node:path';
 import { EXAMPLE_CLIENT_IDENTITY } from './identity.js';
 
 
-import { bootstrap, logSeed, resolveLoggingConfig } from '@lemwood/agent-core-v2';
-import { createKlient } from '@lemwood/klient/memory';
+import { bootstrap, logSeed, resolveLoggingConfig } from '@lcode-cli/agent-core-v2';
+import { createKlient } from '@lcode-cli/klient/memory';
 
 const SEEDED_MODEL_ID = 'klient-example-model';
 

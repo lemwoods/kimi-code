@@ -153,7 +153,7 @@ Once a foundational component knows about an upstream scenario, it can no longer
 
 `agent-core-v2` has no mechanical domain-layer numbering — dependency direction is the judgment rule above, applied per domain. What remains enforceable is a small set of specific boundaries (`lint:imports`, `scripts/check-import-boundaries.mjs`):
 
-- v2 never imports v1 (`@lemwood/agent-core`).
+- v2 never imports v1 (`@lcode-cli/agent-core`).
 - The kosong subtree keeps its strict internal order (`contract ← protocol ← provider/model`, purity bans, the `provider/bases` registration boundary).
 
 Two standing red lines on top of that:

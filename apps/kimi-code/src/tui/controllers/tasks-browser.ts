@@ -1,5 +1,5 @@
-import type { BackgroundTaskInfo, Session } from '@lemwood/lcode-sdk';
-import type { ProcessTerminal, TUI } from '@lemwood/pi-tui';
+import type { BackgroundTaskInfo, Session } from '@lcode-cli/lcode-sdk';
+import type { ProcessTerminal, TUI } from '@lcode-cli/pi-tui';
 
 import { AgentActivityViewer, formatSubagentActivityPreview } from '../components/dialogs/agent-activity-viewer';
 import { TaskOutputViewer } from '../components/dialogs/task-output-viewer';

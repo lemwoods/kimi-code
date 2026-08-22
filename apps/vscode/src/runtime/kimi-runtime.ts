@@ -5,7 +5,7 @@ import {
   type Session,
   type SessionSummary,
   type ThinkingEffort,
-} from "@lemwood/lcode-sdk";
+} from "@lcode-cli/lcode-sdk";
 
 import type { RuntimeBroadcast } from "./session-runtime";
 import {

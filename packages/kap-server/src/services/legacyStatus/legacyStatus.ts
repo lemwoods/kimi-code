@@ -7,9 +7,9 @@ import {
   IModelService,
   type IAgentScopeHandle,
   type UsageStatus,
-} from '@lemwood/agent-core-v2';
-import type { AgentActivityState } from '@lemwood/agent-core-v2';
-import type { TurnEndReason } from '@lemwood/agent-core-v2/agent/loop/turnEvents';
+} from '@lcode-cli/agent-core-v2';
+import type { AgentActivityState } from '@lcode-cli/agent-core-v2';
+import type { TurnEndReason } from '@lcode-cli/agent-core-v2/agent/loop/turnEvents';
 
 /**
  * The v1 `phase` field of the combined `agent.status.updated` payload — a

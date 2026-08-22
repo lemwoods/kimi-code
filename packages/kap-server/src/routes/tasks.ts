@@ -4,7 +4,7 @@ import {
   getLiveSessionById,
   type AgentTaskInfo,
   type Scope,
-} from '@lemwood/agent-core-v2';
+} from '@lcode-cli/agent-core-v2';
 import { ErrorCode } from '../protocol/error-codes';
 import {
   cancelTaskResultSchema,

@@ -1,8 +1,8 @@
 import type {
   BackgroundTaskInfo,
   Event,
-} from '@lemwood/lcode-sdk';
-import type { Component } from '@lemwood/pi-tui';
+} from '@lcode-cli/lcode-sdk';
+import type { Component } from '@lcode-cli/pi-tui';
 
 import {
   AgentSwarmProgressComponent,

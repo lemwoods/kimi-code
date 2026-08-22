@@ -5,10 +5,10 @@ import type {
   TelemetryClient,
   TelemetryContextPatch,
   TelemetryProperties,
-} from '@lemwood/agent-core';
-import type { Kaos } from '@lemwood/kaos';
-import type { KimiHostIdentity, OAuthRefreshOutcome } from '@lemwood/lcode-oauth';
-import type { ContentPart } from '@lemwood/kosong';
+} from '@lcode-cli/agent-core';
+import type { Kaos } from '@lcode-cli/kaos';
+import type { KimiHostIdentity, OAuthRefreshOutcome } from '@lcode-cli/lcode-oauth';
+import type { ContentPart } from '@lcode-cli/kosong';
 
 export type JsonPrimitive = string | number | boolean | null;
 export type JsonValue = JsonPrimitive | JsonValue[] | { readonly [key: string]: JsonValue };
@@ -21,7 +21,7 @@ export interface AgentRuntimeBinding {
   readonly runtimeId: string;
 }
 
-export type { CapabilityStatus } from '@lemwood/agent-core-v2/app/capability/types';
+export type { CapabilityStatus } from '@lcode-cli/agent-core-v2/app/capability/types';
 
 export type {
   AgentReplayRecord,
@@ -82,14 +82,14 @@ export type {
   ToolInfo,
   GlobalMcpServerConfig as McpServerConfig,
   GlobalMcpServerTestResult as McpTestResult,
-} from '@lemwood/agent-core';
+} from '@lcode-cli/agent-core';
 
 export type { KimiHostIdentity, OAuthRefreshOutcome };
 export type { TelemetryClient, TelemetryContextPatch, TelemetryProperties };
-export type { ContentPart, Role, ThinkingEffort, ToolCall } from '@lemwood/kosong';
+export type { ContentPart, Role, ThinkingEffort, ToolCall } from '@lcode-cli/kosong';
 // Contributed commands are an agent-core-v2 seam; the type is re-exported
 // from the v2 engine (v1 sessions report an empty command set).
-export type { AgentCommandInfo } from '@lemwood/agent-core-v2/agent/command/agentCommand';
+export type { AgentCommandInfo } from '@lcode-cli/agent-core-v2/agent/command/agentCommand';
 
 export type PermissionMode = 'yolo' | 'manual' | 'auto';
 
@@ -114,7 +114,7 @@ export interface WorkspaceTrustInfo {
 }
 
 /** Metadata of one upload in the engine's daemon file store. */
-export type { FileMeta } from '@lemwood/agent-core-v2/app/file/fileService';
+export type { FileMeta } from '@lcode-cli/agent-core-v2/app/file/fileService';
 
 /** Input for `uploadFile`: the upload's display name and MIME type. */
 export interface UploadFileOptions {

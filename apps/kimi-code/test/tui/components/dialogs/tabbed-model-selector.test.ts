@@ -1,4 +1,4 @@
-import type { ModelAlias } from '@lemwood/lcode-sdk';
+import type { ModelAlias } from '@lcode-cli/lcode-sdk';
 import chalk from 'chalk';
 import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest';
 

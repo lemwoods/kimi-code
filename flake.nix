@@ -89,29 +89,29 @@
       ];
 
       workspaceNames = [
-        "@lemwood/acp-adapter"
-        "@lemwood/acp-server"
-        "@lemwood/agent-core"
-        "@lemwood/agent-core-v2"
-        "@lemwood/kap-server"
-        "@lemwood/kaos"
-        "@lemwood/kosong"
-        "@lemwood/migration-legacy"
-        "@lemwood/minidb"
-        "@lemwood/lcode-sdk"
-        "@lemwood/lcode-oauth"
-        "@lemwood/klient"
-        "@lemwood/pi-tui"
-        "@lemwood/protocol"
-        "@lemwood/lcode-telemetry"
-        "@lemwood/transcript"
-        "@lemwood/tree-sitter-bash"
-        "@lemwood/lcode"
+        "@lcode-cli/acp-adapter"
+        "@lcode-cli/acp-server"
+        "@lcode-cli/agent-core"
+        "@lcode-cli/agent-core-v2"
+        "@lcode-cli/kap-server"
+        "@lcode-cli/kaos"
+        "@lcode-cli/kosong"
+        "@lcode-cli/migration-legacy"
+        "@lcode-cli/minidb"
+        "@lcode-cli/lcode-sdk"
+        "@lcode-cli/lcode-oauth"
+        "@lcode-cli/klient"
+        "@lcode-cli/pi-tui"
+        "@lcode-cli/protocol"
+        "@lcode-cli/lcode-telemetry"
+        "@lcode-cli/transcript"
+        "@lcode-cli/tree-sitter-bash"
+        "@lcode-cli/lcode"
         "kimi-code"
-        "@lemwood/lcode-inspect"
-        "@lemwood/vis"
-        "@lemwood/vis-server"
-        "@lemwood/vis-web"
+        "@lcode-cli/lcode-inspect"
+        "@lcode-cli/vis"
+        "@lcode-cli/vis-server"
+        "@lcode-cli/vis-web"
         "kimi-code-docs"
       ];
     in
@@ -205,7 +205,7 @@
               # code-app repo) — verify it is in place before producing the
               # native executable.
               node apps/kimi-code/scripts/check-web-assets.mjs
-              pnpm --filter=@lemwood/lcode run build:native:sea
+              pnpm --filter=@lcode-cli/lcode run build:native:sea
               runHook postBuild
             '';
 

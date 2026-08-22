@@ -1,4 +1,4 @@
-import type { PluginCommandDef } from '@lemwood/lcode-sdk';
+import type { PluginCommandDef } from '@lcode-cli/lcode-sdk';
 
 import type { KimiSlashCommand } from './types';
 

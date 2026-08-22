@@ -115,8 +115,8 @@ const mocks = vi.hoisted(() => {
   };
 });
 
-vi.mock('@lemwood/lcode-sdk', async (importOriginal) => {
-  const actual = await importOriginal<typeof import('@lemwood/lcode-sdk')>();
+vi.mock('@lcode-cli/lcode-sdk', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@lcode-cli/lcode-sdk')>();
   return {
     ...actual,
     createKimiHarness: () => ({
@@ -135,7 +135,7 @@ vi.mock('@lemwood/lcode-sdk', async (importOriginal) => {
   };
 });
 
-vi.mock('@lemwood/lcode-telemetry', () => ({
+vi.mock('@lcode-cli/lcode-telemetry', () => ({
   initializeTelemetry: vi.fn(),
   setCrashPhase: vi.fn(),
   shutdownTelemetry: vi.fn(),

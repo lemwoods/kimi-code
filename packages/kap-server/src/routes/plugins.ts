@@ -14,7 +14,7 @@ import {
   type MarketplaceLocation,
   type PluginMarketplace,
   type Scope,
-} from '@lemwood/agent-core-v2';
+} from '@lcode-cli/agent-core-v2';
 import { z } from 'zod';
 
 import { errEnvelope, okEnvelope } from '../envelope';

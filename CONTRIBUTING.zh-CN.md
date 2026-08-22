@@ -28,7 +28,7 @@ Kimi Code 对 CLI/TUI 行为、agent 工作流和公开 API 已有自己的主�
 - `apps/kimi-code` — CLI / TUI
 - `apps/vscode` — VS Code 插件
 - `apps/vis` — 会话调试可视化工具
-- `packages/node-sdk` — 公开 TypeScript SDK（`@lemwood/lcode-sdk`）
+- `packages/node-sdk` — 公开 TypeScript SDK（`@lcode-cli/lcode-sdk`）
 - `packages/agent-core-v2` — 当前的 agent 引擎（v2，DI Scope 架构）；`packages/agent-core` 为 v1，正在逐步废弃
 - `packages/klient`、`kap-server`、`protocol`、`transcript`、`kosong`、`kaos`、`oauth`、`telemetry` — 内部引擎包
 - `docs/` — VitePress 双语文档站

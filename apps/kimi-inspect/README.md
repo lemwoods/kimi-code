@@ -10,7 +10,7 @@ scoped DI registry).
    for you): `pnpm dev:v1` / `pnpm dev:v2` from the repo root pass
    `--debug-endpoints` on a loopback bind; the surface inherits the global
    bearer auth.
-2. `pnpm --filter @lemwood/lcode-inspect dev` — the Vite dev server proxies
+2. `pnpm --filter @lcode-cli/lcode-inspect dev` — the Vite dev server proxies
    `/api` to the server (`KIMI_SERVER_URL`, default `http://127.0.0.1:58627`)
    and auto-discovers running instances
    (`~/.kimi-code/server/instances`); switch servers from the header dropdown.

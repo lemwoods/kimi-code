@@ -2,7 +2,7 @@
  * `kimi acp`
  *
  * Verifies that the ACP v2 sub-command is registered on the program and that
- * the action wires `@lemwood/acp-server`'s `runAcpServer` (the real server
+ * the action wires `@lcode-cli/acp-server`'s `runAcpServer` (the real server
  * is stubbed so the test doesn't actually take over stdio). The module is
  * loaded via a lazy dynamic import in the action, so the mock intercepts that
  * import.
@@ -14,11 +14,11 @@ import { join } from 'node:path';
 import { Command } from 'commander';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
-vi.mock('@lemwood/acp-server', () => ({
+vi.mock('@lcode-cli/acp-server', () => ({
   runAcpServer: vi.fn(async () => undefined),
 }));
 
-import { runAcpServer } from '@lemwood/acp-server';
+import { runAcpServer } from '@lcode-cli/acp-server';
 
 import { registerAcpCommand } from '#/cli/sub/acp';
 import { registerNativeAcpCommand } from '#/cli/sub/acp-native';
@@ -155,7 +155,7 @@ describe('kimi acp', () => {
     // Stub the SDK harness so runLoginFlow doesn't hit a real OAuth endpoint:
     // harness.auth.login resolves immediately and triggers exit 0.
     const loginStub = vi.fn(async () => ({ providerName: 'kimi-code' }));
-    vi.doMock(import('@lemwood/lcode-sdk'), async (importOriginal) => {
+    vi.doMock(import('@lcode-cli/lcode-sdk'), async (importOriginal) => {
       const actual = await importOriginal();
       return {
         ...actual,
@@ -179,7 +179,7 @@ describe('kimi acp', () => {
       expect(runAcpServer).not.toHaveBeenCalled();
       expect(exitSpy).toHaveBeenCalledWith(0);
     } finally {
-      vi.doUnmock('@lemwood/lcode-sdk');
+      vi.doUnmock('@lcode-cli/lcode-sdk');
       vi.resetModules();
     }
   });

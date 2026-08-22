@@ -1,4 +1,4 @@
-import type { ApprovalRequest } from '@lemwood/lcode-sdk';
+import type { ApprovalRequest } from '@lcode-cli/lcode-sdk';
 import { describe, expect, it, vi } from 'vitest';
 
 import { ApprovalController } from '#/tui/reverse-rpc/approval/controller';

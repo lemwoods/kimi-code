@@ -26,9 +26,9 @@ import {
   type GlobalMcpServerConfig,
   type McpRemoteServerConfig,
   type McpServerConfig,
-} from '@lemwood/agent-core';
-import type { McpConnectionManager } from '@lemwood/agent-core-v2/mcpCore/connection-manager';
-import { atomicWrite } from '@lemwood/agent-core-v2/_base/utils/fs';
+} from '@lcode-cli/agent-core';
+import type { McpConnectionManager } from '@lcode-cli/agent-core-v2/mcpCore/connection-manager';
+import { atomicWrite } from '@lcode-cli/agent-core-v2/_base/utils/fs';
 
 import type {
   AppMcpServerConfig,

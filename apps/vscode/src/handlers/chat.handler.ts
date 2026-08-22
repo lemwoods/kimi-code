@@ -1,5 +1,5 @@
 import * as vscode from "vscode";
-import { isKimiError } from "@lemwood/lcode-sdk";
+import { isKimiError } from "@lcode-cli/lcode-sdk";
 
 import { Events, Methods } from "../../shared/bridge";
 import type { ApprovalResponse, ContentPart } from "../../shared/legacy-sdk";

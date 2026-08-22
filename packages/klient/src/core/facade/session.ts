@@ -7,25 +7,25 @@
  * wire).
  */
 
-import type { AgentActivityState } from '@lemwood/agent-core-v2/agent/activityView/activityView';
+import type { AgentActivityState } from '@lcode-cli/agent-core-v2/agent/activityView/activityView';
 import type {
   ApprovalRequest,
   ApprovalResponse,
-} from '@lemwood/agent-core-v2/session/approval/approval';
+} from '@lcode-cli/agent-core-v2/session/approval/approval';
 import type {
   Interaction,
   InteractionKind,
-} from '@lemwood/agent-core-v2/session/interaction/interaction';
+} from '@lcode-cli/agent-core-v2/session/interaction/interaction';
 import type {
   QuestionRequest,
   QuestionResult,
-} from '@lemwood/agent-core-v2/session/question/question';
+} from '@lcode-cli/agent-core-v2/session/question/question';
 import type {
   AgentMeta,
   SessionMeta,
   SessionMetaPatch,
-} from '@lemwood/agent-core-v2/session/sessionMetadata/sessionMetadata';
-import type { SkillSummary } from '@lemwood/agent-core-v2/app/skillCatalog/types';
+} from '@lcode-cli/agent-core-v2/session/sessionMetadata/sessionMetadata';
+import type { SkillSummary } from '@lcode-cli/agent-core-v2/app/skillCatalog/types';
 
 import type { ScopeRef } from '../channel.js';
 import type { McpServerConfig } from '../../contract/mcp.js';

@@ -8,14 +8,14 @@ import {
   deleteAllKittyImages,
   resetCapabilitiesCache,
   setCapabilities,
-} from '@lemwood/pi-tui';
+} from '@lcode-cli/pi-tui';
 import type {
   ApprovalRequest,
   ApprovalResponse,
   Event,
   GoalSnapshot,
   Session,
-} from '@lemwood/lcode-sdk';
+} from '@lcode-cli/lcode-sdk';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { ApprovalPanelComponent } from '#/tui/components/dialogs/approval-panel';

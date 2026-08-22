@@ -1,4 +1,4 @@
-import { visibleWidth } from '@lemwood/pi-tui';
+import { visibleWidth } from '@lcode-cli/pi-tui';
 import { describe, expect, it } from 'vitest';
 
 import { TruncatedOutputComponent } from '#/tui/components/messages/tool-renderers/truncated';

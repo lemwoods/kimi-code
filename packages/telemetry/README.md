@@ -1,4 +1,4 @@
-# @lemwood/lcode-telemetry
+# @lcode-cli/lcode-telemetry
 
 Shared telemetry infrastructure for Kimi Code.
 

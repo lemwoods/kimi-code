@@ -5,7 +5,7 @@
  * visualizer server (auto-picking a free port by default), prints the URL,
  * optionally opens the browser (with an optional session deep-link), then
  * waits for Ctrl-C and shuts the server down. The visualizer server itself
- * lives in `@lemwood/vis-server`.
+ * lives in `@lcode-cli/vis-server`.
  */
 
 import type { Command } from 'commander';
@@ -131,7 +131,7 @@ function createDefaultVisDeps(overrides: Partial<VisDeps> = {}): VisDeps {
       overrides.startVisServer ??
       (async (opts) => {
         // Dynamic import keeps the vis server (and Hono) out of the hot path.
-        const { startVisServer } = await import('@lemwood/vis-server/start');
+        const { startVisServer } = await import('@lcode-cli/vis-server/start');
         return startVisServer(opts);
       }),
     // `openUrl` is a synchronous fire-and-forget; adapt it to the async dep.

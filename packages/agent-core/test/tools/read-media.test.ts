@@ -2,11 +2,11 @@
  * ReadMediaFileTool public execution contract: capability and path gating,
  * model-safe media delivery, compression/crop behavior, and actionable
  * failures. Real codecs are used; Kaos is the only stubbed I/O boundary.
- * Run with: pnpm --filter @lemwood/agent-core test -- read-media.test.ts
+ * Run with: pnpm --filter @lcode-cli/agent-core test -- read-media.test.ts
  */
 
-import type { Kaos } from '@lemwood/kaos';
-import type { ContentPart, ModelCapability } from '@lemwood/kosong';
+import type { Kaos } from '@lcode-cli/kaos';
+import type { ContentPart, ModelCapability } from '@lcode-cli/kosong';
 import { Jimp } from 'jimp';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 

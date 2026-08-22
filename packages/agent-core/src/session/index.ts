@@ -1,7 +1,7 @@
 import { homedir } from 'node:os';
 import { join } from 'pathe';
-import type { Kaos } from '@lemwood/kaos';
-import type { SessionWarning } from '@lemwood/protocol';
+import type { Kaos } from '@lcode-cli/kaos';
+import type { SessionWarning } from '@lcode-cli/protocol';
 
 import { ErrorCodes, KimiError } from '#/errors';
 import { getRootLogger, log } from '#/logging/logger';

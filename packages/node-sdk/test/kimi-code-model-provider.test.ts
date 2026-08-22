@@ -8,7 +8,7 @@ import {
   OAuthError,
   OAuthUnauthorizedError,
   RetryableRefreshError,
-} from '@lemwood/lcode-oauth';
+} from '@lcode-cli/lcode-oauth';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { ErrorCodes, KimiError, KimiForCodingProvider } from '#/index';

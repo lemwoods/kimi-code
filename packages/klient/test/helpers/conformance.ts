@@ -11,12 +11,12 @@ import { mkdir, mkdtemp, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
-import { Service } from '@lemwood/agent-core-v2/_base/di/service';
-import { CommandContribution } from '@lemwood/agent-core-v2/agent/command/commandContribution';
-import { IFeatureManager } from '@lemwood/agent-core-v2/app/feature/featureManager';
-import { getLiveSessionById } from '@lemwood/agent-core-v2/app/sessionManager/sessionLookup';
-import { IAgentLifecycleService } from '@lemwood/agent-core-v2/session/agentLifecycle/agentLifecycle';
-import { IAgentPromptService, reservePrompt } from '@lemwood/agent-core-v2/agent/prompt/prompt';
+import { Service } from '@lcode-cli/agent-core-v2/_base/di/service';
+import { CommandContribution } from '@lcode-cli/agent-core-v2/agent/command/commandContribution';
+import { IFeatureManager } from '@lcode-cli/agent-core-v2/app/feature/featureManager';
+import { getLiveSessionById } from '@lcode-cli/agent-core-v2/app/sessionManager/sessionLookup';
+import { IAgentLifecycleService } from '@lcode-cli/agent-core-v2/session/agentLifecycle/agentLifecycle';
+import { IAgentPromptService, reservePrompt } from '@lcode-cli/agent-core-v2/agent/prompt/prompt';
 
 import type { Klient } from '../../src/index.js';
 import type { TestEngine } from './engine.js';

@@ -9,7 +9,7 @@
  */
 
 import { createDecorator } from '../../di';
-import type { KimiHostIdentity } from '@lemwood/lcode-oauth';
+import type { KimiHostIdentity } from '@lcode-cli/lcode-oauth';
 
 export interface IEnvironmentService {
   readonly _serviceBrand: undefined;

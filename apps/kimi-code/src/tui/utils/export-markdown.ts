@@ -1,4 +1,4 @@
-import type { ContentPart, ContextMessage, PromptOrigin, ToolCall } from '@lemwood/lcode-sdk';
+import type { ContentPart, ContextMessage, PromptOrigin, ToolCall } from '@lcode-cli/lcode-sdk';
 
 const HINT_KEYS = ['path', 'file_path', 'command', 'query', 'url', 'name', 'pattern'] as const;
 

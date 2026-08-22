@@ -24,12 +24,12 @@
  * Read/Write/Edit.
  */
 
-import type { Kaos } from '@lemwood/kaos';
+import type { Kaos } from '@lcode-cli/kaos';
 import type {
   ContentPart,
   ModelCapability,
   VideoUploadInput as ProviderVideoUploadInput,
-} from '@lemwood/kosong';
+} from '@lcode-cli/kosong';
 import { z } from 'zod';
 
 import type { BuiltinTool } from '../../../agent/tool';

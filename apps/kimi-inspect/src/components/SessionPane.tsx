@@ -10,7 +10,7 @@
  * without a Refresh button.
  */
 
-import { ISessionStateService } from '@lemwood/agent-core-v2/session/state/sessionState';
+import { ISessionStateService } from '@lcode-cli/agent-core-v2/session/state/sessionState';
 import { useQuery } from '@tanstack/react-query';
 import { useMemo, useState } from 'react';
 

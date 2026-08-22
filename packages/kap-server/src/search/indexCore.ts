@@ -8,7 +8,7 @@ import {
   OpTracker,
   TextIndexBuildingError,
   type BatchInputOp,
-} from '@lemwood/minidb';
+} from '@lcode-cli/minidb';
 
 import { GlobalSearchError, type GlobalSearchIncomplete } from './contract.ts';
 import {

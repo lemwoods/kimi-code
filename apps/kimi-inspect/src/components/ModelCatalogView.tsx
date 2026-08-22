@@ -17,17 +17,17 @@
  * There is no live event push; the queries refresh on a slow poll.
  */
 
-import { IAgentProfileService } from '@lemwood/agent-core-v2/agent/profile/profile';
-import { ISessionManager } from '@lemwood/agent-core-v2/app/sessionManager/sessionManager';
-import type { InspectionSource } from '@lemwood/agent-core-v2/kosong/contract/inspection';
-import type { TokenUsage } from '@lemwood/agent-core-v2/kosong/contract/usage';
+import { IAgentProfileService } from '@lcode-cli/agent-core-v2/agent/profile/profile';
+import { ISessionManager } from '@lcode-cli/agent-core-v2/app/sessionManager/sessionManager';
+import type { InspectionSource } from '@lcode-cli/agent-core-v2/kosong/contract/inspection';
+import type { TokenUsage } from '@lcode-cli/agent-core-v2/kosong/contract/usage';
 import {
   IModelCatalog,
   type ModelCatalogItem,
   type ModelPingResult,
   type ProviderCatalogItem,
-} from '@lemwood/agent-core-v2/kosong/model/catalog';
-import { IModelService } from '@lemwood/agent-core-v2/kosong/model/model';
+} from '@lcode-cli/agent-core-v2/kosong/model/catalog';
+import { IModelService } from '@lcode-cli/agent-core-v2/kosong/model/model';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { useEffect, useRef, useState } from 'react';
 

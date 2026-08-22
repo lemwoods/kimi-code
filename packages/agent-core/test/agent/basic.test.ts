@@ -1,4 +1,4 @@
-import type { ContentPart, ToolCall } from '@lemwood/kosong';
+import type { ContentPart, ToolCall } from '@lcode-cli/kosong';
 import { createServer } from 'node:http';
 import type { AddressInfo } from 'node:net';
 import { mkdtempSync, truncateSync, writeFileSync } from 'node:fs';

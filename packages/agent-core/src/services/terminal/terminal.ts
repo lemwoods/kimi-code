@@ -6,7 +6,7 @@ import type {
   Terminal,
   TerminalExitMessage,
   TerminalOutputMessage,
-} from '@lemwood/protocol';
+} from '@lcode-cli/protocol';
 
 export type TerminalFrame = TerminalOutputMessage | TerminalExitMessage;
 

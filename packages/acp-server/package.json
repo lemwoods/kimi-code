@@ -1,5 +1,5 @@
 {
-  "name": "@lemwood/acp-server",
+  "name": "@lcode-cli/acp-server",
   "version": "0.0.1",
   "private": true,
   "description": "Agent Client Protocol (ACP) host backed directly by the DI × Scope agent engine (agent-core-v2)",
@@ -20,8 +20,8 @@
   },
   "dependencies": {
     "@agentclientprotocol/sdk": "^1.3.0",
-    "@lemwood/agent-core-v2": "workspace:^",
-    "@lemwood/klient": "workspace:^",
-    "@lemwood/protocol": "workspace:^"
+    "@lcode-cli/agent-core-v2": "workspace:^",
+    "@lcode-cli/klient": "workspace:^",
+    "@lcode-cli/protocol": "workspace:^"
   }
 }

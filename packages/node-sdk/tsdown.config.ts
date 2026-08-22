@@ -20,13 +20,13 @@ export default defineConfig({
     ].join('\n'),
   },
   alias: {
-    '@lemwood/agent-core': fileURLToPath(new URL('../agent-core/src/index.ts', import.meta.url)),
-    '@lemwood/kaos': fileURLToPath(new URL('../kaos/src/index.ts', import.meta.url)),
-    '@lemwood/lcode-oauth': fileURLToPath(new URL('../oauth/src/index.ts', import.meta.url)),
-    '@lemwood/kosong': fileURLToPath(new URL('../kosong/src/index.ts', import.meta.url)),
+    '@lcode-cli/agent-core': fileURLToPath(new URL('../agent-core/src/index.ts', import.meta.url)),
+    '@lcode-cli/kaos': fileURLToPath(new URL('../kaos/src/index.ts', import.meta.url)),
+    '@lcode-cli/lcode-oauth': fileURLToPath(new URL('../oauth/src/index.ts', import.meta.url)),
+    '@lcode-cli/kosong': fileURLToPath(new URL('../kosong/src/index.ts', import.meta.url)),
   },
   deps: {
-    alwaysBundle: [/^@lemwood\//],
+    alwaysBundle: [/^@lcode-cli\//],
     neverBundle: [],
   },
 });

@@ -27,7 +27,7 @@ import {
   type ModelCapability,
   type StreamDecodeStats,
   type StreamedMessagePart,
-} from '@lemwood/kosong';
+} from '@lcode-cli/kosong';
 
 import type {
   LLM,

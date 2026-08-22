@@ -1,4 +1,4 @@
-# @lemwood/kosong
+# @lcode-cli/kosong
 
 ## 0.5.5
 

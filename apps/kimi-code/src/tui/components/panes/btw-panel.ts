@@ -1,10 +1,10 @@
-import type { Component, MarkdownTheme } from '@lemwood/pi-tui';
+import type { Component, MarkdownTheme } from '@lcode-cli/pi-tui';
 import {
   Markdown,
   Text,
   truncateToWidth,
   visibleWidth,
-} from '@lemwood/pi-tui';
+} from '@lcode-cli/pi-tui';
 import chalk from 'chalk';
 
 import { THINKING_PREVIEW_LINES } from '../../constant/rendering';

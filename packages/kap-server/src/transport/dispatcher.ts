@@ -7,7 +7,7 @@ import {
   type IScopeHandle,
   type Scope,
   type ServiceIdentifier,
-} from '@lemwood/agent-core-v2';
+} from '@lcode-cli/agent-core-v2';
 
 import type { ScopeKind } from './channel';
 import { resolveAnyScopedServiceId } from './channelRegistry';

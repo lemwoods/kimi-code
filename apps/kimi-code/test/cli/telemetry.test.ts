@@ -22,17 +22,17 @@ const mocks = vi.hoisted(() => ({
   getCachedAccessToken: vi.fn(async () => 'tok'),
 }));
 
-vi.mock('@lemwood/lcode-telemetry', () => ({
+vi.mock('@lcode-cli/lcode-telemetry', () => ({
   initializeTelemetry: mocks.initializeTelemetry,
   setTelemetryContext: vi.fn(),
   track: vi.fn(),
   withTelemetryContext: vi.fn(),
 }));
 
-vi.mock('@lemwood/lcode-oauth', async (importOriginal) => {
+vi.mock('@lcode-cli/lcode-oauth', async (importOriginal) => {
   // Spread the real module: the SDK's v2 client pulls agent-core-v2 into the
   // import graph, which subclasses KimiOAuthToolkit from this package.
-  const actual = await importOriginal<typeof import('@lemwood/lcode-oauth')>();
+  const actual = await importOriginal<typeof import('@lcode-cli/lcode-oauth')>();
   return {
     ...actual,
     createKimiDeviceId: mocks.createKimiDeviceId,
@@ -40,8 +40,8 @@ vi.mock('@lemwood/lcode-oauth', async (importOriginal) => {
   };
 });
 
-vi.mock('@lemwood/lcode-sdk', async (importOriginal) => {
-  const actual = await importOriginal<typeof import('@lemwood/lcode-sdk')>();
+vi.mock('@lcode-cli/lcode-sdk', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@lcode-cli/lcode-sdk')>();
   return {
     ...actual,
     resolveKimiHome: mocks.resolveKimiHome,

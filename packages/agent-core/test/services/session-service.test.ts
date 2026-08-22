@@ -15,7 +15,7 @@ import {
   type UpdateSessionMetadataPayload,
 } from '../../src';
 import { TestInstantiationService } from '../../src/di/test';
-import { emptySessionUsage, type Event, type Session } from '@lemwood/protocol';
+import { emptySessionUsage, type Event, type Session } from '@lcode-cli/protocol';
 
 import {
   IApprovalService,

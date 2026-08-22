@@ -52,7 +52,7 @@
  * are injected, so the tracker is unit-testable without a TUI.
  */
 
-import type { TurnEndedEvent, TurnStartedEvent } from '@lemwood/lcode-sdk';
+import type { TurnEndedEvent, TurnStartedEvent } from '@lcode-cli/lcode-sdk';
 
 import type { QueuedMessage } from '../types';
 

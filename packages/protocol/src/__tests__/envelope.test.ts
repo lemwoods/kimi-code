@@ -2,7 +2,7 @@
  * Scenario: protocol success/error envelopes and canonical error codes.
  * Responsibilities: verify schema round-trips, stable numeric codes, and reason labels.
  * Wiring: pure protocol schemas and constructors; no external boundaries.
- * Run: `pnpm --filter @lemwood/protocol exec vitest run src/__tests__/envelope.test.ts`.
+ * Run: `pnpm --filter @lcode-cli/protocol exec vitest run src/__tests__/envelope.test.ts`.
  */
 import { describe, expect, it } from 'vitest';
 import { z } from 'zod';

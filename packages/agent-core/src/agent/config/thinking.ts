@@ -1,4 +1,4 @@
-import type { ThinkingEffort } from '@lemwood/kosong';
+import type { ThinkingEffort } from '@lcode-cli/kosong';
 
 import { effectiveModelAlias } from '../../config';
 import type { ModelAlias, ThinkingConfig } from '../../config/schema';

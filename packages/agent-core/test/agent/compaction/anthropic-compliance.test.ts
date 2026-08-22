@@ -14,8 +14,8 @@
 // These tests drive the real compaction/projection functions, run their output
 // through the real AnthropicChatProvider conversion, and assert the wire request
 // is well-formed — so a regression in any single layer turns red here.
-import { createProvider } from '@lemwood/kosong';
-import type { Message, Tool } from '@lemwood/kosong';
+import { createProvider } from '@lcode-cli/kosong';
+import type { Message, Tool } from '@lcode-cli/kosong';
 import { describe, expect, it, vi } from 'vitest';
 
 import type { ContextMessage } from '../../../src/agent/context';

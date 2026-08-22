@@ -1,4 +1,4 @@
-import type { TurnEndedEvent, TurnStartedEvent } from '@lemwood/lcode-sdk';
+import type { TurnEndedEvent, TurnStartedEvent } from '@lcode-cli/lcode-sdk';
 import { describe, expect, it, vi } from 'vitest';
 
 import {

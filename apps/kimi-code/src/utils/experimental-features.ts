@@ -1,7 +1,7 @@
 import type {
   ExperimentalFeatureState,
   ExperimentalFlagMap,
-} from '@lemwood/lcode-sdk';
+} from '@lcode-cli/lcode-sdk';
 
 export function experimentalFeatureMap(
   features: readonly Pick<ExperimentalFeatureState, 'id' | 'enabled'>[],

@@ -1,4 +1,4 @@
-import { Markdown, visibleWidth } from '@lemwood/pi-tui';
+import { Markdown, visibleWidth } from '@lcode-cli/pi-tui';
 import * as cliHighlight from 'cli-highlight';
 import { describe, expect, it, vi } from 'vitest';
 

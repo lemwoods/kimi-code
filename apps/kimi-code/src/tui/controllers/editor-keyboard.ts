@@ -1,7 +1,7 @@
 import { readFile } from 'node:fs/promises';
 
-import type { FileMeta, KimiHarness, Session } from '@lemwood/lcode-sdk';
-import { compressImageForModel } from '@lemwood/lcode-sdk';
+import type { FileMeta, KimiHarness, Session } from '@lcode-cli/lcode-sdk';
+import { compressImageForModel } from '@lcode-cli/lcode-sdk';
 
 import {
   ClipboardMediaError,

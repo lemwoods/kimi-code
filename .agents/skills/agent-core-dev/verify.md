@@ -4,15 +4,15 @@ Run the guards and re-scan the red lines before submitting.
 
 ## Commands
 
-Run from the package (or with `--filter @lemwood/agent-core-v2`):
+Run from the package (or with `--filter @lcode-cli/agent-core-v2`):
 
-- `pnpm --filter @lemwood/agent-core-v2 lint:imports` — import-boundary guard (`scripts/check-import-boundaries.mjs`). Catches v1 imports (`@lemwood/agent-core`) and kosong subtree violations.
-- `pnpm --filter @lemwood/agent-core-v2 typecheck` — `tsc -p tsconfig.json --noEmit`.
-- `pnpm --filter @lemwood/agent-core-v2 test` — `vitest run`.
+- `pnpm --filter @lcode-cli/agent-core-v2 lint:imports` — import-boundary guard (`scripts/check-import-boundaries.mjs`). Catches v1 imports (`@lcode-cli/agent-core`) and kosong subtree violations.
+- `pnpm --filter @lcode-cli/agent-core-v2 typecheck` — `tsc -p tsconfig.json --noEmit`.
+- `pnpm --filter @lcode-cli/agent-core-v2 test` — `vitest run`.
 
 ## Changesets (when the change ships through the CLI)
 
-If the change is user-facing and ships through the CLI, generate a changeset with the repository's `gen-changesets` skill (root `AGENTS.md` workflow). `agent-core-v2` is an internal package; if its change enters the CLI bundle, the changeset lists `@lemwood/lcode` and describes the real change — do not present an internal-only change as a user-facing feature. Never write a `major` bump without explicit user confirmation.
+If the change is user-facing and ships through the CLI, generate a changeset with the repository's `gen-changesets` skill (root `AGENTS.md` workflow). `agent-core-v2` is an internal package; if its change enters the CLI bundle, the changeset lists `@lcode-cli/lcode` and describes the real change — do not present an internal-only change as a user-facing feature. Never write a `major` bump without explicit user confirmation.
 
 ## Pre-submit checklist
 
@@ -28,5 +28,5 @@ Then re-read the [global red lines](SKILL.md#global-red-lines) once — they cat
 ## Red lines (this stage)
 
 - Do not skip `lint:imports` — it is the only automated check for the v1-import ban and the kosong subtree rules.
-- Do not list internal packages in a changeset when the change enters the CLI bundle — list `@lemwood/lcode` and describe the real change.
+- Do not list internal packages in a changeset when the change enters the CLI bundle — list `@lcode-cli/lcode` and describe the real change.
 - Never write a `major` changeset without explicit user confirmation.

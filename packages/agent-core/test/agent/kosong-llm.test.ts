@@ -6,7 +6,7 @@ import {
   type ModelCapability,
   type StreamedMessagePart,
   type ToolCall,
-} from '@lemwood/kosong';
+} from '@lcode-cli/kosong';
 import { describe, expect, it } from 'vitest';
 
 import {

@@ -25,7 +25,7 @@ import {
   type ISessionMediaStore,
   type ImageCompressionTelemetry,
   type ITelemetryService,
-} from '@lemwood/agent-core-v2';
+} from '@lcode-cli/agent-core-v2';
 
 import type { PromptSubmission } from '../protocol/rest-prompt';
 

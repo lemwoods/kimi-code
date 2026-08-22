@@ -1,6 +1,6 @@
 import { createHash } from 'node:crypto';
 
-import { normalizeLiteral } from '@lemwood/minidb';
+import { normalizeLiteral } from '@lcode-cli/minidb';
 
 import {
   GlobalSearchError,

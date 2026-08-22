@@ -1,4 +1,4 @@
-import type { ToolInputDisplay } from '@lemwood/agent-core';
+import type { ToolInputDisplay } from '@lcode-cli/agent-core';
 
 /**
  * Recover the UI display attached to a legacy top-level ToolResult.

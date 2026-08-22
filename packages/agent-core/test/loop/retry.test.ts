@@ -4,7 +4,7 @@ import {
   APIProviderRateLimitError,
   emptyUsage,
   isRetryableGenerateError,
-} from '@lemwood/kosong';
+} from '@lcode-cli/kosong';
 import { describe, expect, it } from 'vitest';
 
 import type { KimiConfig } from '#/config';

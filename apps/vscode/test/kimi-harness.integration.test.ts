@@ -13,7 +13,7 @@ import { join } from "node:path";
 import {
   createKimiHarness,
   type KimiHarness,
-} from "@lemwood/lcode-sdk";
+} from "@lcode-cli/lcode-sdk";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 vi.mock("vscode", () => ({

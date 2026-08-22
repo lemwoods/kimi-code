@@ -7,7 +7,7 @@ import {
   APIStatusError,
   type GenerateResult,
   type ProviderConfig,
-} from '@lemwood/kosong';
+} from '@lcode-cli/kosong';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { ProviderManager } from '../../src/session/provider-manager';

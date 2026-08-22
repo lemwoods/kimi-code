@@ -1,4 +1,4 @@
-import type { Event } from '@lemwood/lcode-sdk';
+import type { Event } from '@lcode-cli/lcode-sdk';
 
 import type {
   DisplayBlock,

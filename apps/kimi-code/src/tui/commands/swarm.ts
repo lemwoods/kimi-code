@@ -1,4 +1,4 @@
-import type { PermissionMode } from '@lemwood/lcode-sdk';
+import type { PermissionMode } from '@lcode-cli/lcode-sdk';
 
 import {
   SwarmStartPermissionPromptComponent,

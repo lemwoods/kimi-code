@@ -13,7 +13,7 @@
  *    raw REST request/response or WS payload).
  */
 
-import { EMPTY_AGENT_STATE } from '@lemwood/transcript';
+import { EMPTY_AGENT_STATE } from '@lcode-cli/transcript';
 import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
 
 import { diffValue, type DiffNode } from '../../audit/diff';

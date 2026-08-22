@@ -1,5 +1,5 @@
 {
-  "name": "@lemwood/migration-legacy",
+  "name": "@lcode-cli/migration-legacy",
   "version": "0.1.16",
   "description": "Migrate kimi-cli (~/.kimi/) data into kimi-code (~/.kimi-code/).",
   "license": "MIT",
@@ -24,11 +24,11 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@lemwood/agent-core": "workspace:^",
+    "@lcode-cli/agent-core": "workspace:^",
     "smol-toml": "^1.6.1",
     "zod": "^4.3.6"
   },
   "devDependencies": {
-    "@lemwood/kaos": "workspace:^"
+    "@lcode-cli/kaos": "workspace:^"
   }
 }

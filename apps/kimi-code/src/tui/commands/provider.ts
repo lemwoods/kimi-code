@@ -5,7 +5,7 @@ import {
   fetchOpenAiCompatibleModels,
   type CustomRegistrySource,
   type ManagedKimiConfigShape,
-} from '@lemwood/lcode-oauth';
+} from '@lcode-cli/lcode-oauth';
 import {
   applyCatalogProvider,
   cascadeSubagentModelPool,
@@ -16,7 +16,7 @@ import {
   SECONDARY_DERIVED_MODEL_ALIAS,
   type Catalog,
   type ThinkingEffort,
-} from '@lemwood/lcode-sdk';
+} from '@lcode-cli/lcode-sdk';
 
 import { createKimiCodeUserAgent } from '#/cli/version';
 import { fetchCatalogOrBuiltIn } from '#/utils/catalog-fetch';

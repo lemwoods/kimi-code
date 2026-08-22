@@ -3,7 +3,7 @@ import { access, mkdtemp, readFile, rename, rm, stat, writeFile } from 'node:fs/
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 
-import { kimiCdnContentUrl } from '@lemwood/lcode-oauth';
+import { kimiCdnContentUrl } from '@lcode-cli/lcode-oauth';
 
 import { downloadToFile, runCommand } from '../host';
 import type {

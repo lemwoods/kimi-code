@@ -55,8 +55,8 @@ import type {
   QuestionOption as ProtocolQuestionOption,
   QuestionRequest as ProtocolQuestionRequest,
   QuestionResponse as ProtocolQuestionResponse,
-} from '@lemwood/protocol';
-import type {} from '@lemwood/protocol'; // type-only marker — keep protocol dep referenced
+} from '@lcode-cli/protocol';
+import type {} from '@lcode-cli/protocol'; // type-only marker — keep protocol dep referenced
 
 // Re-export for service-side consumers.
 export type { QuestionRequest, QuestionResult };

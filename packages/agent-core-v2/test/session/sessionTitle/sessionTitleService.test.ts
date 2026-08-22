@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi, type Mock } from 'vitest';
 
-import { OAuthConnectionError, OAuthUnauthorizedError } from '@lemwood/lcode-oauth';
+import { OAuthConnectionError, OAuthUnauthorizedError } from '@lcode-cli/lcode-oauth';
 
 import { DisposableStore, type IDisposable } from '#/_base/di/lifecycle';
 import { type IAgentScopeHandle } from '#/_base/di/scope';

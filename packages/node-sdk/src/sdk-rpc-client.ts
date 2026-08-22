@@ -12,9 +12,9 @@ import {
   type RPCMethods,
   type SDKAPI,
   type TelemetryClient,
-} from '@lemwood/agent-core';
-import type { Kaos } from '@lemwood/kaos';
-import { assertKimiHostIdentity, createKimiDefaultHeaders } from '@lemwood/lcode-oauth';
+} from '@lcode-cli/agent-core';
+import type { Kaos } from '@lcode-cli/kaos';
+import { assertKimiHostIdentity, createKimiDefaultHeaders } from '@lcode-cli/lcode-oauth';
 
 import { KimiAuthFacade } from '#/auth';
 import { KimiHarness } from '#/kimi-harness';

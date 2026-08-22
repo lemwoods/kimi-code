@@ -10,7 +10,7 @@ import type {
   FsGitStatusRequest,
   FsGitStatusResponse,
   FsPullRequest,
-} from '@lemwood/protocol';
+} from '@lcode-cli/protocol';
 import { ISessionService } from '../session/session';
 
 import { FsPathNotFoundError } from './fs';

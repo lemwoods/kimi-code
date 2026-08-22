@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 
-import type { KimiHarness } from '@lemwood/lcode-sdk';
+import type { KimiHarness } from '@lcode-cli/lcode-sdk';
 
 import {
   buildModelOption,

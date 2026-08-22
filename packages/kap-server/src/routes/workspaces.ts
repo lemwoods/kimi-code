@@ -6,7 +6,7 @@ import {
   IWorkspaceTrust,
   type Scope,
   type Workspace,
-} from '@lemwood/agent-core-v2';
+} from '@lcode-cli/agent-core-v2';
 import { isAbsolute } from 'node:path';
 
 import { z } from 'zod';

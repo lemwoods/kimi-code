@@ -11,7 +11,7 @@
  * This file implements the ask, progress, and result phases. `beginMigration`
  * drives the real runMigration flow (injectable for tests).
  */
-import { Container, matchesKey, Key, truncateToWidth, type Focusable } from '@lemwood/pi-tui';
+import { Container, matchesKey, Key, truncateToWidth, type Focusable } from '@lcode-cli/pi-tui';
 import chalk from 'chalk';
 
 import type { ColorPalette } from '#/tui/theme/colors';
@@ -27,7 +27,7 @@ import {
   type Prompt1Choice,
   type Prompt2Choice,
   type RunMigrationInput,
-} from '@lemwood/migration-legacy';
+} from '@lcode-cli/migration-legacy';
 
 type Phase = 'ask1' | 'ask2' | 'progress' | 'result';
 

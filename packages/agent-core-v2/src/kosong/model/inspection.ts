@@ -1,4 +1,4 @@
-import { parseKimiCodeCustomHeaders } from '@lemwood/lcode-oauth';
+import { parseKimiCodeCustomHeaders } from '@lcode-cli/lcode-oauth';
 
 import { BugIndicatingError } from '#/_base/errors/errors';
 

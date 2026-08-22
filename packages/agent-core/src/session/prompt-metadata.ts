@@ -1,6 +1,6 @@
 import type { ActivatePluginCommandPayload, ActivateSkillPayload, PromptPayload } from '#/rpc';
 import { extractImageCompressionCaptions } from '#/tools/support/image-compress';
-import type { ContentPart } from '@lemwood/kosong';
+import type { ContentPart } from '@lcode-cli/kosong';
 
 const MAX_TITLE_LENGTH = 200;
 const MAX_LAST_PROMPT_LENGTH = 4000;

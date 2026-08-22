@@ -1,4 +1,4 @@
-import type { Component } from '@lemwood/pi-tui';
+import type { Component } from '@lcode-cli/pi-tui';
 import { describe, expect, it, vi } from 'vitest';
 
 import { GutterContainer } from '#/tui/components/chrome/gutter-container';

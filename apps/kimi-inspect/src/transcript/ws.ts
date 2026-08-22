@@ -33,7 +33,7 @@ import {
   transcriptResetEventSchema,
   type AgentTranscriptSnapshot,
   type TranscriptOperation,
-} from '@lemwood/transcript';
+} from '@lcode-cli/transcript';
 
 import type { WsLike, WsLikeCtor } from '../channel/wsLike';
 

@@ -11,7 +11,7 @@ import {
   type PermissionMode,
   type SessionStatus,
   type ThinkingEffort,
-} from '@lemwood/lcode-sdk';
+} from '@lcode-cli/lcode-sdk';
 
 import { PRODUCT_NAME } from '#/constant/app';
 import { currentTheme } from '#/tui/theme';

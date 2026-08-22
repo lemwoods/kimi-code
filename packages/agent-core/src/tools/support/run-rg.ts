@@ -10,7 +10,7 @@
 
 import type { Readable } from 'node:stream';
 
-import type { Kaos, KaosProcess } from '@lemwood/kaos';
+import type { Kaos, KaosProcess } from '@lcode-cli/kaos';
 
 import type { ExecutableToolResult } from '../../loop/types';
 import { SENSITIVE_DOT_VARIANT_SUFFIXES } from '../policies/sensitive';

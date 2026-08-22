@@ -1,6 +1,6 @@
 import { basename, join, relative } from 'pathe';
 
-import type { KimiHostIdentity } from '@lemwood/lcode-oauth';
+import type { KimiHostIdentity } from '@lcode-cli/lcode-oauth';
 import { LifecycleScope } from '#/app/scopes';
 import { ScopeActivation, registerScopedService } from '#/_base/di/scope';
 

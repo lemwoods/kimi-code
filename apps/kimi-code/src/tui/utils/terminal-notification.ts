@@ -1,4 +1,4 @@
-import type { Terminal } from '@lemwood/pi-tui';
+import type { Terminal } from '@lcode-cli/pi-tui';
 
 import { BEL, ESC, MAX_TERMINAL_NOTIFICATION_MESSAGE_LENGTH, ST } from '#/tui/constant/terminal';
 import type { TUIState } from '#/tui/tui-state';

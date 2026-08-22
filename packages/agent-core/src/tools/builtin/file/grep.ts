@@ -17,7 +17,7 @@
  *     backend path class.
  */
 
-import type { Kaos } from '@lemwood/kaos';
+import type { Kaos } from '@lcode-cli/kaos';
 import { normalize } from 'pathe';
 import { z } from 'zod';
 

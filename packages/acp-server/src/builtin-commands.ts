@@ -6,7 +6,7 @@ import type {
   McpServerEntry,
   SessionHandle,
   UsageStatus,
-} from '@lemwood/klient';
+} from '@lcode-cli/klient';
 
 /**
  * ACP-owned built-in slash commands. Advertised in

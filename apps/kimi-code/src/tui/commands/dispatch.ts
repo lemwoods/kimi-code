@@ -1,6 +1,6 @@
-import type { Component, Focusable } from '@lemwood/pi-tui';
-import type { DeviceAuthorization } from '@lemwood/lcode-oauth';
-import type { KimiHarness, Session } from '@lemwood/lcode-sdk';
+import type { Component, Focusable } from '@lcode-cli/pi-tui';
+import type { DeviceAuthorization } from '@lcode-cli/lcode-oauth';
+import type { KimiHarness, Session } from '@lcode-cli/lcode-sdk';
 
 import type { ColorToken, ThemeName } from '#/tui/theme';
 

@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/api-extractor/v7/api-extractor.schema.json",
   "mainEntryPointFilePath": "<projectFolder>/.tmp-api-extractor/dts/node-sdk/src/index.d.ts",
   "bundledPackages": [
-    "@lemwood/agent-core",
-    "@lemwood/kaos",
-    "@lemwood/lcode-oauth",
-    "@lemwood/kosong"
+    "@lcode-cli/agent-core",
+    "@lcode-cli/kaos",
+    "@lcode-cli/lcode-oauth",
+    "@lcode-cli/kosong"
   ],
   "compiler": {
     "tsconfigFilePath": "<projectFolder>/tsconfig.api-extractor.json",

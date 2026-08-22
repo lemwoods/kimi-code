@@ -21,9 +21,9 @@ export type {
   ProcessBackgroundTaskInfo,
   AgentBackgroundTaskInfo,
   QuestionBackgroundTaskInfo,
-} from '@lemwood/agent-core';
-export { AGENT_WIRE_PROTOCOL_VERSION } from '@lemwood/agent-core';
-export type { Message, ContentPart, ToolCall, TokenUsage } from '@lemwood/kosong';
+} from '@lcode-cli/agent-core';
+export { AGENT_WIRE_PROTOCOL_VERSION } from '@lcode-cli/agent-core';
+export type { Message, ContentPart, ToolCall, TokenUsage } from '@lcode-cli/kosong';
 
 // Local bindings for the upstream types referenced by the vis-only DTOs
 // below. The `export type { … }` re-export above forwards the names to
@@ -31,7 +31,7 @@ export type { Message, ContentPart, ToolCall, TokenUsage } from '@lemwood/kosong
 import type {
   AgentRecord as UpstreamAgentRecord,
   BackgroundTaskInfo,
-} from '@lemwood/agent-core';
+} from '@lcode-cli/agent-core';
 
 /**
  * The wire record union vis projects, widened with the v2-engine tower-mode

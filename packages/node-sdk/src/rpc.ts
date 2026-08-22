@@ -19,8 +19,8 @@ import {
   type ToolCallRequest,
   type ToolCallResponse,
   type SwarmModeTrigger,
-} from '@lemwood/agent-core';
-import type { Kaos } from '@lemwood/kaos';
+} from '@lcode-cli/agent-core';
+import type { Kaos } from '@lcode-cli/kaos';
 
 import type { ApprovalHandler, QuestionHandler } from '#/events';
 import type {

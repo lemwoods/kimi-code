@@ -11,9 +11,9 @@ import type {
   ILogService,
   ISessionIndex,
   SessionSummary,
-} from '@lemwood/agent-core-v2';
-import { MiniDb } from '@lemwood/minidb';
-import { TranscriptStore, type TranscriptOperation } from '@lemwood/transcript';
+} from '@lcode-cli/agent-core-v2';
+import { MiniDb } from '@lcode-cli/minidb';
+import { TranscriptStore, type TranscriptOperation } from '@lcode-cli/transcript';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import type { SyncSessionInput } from '../../src/search/indexCore';

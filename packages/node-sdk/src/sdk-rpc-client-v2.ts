@@ -151,22 +151,22 @@ import {
   type AgentContextData,
   type BeginGlobalMcpServerAuthResult,
   type ExperimentalFeatureState,
-} from '@lemwood/agent-core';
-import { encodeWorkDirKey } from '@lemwood/agent-core-v2/_base/utils/workdir-slug';
-import { MCP_SECTION, type McpSection } from '@lemwood/agent-core-v2/app/mcpConfig/configSection';
-import { IAgentIdentity } from '@lemwood/agent-core-v2/app/agentIdentity/agentIdentity';
-import { McpConnectionManager } from '@lemwood/agent-core-v2/mcpCore/connection-manager';
+} from '@lcode-cli/agent-core';
+import { encodeWorkDirKey } from '@lcode-cli/agent-core-v2/_base/utils/workdir-slug';
+import { MCP_SECTION, type McpSection } from '@lcode-cli/agent-core-v2/app/mcpConfig/configSection';
+import { IAgentIdentity } from '@lcode-cli/agent-core-v2/app/agentIdentity/agentIdentity';
+import { McpConnectionManager } from '@lcode-cli/agent-core-v2/mcpCore/connection-manager';
 import {
   AlreadyAuthorizedError,
   McpOAuthService,
   type BeginAuthorizationResult,
-} from '@lemwood/agent-core-v2/mcpCore/oauth/service';
-import { createMcpOAuthStore } from '@lemwood/agent-core-v2/app/mcpConfig/oauthStore';
-import { canonicalMcpOAuthResource } from '@lemwood/agent-core-v2/mcpCore/oauth/store';
-import { IAppendLogStore } from '@lemwood/agent-core-v2/persistence/interface/appendLogStore';
-import { IAtomicDocumentStore } from '@lemwood/agent-core-v2/persistence/interface/atomicDocumentStore';
-import { loadMcpServers } from '@lemwood/agent-core-v2/workspace/workspaceMcpConfig/internal/config-loader';
-import type { McpServerConfig as WorkspaceMcpServerConfig } from '@lemwood/agent-core-v2/mcpCore/config-schema';
+} from '@lcode-cli/agent-core-v2/mcpCore/oauth/service';
+import { createMcpOAuthStore } from '@lcode-cli/agent-core-v2/app/mcpConfig/oauthStore';
+import { canonicalMcpOAuthResource } from '@lcode-cli/agent-core-v2/mcpCore/oauth/store';
+import { IAppendLogStore } from '@lcode-cli/agent-core-v2/persistence/interface/appendLogStore';
+import { IAtomicDocumentStore } from '@lcode-cli/agent-core-v2/persistence/interface/atomicDocumentStore';
+import { loadMcpServers } from '@lcode-cli/agent-core-v2/workspace/workspaceMcpConfig/internal/config-loader';
+import type { McpServerConfig as WorkspaceMcpServerConfig } from '@lcode-cli/agent-core-v2/mcpCore/config-schema';
 import {
   bootstrap,
   DEFAULT_AGENT_PROFILE_NAME,
@@ -246,10 +246,10 @@ import {
   type Scope,
   type ServicesAccessor,
   type SessionSummary as V2SessionSummary,
-} from '@lemwood/agent-core-v2';
-import type { AgentHandle, Klient } from '@lemwood/klient';
-import { createKlient } from '@lemwood/klient/memory';
-import { assertKimiHostIdentity, createKimiDefaultHeaders } from '@lemwood/lcode-oauth';
+} from '@lcode-cli/agent-core-v2';
+import type { AgentHandle, Klient } from '@lcode-cli/klient';
+import { createKlient } from '@lcode-cli/klient/memory';
+import { assertKimiHostIdentity, createKimiDefaultHeaders } from '@lcode-cli/lcode-oauth';
 
 import { KimiAuthFacade } from '#/auth';
 import { KimiHarness } from '#/kimi-harness';

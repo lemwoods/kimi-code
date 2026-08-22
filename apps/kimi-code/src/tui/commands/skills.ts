@@ -1,4 +1,4 @@
-import type { Session, SkillSummary } from '@lemwood/lcode-sdk';
+import type { Session, SkillSummary } from '@lcode-cli/lcode-sdk';
 
 import type { KimiSlashCommand } from './types';
 

@@ -14,12 +14,12 @@ import {
   sessionDirOf,
   type Event2,
   type SessionSummary,
-} from '@lemwood/agent-core-v2';
+} from '@lcode-cli/agent-core-v2';
 import {
   type FsGitStatusResponse,
   type FsPullRequest,
   IGitService,
-} from '@lemwood/agent-core-v2/app/git/git';
+} from '@lcode-cli/agent-core-v2/app/git/git';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { type RunningServer, startServer } from '../src/start';

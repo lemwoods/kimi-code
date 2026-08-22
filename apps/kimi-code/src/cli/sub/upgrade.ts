@@ -1,5 +1,5 @@
-import { log, type Logger } from '@lemwood/lcode-sdk';
-import { track as trackTelemetry, type TelemetryProperties } from '@lemwood/lcode-telemetry';
+import { log, type Logger } from '@lcode-cli/lcode-sdk';
+import { track as trackTelemetry, type TelemetryProperties } from '@lcode-cli/lcode-telemetry';
 
 import { refreshUpdateCache } from '#/cli/update/refresh';
 import { selectUpdateTarget } from '#/cli/update/select';

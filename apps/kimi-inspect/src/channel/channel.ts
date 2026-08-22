@@ -10,7 +10,7 @@
  * `listen` throws and panels fetch on demand instead.
  */
 
-import type { ServiceIdentifier } from '@lemwood/agent-core-v2/_base/di/instantiation';
+import type { ServiceIdentifier } from '@lcode-cli/agent-core-v2/_base/di/instantiation';
 
 export interface IDisposable {
   dispose(): void;

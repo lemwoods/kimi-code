@@ -30,7 +30,7 @@
  * Callers: the live LLM projection (`agent/context/projector.ts`) and the
  * vis debugger's model view, which must mirror the live projection exactly.
  */
-import type { ContentPart } from '@lemwood/kosong';
+import type { ContentPart } from '@lcode-cli/kosong';
 
 export const TOOL_ERROR_STATUS = '<system>ERROR: Tool execution failed.</system>';
 export const TOOL_EMPTY_STATUS = '<system>Tool output is empty.</system>';

@@ -9,33 +9,33 @@
 import type {
   SessionListQuery,
   SessionSummary,
-} from '@lemwood/agent-core-v2/app/sessionIndex/sessionIndex';
-import type { SessionMeta } from '@lemwood/agent-core-v2/session/sessionMetadata/sessionMetadata';
-import type { Page } from '@lemwood/agent-core-v2/persistence/interface/queryStore';
+} from '@lcode-cli/agent-core-v2/app/sessionIndex/sessionIndex';
+import type { SessionMeta } from '@lcode-cli/agent-core-v2/session/sessionMetadata/sessionMetadata';
+import type { Page } from '@lcode-cli/agent-core-v2/persistence/interface/queryStore';
 import type {
   Workspace,
   WorkspaceUpdate,
-} from '@lemwood/agent-core-v2/app/workspace/workspace';
+} from '@lcode-cli/agent-core-v2/app/workspace/workspace';
 import type {
   ConfigDiagnostic,
   ConfigInspectValue,
   ConfigTarget,
-} from '@lemwood/agent-core-v2/app/config/config';
-import type { ProviderConfig } from '@lemwood/agent-core-v2/kosong/provider/provider';
+} from '@lcode-cli/agent-core-v2/app/config/config';
+import type { ProviderConfig } from '@lcode-cli/agent-core-v2/kosong/provider/provider';
 import type {
   AuthStatus,
   IOAuthService,
   OAuthLoginOptions,
-} from '@lemwood/agent-core-v2/app/auth/auth';
-import type { ExperimentalFeatureState } from '@lemwood/agent-core-v2/app/flag/flag';
+} from '@lcode-cli/agent-core-v2/app/auth/auth';
+import type { ExperimentalFeatureState } from '@lcode-cli/agent-core-v2/app/flag/flag';
 import type {
   FsBrowseResponse,
   FsHomeResponse,
-} from '@lemwood/agent-core-v2/app/hostFolderBrowser/hostFolderBrowser';
-import type { FileMeta } from '@lemwood/agent-core-v2/app/file/fileService';
-import type { ModelRecord } from '@lemwood/agent-core-v2/kosong/model/model';
-import type { IModelCatalog } from '@lemwood/agent-core-v2/kosong/model/catalog';
-import type { IProviderDiscoveryService } from '@lemwood/agent-core-v2/app/kosongConfig/discovery';
+} from '@lcode-cli/agent-core-v2/app/hostFolderBrowser/hostFolderBrowser';
+import type { FileMeta } from '@lcode-cli/agent-core-v2/app/file/fileService';
+import type { ModelRecord } from '@lcode-cli/agent-core-v2/kosong/model/model';
+import type { IModelCatalog } from '@lcode-cli/agent-core-v2/kosong/model/catalog';
+import type { IProviderDiscoveryService } from '@lcode-cli/agent-core-v2/app/kosongConfig/discovery';
 
 import type { McpServerConfig } from '../../contract/mcp.js';
 import type { AnonymousProviderInput, GenerateEvent, GenerateInput, GenerateParams, ProviderInput } from './kosong-types.js';
@@ -45,8 +45,8 @@ import type {
   PluginSummary,
   PluginUpdateStatus,
   ReloadSummary,
-} from '@lemwood/agent-core-v2/app/plugin/types';
-import type { CapabilityStatus } from '@lemwood/agent-core-v2/app/capability/types';
+} from '@lcode-cli/agent-core-v2/app/plugin/types';
+import type { CapabilityStatus } from '@lcode-cli/agent-core-v2/app/capability/types';
 
 /** Low-level caller the klient factory builds: routes + validates one service call. */
 export type Caller = (service: string, method: string, args: unknown[]) => Promise<unknown>;
@@ -68,7 +68,7 @@ export type ScopedStreamCaller = (
 ) => AsyncIterable<unknown>;
 
 // ---------------------------------------------------------------------------
-// Wire-type aliases for shapes the engine sources from `@lemwood/protocol`
+// Wire-type aliases for shapes the engine sources from `@lcode-cli/protocol`
 // (not a direct klient dependency) — derived through the service interfaces.
 // ---------------------------------------------------------------------------
 

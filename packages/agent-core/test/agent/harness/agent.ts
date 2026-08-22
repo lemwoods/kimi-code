@@ -2,8 +2,8 @@ import { EventEmitter } from 'node:events';
 import { Readable, type Writable } from 'node:stream';
 
 import { createControlledPromise } from '@antfu/utils';
-import { type Environment, type Kaos, type KaosProcess } from '@lemwood/kaos';
-import type { ModelCapability, ProviderConfig } from '@lemwood/kosong';
+import { type Environment, type Kaos, type KaosProcess } from '@lcode-cli/kaos';
+import type { ModelCapability, ProviderConfig } from '@lcode-cli/kosong';
 import { expect, onTestFinished, vi } from 'vitest';
 
 import {

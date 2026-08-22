@@ -6,7 +6,7 @@
  * core payloads into these shapes for panel components.
  */
 
-import type { QuestionAnswerMethod } from '@lemwood/lcode-sdk';
+import type { QuestionAnswerMethod } from '@lcode-cli/lcode-sdk';
 
 // ── Display blocks (approval panel) ──────────────────────────────────
 

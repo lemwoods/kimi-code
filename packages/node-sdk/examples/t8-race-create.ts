@@ -1,5 +1,5 @@
 // T8.4 driver: create session with explicit id, twice concurrently in same process.
-import { createKimiHarness, type KimiHarness } from '@lemwood/lcode-sdk';
+import { createKimiHarness, type KimiHarness } from '@lcode-cli/lcode-sdk';
 
 const workDir = process.argv[2]!;
 const homeDir = process.argv[3]!;

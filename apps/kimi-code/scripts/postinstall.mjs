@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Postinstall hook for @lemwood/lcode.
+ * Postinstall hook for @lcode-cli/lcode.
  *
  * Goal: when this package is installed globally, ensure typing `kimi`
  * invokes the new TypeScript CLI. The npm `package.json` bin field
@@ -43,7 +43,7 @@
  *
  * ## Workflow
  *
- * What runs when a user types `npm install -g @lemwood/lcode`
+ * What runs when a user types `npm install -g @lcode-cli/lcode`
  * (or the yarn / pnpm equivalent):
  *
  *   1. The manager extracts the package and runs lifecycle scripts.

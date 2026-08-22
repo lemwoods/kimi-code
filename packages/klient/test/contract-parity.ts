@@ -3,7 +3,7 @@
  * types they mirror. Plain `.ts` (not `.test.ts`) — vitest must not pick it
  * up; `tsc -p tsconfig.json --noEmit` is the check.
  *
- * Wire shapes the engine imports from `@lemwood/protocol` are reached
+ * Wire shapes the engine imports from `@lcode-cli/protocol` are reached
  * through indexed access on the engine service interfaces, since klient does
  * not depend on the protocol package directly.
  */
@@ -20,37 +20,37 @@ import type {
   BackgroundRef,
   ToolCallRef,
   TurnPhase,
-} from '@lemwood/agent-core-v2/agent/activityView/activityView';
-import type { AgentContextData } from '@lemwood/agent-core-v2/agent/contextMemory/types';
-import type { IAgentCommandService } from '@lemwood/agent-core-v2/agent/command/agentCommand';
-import type { IAgentRuntimeBindingService } from '@lemwood/agent-core-v2/agent/runtimeBinding/runtimeBinding';
-import type { TurnEndReason } from '@lemwood/agent-core-v2/agent/loop/turnEvents';
-import type { PermissionMode } from '@lemwood/agent-core-v2/agent/permissionPolicy/types';
-import type { IAgentProfileService } from '@lemwood/agent-core-v2/agent/profile/profile';
-import type { IAgentPromptService } from '@lemwood/agent-core-v2/agent/prompt/prompt';
-import type { IAgentShellCommandService } from '@lemwood/agent-core-v2/agent/shellCommand/shellCommand';
-import type { IAgentSkillService } from '@lemwood/agent-core-v2/agent/skill/skill';
-import type { ContentPart } from '@lemwood/agent-core-v2/kosong/contract/message';
-import type { PlanData } from '@lemwood/agent-core-v2/features/plan/plan';
-import type { UsageStatus } from '@lemwood/agent-core-v2/agent/usage/usage';
-import type { SkillSummary } from '@lemwood/agent-core-v2/app/skillCatalog/types';
-import type { McpServerEntry } from '@lemwood/agent-core-v2/mcpCore/connection-manager';
-import type { FullCompactionInput } from '@lemwood/agent-core-v2/agent/fullCompaction/fullCompaction';
-import type { ISessionScopeHandle } from '@lemwood/agent-core-v2/_base/di/scope';
+} from '@lcode-cli/agent-core-v2/agent/activityView/activityView';
+import type { AgentContextData } from '@lcode-cli/agent-core-v2/agent/contextMemory/types';
+import type { IAgentCommandService } from '@lcode-cli/agent-core-v2/agent/command/agentCommand';
+import type { IAgentRuntimeBindingService } from '@lcode-cli/agent-core-v2/agent/runtimeBinding/runtimeBinding';
+import type { TurnEndReason } from '@lcode-cli/agent-core-v2/agent/loop/turnEvents';
+import type { PermissionMode } from '@lcode-cli/agent-core-v2/agent/permissionPolicy/types';
+import type { IAgentProfileService } from '@lcode-cli/agent-core-v2/agent/profile/profile';
+import type { IAgentPromptService } from '@lcode-cli/agent-core-v2/agent/prompt/prompt';
+import type { IAgentShellCommandService } from '@lcode-cli/agent-core-v2/agent/shellCommand/shellCommand';
+import type { IAgentSkillService } from '@lcode-cli/agent-core-v2/agent/skill/skill';
+import type { ContentPart } from '@lcode-cli/agent-core-v2/kosong/contract/message';
+import type { PlanData } from '@lcode-cli/agent-core-v2/features/plan/plan';
+import type { UsageStatus } from '@lcode-cli/agent-core-v2/agent/usage/usage';
+import type { SkillSummary } from '@lcode-cli/agent-core-v2/app/skillCatalog/types';
+import type { McpServerEntry } from '@lcode-cli/agent-core-v2/mcpCore/connection-manager';
+import type { FullCompactionInput } from '@lcode-cli/agent-core-v2/agent/fullCompaction/fullCompaction';
+import type { ISessionScopeHandle } from '@lcode-cli/agent-core-v2/_base/di/scope';
 import type {
   CreateChildSessionOptions,
   CreateSessionOptions,
   ForkSessionOptions,
   ResumeSessionOptions,
-} from '@lemwood/agent-core-v2/workspace/sessionLifecycle/sessionLifecycle';
+} from '@lcode-cli/agent-core-v2/workspace/sessionLifecycle/sessionLifecycle';
 import type {
   ApprovalRequest,
   ApprovalResponse,
-} from '@lemwood/agent-core-v2/session/approval/approval';
+} from '@lcode-cli/agent-core-v2/session/approval/approval';
 import type {
   Interaction,
   InteractionResolution,
-} from '@lemwood/agent-core-v2/session/interaction/interaction';
+} from '@lcode-cli/agent-core-v2/session/interaction/interaction';
 import type {
   QuestionAnswers,
   QuestionItem,
@@ -58,48 +58,48 @@ import type {
   QuestionRequest,
   QuestionResponse,
   QuestionResult,
-} from '@lemwood/agent-core-v2/session/question/question';
+} from '@lcode-cli/agent-core-v2/session/question/question';
 import type {
   AgentMeta,
   SessionMeta,
   SessionMetadataChangedEvent,
   SessionMetaPatch,
-} from '@lemwood/agent-core-v2/session/sessionMetadata/sessionMetadata';
-import type { ISessionTitleService } from '@lemwood/agent-core-v2/session/sessionTitle/sessionTitle';
+} from '@lcode-cli/agent-core-v2/session/sessionMetadata/sessionMetadata';
+import type { ISessionTitleService } from '@lcode-cli/agent-core-v2/session/sessionTitle/sessionTitle';
 import type {
   AuthStatus,
   IOAuthService,
-} from '@lemwood/agent-core-v2/app/auth/auth';
-import type { IBootstrapService } from '@lemwood/agent-core-v2/app/bootstrap/bootstrap';
+} from '@lcode-cli/agent-core-v2/app/auth/auth';
+import type { IBootstrapService } from '@lcode-cli/agent-core-v2/app/bootstrap/bootstrap';
 import type {
   ConfigDiagnostic,
   ConfigInspectValue,
   ConfigTarget,
-} from '@lemwood/agent-core-v2/app/config/config';
+} from '@lcode-cli/agent-core-v2/app/config/config';
 import type {
   CapabilityInstallProgress,
   CapabilityStatus,
   CapabilityStep,
-} from '@lemwood/agent-core-v2/app/capability/types';
-import type { ExperimentalFeatureState } from '@lemwood/agent-core-v2/app/flag/flag';
+} from '@lcode-cli/agent-core-v2/app/capability/types';
+import type { ExperimentalFeatureState } from '@lcode-cli/agent-core-v2/app/flag/flag';
 import type {
   FileMeta,
   SaveOptions,
-} from '@lemwood/agent-core-v2/app/file/fileService';
+} from '@lcode-cli/agent-core-v2/app/file/fileService';
 import type {
   FsBrowseResponse,
   FsHomeResponse,
-} from '@lemwood/agent-core-v2/app/hostFolderBrowser/hostFolderBrowser';
-import type { ModelRecord } from '@lemwood/agent-core-v2/kosong/model/model';
-import type { IModelCatalog } from '@lemwood/agent-core-v2/kosong/model/catalog';
-import type { IProviderDiscoveryService } from '@lemwood/agent-core-v2/app/kosongConfig/discovery';
+} from '@lcode-cli/agent-core-v2/app/hostFolderBrowser/hostFolderBrowser';
+import type { ModelRecord } from '@lcode-cli/agent-core-v2/kosong/model/model';
+import type { IModelCatalog } from '@lcode-cli/agent-core-v2/kosong/model/catalog';
+import type { IProviderDiscoveryService } from '@lcode-cli/agent-core-v2/app/kosongConfig/discovery';
 import type {
   GetPluginInfoInput,
   InstallPluginInput,
   RemovePluginInput,
   SetPluginEnabledInput,
   SetPluginMcpServerEnabledInput,
-} from '@lemwood/agent-core-v2/app/plugin/plugin';
+} from '@lcode-cli/agent-core-v2/app/plugin/plugin';
 import type {
   PluginCommandDef,
   PluginDiagnostic,
@@ -110,17 +110,17 @@ import type {
   PluginSummary,
   PluginUpdateStatus,
   ReloadSummary,
-} from '@lemwood/agent-core-v2/app/plugin/types';
-import type { ProviderConfig } from '@lemwood/agent-core-v2/kosong/provider/provider';
+} from '@lcode-cli/agent-core-v2/app/plugin/types';
+import type { ProviderConfig } from '@lcode-cli/agent-core-v2/kosong/provider/provider';
 import type {
   SessionListQuery,
   SessionSummary,
-} from '@lemwood/agent-core-v2/app/sessionIndex/sessionIndex';
+} from '@lcode-cli/agent-core-v2/app/sessionIndex/sessionIndex';
 import type {
   Workspace,
   WorkspaceUpdate,
-} from '@lemwood/agent-core-v2/app/workspace/workspace';
-// Test-only: `@lemwood/protocol` is a devDependency; importing its types
+} from '@lcode-cli/agent-core-v2/app/workspace/workspace';
+// Test-only: `@lcode-cli/protocol` is a devDependency; importing its types
 // here (never in `src/`) strengthens parity for the agent event stream.
 import type {
   AssistantDeltaEvent,
@@ -139,7 +139,7 @@ import type {
   TurnEndedEvent,
   TurnStartedEvent,
   WarningEvent,
-} from '@lemwood/protocol';
+} from '@lcode-cli/protocol';
 
 import {
   activityLastTurnStateSchema,
@@ -317,7 +317,7 @@ type AssertWireToEngine<TSchema extends z.ZodType, TEngine> = [z.infer<TSchema>]
   : never;
 
 // Protocol wire shapes, derived from the engine interfaces (no direct
-// `@lemwood/protocol` dependency in klient).
+// `@lcode-cli/protocol` dependency in klient).
 type OAuthFlowStart = Awaited<ReturnType<IOAuthService['startLogin']>>;
 type OAuthFlowSnapshot = NonNullable<ReturnType<IOAuthService['getFlow']>>;
 type OAuthLoginCancelResponse = Awaited<ReturnType<IOAuthService['cancelLogin']>>;

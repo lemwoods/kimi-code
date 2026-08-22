@@ -13,7 +13,7 @@
  * should be reviewed together.
  */
 
-import type { ContentPart } from '@lemwood/kosong';
+import type { ContentPart } from '@lcode-cli/kosong';
 
 import type { Logger } from '#/logging/types';
 import {

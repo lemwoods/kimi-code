@@ -24,7 +24,7 @@ function mockFetch(response: {
 
 const MANIFEST_BODY = JSON.stringify({
   version: VERSION,
-  tag: `@lemwood/lcode@${VERSION}`,
+  tag: `@lcode-cli/lcode@${VERSION}`,
   platforms: {
     'win32-x64': {
       filename: `kimi-code-win32-x64.zip`,

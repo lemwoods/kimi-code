@@ -8,7 +8,7 @@
  * Kaos I/O.
  */
 
-import type { Kaos } from '@lemwood/kaos';
+import type { Kaos } from '@lcode-cli/kaos';
 import { z } from 'zod';
 
 import type { BuiltinTool } from '../../../agent/tool';

@@ -1,4 +1,4 @@
-import type { Event } from '@lemwood/lcode-sdk';
+import type { Event } from '@lcode-cli/lcode-sdk';
 import { describe, expect, it, vi } from 'vitest';
 
 import { SessionEventHandler } from '#/tui/controllers/session-event-handler';

@@ -1,5 +1,5 @@
 {
-  "name": "@lemwood/acp-adapter",
+  "name": "@lcode-cli/acp-adapter",
   "version": "0.3.10",
   "private": true,
   "description": "Agent Client Protocol adapter for kimi-code",
@@ -38,9 +38,9 @@
   },
   "dependencies": {
     "@agentclientprotocol/sdk": "^0.23.0",
-    "@lemwood/agent-core": "workspace:^",
-    "@lemwood/kaos": "workspace:^",
-    "@lemwood/lcode-sdk": "workspace:^"
+    "@lcode-cli/agent-core": "workspace:^",
+    "@lcode-cli/kaos": "workspace:^",
+    "@lcode-cli/lcode-sdk": "workspace:^"
   },
   "devDependencies": {
     "jimp": "^1.6.1"

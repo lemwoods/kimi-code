@@ -5,10 +5,10 @@
  * `providerService`/`modelService` wire formats.
  */
 
-import type { Message, StreamedMessagePart } from '@lemwood/agent-core-v2/kosong/contract/message';
-import type { Tool } from '@lemwood/agent-core-v2/kosong/contract/tool';
-import type { TokenUsage } from '@lemwood/agent-core-v2/kosong/contract/usage';
-import type { ResponseFormat } from '@lemwood/agent-core-v2/kosong/contract/provider';
+import type { Message, StreamedMessagePart } from '@lcode-cli/agent-core-v2/kosong/contract/message';
+import type { Tool } from '@lcode-cli/agent-core-v2/kosong/contract/tool';
+import type { TokenUsage } from '@lcode-cli/agent-core-v2/kosong/contract/usage';
+import type { ResponseFormat } from '@lcode-cli/agent-core-v2/kosong/contract/provider';
 
 // ---------------------------------------------------------------------------
 // Provider auth

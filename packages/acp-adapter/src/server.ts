@@ -51,9 +51,9 @@ import type {
   ProviderConfig,
   Session,
   SessionSummary,
-} from '@lemwood/lcode-sdk';
-import { log } from '@lemwood/lcode-sdk';
-import { LocalKaos, type Kaos } from '@lemwood/kaos';
+} from '@lcode-cli/lcode-sdk';
+import { log } from '@lcode-cli/lcode-sdk';
+import { LocalKaos, type Kaos } from '@lcode-cli/kaos';
 
 import { TERMINAL_AUTH_METHOD, buildTerminalAuthMethod } from './auth-methods';
 import { redirectConsoleToStderr } from './log-guard';

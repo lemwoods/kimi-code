@@ -5,8 +5,8 @@ import { defineConfig } from 'vitest/config';
 export default defineConfig({
   resolve: {
     alias: {
-      '@lemwood/agent-core': fileURLToPath(new URL('../agent-core/src/index.ts', import.meta.url)),
-      '@lemwood/lcode-oauth': fileURLToPath(
+      '@lcode-cli/agent-core': fileURLToPath(new URL('../agent-core/src/index.ts', import.meta.url)),
+      '@lcode-cli/lcode-oauth': fileURLToPath(
         new URL('../oauth/src/index.ts', import.meta.url),
       ),
     },

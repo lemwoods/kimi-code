@@ -13,14 +13,14 @@
  * status badge. Session creation still goes through the v1 REST endpoint.
  */
 
-import { IAgentProfileService } from '@lemwood/agent-core-v2/agent/profile/profile';
-import { IConfigService } from '@lemwood/agent-core-v2/app/config/config';
-import { ISessionManager } from '@lemwood/agent-core-v2/app/sessionManager/sessionManager';
+import { IAgentProfileService } from '@lcode-cli/agent-core-v2/agent/profile/profile';
+import { IConfigService } from '@lcode-cli/agent-core-v2/app/config/config';
+import { ISessionManager } from '@lcode-cli/agent-core-v2/app/sessionManager/sessionManager';
 import {
   IWorkspaceService,
   type Workspace,
-} from '@lemwood/agent-core-v2/app/workspace/workspace';
-import { IModelCatalog } from '@lemwood/agent-core-v2/kosong/model/catalog';
+} from '@lcode-cli/agent-core-v2/app/workspace/workspace';
+import { IModelCatalog } from '@lcode-cli/agent-core-v2/kosong/model/catalog';
 import { useInfiniteQuery, useQuery, useQueryClient } from '@tanstack/react-query';
 import { useMemo, useState } from 'react';
 

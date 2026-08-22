@@ -11,7 +11,7 @@
  * manual join needed.
  */
 
-import { IWorkspaceService } from '@lemwood/agent-core-v2/app/workspace/workspace';
+import { IWorkspaceService } from '@lcode-cli/agent-core-v2/app/workspace/workspace';
 import { useQuery } from '@tanstack/react-query';
 import { useEffect, useState, type ReactNode } from 'react';
 

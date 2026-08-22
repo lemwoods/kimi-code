@@ -1,4 +1,4 @@
-import { DEFAULT_CATALOG_URL, CatalogFetchError } from '@lemwood/lcode-sdk';
+import { DEFAULT_CATALOG_URL, CatalogFetchError } from '@lcode-cli/lcode-sdk';
 import { describe, expect, it, vi } from 'vitest';
 
 import { fetchCatalogOrBuiltIn } from '#/utils/catalog-fetch';

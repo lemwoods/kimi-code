@@ -7,7 +7,7 @@
  * file doesn't have to hand-roll them.
  */
 
-import type { ModelAlias } from '@lemwood/lcode-sdk';
+import type { ModelAlias } from '@lcode-cli/lcode-sdk';
 
 /** Stub `auth.status()` payload for an authenticated harness. */
 export const AUTHED_STATUS = {

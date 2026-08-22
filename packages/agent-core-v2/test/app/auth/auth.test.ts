@@ -7,7 +7,7 @@ import {
   clearManagedKimiCodeConfig,
   resolveKimiCodeOAuthKey,
   resolveKimiCodeRuntimeAuth,
-} from '@lemwood/lcode-oauth';
+} from '@lcode-cli/lcode-oauth';
 
 import { DisposableStore } from '#/_base/di/lifecycle';
 import { createServices, type TestInstantiationService } from '#/_base/di/test';

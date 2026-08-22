@@ -1,4 +1,4 @@
-import type { QuestionHandler, QuestionRequest, QuestionResult } from '@lemwood/lcode-sdk';
+import type { QuestionHandler, QuestionRequest, QuestionResult } from '@lcode-cli/lcode-sdk';
 
 import type {
   QuestionPanelData,

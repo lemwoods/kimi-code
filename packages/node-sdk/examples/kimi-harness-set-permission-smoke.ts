@@ -1,4 +1,4 @@
-import { createKimiHarness, type PermissionMode } from '@lemwood/lcode-sdk';
+import { createKimiHarness, type PermissionMode } from '@lcode-cli/lcode-sdk';
 
 import {
   smokeIdentityFromEnv,

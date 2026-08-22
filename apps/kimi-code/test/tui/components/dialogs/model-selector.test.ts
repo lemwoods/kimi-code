@@ -1,5 +1,5 @@
-import type { ModelAlias } from '@lemwood/lcode-sdk';
-import { visibleWidth } from '@lemwood/pi-tui';
+import type { ModelAlias } from '@lcode-cli/lcode-sdk';
+import { visibleWidth } from '@lcode-cli/pi-tui';
 import { describe, expect, it, vi } from 'vitest';
 
 import { ModelSelectorComponent } from '#/tui/components/dialogs/model-selector';

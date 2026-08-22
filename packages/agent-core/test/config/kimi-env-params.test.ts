@@ -1,5 +1,5 @@
-import { type ChatProvider, KimiChatProvider } from '@lemwood/kosong';
-import { AnthropicChatProvider } from '@lemwood/kosong/providers/anthropic';
+import { type ChatProvider, KimiChatProvider } from '@lcode-cli/kosong';
+import { AnthropicChatProvider } from '@lcode-cli/kosong/providers/anthropic';
 import { describe, expect, it } from 'vitest';
 
 import {

@@ -38,7 +38,7 @@ import type {
   Event,
   SessionSummary,
 } from '../../src';
-import type { PromptSubmission, Session } from '@lemwood/protocol';
+import type { PromptSubmission, Session } from '@lcode-cli/protocol';
 
 import {
   type IAuthSummaryService,

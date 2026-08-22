@@ -1,4 +1,4 @@
-# @lemwood/kosong
+# @lcode-cli/kosong
 
 LLM abstraction layer used by Kimi Code.
 

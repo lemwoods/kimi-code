@@ -23,7 +23,7 @@ import {
   type ISessionScopeHandle,
   type ISessionStateService,
   type Scope,
-} from '@lemwood/agent-core-v2';
+} from '@lcode-cli/agent-core-v2';
 import {
   AgentTranscript,
   TranscriptStore,
@@ -35,7 +35,7 @@ import {
   type TranscriptOperation,
   type TranscriptTask,
   type TranscriptTurn,
-} from '@lemwood/transcript';
+} from '@lcode-cli/transcript';
 import { describe, expect, it } from 'vitest';
 
 import { bindSessionTranscript } from '../../src/services/transcript/coreBinding';

@@ -1,4 +1,4 @@
-import { Container, Spacer, Text } from '@lemwood/pi-tui';
+import { Container, Spacer, Text } from '@lcode-cli/pi-tui';
 
 import { currentTheme } from '#/tui/theme';
 import type { ColorToken } from '#/tui/theme';

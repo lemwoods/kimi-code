@@ -1,4 +1,4 @@
-import { Container, truncateToWidth, visibleWidth } from '@lemwood/pi-tui';
+import { Container, truncateToWidth, visibleWidth } from '@lcode-cli/pi-tui';
 
 import { SELECT_POINTER } from '../../constant/symbols';
 import type { QueuedMessage } from '../../types';

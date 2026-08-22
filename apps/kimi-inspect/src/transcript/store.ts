@@ -25,7 +25,7 @@ import {
   type AgentState,
   type TranscriptItem,
   type TranscriptOperation,
-} from '@lemwood/transcript';
+} from '@lcode-cli/transcript';
 
 import type { TranscriptPage } from './api';
 

@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
-import { isoDateTimeSchema } from '@lemwood/agent-core-v2/_base/utils/isoDateTime';
-import { transcriptGradeSpecSchema, transcriptSeqSchema } from '@lemwood/transcript';
+import { isoDateTimeSchema } from '@lcode-cli/agent-core-v2/_base/utils/isoDateTime';
+import { transcriptGradeSpecSchema, transcriptSeqSchema } from '@lcode-cli/transcript';
 
 import { eventSchema } from './events-zod';
 
@@ -147,7 +147,7 @@ export type SubscribeMessage = z.infer<typeof subscribeMessageSchema>;
  * `subscribe_v2` — the transcript subscription channel. Owns ONLY the
  * per-agent transcript grades (and the optional op-batch seq cursor) for one
  * session; legacy event subscription stays on `client_hello` / `subscribe`.
- * The grade/seq schemas are owned by `@lemwood/transcript`.
+ * The grade/seq schemas are owned by `@lcode-cli/transcript`.
  */
 export const subscribeV2PayloadSchema = z.object({
   session_id: z.string().min(1),

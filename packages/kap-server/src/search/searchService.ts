@@ -15,9 +15,9 @@ import {
   sessionDirOf,
   workspacePersistenceScope,
   type SessionSummary,
-} from '@lemwood/agent-core-v2';
-import { normalizeLiteral, tokenize } from '@lemwood/minidb';
-import type { TranscriptStore } from '@lemwood/transcript';
+} from '@lcode-cli/agent-core-v2';
+import { normalizeLiteral, tokenize } from '@lcode-cli/minidb';
+import type { TranscriptStore } from '@lcode-cli/transcript';
 
 import {
   GlobalSearchError,

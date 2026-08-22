@@ -1,6 +1,6 @@
-import type { Component } from '@lemwood/pi-tui';
-import type { ContextMessage } from '@lemwood/lcode-sdk';
-import { isKimiError } from '@lemwood/lcode-sdk';
+import type { Component } from '@lcode-cli/pi-tui';
+import type { ContextMessage } from '@lcode-cli/lcode-sdk';
+import { isKimiError } from '@lcode-cli/lcode-sdk';
 
 import { WelcomeComponent } from '../components/chrome/welcome';
 import { CompactionComponent } from '../components/dialogs/compaction';

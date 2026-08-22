@@ -13,8 +13,8 @@
  * reads the same "work in progress" signal across the UI.
  */
 
-import { Container, Text, Spacer } from '@lemwood/pi-tui';
-import type { TUI } from '@lemwood/pi-tui';
+import { Container, Text, Spacer } from '@lcode-cli/pi-tui';
+import type { TUI } from '@lcode-cli/pi-tui';
 
 import { STATUS_BULLET } from '#/tui/constant/symbols';
 import { currentTheme } from '#/tui/theme';

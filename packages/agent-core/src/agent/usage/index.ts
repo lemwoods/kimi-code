@@ -1,5 +1,5 @@
 import type { UsageStatus } from '#/rpc';
-import { addUsage, type TokenUsage } from '@lemwood/kosong';
+import { addUsage, type TokenUsage } from '@lcode-cli/kosong';
 
 import type { Agent } from '..';
 

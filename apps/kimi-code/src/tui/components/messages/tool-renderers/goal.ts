@@ -1,4 +1,4 @@
-import { Text } from '@lemwood/pi-tui';
+import { Text } from '@lcode-cli/pi-tui';
 
 import { STATUS_BULLET } from '#/tui/constant/symbols';
 import { currentTheme } from '#/tui/theme';

@@ -15,7 +15,7 @@ import {
   isError2,
   Error2,
   type Scope,
-} from '@lemwood/agent-core-v2';
+} from '@lcode-cli/agent-core-v2';
 import {
   fsDiffRequestSchema,
   fsGitStatusRequestSchema,
@@ -30,14 +30,14 @@ import {
   fsStatRequestSchema,
   fsSuggestRequestSchema,
   fsSuggestResponseSchema,
-} from '@lemwood/agent-core-v2/workspace/workspaceFs/fs';
-import { GitService } from '@lemwood/agent-core-v2/app/git/gitService';
-import type { IHostFileSystem } from '@lemwood/agent-core-v2/os/interface/hostFileSystem';
-import type { RuntimeCapability, RuntimeLease } from '@lemwood/agent-core-v2/runtime/runtime';
-import { WorkspaceFsService } from '@lemwood/agent-core-v2/workspace/workspaceFs/fsService';
-import { WorkspaceGitService } from '@lemwood/agent-core-v2/workspace/workspaceGit/workspaceGitService';
-import type { IWorkspaceContext } from '@lemwood/agent-core-v2/workspace/workspaceContext/workspaceContext';
-import type { IWorkspaceDirs } from '@lemwood/agent-core-v2/workspace/workspaceDirs/workspaceDirs';
+} from '@lcode-cli/agent-core-v2/workspace/workspaceFs/fs';
+import { GitService } from '@lcode-cli/agent-core-v2/app/git/gitService';
+import type { IHostFileSystem } from '@lcode-cli/agent-core-v2/os/interface/hostFileSystem';
+import type { RuntimeCapability, RuntimeLease } from '@lcode-cli/agent-core-v2/runtime/runtime';
+import { WorkspaceFsService } from '@lcode-cli/agent-core-v2/workspace/workspaceFs/fsService';
+import { WorkspaceGitService } from '@lcode-cli/agent-core-v2/workspace/workspaceGit/workspaceGitService';
+import type { IWorkspaceContext } from '@lcode-cli/agent-core-v2/workspace/workspaceContext/workspaceContext';
+import type { IWorkspaceDirs } from '@lcode-cli/agent-core-v2/workspace/workspaceDirs/workspaceDirs';
 import { z } from 'zod';
 
 import { errEnvelope, okEnvelope } from '../envelope';

@@ -1,4 +1,4 @@
-import type { ContentPart, Message } from '@lemwood/kosong';
+import type { ContentPart, Message } from '@lcode-cli/kosong';
 
 import type { SkillSource } from '../../skill';
 import type { ToolInputDisplay } from '../../tools/display';

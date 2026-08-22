@@ -1,4 +1,4 @@
-import { visibleWidth } from '@lemwood/pi-tui';
+import { visibleWidth } from '@lcode-cli/pi-tui';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { SessionPickerComponent } from '#/tui/components/dialogs/session-picker';

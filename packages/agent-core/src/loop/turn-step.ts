@@ -14,7 +14,7 @@ import {
   isImageFormatError,
   isRecoverableRequestStructureError,
   type TokenUsage,
-} from '@lemwood/kosong';
+} from '@lcode-cli/kosong';
 import type { Logger } from '#/logging/types';
 
 import type { LoopEventDispatcher } from './events';

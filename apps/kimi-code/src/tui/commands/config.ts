@@ -7,7 +7,7 @@ import {
   type PermissionMode,
   type Session,
   type ThinkingEffort,
-} from '@lemwood/lcode-sdk';
+} from '@lcode-cli/lcode-sdk';
 
 import { EditorSelectorComponent } from '../components/dialogs/editor-selector';
 import { EffortSelectorComponent } from '../components/dialogs/effort-selector';

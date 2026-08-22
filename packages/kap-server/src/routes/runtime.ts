@@ -4,8 +4,8 @@ import {
   IAgentRuntimeBindingService,
   resumeSessionById,
   type Scope,
-} from '@lemwood/agent-core-v2';
-import { RuntimeError } from '@lemwood/agent-core-v2/runtime/runtimeRegistry';
+} from '@lcode-cli/agent-core-v2';
+import { RuntimeError } from '@lcode-cli/agent-core-v2/runtime/runtimeRegistry';
 
 import { errEnvelope, okEnvelope } from '../envelope';
 import { defineRoute } from '../middleware/defineRoute';

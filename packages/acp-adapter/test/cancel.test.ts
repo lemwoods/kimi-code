@@ -13,7 +13,7 @@ import {
   type WriteTextFileRequest,
   type WriteTextFileResponse,
 } from '@agentclientprotocol/sdk';
-import { log, type KimiHarness, type Session } from '@lemwood/lcode-sdk';
+import { log, type KimiHarness, type Session } from '@lcode-cli/lcode-sdk';
 import { Jimp } from 'jimp';
 
 import { AcpServer } from '../src/server';

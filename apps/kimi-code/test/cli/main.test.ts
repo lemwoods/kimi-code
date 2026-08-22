@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { ErrorCodes, KimiError } from '@lemwood/lcode-sdk';
+import { ErrorCodes, KimiError } from '@lcode-cli/lcode-sdk';
 
 import { validateOptions } from '#/cli/options';
 import type { CLIOptions } from '#/cli/options';
@@ -54,7 +54,7 @@ const mocks = vi.hoisted(() => {
   };
 });
 
-vi.mock('@lemwood/lcode-telemetry', () => ({
+vi.mock('@lcode-cli/lcode-telemetry', () => ({
   installCrashHandlers: mocks.installCrashHandlers,
   track: mocks.track,
   setTelemetryContext: mocks.setTelemetryContext,
@@ -62,9 +62,9 @@ vi.mock('@lemwood/lcode-telemetry', () => ({
   shutdownTelemetry: mocks.shutdownTelemetry,
 }));
 
-vi.mock('@lemwood/lcode-sdk', async () => {
-  const actual = await vi.importActual<typeof import('@lemwood/lcode-sdk')>(
-    '@lemwood/lcode-sdk',
+vi.mock('@lcode-cli/lcode-sdk', async () => {
+  const actual = await vi.importActual<typeof import('@lcode-cli/lcode-sdk')>(
+    '@lcode-cli/lcode-sdk',
   );
   class MockKimiHarness {
     readonly homeDir = mocks.harness.homeDir;

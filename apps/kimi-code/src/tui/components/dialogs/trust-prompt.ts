@@ -5,9 +5,9 @@ import {
   wrapTextWithAnsi,
   type Component,
   type Focusable,
-} from '@lemwood/pi-tui';
+} from '@lcode-cli/pi-tui';
 
-import type { WorkspaceTrustMcpServerInfo } from '@lemwood/lcode-sdk';
+import type { WorkspaceTrustMcpServerInfo } from '@lcode-cli/lcode-sdk';
 
 import { SELECT_POINTER } from '#/tui/constant/symbols';
 import { currentTheme } from '#/tui/theme';

@@ -60,8 +60,8 @@ import {
   type AgentRecord,
   type AgentRecordPersistence,
   type AgentReplayRecord,
-} from '@lemwood/agent-core';
-import { LocalKaos } from '@lemwood/kaos';
+} from '@lcode-cli/agent-core';
+import { LocalKaos } from '@lcode-cli/kaos';
 
 export interface FoldedAgentReplay {
   readonly replay: readonly AgentReplayRecord[];
@@ -76,7 +76,7 @@ const EMPTY_FOLD: FoldedAgentReplay = { replay: [], toolStore: {} };
  * records `finishResume` appends) land here and go nowhere — the on-disk
  * journal is never mutated. `InMemoryAgentRecordPersistence` would do, but
  * the package root only exports the interface, and node-sdk's vitest aliases
- * `@lemwood/agent-core` to its index, which swallows every deep subpath.
+ * `@lcode-cli/agent-core` to its index, which swallows every deep subpath.
  */
 class ReadOnlyAgentRecordPersistence implements AgentRecordPersistence {
   constructor(private readonly records: readonly AgentRecord[]) {}

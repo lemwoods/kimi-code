@@ -4,7 +4,7 @@ import {
   loadBuiltInCatalog,
   type Catalog,
   type FetchCatalogOptions,
-} from '@lemwood/lcode-sdk';
+} from '@lcode-cli/lcode-sdk';
 
 import { BUILT_IN_CATALOG_JSON } from '#/built-in-catalog';
 

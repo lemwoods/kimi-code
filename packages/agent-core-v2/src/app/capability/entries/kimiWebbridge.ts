@@ -7,7 +7,7 @@ import {
   kimiCdnContentUrl,
   kimiRegionProfile,
   resolveKimiRegion,
-} from '@lemwood/lcode-oauth';
+} from '@lcode-cli/lcode-oauth';
 
 import { downloadToFile, runCommand } from '../host';
 import type {

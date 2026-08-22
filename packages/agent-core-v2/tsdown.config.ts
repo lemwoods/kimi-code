@@ -11,8 +11,8 @@ export default defineConfig({
   plugins: [rawTextPlugin()],
   deps: {
     neverBundle: [
-      '@lemwood/lcode-oauth',
-      '@lemwood/lcode-telemetry',
+      '@lcode-cli/lcode-oauth',
+      '@lcode-cli/lcode-telemetry',
     ],
   },
 });

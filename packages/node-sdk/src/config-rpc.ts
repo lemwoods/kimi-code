@@ -5,7 +5,7 @@ import {
   parseConfigString,
   resolveConfigPath,
   type RPCMethods,
-} from '@lemwood/agent-core';
+} from '@lcode-cli/agent-core';
 import { z } from 'zod';
 
 export type KimiConfigValidationPathSegment = string | number;

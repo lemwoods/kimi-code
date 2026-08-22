@@ -1,4 +1,4 @@
-import type { Message, Tool as LLMTool } from '@lemwood/kosong';
+import type { Message, Tool as LLMTool } from '@lcode-cli/kosong';
 import { expect } from 'vitest';
 
 import { AGENT_WIRE_PROTOCOL_VERSION } from '../../../src/agent/records';

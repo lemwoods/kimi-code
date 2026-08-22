@@ -13,7 +13,7 @@ import type {
   FsStatManyRequest,
   FsStatManyResponse,
   FsStatRequest,
-} from '@lemwood/protocol';
+} from '@lcode-cli/protocol';
 
 export class FsPathNotFoundError extends Error {
   readonly inputPath: string;

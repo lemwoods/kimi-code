@@ -10,24 +10,24 @@ Current publishable packages:
 
 | Package | Directory | Description |
 | --- | --- | --- |
-| `@lemwood/lcode` | `apps/kimi-code` | CLI / TUI application — provides the `kimi` command after install |
-| `@lemwood/lcode-sdk` | `packages/node-sdk` | Public TypeScript SDK |
+| `@lcode-cli/lcode` | `apps/kimi-code` | CLI / TUI application — provides the `kimi` command after install |
+| `@lcode-cli/lcode-sdk` | `packages/node-sdk` | Public TypeScript SDK |
 
 All other workspace packages are private internal packages, are not published to npm, and are excluded via `ignore` in `.changeset/config.json`:
 
-- `@lemwood/acp-adapter`
-- `@lemwood/agent-core`
-- `@lemwood/kaos`
-- `@lemwood/lcode-oauth`
-- `@lemwood/lcode-telemetry`
-- `@lemwood/kosong`
-- `@lemwood/migration-legacy`
-- `@lemwood/protocol`
-- `@lemwood/vis`
-- `@lemwood/vis-server`
-- `@lemwood/vis-web`
+- `@lcode-cli/acp-adapter`
+- `@lcode-cli/agent-core`
+- `@lcode-cli/kaos`
+- `@lcode-cli/lcode-oauth`
+- `@lcode-cli/lcode-telemetry`
+- `@lcode-cli/kosong`
+- `@lcode-cli/migration-legacy`
+- `@lcode-cli/protocol`
+- `@lcode-cli/vis`
+- `@lcode-cli/vis-server`
+- `@lcode-cli/vis-web`
 
-Version impact from internal dependencies must be judged manually. The published artifacts for CLI and SDK bundle internal workspace packages into the artifact itself; runtime `dependencies` of published packages must not include any `@lemwood/*` internal workspace packages.
+Version impact from internal dependencies must be judged manually. The published artifacts for CLI and SDK bundle internal workspace packages into the artifact itself; runtime `dependencies` of published packages must not include any `@lcode-cli/*` internal workspace packages.
 
 The repository's `.changeset/config.json` sets `updateInternalDependencies: "patch"`. Because internal packages are not published, you still need to manually select all affected publishable packages in the changeset — do not rely solely on automatic dependency bumps to express user-visible changes.
 
@@ -35,12 +35,12 @@ Example scenarios:
 
 | Change | Changeset selection |
 | --- | --- |
-| Only modifies TUI behavior in `@lemwood/lcode` | Add `patch` / `minor` / `major` to `@lemwood/lcode` |
+| Only modifies TUI behavior in `@lcode-cli/lcode` | Add `patch` / `minor` / `major` to `@lcode-cli/lcode` |
 | Only modifies internal packages, no user-visible change in SDK / CLI | Usually no changeset needed |
-| Internal package fix changes the CLI user experience | Add a changeset to `@lemwood/lcode` describing the user-visible fix |
-| Internal package adds a new capability exposed by the SDK | Add a changeset to `@lemwood/lcode-sdk` |
-| SDK behavior change affects CLI user experience | Add changesets to both `@lemwood/lcode-sdk` and `@lemwood/lcode` |
-| Provider abstraction change affects SDK / CLI | Add changesets to the affected `@lemwood/lcode-sdk` and/or `@lemwood/lcode` |
+| Internal package fix changes the CLI user experience | Add a changeset to `@lcode-cli/lcode` describing the user-visible fix |
+| Internal package adds a new capability exposed by the SDK | Add a changeset to `@lcode-cli/lcode-sdk` |
+| SDK behavior change affects CLI user experience | Add changesets to both `@lcode-cli/lcode-sdk` and `@lcode-cli/lcode` |
+| Provider abstraction change affects SDK / CLI | Add changesets to the affected `@lcode-cli/lcode-sdk` and/or `@lcode-cli/lcode` |
 | Test-only, internal refactor, docs, or private debug tooling changes | Usually no changeset needed |
 | Bundled official plugin change under `plugins/` (e.g. `kimi-datasource`) | No changeset — the plugin is versioned via its own `kimi.plugin.json` / `plugins/marketplace.json` and shipped through the marketplace CDN, not the npm package |
 
@@ -50,7 +50,7 @@ This repository uses npm's **Trusted Publishing** (OIDC-based) for publishing �
 
 ### Configuration steps
 
-1. Open each publishable package's page on the npm website, e.g. `https://www.npmjs.com/package/@lemwood/lcode`.
+1. Open each publishable package's page on the npm website, e.g. `https://www.npmjs.com/package/@lcode-cli/lcode`.
 2. Go to **Settings** -> **Publishing access**.
 3. Find **Automate publishing with GitHub Actions** or **Add trusted publisher**.
 4. Click **Add a new trusted publisher**.
@@ -142,12 +142,12 @@ The root-level `pnpm run publish` first runs typecheck, lint, sherif, test, buil
 ## Notes
 
 - Every PR that affects publishable-package behavior or public API should include a corresponding changeset.
-- Changes under `plugins/` (the bundled official plugins such as `kimi-datasource`) do **not** need a changeset: each plugin carries its own version in `kimi.plugin.json` and `plugins/marketplace.json` and is distributed via the marketplace CDN, separately from the `@lemwood/lcode` npm package.
+- Changes under `plugins/` (the bundled official plugins such as `kimi-datasource`) do **not** need a changeset: each plugin carries its own version in `kimi.plugin.json` and `plugins/marketplace.json` and is distributed via the marketplace CDN, separately from the `@lcode-cli/lcode` npm package.
 - Changeset files must be committed to the repository — release PRs are only triggered after they're merged.
 - Release PRs require human review and merge; they will not publish automatically.
-- Do not add release changesets for private internal packages; only select `@lemwood/lcode` and `@lemwood/lcode-sdk`.
-- If a change in an underlying internal package alters user-visible behavior or public API of a publishable package, add a changeset to the affected publishable package. For example, when a bug fixed in `@lemwood/agent-core` resolves an issue CLI users encounter, add a changeset to `@lemwood/lcode` describing the user-visible fix.
-- `@lemwood/lcode` is the official CLI package name; after a global install it provides the `kimi` command.
+- Do not add release changesets for private internal packages; only select `@lcode-cli/lcode` and `@lcode-cli/lcode-sdk`.
+- If a change in an underlying internal package alters user-visible behavior or public API of a publishable package, add a changeset to the affected publishable package. For example, when a bug fixed in `@lcode-cli/agent-core` resolves an issue CLI users encounter, add a changeset to `@lcode-cli/lcode` describing the user-visible fix.
+- `@lcode-cli/lcode` is the official CLI package name; after a global install it provides the `kimi` command.
 - Make sure each publishable package on npm has a Trusted Publisher configured.
 
 ## References

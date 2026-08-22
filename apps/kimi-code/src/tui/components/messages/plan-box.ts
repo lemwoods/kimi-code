@@ -7,7 +7,7 @@
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 
-import { Markdown, truncateToWidth, visibleWidth, type Component, type MarkdownTheme } from '@lemwood/pi-tui';
+import { Markdown, truncateToWidth, visibleWidth, type Component, type MarkdownTheme } from '@lcode-cli/pi-tui';
 import chalk from 'chalk';
 
 import { createMarkdownOptions } from '#/tui/utils/markdown-options';

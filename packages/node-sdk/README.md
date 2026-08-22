@@ -1,4 +1,4 @@
-# @lemwood/lcode-sdk
+# @lcode-cli/lcode-sdk
 
 The TypeScript SDK for Kimi Code
 

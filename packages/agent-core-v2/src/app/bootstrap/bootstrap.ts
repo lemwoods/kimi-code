@@ -3,7 +3,7 @@ import { homedir } from 'node:os';
 
 import { join } from 'pathe';
 
-import type { KimiHostIdentity } from '@lemwood/lcode-oauth';
+import type { KimiHostIdentity } from '@lcode-cli/lcode-oauth';
 
 import { SyncDescriptor } from '#/_base/di/descriptors';
 import { createDecorator, type ServiceIdentifier } from '#/_base/di/instantiation';

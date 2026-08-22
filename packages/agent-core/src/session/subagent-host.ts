@@ -2,7 +2,7 @@ import {
   APIProviderRateLimitError,
   isProviderRateLimitError,
   type TokenUsage,
-} from '@lemwood/kosong';
+} from '@lcode-cli/kosong';
 
 import type { Agent } from '../agent';
 import type { PromptOrigin } from '../agent/context';

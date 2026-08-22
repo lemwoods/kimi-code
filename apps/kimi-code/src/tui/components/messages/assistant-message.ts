@@ -5,7 +5,7 @@
  * to align after the bullet.
  */
 
-import { Container, Markdown, truncateToWidth, visibleWidth, type Component } from '@lemwood/pi-tui';
+import { Container, Markdown, truncateToWidth, visibleWidth, type Component } from '@lcode-cli/pi-tui';
 
 import { MESSAGE_INDENT } from '#/tui/constant/rendering';
 import { STATUS_BULLET } from '#/tui/constant/symbols';

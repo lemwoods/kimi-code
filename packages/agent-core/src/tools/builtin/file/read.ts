@@ -1,4 +1,4 @@
-import type { Kaos, StatResult } from '@lemwood/kaos';
+import type { Kaos, StatResult } from '@lcode-cli/kaos';
 import { z } from 'zod';
 
 import type { BuiltinTool } from '../../../agent/tool';

@@ -1,4 +1,4 @@
-import { KIMI_ERROR_INFO, isKimiError } from '@lemwood/lcode-sdk';
+import { KIMI_ERROR_INFO, isKimiError } from '@lcode-cli/lcode-sdk';
 import { chalkStderr } from 'chalk';
 
 import { STARTUP_ERROR_COLOR } from '#/constant/startup-error';

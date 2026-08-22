@@ -20,14 +20,14 @@
  * derives from transcript state (`meta.activity` / running turns).
  */
 
-import { IAgentLoopService } from '@lemwood/agent-core-v2/agent/loop/loop';
-import { IAgentPromptService } from '@lemwood/agent-core-v2/agent/prompt/prompt';
-import { ISessionApprovalService } from '@lemwood/agent-core-v2/session/approval/approval';
+import { IAgentLoopService } from '@lcode-cli/agent-core-v2/agent/loop/loop';
+import { IAgentPromptService } from '@lcode-cli/agent-core-v2/agent/prompt/prompt';
+import { ISessionApprovalService } from '@lcode-cli/agent-core-v2/session/approval/approval';
 import {
   ISessionQuestionService,
   type QuestionItem,
   type QuestionRequest,
-} from '@lemwood/agent-core-v2/session/question/question';
+} from '@lcode-cli/agent-core-v2/session/question/question';
 import {
   EMPTY_AGENT_STATE,
   itemId,
@@ -46,7 +46,7 @@ import {
   type TranscriptUsage,
   type TurnOrigin,
   type TurnState,
-} from '@lemwood/transcript';
+} from '@lcode-cli/transcript';
 import {
   createContext,
   useCallback,

@@ -1,4 +1,4 @@
-# @lemwood/agent-core
+# @lcode-cli/agent-core
 
 The unified agent engine for Kimi Code.
 

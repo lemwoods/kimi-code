@@ -1,4 +1,4 @@
-# @lemwood/acp-adapter
+# @lcode-cli/acp-adapter
 
 Agent Client Protocol adapter for kimi-code. Exposes the kimi-code agent over the [Agent Client Protocol](https://agentclientprotocol.com/) so that ACP-compatible clients (editors, IDEs, custom front-ends) can drive a kimi-code session over stdio.
 
@@ -7,8 +7,8 @@ Part of the [Kimi Code](https://github.com/MoonshotAI/kimi-code) monorepo.
 ## Minimum usage
 
 ```ts
-import { createKimiHarness } from '@lemwood/lcode-sdk';
-import { runAcpServer } from '@lemwood/acp-adapter';
+import { createKimiHarness } from '@lcode-cli/lcode-sdk';
+import { runAcpServer } from '@lcode-cli/acp-adapter';
 
 const harness = await createKimiHarness();
 await runAcpServer(harness);

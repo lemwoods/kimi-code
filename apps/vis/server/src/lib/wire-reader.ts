@@ -5,7 +5,7 @@ import {
   migrateWireRecord,
   resolveWireMigrations,
   type WireMigration,
-} from '@lemwood/agent-core/agent/records/migration/index';
+} from '@lcode-cli/agent-core/agent/records/migration/index';
 
 import type { AgentRecord, WireEntry } from './agent-record-types';
 

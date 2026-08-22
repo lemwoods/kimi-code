@@ -1,13 +1,13 @@
-import type { AgentActivityUpdated } from '@lemwood/agent-core-v2/agent/activityView/activityView';
-import type { ContextSpliced } from '@lemwood/agent-core-v2/agent/contextMemory/contextEvents';
-import type { HookResult } from '@lemwood/agent-core-v2/features/externalHooks/agent/agentExternalHooksService';
+import type { AgentActivityUpdated } from '@lcode-cli/agent-core-v2/agent/activityView/activityView';
+import type { ContextSpliced } from '@lcode-cli/agent-core-v2/agent/contextMemory/contextEvents';
+import type { HookResult } from '@lcode-cli/agent-core-v2/features/externalHooks/agent/agentExternalHooksService';
 import type {
   CompactionBlocked,
   CompactionCancelled,
   CompactionCompleted,
   CompactionStarted,
-} from '@lemwood/agent-core-v2/agent/fullCompaction/compactionOps';
-import type { GoalUpdated } from '@lemwood/agent-core-v2';
+} from '@lcode-cli/agent-core-v2/agent/fullCompaction/compactionOps';
+import type { GoalUpdated } from '@lcode-cli/agent-core-v2';
 import type {
   AssistantDelta,
   ThinkingDelta,
@@ -16,43 +16,43 @@ import type {
   TurnStepCompleted,
   TurnStepInterrupted,
   TurnStepStarted,
-} from '@lemwood/agent-core-v2/agent/loop/turnEvents';
-import type { TurnEnded } from '@lemwood/agent-core-v2/agent/loop/turnOps';
-import type { AgentErrorEvent } from '@lemwood/agent-core-v2/agent/mcp/mcpEvents';
-import type { PluginCommandActivated } from '@lemwood/agent-core-v2/agent/pluginCommand/pluginCommand';
-import type { WarningIssued } from '@lemwood/agent-core-v2/agent/profile/profileOps';
+} from '@lcode-cli/agent-core-v2/agent/loop/turnEvents';
+import type { TurnEnded } from '@lcode-cli/agent-core-v2/agent/loop/turnOps';
+import type { AgentErrorEvent } from '@lcode-cli/agent-core-v2/agent/mcp/mcpEvents';
+import type { PluginCommandActivated } from '@lcode-cli/agent-core-v2/agent/pluginCommand/pluginCommand';
+import type { WarningIssued } from '@lcode-cli/agent-core-v2/agent/profile/profileOps';
 import type {
   PromptAborted,
   PromptCompleted,
   PromptSteered,
-} from '@lemwood/agent-core-v2/agent/prompt/promptService';
+} from '@lcode-cli/agent-core-v2/agent/prompt/promptService';
 import type {
   ShellCompleted,
   ShellOutput,
   ShellStarted,
-} from '@lemwood/agent-core-v2/agent/shellCommand/shellCommandService';
-import type { SkillActivated } from '@lemwood/agent-core-v2/agent/skill/skillOps';
-import type { TurnStepRetrying } from '@lemwood/agent-core-v2/agent/stepRetry/stepRetryService';
+} from '@lcode-cli/agent-core-v2/agent/shellCommand/shellCommandService';
+import type { SkillActivated } from '@lcode-cli/agent-core-v2/agent/skill/skillOps';
+import type { TurnStepRetrying } from '@lcode-cli/agent-core-v2/agent/stepRetry/stepRetryService';
 import type {
   TaskNotified,
   TaskStarted,
   TaskTerminatedNotice,
-} from '@lemwood/agent-core-v2/agent/task/taskOps';
+} from '@lcode-cli/agent-core-v2/agent/task/taskOps';
 import type {
   ToolCallStarted,
   ToolProgress,
   ToolResultEvent,
-} from '@lemwood/agent-core-v2/agent/toolExecutor/toolExecutorEvents';
-import type { AgentStatusUpdated } from '@lemwood/agent-core-v2/agent/usage/usageEvents';
-import type { PlanRevision } from '@lemwood/agent-core-v2/features/plan/planOps';
-import type { SubagentSuspended } from '@lemwood/agent-core-v2/features/swarm/session/sessionSwarmService';
-import type { CronFired } from '@lemwood/agent-core-v2/session/cron/cronOps';
+} from '@lcode-cli/agent-core-v2/agent/toolExecutor/toolExecutorEvents';
+import type { AgentStatusUpdated } from '@lcode-cli/agent-core-v2/agent/usage/usageEvents';
+import type { PlanRevision } from '@lcode-cli/agent-core-v2/features/plan/planOps';
+import type { SubagentSuspended } from '@lcode-cli/agent-core-v2/features/swarm/session/sessionSwarmService';
+import type { CronFired } from '@lcode-cli/agent-core-v2/session/cron/cronOps';
 import type {
   SubagentCompleted,
   SubagentFailed,
   SubagentSpawned,
   SubagentStarted,
-} from '@lemwood/agent-core-v2/session/subagent/mirrorAgentRun';
+} from '@lcode-cli/agent-core-v2/session/subagent/mirrorAgentRun';
 import type {
   AgentRef,
   AgentUsageMeta,
@@ -73,7 +73,7 @@ import type {
   TurnHeader,
   TurnOrigin,
   TurnState,
-} from '@lemwood/transcript';
+} from '@lcode-cli/transcript';
 
 import { toLegacyPhase } from '../legacyStatus/legacyStatus';
 import { projectPromptContentParts } from '../messages/messageProjection';

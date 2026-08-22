@@ -31,7 +31,7 @@ import type {
   ToolCallRequest,
   ToolCallResponse,
   ToolInputDisplay,
-} from '@lemwood/agent-core';
+} from '@lcode-cli/agent-core';
 import {
   agentContextOf,
   IAgentLifecycleService,
@@ -48,7 +48,7 @@ import {
   type IDisposable,
   type Interaction,
   type ISessionScopeHandle,
-} from '@lemwood/agent-core-v2';
+} from '@lcode-cli/agent-core-v2';
 
 import { translateDomainEvent } from '#/v2/event-mapper';
 

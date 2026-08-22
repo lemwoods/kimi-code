@@ -1,4 +1,4 @@
-import { type Scope } from '@lemwood/agent-core-v2';
+import { type Scope } from '@lcode-cli/agent-core-v2';
 import { z } from 'zod';
 
 import { errEnvelope, okEnvelope } from '../envelope';

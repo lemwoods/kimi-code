@@ -10,8 +10,8 @@ import {
   ISessionExportService,
   isError2,
   type Scope,
-} from '@lemwood/agent-core-v2';
-import type { KimiHostIdentity } from '@lemwood/lcode-oauth';
+} from '@lcode-cli/agent-core-v2';
+import type { KimiHostIdentity } from '@lcode-cli/lcode-oauth';
 
 import { requestLog } from '../lib/requestLog';
 import { defineRoute } from '../middleware/defineRoute';

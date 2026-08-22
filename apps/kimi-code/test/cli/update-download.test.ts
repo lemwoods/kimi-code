@@ -30,9 +30,9 @@ vi.mock('#/cli/update/native-stage', () => ({
   stagedExePath: mocks.stagedExePath,
 }));
 
-vi.mock('@lemwood/lcode-sdk', async () => {
-  const actual = await vi.importActual<typeof import('@lemwood/lcode-sdk')>(
-    '@lemwood/lcode-sdk',
+vi.mock('@lcode-cli/lcode-sdk', async () => {
+  const actual = await vi.importActual<typeof import('@lcode-cli/lcode-sdk')>(
+    '@lcode-cli/lcode-sdk',
   );
   return {
     ...actual,

@@ -1,4 +1,4 @@
-import { CapabilityErrors, ICapabilityService, isError2, type Scope } from '@lemwood/agent-core-v2';
+import { CapabilityErrors, ICapabilityService, isError2, type Scope } from '@lcode-cli/agent-core-v2';
 import { z } from 'zod';
 
 import { errEnvelope, okEnvelope } from '../envelope';

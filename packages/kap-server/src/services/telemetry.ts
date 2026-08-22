@@ -7,8 +7,8 @@ import {
   IOAuthToolkit,
   ITelemetryService,
   type Scope,
-} from '@lemwood/agent-core-v2';
-import { createKimiDeviceId } from '@lemwood/lcode-oauth';
+} from '@lcode-cli/agent-core-v2';
+import { createKimiDeviceId } from '@lcode-cli/lcode-oauth';
 
 const SERVER_TELEMETRY_APP_NAME = 'kimi-code-cli';
 const SERVER_TELEMETRY_UI_MODE = 'web';

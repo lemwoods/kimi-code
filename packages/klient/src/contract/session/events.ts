@@ -10,8 +10,8 @@ import { z } from 'zod';
 import type {
   Interaction,
   InteractionResolution,
-} from '@lemwood/agent-core-v2/session/interaction/interaction';
-import type { SessionMetadataChangedEvent } from '@lemwood/agent-core-v2/session/sessionMetadata/sessionMetadata';
+} from '@lcode-cli/agent-core-v2/session/interaction/interaction';
+import type { SessionMetadataChangedEvent } from '@lcode-cli/agent-core-v2/session/sessionMetadata/sessionMetadata';
 
 import type { EventRegistration } from '../types.js';
 import {

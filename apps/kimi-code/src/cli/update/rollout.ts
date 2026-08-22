@@ -2,8 +2,8 @@ import { createHash, randomUUID } from 'node:crypto';
 import { appendFile, mkdir, stat, writeFile } from 'node:fs/promises';
 import { dirname } from 'node:path';
 
-import { readKimiDeviceId } from '@lemwood/lcode-oauth';
-import { resolveKimiHome } from '@lemwood/lcode-sdk';
+import { readKimiDeviceId } from '@lcode-cli/lcode-oauth';
+import { resolveKimiHome } from '@lcode-cli/lcode-sdk';
 
 import { getUpdateRolloutLogFile } from '#/utils/paths';
 

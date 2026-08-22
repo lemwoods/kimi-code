@@ -1,4 +1,4 @@
-import type { Component } from '@lemwood/pi-tui';
+import type { Component } from '@lcode-cli/pi-tui';
 
 import type { TranscriptEntry } from '../types';
 

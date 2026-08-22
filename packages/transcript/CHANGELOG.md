@@ -1,4 +1,4 @@
-# @lemwood/transcript
+# @lcode-cli/transcript
 
 ## 0.0.1
 

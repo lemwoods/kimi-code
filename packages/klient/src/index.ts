@@ -1,7 +1,7 @@
 /**
- * `@lemwood/klient` public surface — the transport-agnostic client facade
+ * `@lcode-cli/klient` public surface — the transport-agnostic client facade
  * over the agent-core-v2 engine. Create a klient with one of the transport
- * entry points (`@lemwood/klient/ipc` or `/memory`); everything
+ * entry points (`@lcode-cli/klient/ipc` or `/memory`); everything
  * exported here behaves identically regardless of which one carried the
  * bytes.
  */
@@ -98,48 +98,48 @@ export type { AgentEventPayloads } from './contract/agent/events.js';
 export type {
   SessionListQuery,
   SessionSummary,
-} from '@lemwood/agent-core-v2/app/sessionIndex/sessionIndex';
-export type { Page } from '@lemwood/agent-core-v2/persistence/interface/queryStore';
+} from '@lcode-cli/agent-core-v2/app/sessionIndex/sessionIndex';
+export type { Page } from '@lcode-cli/agent-core-v2/persistence/interface/queryStore';
 export type {
   Workspace,
   WorkspaceUpdate,
-} from '@lemwood/agent-core-v2/app/workspace/workspace';
+} from '@lcode-cli/agent-core-v2/app/workspace/workspace';
 export type {
   ConfigDiagnostic,
   ConfigInspectValue,
-} from '@lemwood/agent-core-v2/app/config/config';
-export type { ProviderConfig } from '@lemwood/agent-core-v2/kosong/provider/provider';
-export type { AuthStatus } from '@lemwood/agent-core-v2/app/auth/auth';
-export type { ExperimentalFeatureState } from '@lemwood/agent-core-v2/app/flag/flag';
+} from '@lcode-cli/agent-core-v2/app/config/config';
+export type { ProviderConfig } from '@lcode-cli/agent-core-v2/kosong/provider/provider';
+export type { AuthStatus } from '@lcode-cli/agent-core-v2/app/auth/auth';
+export type { ExperimentalFeatureState } from '@lcode-cli/agent-core-v2/app/flag/flag';
 export type {
   FsBrowseResponse,
   FsHomeResponse,
-} from '@lemwood/agent-core-v2/app/hostFolderBrowser/hostFolderBrowser';
-export type { FileMeta } from '@lemwood/agent-core-v2/app/file/fileService';
+} from '@lcode-cli/agent-core-v2/app/hostFolderBrowser/hostFolderBrowser';
+export type { FileMeta } from '@lcode-cli/agent-core-v2/app/file/fileService';
 export type {
   PluginCommandDef,
   PluginInfo,
   PluginSummary,
   PluginUpdateStatus,
   ReloadSummary,
-} from '@lemwood/agent-core-v2/app/plugin/types';
+} from '@lcode-cli/agent-core-v2/app/plugin/types';
 export type {
   AgentMeta,
   SessionMeta,
   SessionMetaPatch,
-} from '@lemwood/agent-core-v2/session/sessionMetadata/sessionMetadata';
+} from '@lcode-cli/agent-core-v2/session/sessionMetadata/sessionMetadata';
 export type {
   ApprovalRequest,
   ApprovalResponse,
-} from '@lemwood/agent-core-v2/session/approval/approval';
+} from '@lcode-cli/agent-core-v2/session/approval/approval';
 export type {
   QuestionRequest,
   QuestionResult,
-} from '@lemwood/agent-core-v2/session/question/question';
+} from '@lcode-cli/agent-core-v2/session/question/question';
 export type {
   Interaction,
   InteractionKind,
-} from '@lemwood/agent-core-v2/session/interaction/interaction';
-export type { SkillSummary } from '@lemwood/agent-core-v2/app/skillCatalog/types';
-export type { ContentPart } from '@lemwood/agent-core-v2/kosong/contract/message';
-export type { PermissionMode } from '@lemwood/agent-core-v2/agent/permissionPolicy/types';
+} from '@lcode-cli/agent-core-v2/session/interaction/interaction';
+export type { SkillSummary } from '@lcode-cli/agent-core-v2/app/skillCatalog/types';
+export type { ContentPart } from '@lcode-cli/agent-core-v2/kosong/contract/message';
+export type { PermissionMode } from '@lcode-cli/agent-core-v2/agent/permissionPolicy/types';

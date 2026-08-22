@@ -1,5 +1,5 @@
 {
-  "name": "@lemwood/lcode-inspect",
+  "name": "@lcode-cli/lcode-inspect",
   "version": "0.0.0",
   "private": true,
   "license": "MIT",
@@ -22,8 +22,8 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@lemwood/agent-core-v2": "workspace:^",
-    "@lemwood/transcript": "workspace:^",
+    "@lcode-cli/agent-core-v2": "workspace:^",
+    "@lcode-cli/transcript": "workspace:^",
     "@tanstack/react-query": "^5.74.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"

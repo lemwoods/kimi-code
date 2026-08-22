@@ -1,4 +1,4 @@
-import { Container, Spacer, Text } from '@lemwood/pi-tui';
+import { Container, Spacer, Text } from '@lcode-cli/pi-tui';
 
 import type { MoonLoader } from '#/tui/components/chrome/moon-loader';
 import { ACTIVITY_DETAIL_INDENT } from '#/tui/constant/rendering';

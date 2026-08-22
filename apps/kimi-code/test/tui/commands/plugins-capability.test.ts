@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { log } from '@lemwood/lcode-sdk';
-import { resetCapabilitiesCache, setCapabilities, type Component } from '@lemwood/pi-tui';
+import { log } from '@lcode-cli/lcode-sdk';
+import { resetCapabilitiesCache, setCapabilities, type Component } from '@lcode-cli/pi-tui';
 
 import { __pluginsCommandInternals } from '#/tui/commands/plugins';
 import { NoticeMessageComponent } from '#/tui/components/messages/status-message';

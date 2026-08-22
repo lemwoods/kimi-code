@@ -4,7 +4,7 @@ import {
   type KimiConfig as SdkKimiConfig,
   type ModelAlias,
   type ThinkingEffort,
-} from "@lemwood/lcode-sdk";
+} from "@lcode-cli/lcode-sdk";
 
 import { Methods } from "../../shared/bridge";
 import type {

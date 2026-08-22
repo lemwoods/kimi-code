@@ -1,4 +1,4 @@
-import { isProviderRateLimitError, type TokenUsage } from '@lemwood/kosong';
+import { isProviderRateLimitError, type TokenUsage } from '@lcode-cli/kosong';
 import * as retry from 'retry';
 
 import type {

@@ -26,7 +26,7 @@ import {
   ServiceCollection,
   SyncDescriptor,
   type ServiceIdentifier,
-} from '@lemwood/agent-core-v2';
+} from '@lcode-cli/agent-core-v2';
 import { describe, expect, it } from 'vitest';
 
 interface IShadowProbe {

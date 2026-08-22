@@ -4,14 +4,14 @@ import {
   daemonFileRefFromPart as engineRefFromPart,
   matchSingleMediaPathTag as engineMatchTag,
   parseDaemonFileUrl as engineParse,
-} from '@lemwood/agent-core-v2';
+} from '@lcode-cli/agent-core-v2';
 import {
   daemonFileRefFromPairingPart as mirrorRefFromPart,
   matchMediaPathTagText as mirrorMatchTag,
   parseDaemonFileRef as mirrorParse,
   type MediaRefPart,
-} from '@lemwood/transcript';
-import type { ContentPart } from '@lemwood/agent-core-v2/kosong/contract/message';
+} from '@lcode-cli/transcript';
+import type { ContentPart } from '@lcode-cli/agent-core-v2/kosong/contract/message';
 
 const URLS = [
   'kimi-file://f_1?path=%2Fcache%2Fshot.png',

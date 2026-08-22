@@ -36,7 +36,7 @@ import {
 } from '../../src/services';
 
 const packageRoot = fileURLToPath(new URL('../..', import.meta.url));
-const sdkPackageName = ['@lemwood', 'lcode-sdk'].join('/');
+const sdkPackageName = ['@lcode-cli', 'lcode-sdk'].join('/');
 
 function readPackageFiles(): string {
   const files = [
@@ -151,7 +151,7 @@ function makeFakeQuestion(): QuestionRequest & { sessionId: string; agentId: str
   };
 }
 
-describe('@lemwood/agent-core · services interfaces', () => {
+describe('@lcode-cli/agent-core · services interfaces', () => {
   it('does not depend on the node SDK package', () => {
     expect(readPackageFiles()).not.toContain(sdkPackageName);
   });

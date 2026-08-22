@@ -2,7 +2,7 @@ import {
   BUDGET_THINKING_EFFORTS,
   matchKnownAnthropicModelProfile,
   matchUnknownClaudeProfile,
-} from '@lemwood/kosong/providers/anthropic-profile';
+} from '@lcode-cli/kosong/providers/anthropic-profile';
 
 import type { ModelAlias, ProviderType } from './schema';
 

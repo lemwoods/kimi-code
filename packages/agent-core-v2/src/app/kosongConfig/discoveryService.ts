@@ -4,7 +4,7 @@ import {
   type ManagedKimiOAuthRef,
   type RefreshProviderHost,
   type RefreshResult,
-} from '@lemwood/lcode-oauth';
+} from '@lcode-cli/lcode-oauth';
 import { LifecycleScope } from '#/app/scopes';
 import { ScopeActivation, registerScopedService } from '#/_base/di/scope';
 import { Error2 } from '#/_base/errors/errors';

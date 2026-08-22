@@ -7,7 +7,7 @@ import { afterEach, describe, expect, it } from 'vitest';
 import {
   getTextBuildWorkerRuntimeState,
   resetTextBuildWorkerRuntime,
-} from '@lemwood/minidb/worker-runtime';
+} from '@lcode-cli/minidb/worker-runtime';
 
 import {
   getEmbeddedNativeAssetManifest,

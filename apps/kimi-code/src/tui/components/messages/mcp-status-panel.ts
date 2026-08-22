@@ -1,4 +1,4 @@
-import type { McpServerInfo } from '@lemwood/lcode-sdk';
+import type { McpServerInfo } from '@lcode-cli/lcode-sdk';
 
 import { currentTheme } from '#/tui/theme';
 

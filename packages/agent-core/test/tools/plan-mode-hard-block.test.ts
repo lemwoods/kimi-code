@@ -1,4 +1,4 @@
-import type { ToolCall } from '@lemwood/kosong';
+import type { ToolCall } from '@lcode-cli/kosong';
 import { describe, expect, it, vi } from 'vitest';
 
 import type { Agent } from '../../src/agent';

@@ -63,7 +63,7 @@ Registration is not the end of the story. Every unit a container tracks — stat
 
 There is no domain-layer numbering — a domain may import any other domain, guided by the dependency-direction judgment in design.md. The only mechanically enforced import boundaries are (`lint:imports`, `scripts/check-import-boundaries.mjs`):
 
-- v2 never imports v1 (`@lemwood/agent-core` or any subpath).
+- v2 never imports v1 (`@lcode-cli/agent-core` or any subpath).
 - The kosong subtree (`src/kosong/{contract,protocol,provider,model}`) keeps its strict internal order (`contract ← protocol ← provider/model`), purity bans (no SDKs in `contract`/`protocol`), and the `provider/bases` registration boundary.
 
 ## Comment convention

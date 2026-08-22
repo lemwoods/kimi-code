@@ -1,5 +1,5 @@
 import { createDecorator } from '../../di';
-import type { ConfigResponse, PatchConfigRequest } from '@lemwood/protocol';
+import type { ConfigResponse, PatchConfigRequest } from '@lcode-cli/protocol';
 
 export interface IConfigService {
   readonly _serviceBrand: undefined;

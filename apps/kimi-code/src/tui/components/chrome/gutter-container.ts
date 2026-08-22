@@ -15,8 +15,8 @@
  * style changes that genuinely dirty every child (e.g. theme switches).
  */
 
-import { Container } from '@lemwood/pi-tui';
-import type { Component } from '@lemwood/pi-tui';
+import { Container } from '@lcode-cli/pi-tui';
+import type { Component } from '@lcode-cli/pi-tui';
 
 import { prefixPreservingOsc133Zone } from '#/tui/utils/osc133';
 import { isRenderCacheEnabled } from '#/tui/utils/render-cache';

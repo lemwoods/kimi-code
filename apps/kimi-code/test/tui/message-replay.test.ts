@@ -10,7 +10,7 @@ import type {
   Role,
   Session,
   ToolCall,
-} from '@lemwood/lcode-sdk';
+} from '@lcode-cli/lcode-sdk';
 import { describe, expect, it, vi } from 'vitest';
 
 import { KimiTUI, type KimiTUIStartupInput, type TUIState } from '#/tui/kimi-tui';

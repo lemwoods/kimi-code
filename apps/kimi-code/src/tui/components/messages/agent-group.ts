@@ -15,8 +15,8 @@
  * - Ungrouping is not implemented. Once formed, a group stays grouped.
  */
 
-import type { TUI } from '@lemwood/pi-tui';
-import { Container, Spacer, Text } from '@lemwood/pi-tui';
+import type { TUI } from '@lcode-cli/pi-tui';
+import { Container, Spacer, Text } from '@lcode-cli/pi-tui';
 
 import { STATUS_BULLET } from '#/tui/constant/symbols';
 import { currentTheme } from '#/tui/theme';

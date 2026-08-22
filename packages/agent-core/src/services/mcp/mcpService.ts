@@ -3,7 +3,7 @@
  */
 
 import { Disposable, InstantiationType, registerSingleton } from '../../di';
-import type { McpServer } from '@lemwood/protocol';
+import type { McpServer } from '@lcode-cli/protocol';
 
 import { ICoreProcessService } from '../coreProcess/coreProcess';
 import {

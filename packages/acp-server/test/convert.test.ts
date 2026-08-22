@@ -3,7 +3,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
 import type { McpServer } from '@agentclientprotocol/sdk';
-import type { ContentPart } from '@lemwood/agent-core-v2';
+import type { ContentPart } from '@lcode-cli/agent-core-v2';
 import { afterEach, describe, expect, it } from 'vitest';
 
 import {

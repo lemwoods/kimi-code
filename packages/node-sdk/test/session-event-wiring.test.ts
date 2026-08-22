@@ -8,7 +8,7 @@
  */
 import { describe, expect, it } from 'vitest';
 
-import type { Event } from '@lemwood/agent-core';
+import type { Event } from '@lcode-cli/agent-core';
 import {
   IAgentLifecycleService,
   IAgentProfileService,
@@ -20,7 +20,7 @@ import {
   makeAgentScopeContext,
   type IAgentScopeHandle,
   type ISessionScopeHandle,
-} from '@lemwood/agent-core-v2';
+} from '@lcode-cli/agent-core-v2';
 
 import { SessionEventWiring, type SessionEventSink } from '#/v2/session-wiring';
 

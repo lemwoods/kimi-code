@@ -29,12 +29,12 @@
  * `setOptions`.
  */
 
-import type { ProviderConfig } from '@lemwood/lcode-sdk';
+import type { ProviderConfig } from '@lcode-cli/lcode-sdk';
 import {
   getOpenPlatformById,
   isOpenPlatformId,
   type CustomRegistrySource,
-} from '@lemwood/lcode-oauth';
+} from '@lcode-cli/lcode-oauth';
 import {
   Container,
   Key,
@@ -42,7 +42,7 @@ import {
   truncateToWidth,
   visibleWidth,
   type Focusable,
-} from '@lemwood/pi-tui';
+} from '@lcode-cli/pi-tui';
 
 import { DEFAULT_OAUTH_PROVIDER_NAME } from '#/constant/app';
 import { CURRENT_MARK, SELECT_POINTER } from '#/tui/constant/symbols';

@@ -2,8 +2,8 @@ import { promises as fsp } from 'node:fs';
 
 import { join } from 'pathe';
 
-import { type QueryOptions } from '@lemwood/minidb';
-import { ClusterDb } from '@lemwood/minidb/cluster';
+import { type QueryOptions } from '@lcode-cli/minidb';
+import { ClusterDb } from '@lcode-cli/minidb/cluster';
 
 import { Disposable, toDisposable } from '#/_base/di/lifecycle';
 import { LifecycleScope } from '#/app/scopes';

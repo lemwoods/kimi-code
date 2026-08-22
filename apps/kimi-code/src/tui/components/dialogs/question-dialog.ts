@@ -15,7 +15,7 @@ import {
   truncateToWidth,
   visibleWidth,
   wrapTextWithAnsi,
-} from '@lemwood/pi-tui';
+} from '@lcode-cli/pi-tui';
 
 import { currentTheme } from '#/tui/theme';
 import type {

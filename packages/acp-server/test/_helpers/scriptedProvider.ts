@@ -28,7 +28,7 @@ import {
   type StreamedMessagePart,
   type TokenUsage,
   type Tool,
-} from '@lemwood/agent-core-v2';
+} from '@lcode-cli/agent-core-v2';
 
 interface ScriptedResponse {
   readonly parts: readonly StreamedMessagePart[];

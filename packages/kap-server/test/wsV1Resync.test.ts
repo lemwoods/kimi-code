@@ -7,7 +7,7 @@ import {
   IEventBus,
   IAgentLifecycleService,
   getLiveSessionById,
-} from '@lemwood/agent-core-v2';
+} from '@lcode-cli/agent-core-v2';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import { WebSocket } from 'ws';
 

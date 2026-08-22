@@ -1,4 +1,4 @@
-import type { ShellEnvironment } from '@lemwood/lcode-sdk';
+import type { ShellEnvironment } from '@lcode-cli/lcode-sdk';
 
 function detectMultiplexer(): string | undefined {
   if (process.env['TMUX']) return 'tmux';

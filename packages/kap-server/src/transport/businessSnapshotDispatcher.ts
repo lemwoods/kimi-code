@@ -14,7 +14,7 @@ import {
   type SessionWorkspaceAssociationSnapshot,
   type WorkspaceInstanceSnapshot,
   type WorkspaceInstancesSnapshot,
-} from '@lemwood/agent-core-v2';
+} from '@lcode-cli/agent-core-v2';
 
 import { MAIN_AGENT_ID, ensureMainAgent } from './mainAgent';
 

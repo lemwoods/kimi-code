@@ -5,7 +5,7 @@ import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { Worker } from 'node:worker_threads';
 
-import { getTextBuildWorkerRuntimeState } from '@lemwood/minidb/worker-runtime';
+import { getTextBuildWorkerRuntimeState } from '@lcode-cli/minidb/worker-runtime';
 
 import { GlobalSearchError } from '../contract';
 import type {

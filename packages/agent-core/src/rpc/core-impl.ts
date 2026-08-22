@@ -172,9 +172,9 @@ import type {
 } from './core-api';
 import type { ResumedAgentState, ResumeSessionResult } from './resumed';
 import type { SDKRPC } from './sdk-api';
-import type { SessionWarning } from '@lemwood/protocol';
+import type { SessionWarning } from '@lcode-cli/protocol';
 import { proxyWithExtraPayload } from './types';
-import { KaosShellNotFoundError, LocalKaos, type Kaos } from '@lemwood/kaos';
+import { KaosShellNotFoundError, LocalKaos, type Kaos } from '@lcode-cli/kaos';
 import type { ToolServices } from '../tools/support/services';
 
 const KIMI_CODE_PROVIDER_NAME = 'managed:kimi-code';

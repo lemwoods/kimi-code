@@ -24,7 +24,7 @@
  *     anchor (extension, subdirectory) when that would not be enough.
  */
 
-import type { Kaos } from '@lemwood/kaos';
+import type { Kaos } from '@lcode-cli/kaos';
 import { normalize, resolve } from 'pathe';
 import { z } from 'zod';
 

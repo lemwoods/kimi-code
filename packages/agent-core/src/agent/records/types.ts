@@ -1,4 +1,4 @@
-import type { ContentPart, ThinkingEffort, TokenUsage } from '@lemwood/kosong';
+import type { ContentPart, ThinkingEffort, TokenUsage } from '@lcode-cli/kosong';
 
 import type { LoopRecordedEvent } from '../../loop';
 import type { GoalActor, GoalBudgetLimits, GoalStatus } from '../goal';

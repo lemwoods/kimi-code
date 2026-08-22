@@ -1,4 +1,4 @@
-import type { PluginSummary } from '@lemwood/lcode-sdk';
+import type { PluginSummary } from '@lcode-cli/lcode-sdk';
 
 import { kimiCodePluginMarketplaceUrl } from '#/constant/app';
 import {

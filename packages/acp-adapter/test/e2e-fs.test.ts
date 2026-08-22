@@ -35,8 +35,8 @@ import {
   type WriteTextFileRequest,
   type WriteTextFileResponse,
 } from '@agentclientprotocol/sdk';
-import type { Kaos } from '@lemwood/kaos';
-import type { Event, KimiHarness, Session } from '@lemwood/lcode-sdk';
+import type { Kaos } from '@lcode-cli/kaos';
+import type { Event, KimiHarness, Session } from '@lcode-cli/lcode-sdk';
 import { describe, expect, it } from 'vitest';
 
 import { AcpServer } from '../src/server';

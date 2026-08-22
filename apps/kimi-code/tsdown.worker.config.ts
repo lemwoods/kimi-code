@@ -35,9 +35,9 @@ function workerConfig(name: string, entry: string) {
     silent: true,
     deps: {
       // Force-bundle the workspace packages the entries import
-      // (`@lemwood/minidb` and its subpaths) so the output is
+      // (`@lcode-cli/minidb` and its subpaths) so the output is
       // self-contained.
-      alwaysBundle: [/^@lemwood\//],
+      alwaysBundle: [/^@lcode-cli\//],
     },
     // The intermediates dir also holds main.cjs & co. — never wipe it.
     clean: false,

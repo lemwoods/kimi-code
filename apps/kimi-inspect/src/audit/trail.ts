@@ -13,7 +13,7 @@ import type {
   AgentState,
   AgentTranscriptSnapshot,
   TranscriptOperation,
-} from '@lemwood/transcript';
+} from '@lcode-cli/transcript';
 
 import type { TranscriptPage } from '../transcript/api';
 

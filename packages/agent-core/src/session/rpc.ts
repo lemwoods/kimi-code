@@ -1,6 +1,6 @@
 import { ErrorCodes, KimiError } from '#/errors';
 import { McpServerConfigSchema } from '#/config/schema';
-import type { SessionWarning } from '@lemwood/protocol';
+import type { SessionWarning } from '@lcode-cli/protocol';
 import type {
   ActivateSkillPayload,
   ActivatePluginCommandPayload,

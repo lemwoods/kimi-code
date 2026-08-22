@@ -1,4 +1,4 @@
-import { createDecorator } from '@lemwood/agent-core-v2';
+import { createDecorator } from '@lcode-cli/agent-core-v2';
 
 import { verifyPassword } from './password';
 import type { TokenStore } from './tokenStore';

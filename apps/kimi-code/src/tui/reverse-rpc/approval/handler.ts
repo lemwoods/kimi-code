@@ -1,4 +1,4 @@
-import type { ApprovalHandler, ApprovalRequest, ApprovalResponse } from '@lemwood/lcode-sdk';
+import type { ApprovalHandler, ApprovalRequest, ApprovalResponse } from '@lcode-cli/lcode-sdk';
 
 import { adaptApprovalRequest } from './adapter';
 import type { ApprovalController } from './controller';

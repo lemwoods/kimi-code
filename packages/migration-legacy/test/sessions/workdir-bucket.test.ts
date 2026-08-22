@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { computeWorkdirBucket, oldMd5BucketName } from '../../src/sessions/workdir-bucket.js';
-import { encodeWorkDirKey } from '@lemwood/agent-core/session/store';
+import { encodeWorkDirKey } from '@lcode-cli/agent-core/session/store';
 import { createHash } from 'node:crypto';
 
 /**

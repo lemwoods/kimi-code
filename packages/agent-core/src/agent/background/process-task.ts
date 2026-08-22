@@ -1,4 +1,4 @@
-import type { KaosProcess } from '@lemwood/kaos';
+import type { KaosProcess } from '@lcode-cli/kaos';
 import type { Readable } from 'node:stream';
 
 import { errorMessage } from '../../loop/errors';

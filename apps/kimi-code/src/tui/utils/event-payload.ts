@@ -1,4 +1,4 @@
-import { isKimiError } from '@lemwood/lcode-sdk';
+import { isKimiError } from '@lcode-cli/lcode-sdk';
 
 import {
   STREAMING_ARGS_FIELD_RE,

@@ -68,7 +68,7 @@ import type {
   OAuthFlowStart,
   OAuthLoginCancelResponse,
   OAuthLogoutResponse,
-} from '@lemwood/protocol';
+} from '@lcode-cli/protocol';
 
 export interface IOAuthService {
   readonly _serviceBrand: undefined;

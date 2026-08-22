@@ -14,23 +14,23 @@
  * memory behave identically by construction.
  */
 
-import type { ServiceIdentifier } from '@lemwood/agent-core-v2/_base/di/instantiation';
-import type { IAgentScopeHandle } from '@lemwood/agent-core-v2/_base/di/scope';
-import { IWorkspaceInstanceManager } from '@lemwood/agent-core-v2/workspace/workspaceInstance/workspaceInstanceManager';
-import { ISessionManager } from '@lemwood/agent-core-v2/app/sessionManager/sessionManager';
-import { getLiveSessionById } from '@lemwood/agent-core-v2/app/sessionManager/sessionLookup';
-import { IAgentLifecycleService } from '@lemwood/agent-core-v2/session/agentLifecycle/agentLifecycle';
-import { ensureMainAgent } from '@lemwood/agent-core-v2/session/agentLifecycle/mainAgent';
-import { agentContextOf } from '@lemwood/agent-core-v2/agent/scopeContext/scopeContext';
-import { ISessionInteractionService } from '@lemwood/agent-core-v2/session/interaction/interaction';
-import { IEventBus } from '@lemwood/agent-core-v2/app/event/eventBus';
+import type { ServiceIdentifier } from '@lcode-cli/agent-core-v2/_base/di/instantiation';
+import type { IAgentScopeHandle } from '@lcode-cli/agent-core-v2/_base/di/scope';
+import { IWorkspaceInstanceManager } from '@lcode-cli/agent-core-v2/workspace/workspaceInstance/workspaceInstanceManager';
+import { ISessionManager } from '@lcode-cli/agent-core-v2/app/sessionManager/sessionManager';
+import { getLiveSessionById } from '@lcode-cli/agent-core-v2/app/sessionManager/sessionLookup';
+import { IAgentLifecycleService } from '@lcode-cli/agent-core-v2/session/agentLifecycle/agentLifecycle';
+import { ensureMainAgent } from '@lcode-cli/agent-core-v2/session/agentLifecycle/mainAgent';
+import { agentContextOf } from '@lcode-cli/agent-core-v2/agent/scopeContext/scopeContext';
+import { ISessionInteractionService } from '@lcode-cli/agent-core-v2/session/interaction/interaction';
+import { IEventBus } from '@lcode-cli/agent-core-v2/app/event/eventBus';
 import type {
   FileMeta,
   GetResult,
   SaveOptions,
-} from '@lemwood/agent-core-v2/app/file/fileService';
-import { FileErrors } from '@lemwood/agent-core-v2/app/file/fileService';
-import { Error2, ErrorCodes } from '@lemwood/agent-core-v2/errors';
+} from '@lcode-cli/agent-core-v2/app/file/fileService';
+import { FileErrors } from '@lcode-cli/agent-core-v2/app/file/fileService';
+import { Error2, ErrorCodes } from '@lcode-cli/agent-core-v2/errors';
 
 import { Readable } from 'node:stream';
 

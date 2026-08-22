@@ -6,8 +6,8 @@
  * activity baseline; the pure trigger rule lives in `../utils/cache-hint`.
  */
 
-import type { Component, Focusable } from '@lemwood/pi-tui';
-import type { KimiHarness, Session, TokenUsage } from '@lemwood/lcode-sdk';
+import type { Component, Focusable } from '@lcode-cli/pi-tui';
+import type { KimiHarness, Session, TokenUsage } from '@lcode-cli/lcode-sdk';
 
 import { getCacheHintConfig, peekCacheHintConfig } from '#/utils/cache-hint-config';
 import { currentTuiConfig } from '../commands/config';

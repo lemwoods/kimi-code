@@ -1,6 +1,6 @@
 import { parentPort, workerData } from 'node:worker_threads';
 
-import { configureTextBuildWorkerRuntime } from '@lemwood/minidb/worker-runtime';
+import { configureTextBuildWorkerRuntime } from '@lcode-cli/minidb/worker-runtime';
 
 import { GlobalSearchError, type GlobalSearchErrorReason } from '../contract.ts';
 import {

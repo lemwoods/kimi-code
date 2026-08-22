@@ -3,7 +3,7 @@
  * Responsibilities: closing rejects pending waits, successful callbacks survive cleanup, and
  * service cancellation settles in-flight completion. The listener and service are real; only the
  * external MCP SDK authorization boundary is mocked.
- * Run: pnpm --filter @lemwood/agent-core exec vitest run test/mcp/oauth-callback-server.test.ts
+ * Run: pnpm --filter @lcode-cli/agent-core exec vitest run test/mcp/oauth-callback-server.test.ts
  */
 
 import { mkdtemp, rm } from 'node:fs/promises';

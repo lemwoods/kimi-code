@@ -1,7 +1,7 @@
 import type * as vscode from "vscode";
 import type { FileManager } from "../managers/file.manager";
 import type { BaselineManager } from "../managers/baseline.manager";
-import type { KimiHarness } from "@lemwood/lcode-sdk";
+import type { KimiHarness } from "@lcode-cli/lcode-sdk";
 import type { KimiRuntime } from "../runtime/kimi-runtime";
 import type { SessionRuntime } from "../runtime/session-runtime";
 

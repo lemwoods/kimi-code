@@ -1,4 +1,4 @@
-# @lemwood/minidb
+# @lcode-cli/minidb
 
 ## 0.2.0
 

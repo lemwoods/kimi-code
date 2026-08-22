@@ -6,7 +6,7 @@ import {
   type OAuthRef,
   type Session,
   type ThinkingEffort,
-} from '@lemwood/lcode-sdk';
+} from '@lcode-cli/lcode-sdk';
 
 import { createKimiCodeUserAgent } from '#/cli/version';
 

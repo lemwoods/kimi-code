@@ -13,8 +13,8 @@
  * message.
  */
 
-import type { Component } from '@lemwood/pi-tui';
-import { Text } from '@lemwood/pi-tui';
+import type { Component } from '@lcode-cli/pi-tui';
+import { Text } from '@lcode-cli/pi-tui';
 import chalk from 'chalk';
 
 import type { ChipProvider } from './chip';

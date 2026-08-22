@@ -5,7 +5,7 @@ import {
   writeConfigFile,
   type KimiConfig,
   type OAuthRef,
-} from '@lemwood/agent-core';
+} from '@lcode-cli/agent-core';
 import {
   applyManagedKimiCodeConfig,
   applyManagedKimiCodeLogoutConfig,
@@ -25,7 +25,7 @@ import {
   type KimiRegion,
   type ManagedKimiConfigShape,
   type OAuthRefreshOutcome,
-} from '@lemwood/lcode-oauth';
+} from '@lcode-cli/lcode-oauth';
 
 import { mapOAuthTokenError } from '#/oauth-error';
 

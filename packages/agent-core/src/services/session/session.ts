@@ -18,7 +18,7 @@ import {
   type SessionUpdate,
   type UndoSessionRequest,
   type UndoSessionResponse,
-} from '@lemwood/protocol';
+} from '@lcode-cli/protocol';
 
 export interface SessionListQuery extends CursorQuery {
   busy?: boolean;

@@ -16,26 +16,26 @@
  * every Service.
  */
 
-import { IAgentActivityView } from '@lemwood/agent-core-v2/agent/activityView/activityView';
-import { IAgentGoalService } from '@lemwood/agent-core-v2/features/goal/goal';
-import { IAgentMcpService } from '@lemwood/agent-core-v2/agent/mcp/mcp';
-import { IAgentPermissionModeService } from '@lemwood/agent-core-v2/agent/permissionMode/permissionMode';
-import { IAgentPermissionRulesService } from '@lemwood/agent-core-v2/agent/permissionRules/permissionRules';
-import { IAgentPlanService } from '@lemwood/agent-core-v2/features/plan/plan';
-import { IAgentProfileService } from '@lemwood/agent-core-v2/agent/profile/profile';
-import { IAgentSwarmService } from '@lemwood/agent-core-v2/features/swarm/agent/swarm';
-import { IAgentTaskService } from '@lemwood/agent-core-v2/agent/task/task';
-import { IAgentToolRegistryService } from '@lemwood/agent-core-v2/agent/toolRegistry/toolRegistry';
-import { IAuthSummaryService } from '@lemwood/agent-core-v2/app/auth/auth';
-import { IConfigService } from '@lemwood/agent-core-v2/app/config/config';
-import { IFlagService } from '@lemwood/agent-core-v2/app/flag/flag';
-import { IProviderService } from '@lemwood/agent-core-v2/kosong/provider/provider';
-import { ISessionApprovalService } from '@lemwood/agent-core-v2/session/approval/approval';
-import { ISessionInteractionService } from '@lemwood/agent-core-v2/session/interaction/interaction';
-import { ISessionQuestionService } from '@lemwood/agent-core-v2/session/question/question';
-import { ISessionInitService } from '@lemwood/agent-core-v2/features/sessionInit/sessionInit';
-import { ISessionMetadata } from '@lemwood/agent-core-v2/session/sessionMetadata/sessionMetadata';
-import { ISessionWorkspaceContext } from '@lemwood/agent-core-v2/session/workspaceContext/workspaceContext';
+import { IAgentActivityView } from '@lcode-cli/agent-core-v2/agent/activityView/activityView';
+import { IAgentGoalService } from '@lcode-cli/agent-core-v2/features/goal/goal';
+import { IAgentMcpService } from '@lcode-cli/agent-core-v2/agent/mcp/mcp';
+import { IAgentPermissionModeService } from '@lcode-cli/agent-core-v2/agent/permissionMode/permissionMode';
+import { IAgentPermissionRulesService } from '@lcode-cli/agent-core-v2/agent/permissionRules/permissionRules';
+import { IAgentPlanService } from '@lcode-cli/agent-core-v2/features/plan/plan';
+import { IAgentProfileService } from '@lcode-cli/agent-core-v2/agent/profile/profile';
+import { IAgentSwarmService } from '@lcode-cli/agent-core-v2/features/swarm/agent/swarm';
+import { IAgentTaskService } from '@lcode-cli/agent-core-v2/agent/task/task';
+import { IAgentToolRegistryService } from '@lcode-cli/agent-core-v2/agent/toolRegistry/toolRegistry';
+import { IAuthSummaryService } from '@lcode-cli/agent-core-v2/app/auth/auth';
+import { IConfigService } from '@lcode-cli/agent-core-v2/app/config/config';
+import { IFlagService } from '@lcode-cli/agent-core-v2/app/flag/flag';
+import { IProviderService } from '@lcode-cli/agent-core-v2/kosong/provider/provider';
+import { ISessionApprovalService } from '@lcode-cli/agent-core-v2/session/approval/approval';
+import { ISessionInteractionService } from '@lcode-cli/agent-core-v2/session/interaction/interaction';
+import { ISessionQuestionService } from '@lcode-cli/agent-core-v2/session/question/question';
+import { ISessionInitService } from '@lcode-cli/agent-core-v2/features/sessionInit/sessionInit';
+import { ISessionMetadata } from '@lcode-cli/agent-core-v2/session/sessionMetadata/sessionMetadata';
+import { ISessionWorkspaceContext } from '@lcode-cli/agent-core-v2/session/workspaceContext/workspaceContext';
 
 /** Loosely-typed view of a scoped service proxy (every member is a remote call). */
 export type AnyService = Record<string, (...args: unknown[]) => Promise<unknown>>;

@@ -1,4 +1,4 @@
-import type { KimiRegion } from '@lemwood/lcode-oauth';
+import type { KimiRegion } from '@lcode-cli/lcode-oauth';
 
 import type { IPluginService } from '#/app/plugin/plugin';
 import type { IHostProcessService } from '#/os/interface/hostProcess';

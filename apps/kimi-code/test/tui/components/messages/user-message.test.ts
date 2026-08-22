@@ -1,4 +1,4 @@
-import { resetCapabilitiesCache, setCapabilities, visibleWidth } from '@lemwood/pi-tui';
+import { resetCapabilitiesCache, setCapabilities, visibleWidth } from '@lcode-cli/pi-tui';
 import { afterEach, describe, expect, it } from 'vitest';
 
 import { UserMessageComponent } from '#/tui/components/messages/user-message';

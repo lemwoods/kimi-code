@@ -1,4 +1,4 @@
-import type { SessionSummary } from '@lemwood/lcode-sdk';
+import type { SessionSummary } from '@lcode-cli/lcode-sdk';
 import { describe, expect, it } from 'vitest';
 
 import { sessionRowsForPicker } from '#/tui/utils/session-picker-rows';

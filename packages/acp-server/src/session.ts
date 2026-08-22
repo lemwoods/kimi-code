@@ -30,7 +30,7 @@ import type {
   ToolCallLocation,
 } from '@agentclientprotocol/sdk';
 import { RequestError } from '@agentclientprotocol/sdk';
-import type { ContextMessage } from '@lemwood/agent-core-v2';
+import type { ContextMessage } from '@lcode-cli/agent-core-v2';
 import type {
   AgentEventPayloads,
   AgentHandle,
@@ -41,14 +41,14 @@ import type {
   SessionEventPayloads,
   SessionHandle,
   SkillSummary,
-} from '@lemwood/klient';
+} from '@lcode-cli/klient';
 import type {
   ToolCallDeltaEvent,
   ToolCallStartedEvent,
   ToolInputDisplay,
   ToolProgressEvent,
   ToolResultEvent,
-} from '@lemwood/protocol';
+} from '@lcode-cli/protocol';
 
 import type { AcpClient } from './acp-client';
 import type { AcpTerminalCreatedEvent, IAcpConnection } from './acp-fs';

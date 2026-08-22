@@ -18,7 +18,7 @@
  * Pure logic — no TUI state, no components — so it is unit-testable.
  */
 
-import type { Event } from '@lemwood/lcode-sdk';
+import type { Event } from '@lcode-cli/lcode-sdk';
 
 import {
   MAX_SUBAGENT_ACTIVITY_STEPS,

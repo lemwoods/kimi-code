@@ -7,7 +7,7 @@ import type {
   PromptPart,
   ThinkingEffort,
   ToolInputDisplay,
-} from '@lemwood/lcode-sdk';
+} from '@lcode-cli/lcode-sdk';
 
 import type { NotificationsConfig, StatusLineConfig, UpgradePreferences } from './config';
 import type { PendingApproval, PendingQuestion } from './reverse-rpc/types';

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import type { KimiHarness, ModelAlias } from '@lemwood/lcode-sdk';
+import type { KimiHarness, ModelAlias } from '@lcode-cli/lcode-sdk';
 
 import {
   deriveAlwaysThinking,

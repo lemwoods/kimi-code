@@ -11,7 +11,7 @@ import {
   visibleWidth,
   type SelectItem,
   type TUI,
-} from '@lemwood/pi-tui';
+} from '@lcode-cli/pi-tui';
 
 import { currentTheme } from '#/tui/theme';
 import { createEditorTheme } from '#/tui/theme/pi-tui-theme';

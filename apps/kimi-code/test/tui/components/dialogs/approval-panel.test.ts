@@ -1,4 +1,4 @@
-import { CURSOR_MARKER } from '@lemwood/pi-tui';
+import { CURSOR_MARKER } from '@lcode-cli/pi-tui';
 import { describe, expect, it } from 'vitest';
 
 import { ApprovalPanelComponent } from '#/tui/components/dialogs/approval-panel';

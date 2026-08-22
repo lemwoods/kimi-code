@@ -14,7 +14,7 @@
 
 import { describe, expect, it } from 'vitest';
 
-import type { ToolCall } from '@lemwood/kosong';
+import type { ToolCall } from '@lcode-cli/kosong';
 
 import {
   foldAnnouncedToolNames,

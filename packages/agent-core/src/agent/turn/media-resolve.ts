@@ -26,7 +26,7 @@
 
 import { fileURLToPath } from 'node:url';
 
-import type { ContentPart } from '@lemwood/kosong';
+import type { ContentPart } from '@lcode-cli/kosong';
 
 import type { Agent } from '..';
 import { MEDIA_SNIFF_BYTES, detectFileType } from '../../tools/support/file-type';

@@ -10,7 +10,7 @@ import type {
   FsChangeAction,
   FsChangeEntry,
   FsChangeKind,
-} from '@lemwood/protocol';
+} from '@lcode-cli/protocol';
 
 import { ILogService } from '../logger/logger';
 import {

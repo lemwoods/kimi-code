@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { FooterComponent } from '#/tui/components/chrome/footer';
-import type { GoalSnapshot } from '@lemwood/lcode-sdk';
+import type { GoalSnapshot } from '@lcode-cli/lcode-sdk';
 import type { AppState } from '#/tui/types';
 
 const ANSI_SGR = /\[[0-9;]*m/g;

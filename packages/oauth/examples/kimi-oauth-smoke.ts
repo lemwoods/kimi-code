@@ -9,7 +9,7 @@ import {
   type DeviceAuthorization,
   type KimiHostIdentity,
   type ManagedKimiConfigShape,
-} from '@lemwood/lcode-oauth';
+} from '@lcode-cli/lcode-oauth';
 
 async function main(): Promise<void> {
   const explicitHomeDir = process.env['KIMI_OAUTH_SMOKE_HOME'];

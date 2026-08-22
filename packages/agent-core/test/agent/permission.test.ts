@@ -1,5 +1,5 @@
-import type { Kaos } from '@lemwood/kaos';
-import type { ToolCall } from '@lemwood/kosong';
+import type { Kaos } from '@lcode-cli/kaos';
+import type { ToolCall } from '@lcode-cli/kosong';
 import * as posixPath from 'node:path/posix';
 import { describe, expect, it, vi } from 'vitest';
 

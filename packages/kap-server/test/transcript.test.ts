@@ -16,7 +16,7 @@ import {
   type ContextMessage,
   type Event2,
   type ScopeSeed,
-} from '@lemwood/agent-core-v2';
+} from '@lcode-cli/agent-core-v2';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { type RunningServer, startServer } from '../src/start';

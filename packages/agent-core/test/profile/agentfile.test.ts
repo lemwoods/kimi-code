@@ -12,7 +12,7 @@ import { join } from 'pathe';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { testKaos } from '../fixtures/test-kaos';
-import type { ProviderConfig } from '@lemwood/kosong';
+import type { ProviderConfig } from '@lcode-cli/kosong';
 
 import type { SDKSessionRPC } from '../../src/rpc';
 import { Session } from '../../src/session';

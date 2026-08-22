@@ -1,4 +1,4 @@
-import type { PluginInfo, PluginSummary } from '@lemwood/lcode-sdk';
+import type { PluginInfo, PluginSummary } from '@lcode-cli/lcode-sdk';
 
 import { currentTheme } from '#/tui/theme';
 import {

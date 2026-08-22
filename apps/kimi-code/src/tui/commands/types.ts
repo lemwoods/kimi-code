@@ -1,5 +1,5 @@
-import type { AutocompleteItem, SlashCommand } from '@lemwood/pi-tui';
-import type { FlagId } from '@lemwood/lcode-sdk';
+import type { AutocompleteItem, SlashCommand } from '@lcode-cli/pi-tui';
+import type { FlagId } from '@lcode-cli/lcode-sdk';
 
 export type SlashCommandAvailability = 'always' | 'idle-only';
 

@@ -1,7 +1,7 @@
 import { spawn } from 'node:child_process';
 
-import { log, type Logger } from '@lemwood/lcode-sdk';
-import type { TelemetryProperties } from '@lemwood/lcode-telemetry';
+import { log, type Logger } from '@lcode-cli/lcode-sdk';
+import type { TelemetryProperties } from '@lcode-cli/lcode-telemetry';
 
 import {
   kimiCodeOfficialInstallUrl,

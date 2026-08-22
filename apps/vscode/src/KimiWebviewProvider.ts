@@ -1,5 +1,5 @@
 import * as vscode from "vscode";
-import type { KimiHarness } from "@lemwood/lcode-sdk";
+import type { KimiHarness } from "@lcode-cli/lcode-sdk";
 import { Events } from "../shared/bridge";
 import { BridgeHandler } from "./bridge-handler";
 

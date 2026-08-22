@@ -5,12 +5,12 @@ import {
   type CatalogModel,
   type ModelAlias,
   type ThinkingEffort,
-} from '@lemwood/lcode-sdk';
-import { capabilitiesForModel } from '@lemwood/lcode-oauth';
+} from '@lcode-cli/lcode-sdk';
+import { capabilitiesForModel } from '@lcode-cli/lcode-oauth';
 import type {
   ManagedKimiCodeModelInfo,
   OpenPlatformDefinition,
-} from '@lemwood/lcode-oauth';
+} from '@lcode-cli/lcode-oauth';
 
 import { ApiKeyInputDialogComponent, type ApiKeyInputResult } from '../components/dialogs/api-key-input-dialog';
 import { ChoicePickerComponent, type ChoiceOption } from '../components/dialogs/choice-picker';

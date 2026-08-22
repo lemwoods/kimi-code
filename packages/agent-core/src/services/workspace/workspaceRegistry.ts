@@ -2,7 +2,7 @@
 
 import { Disposable, createDecorator } from '../../di';
 
-import type { Workspace } from '@lemwood/protocol';
+import type { Workspace } from '@lcode-cli/protocol';
 
 export class WorkspaceNotFoundError extends Error {
   readonly workspaceId: string;

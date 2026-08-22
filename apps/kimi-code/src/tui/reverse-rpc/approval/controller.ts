@@ -1,4 +1,4 @@
-import type { ApprovalResponse } from '@lemwood/lcode-sdk';
+import type { ApprovalResponse } from '@lcode-cli/lcode-sdk';
 
 import { ReverseRpcController } from '#/tui/reverse-rpc/base-controller';
 import type { ApprovalPanelData } from '#/tui/reverse-rpc/types';

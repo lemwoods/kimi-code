@@ -1,4 +1,4 @@
-import type { KimiConfig } from '@lemwood/agent-core';
+import type { KimiConfig } from '@lcode-cli/agent-core';
 import { describe, expect, it, vi } from 'vitest';
 
 import {

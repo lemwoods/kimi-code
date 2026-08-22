@@ -1,4 +1,4 @@
-import { replaceUserAgentProduct } from '@lemwood/lcode-oauth';
+import { replaceUserAgentProduct } from '@lcode-cli/lcode-oauth';
 
 import { createDecorator, type ServiceIdentifier } from '#/_base/di/instantiation';
 

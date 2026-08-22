@@ -7,8 +7,8 @@ import type {
   PromptOrigin,
   ResumedAgentState,
   ToolCall,
-} from '@lemwood/lcode-sdk';
-import { limitAgentReplayByTurns } from '@lemwood/lcode-sdk';
+} from '@lcode-cli/lcode-sdk';
+import { limitAgentReplayByTurns } from '@lcode-cli/lcode-sdk';
 
 import type {
   AppState,

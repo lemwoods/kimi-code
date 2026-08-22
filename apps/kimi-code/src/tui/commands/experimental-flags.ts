@@ -1,4 +1,4 @@
-import type { ExperimentalFeatureState, ExperimentalFlagMap } from '@lemwood/lcode-sdk';
+import type { ExperimentalFeatureState, ExperimentalFlagMap } from '@lcode-cli/lcode-sdk';
 
 import { experimentalFeatureMap } from '#/utils/experimental-features';
 

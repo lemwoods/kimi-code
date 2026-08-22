@@ -1,4 +1,4 @@
-import { visibleWidth } from '@lemwood/pi-tui';
+import { visibleWidth } from '@lcode-cli/pi-tui';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { buildUsageReportLines, UsagePanelComponent } from '#/tui/components/messages/usage-panel';

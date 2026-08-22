@@ -11,9 +11,9 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 const mockLogin = vi.fn();
 
-vi.mock('@lemwood/lcode-sdk', async () => {
-  const actual = await vi.importActual<typeof import('@lemwood/lcode-sdk')>(
-    '@lemwood/lcode-sdk',
+vi.mock('@lcode-cli/lcode-sdk', async () => {
+  const actual = await vi.importActual<typeof import('@lcode-cli/lcode-sdk')>(
+    '@lcode-cli/lcode-sdk',
   );
   return {
     ...actual,
@@ -27,7 +27,7 @@ vi.mock('@lemwood/lcode-sdk', async () => {
 
 vi.mock('#/utils/open-url', () => ({ openUrl: vi.fn() }));
 
-import { createKimiHarness } from '@lemwood/lcode-sdk';
+import { createKimiHarness } from '@lcode-cli/lcode-sdk';
 
 import { registerLoginCommand } from '#/cli/sub/login';
 import { openUrl } from '#/utils/open-url';

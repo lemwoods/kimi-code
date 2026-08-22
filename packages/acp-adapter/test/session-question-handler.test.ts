@@ -20,7 +20,7 @@ import {
   type QuestionRequest,
   type QuestionResult,
   type Session,
-} from '@lemwood/lcode-sdk';
+} from '@lcode-cli/lcode-sdk';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { AcpSession, type TelemetryTrackFn } from '../src/session';

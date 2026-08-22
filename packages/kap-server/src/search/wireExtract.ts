@@ -1,4 +1,4 @@
-import { matchSingleMediaPathTag } from '@lemwood/agent-core-v2/agent/media/mediaRef';
+import { matchSingleMediaPathTag } from '@lcode-cli/agent-core-v2/agent/media/mediaRef';
 
 export interface ExtractedWireMessage {
   readonly role: 'user' | 'assistant';

@@ -1,4 +1,4 @@
-import type { TUI } from '@lemwood/pi-tui';
+import type { TUI } from '@lcode-cli/pi-tui';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { AgentGroupComponent } from '#/tui/components/messages/agent-group';

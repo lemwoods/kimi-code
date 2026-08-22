@@ -54,7 +54,7 @@ describe('promptForInstallChoice', () => {
     const promptPromise = promptForInstallChoice({
       currentVersion: '0.4.0',
       target: { version: '0.5.0' },
-      installCommand: 'npm install -g @lemwood/lcode@0.5.0',
+      installCommand: 'npm install -g @lcode-cli/lcode@0.5.0',
       installSource: 'npm-global',
       input,
       output,

@@ -1,8 +1,8 @@
 /**
- * acp-server bootstrap — wires `@lemwood/agent-core-v2` (the DI × Scope
+ * acp-server bootstrap — wires `@lcode-cli/agent-core-v2` (the DI × Scope
  * engine) into an ACP (Agent Client Protocol) stdio server.
  *
- * Composition root: `bootstrap()` builds the App `Scope`; a `@lemwood/
+ * Composition root: `bootstrap()` builds the App `Scope`; a `@lcode-cli/
  * klient` facade over the in-memory transport is created on top of it, and
  * every ACP method handler drives the engine through that facade. The
  * ACP-backed `IHostFileSystem` (./acp-fs) is imported for its Session-scope
@@ -35,9 +35,9 @@ import {
   type Scope,
   type ScopeSeed,
   sessionMediaOriginalsDir,
-} from '@lemwood/agent-core-v2';
-import type { Klient } from '@lemwood/klient';
-import { createKlient } from '@lemwood/klient/memory';
+} from '@lcode-cli/agent-core-v2';
+import type { Klient } from '@lcode-cli/klient';
+import { createKlient } from '@lcode-cli/klient/memory';
 
 import { acpClientFromContext } from './acp-client';
 // Importing the `acp-fs` barrel also registers the ACP-backed Session-scope
@@ -105,7 +105,7 @@ export async function runAcpServerWithStream(
   // session index all persist to disk. `clientIdentity` is required by the
   // engine: reuse the advertised ACP `agentInfo` (the embedding CLI's
   // name/version) with the CLI platform — the literal matches
-  // `KIMI_CODE_PLATFORM` from `@lemwood/lcode-oauth`, which this
+  // `KIMI_CODE_PLATFORM` from `@lcode-cli/lcode-oauth`, which this
   // package does not depend on.
   const { app: core } = bootstrap(
     {

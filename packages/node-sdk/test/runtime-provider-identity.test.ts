@@ -4,8 +4,8 @@ import { join } from 'node:path';
 
 import { afterEach, describe, expect, it } from 'vitest';
 
-import type { KimiConfig } from '@lemwood/agent-core';
-import { createKimiDefaultHeaders, KIMI_CODE_PLATFORM } from '@lemwood/lcode-oauth';
+import type { KimiConfig } from '@lcode-cli/agent-core';
+import { createKimiDefaultHeaders, KIMI_CODE_PLATFORM } from '@lcode-cli/lcode-oauth';
 
 import { ProviderManager } from '../../agent-core/src/session/provider-manager';
 import { SDKRpcClient } from '#/index';

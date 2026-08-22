@@ -7,8 +7,8 @@ import {
   type PluginInfo,
   type PluginSummary,
   type Session,
-} from '@lemwood/lcode-sdk';
-import { Markdown, Spacer } from '@lemwood/pi-tui';
+} from '@lcode-cli/lcode-sdk';
+import { Markdown, Spacer } from '@lcode-cli/pi-tui';
 
 import { NO_ACTIVE_SESSION_MESSAGE } from '../constant/kimi-tui';
 import {

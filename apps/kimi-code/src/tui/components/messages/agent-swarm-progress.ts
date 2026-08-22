@@ -1,4 +1,4 @@
-import { truncateToWidth, visibleWidth, type Component } from '@lemwood/pi-tui';
+import { truncateToWidth, visibleWidth, type Component } from '@lcode-cli/pi-tui';
 import chalk from 'chalk';
 
 import {

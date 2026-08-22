@@ -1,5 +1,5 @@
 import { createControlledPromise } from '@antfu/utils';
-import { APIProviderRateLimitError } from '@lemwood/kosong';
+import { APIProviderRateLimitError } from '@lcode-cli/kosong';
 import { describe, expect, it, vi } from 'vitest';
 
 import {

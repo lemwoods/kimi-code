@@ -16,7 +16,7 @@
  * ladder so their delivery and fallback semantics stay identical.
  */
 
-import type { ContentPart, VideoUploadInput, VideoURLPart } from '@lemwood/kosong';
+import type { ContentPart, VideoUploadInput, VideoURLPart } from '@lcode-cli/kosong';
 
 import { ErrorCodes } from '../../errors';
 import { abortReason } from '../../utils/abort';

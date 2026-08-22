@@ -9,14 +9,14 @@ import {
   KIMI_CODE_PROVIDER_NAME,
   OAuthError,
   type DeviceAuthorization,
-} from '@lemwood/lcode-oauth';
+} from '@lcode-cli/lcode-oauth';
 import type {
   OAuthFlowSnapshot,
   OAuthFlowStart,
   OAuthFlowStatus,
   OAuthLoginCancelResponse,
   OAuthLogoutResponse,
-} from '@lemwood/protocol';
+} from '@lcode-cli/protocol';
 import { ulid } from 'ulid';
 
 import { createManagedAuthFacade, type ServicesAuthFacade } from '../auth/managedAuth';

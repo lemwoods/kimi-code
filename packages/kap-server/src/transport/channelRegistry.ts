@@ -3,9 +3,9 @@ import {
   getScopedServiceDescriptors,
   IFeatureManager,
   LifecycleScope,
-} from '@lemwood/agent-core-v2';
+} from '@lcode-cli/agent-core-v2';
 
-import type { Scope, ScopedEntry, ServiceIdentifier } from '@lemwood/agent-core-v2';
+import type { Scope, ScopedEntry, ServiceIdentifier } from '@lcode-cli/agent-core-v2';
 
 export interface ChannelMethodDescriptor {
   readonly name: string;

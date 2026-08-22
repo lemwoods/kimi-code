@@ -55,7 +55,7 @@ import type {
   Workspace,
   WorkspaceCreate,
   WorkspaceUpdate,
-} from '@lemwood/protocol';
+} from '@lcode-cli/protocol';
 import { ulid } from 'ulid';
 import { WebSocket as WsWebSocket } from 'ws';
 

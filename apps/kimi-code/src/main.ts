@@ -13,14 +13,14 @@ import {
   resolveGlobalLogPath,
   resolveKimiHome,
   type TelemetryClient,
-} from '@lemwood/lcode-sdk';
+} from '@lcode-cli/lcode-sdk';
 import {
   installCrashHandlers,
   setTelemetryContext,
   shutdownTelemetry,
   track,
   withTelemetryContext,
-} from '@lemwood/lcode-telemetry';
+} from '@lcode-cli/lcode-telemetry';
 
 import { createProgram } from './cli/commands';
 import { finalizeHeadlessRun } from './cli/headless-exit';

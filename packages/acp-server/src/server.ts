@@ -62,9 +62,9 @@ import type {
   SessionHandle,
   SessionRestoreOptions,
   SessionSummary,
-} from '@lemwood/klient';
-import { ErrorCodes, isError2 } from '@lemwood/agent-core-v2';
-import { RPCError } from '@lemwood/klient';
+} from '@lcode-cli/klient';
+import { ErrorCodes, isError2 } from '@lcode-cli/agent-core-v2';
+import { RPCError } from '@lcode-cli/klient';
 
 import type { AcpClient } from './acp-client';
 import type { IAcpConnection } from './acp-fs';

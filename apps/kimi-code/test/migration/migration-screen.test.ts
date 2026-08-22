@@ -8,7 +8,7 @@ import type {
   MigrationPlan,
   MigrationReport,
   RunMigrationInput,
-} from '@lemwood/migration-legacy';
+} from '@lcode-cli/migration-legacy';
 
 function makePlan(over: Partial<MigrationPlan> = {}): MigrationPlan {
   return {

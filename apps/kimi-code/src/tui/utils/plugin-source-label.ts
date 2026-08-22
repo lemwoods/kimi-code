@@ -1,4 +1,4 @@
-import type { PluginSummary } from '@lemwood/lcode-sdk';
+import type { PluginSummary } from '@lcode-cli/lcode-sdk';
 
 export const OFFICIAL_BADGE = 'official';
 export const CURATED_BADGE = 'curated';

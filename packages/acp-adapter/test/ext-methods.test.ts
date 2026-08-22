@@ -13,7 +13,7 @@ import {
   type WriteTextFileRequest,
   type WriteTextFileResponse,
 } from '@agentclientprotocol/sdk';
-import type { KimiHarness } from '@lemwood/lcode-sdk';
+import type { KimiHarness } from '@lcode-cli/lcode-sdk';
 
 import { AcpServer } from '../src/server';
 

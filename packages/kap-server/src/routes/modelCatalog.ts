@@ -12,20 +12,20 @@ import {
   type ProviderConfig,
   type ProvidersSection,
   type Scope,
-} from '@lemwood/agent-core-v2';
-import { setDefaultModelResponseSchema } from '@lemwood/agent-core-v2/kosong/model/catalog';
-import { refreshProviderModelsResponseSchema } from '@lemwood/agent-core-v2/app/kosongConfig/discovery';
+} from '@lcode-cli/agent-core-v2';
+import { setDefaultModelResponseSchema } from '@lcode-cli/agent-core-v2/kosong/model/catalog';
+import { refreshProviderModelsResponseSchema } from '@lcode-cli/agent-core-v2/app/kosongConfig/discovery';
 import {
   DEFAULT_MODEL_SECTION,
   DEFAULT_PROVIDER_SECTION,
   MODELS_SECTION,
   PROVIDERS_SECTION,
-} from '@lemwood/agent-core-v2/app/kosongConfig/configSection';
+} from '@lcode-cli/agent-core-v2/app/kosongConfig/configSection';
 import {
   SECONDARY_MODEL_SECTION,
   cascadeSubagentModelPool,
   type SecondaryModelConfig,
-} from '@lemwood/agent-core-v2/session/subagent/configSection';
+} from '@lcode-cli/agent-core-v2/session/subagent/configSection';
 import { z } from 'zod';
 
 import { errEnvelope, okEnvelope } from '../envelope';
