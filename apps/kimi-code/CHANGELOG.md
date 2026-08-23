@@ -1,5 +1,15 @@
 # @lcode-cli/lcode
 
+## 0.39.5
+
+### Patch Changes
+
+- [`50e6662`](https://github.com/lemwoods/kimi-code/commit/50e6662a2d49988c3091326483327b5c47e4526f) Thanks [@lemwoods](https://github.com/lemwoods)! - Localize the remaining CLI messages (provider, upgrade, export, and related commands) to Simplified Chinese.
+
+- [`fca8a51`](https://github.com/lemwoods/kimi-code/commit/fca8a51aaf930ea8243e0450013c1feaa7a3494b) Thanks [@lemwoods](https://github.com/lemwoods)! - Discover richer model capabilities (context size, output limit, and image-input support) from custom OpenAI-compatible model endpoints, including LiteLLM, vLLM, and OpenRouter field shapes, instead of falling back to conservative defaults.
+
+- [`50e6662`](https://github.com/lemwoods/kimi-code/commit/50e6662a2d49988c3091326483327b5c47e4526f) Thanks [@lemwoods](https://github.com/lemwoods)! - Rename the product from Kimi Code to lcode across messages, system prompts, and the default data directory (`~/.lcode`, automatically falling back to `~/.kimi-code` when present).
+
 ## 0.39.4
 
 ### Patch Changes
