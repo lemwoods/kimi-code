@@ -140,6 +140,7 @@ describe('server-v2 /api/v1/sessions/{sid}/transcript', () => {
       setDefaultModel: async () => {
         throw new Error('modelCatalog.setDefaultModel not exercised in this test');
       },
+      listAliases: () => [],
     };
     seeds = [[IModelCatalog, modelCatalog]];
     await boot();

@@ -264,6 +264,7 @@ describe('server-v2 /api/v1 model/provider catalog', () => {
       get: () => {
         throw new Error('unused');
       },
+      listAliases: () => [],
       getRequester: () => {
         throw new Error('unused');
       },

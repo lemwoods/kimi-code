@@ -62,6 +62,7 @@ describe('server-v2 /api/v1 fs routes', () => {
       setDefaultModel: async () => {
         throw new Error('modelCatalog.setDefaultModel not exercised in this test');
       },
+      listAliases: () => [],
     };
     server = await startServer({
       hostIdentity: TEST_HOST_IDENTITY,
