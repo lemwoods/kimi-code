@@ -64,6 +64,42 @@ describe('fetchOpenAiCompatibleModels', () => {
     );
   });
 
+  it('derives limits and image input from alternative vendor field shapes', async () => {
+    const fetchMock = vi.fn(async () =>
+      makeModelsResponse([
+        {
+          id: 'vllm-model',
+          max_model_len: 32768,
+          supports_vision: true,
+        },
+        {
+          id: 'openrouter-model',
+          top_provider: { context_length: 200000, max_completion_tokens: 8192 },
+          architecture: { input_modalities: ['text', 'image'] },
+        },
+        {
+          id: 'text-only',
+          input_modalities: ['text'],
+        },
+      ]),
+    );
+
+    const models = await fetchOpenAiCompatibleModels('https://api.example.test/v1', 'sk-key', {
+      fetchImpl: fetchMock as unknown as typeof fetch,
+    });
+
+    expect(models).toEqual([
+      { id: 'vllm-model', maxContextSize: 32768, imageIn: true },
+      {
+        id: 'openrouter-model',
+        maxContextSize: 200000,
+        maxOutputSize: 8192,
+        imageIn: true,
+      },
+      { id: 'text-only', imageIn: false },
+    ]);
+  });
+
   it('strips trailing slashes from the base URL', async () => {
     const fetchMock = vi.fn(async () => makeModelsResponse([{ id: 'm1' }]));
 
@@ -170,6 +206,26 @@ describe('applyOpenAiCompatibleProvider', () => {
       provider: 'acme',
       model: 'gpt-4o-mini',
       maxContextSize: CUSTOM_REGISTRY_DEFAULT_MAX_CONTEXT,
+      capabilities: ['tool_use'],
+    });
+  });
+
+  it('maps declared image input to the image_in capability', () => {
+    const config = emptyConfig();
+    applyOpenAiCompatibleProvider(config, {
+      providerId: 'acme',
+      baseUrl: 'https://acme.example.test/v1',
+      apiKey: 'sk-acme',
+      models: [
+        { id: 'vision-model', toolCall: true, imageIn: true },
+        { id: 'text-model', toolCall: true, imageIn: false },
+      ],
+    });
+
+    expect(config.models?.['acme/vision-model']).toMatchObject({
+      capabilities: ['tool_use', 'image_in'],
+    });
+    expect(config.models?.['acme/text-model']).toMatchObject({
       capabilities: ['tool_use'],
     });
   });

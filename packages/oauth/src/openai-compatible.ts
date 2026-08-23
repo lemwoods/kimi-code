@@ -29,6 +29,7 @@ export interface OpenAiCompatibleModelInfo {
   readonly maxOutputSize?: number;
   readonly toolCall?: boolean;
   readonly reasoning?: boolean;
+  readonly imageIn?: boolean;
   readonly supportEfforts?: readonly string[];
   readonly defaultEffort?: string;
 }
@@ -58,7 +59,8 @@ export function readOpenAiCompatibleSource(
 /**
  * 从 OpenAI 兼容的 `GET {baseUrl}/models` 端点列出模型。
  * `data[].id` 是唯一必填字段；当服务器同时返回上下文大小、输出上限、
- * 工具使用、思考能力或努力级别（使用常见的 OpenAI 兼容字段名）时，
+ * 工具使用、思考能力、图像输入或努力级别（使用常见的 OpenAI 兼容字段名，
+ * 包括 LiteLLM / vLLM / OpenRouter 风格的扁平与嵌套字段）时，
  * 这些信息会被一并保留，从而用真实的限额配置模型别名，而不是保守默认值。
  */
 export async function fetchOpenAiCompatibleModels(
@@ -110,6 +112,7 @@ function toOpenAiCompatibleModelInfo(value: unknown): OpenAiCompatibleModelInfo 
     maxOutputSize?: number;
     toolCall?: boolean;
     reasoning?: boolean;
+    imageIn?: boolean;
     supportEfforts?: readonly string[];
     defaultEffort?: string;
   } = { id };
@@ -123,12 +126,15 @@ function toOpenAiCompatibleModelInfo(value: unknown): OpenAiCompatibleModelInfo 
     value['context_length'],
     value['max_context_length'],
     value['context_window'],
+    value['max_model_len'],
+    topProviderRecord(value)['context_length'],
   );
   if (maxContextSize !== undefined) entry.maxContextSize = maxContextSize;
 
   const maxOutputSize = pickPositiveInteger(
     value['max_completion_tokens'],
     value['max_output_tokens'],
+    topProviderRecord(value)['max_completion_tokens'],
   );
   if (maxOutputSize !== undefined) entry.maxOutputSize = maxOutputSize;
 
@@ -138,6 +144,9 @@ function toOpenAiCompatibleModelInfo(value: unknown): OpenAiCompatibleModelInfo 
   const supportsReasoning =
     value['supports_reasoning'] ?? value['supports_thinking'] ?? value['reasoning'];
   if (typeof supportsReasoning === 'boolean') entry.reasoning = supportsReasoning;
+
+  const imageIn = parseImageIn(value);
+  if (imageIn !== undefined) entry.imageIn = imageIn;
 
   const thinkEfforts = parseThinkEfforts(value['think_efforts']);
   const supportEfforts =
@@ -165,6 +174,42 @@ function toOpenAiCompatibleModelInfo(value: unknown): OpenAiCompatibleModelInfo 
 function pickPositiveInteger(...values: unknown[]): number | undefined {
   for (const value of values) {
     if (typeof value === 'number' && Number.isInteger(value) && value > 0) return value;
+  }
+  return undefined;
+}
+
+/** OpenRouter-style nested per-model limits live under `top_provider`. */
+function topProviderRecord(value: Record<string, unknown>): Record<string, unknown> {
+  return isRecord(value['top_provider']) ? value['top_provider'] : {};
+}
+
+/**
+ * Derives image-input support from whatever the endpoint declares, in the
+ * common shapes: LiteLLM-style booleans (`supports_vision`,
+ * `supports_image_in`, `supports_image_input`) or modality lists
+ * (`input_modalities`, models.dev-style `modalities.input`, OpenRouter-style
+ * `architecture.input_modalities`). Returns `true`/`false` when a list is
+ * present so an explicit "no image" wins over the capability fallback;
+ * returns `undefined` when the endpoint says nothing at all.
+ */
+function parseImageIn(value: Record<string, unknown>): boolean | undefined {
+  const flags = [
+    value['supports_vision'],
+    value['supports_image_in'],
+    value['supports_image_input'],
+  ];
+  for (const flag of flags) {
+    if (typeof flag === 'boolean') return flag;
+  }
+  const architecture = isRecord(value['architecture']) ? value['architecture'] : undefined;
+  const modalities = isRecord(value['modalities']) ? value['modalities'] : undefined;
+  for (const list of [
+    value['input_modalities'],
+    modalities?.['input'],
+    architecture?.['input_modalities'],
+  ]) {
+    if (!Array.isArray(list)) continue;
+    return list.includes('image');
   }
   return undefined;
 }
@@ -258,6 +303,7 @@ function resolveCapabilities(model: OpenAiCompatibleModelInfo): string[] {
   if (model.reasoning === true || (model.supportEfforts?.length ?? 0) > 0) {
     caps.add('thinking');
   }
+  if (model.imageIn === true) caps.add('image_in');
   if (caps.size > 0) return [...caps];
   return ['tool_use'];
 }
