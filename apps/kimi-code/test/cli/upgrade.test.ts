@@ -139,7 +139,7 @@ describe('handleUpgrade', () => {
     expect(deps.track).toHaveBeenCalledWith('upgrade_command_no_update', expect.objectContaining({
       current_version: '0.4.0',
     }));
-    expect(stdout.join('')).toContain('Kimi Code is already up to date (v0.4.0).');
+    expect(stdout.join('')).toContain('lcode 已是最新版本（v0.4.0）。');
   });
 
   it('prints the manual update command when the install source cannot be auto-installed', async () => {
@@ -183,7 +183,7 @@ describe('handleUpgrade', () => {
     await expect(handleUpgrade('0.4.0', { ...deps, ...writable })).resolves.toBe(1);
 
     expect(stderr.join('')).toContain(
-      'warning: failed to install @lcode-cli/lcode@0.5.0: npm exited with code 1',
+      '警告：安装 @lcode-cli/lcode@0.5.0 失败：npm exited with code 1',
     );
     expect(deps.track).toHaveBeenCalledWith('upgrade_command_failed', expect.objectContaining({
       target_version: '0.5.0',
@@ -211,7 +211,7 @@ describe('handleUpgrade', () => {
       current_version: '0.4.0',
       stage: 'refresh',
     }));
-    expect(stderr.join('')).toContain('error: failed to check for updates: cdn unavailable');
+    expect(stderr.join('')).toContain('错误：检查更新失败：cdn unavailable');
   });
 
   it('ignores rollout gating: installs the latest version while every batch is still held', async () => {

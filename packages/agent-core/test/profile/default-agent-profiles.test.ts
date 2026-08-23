@@ -26,7 +26,7 @@ describe('default agent profiles', () => {
   it('loads the bundled default system prompt from embedded sources', () => {
     const prompt = DEFAULT_AGENT_PROFILES['agent']?.systemPrompt(promptContext);
 
-    expect(prompt).toContain('You are Kimi Code CLI');
+    expect(prompt).toContain('You are lcode CLI');
     expect(prompt).toContain('Available skills');
     expect(prompt).toContain('/workspace');
   });

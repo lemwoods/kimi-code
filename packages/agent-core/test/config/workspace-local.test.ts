@@ -46,7 +46,7 @@ describe('workspace local config', () => {
 
     await expect(loadWorkspaceLocalConfig(testKaos, join(root, 'packages', 'app'))).resolves.toEqual({
       projectRoot: root,
-      configPath: join(root, '.kimi-code', 'local.toml'),
+      configPath: join(root, '.lcode', 'local.toml'),
       additionalDirs: [],
     });
   });
@@ -57,26 +57,44 @@ describe('workspace local config', () => {
     const otherDir = join(root, 'other');
     await mkdir(sharedDir, { recursive: true });
     await mkdir(otherDir, { recursive: true });
-    await mkdir(join(root, '.kimi-code'), { recursive: true });
+    await mkdir(join(root, '.lcode'), { recursive: true });
     await writeFile(
-      join(root, '.kimi-code', 'local.toml'),
+      join(root, '.lcode', 'local.toml'),
       '[workspace]\nadditional_dir = ["shared", "other"]\n',
       'utf-8',
     );
 
     await expect(readWorkspaceAdditionalDirs(testKaos, join(root, 'packages', 'app'))).resolves.toEqual({
       projectRoot: root,
-      configPath: join(root, '.kimi-code', 'local.toml'),
+      configPath: join(root, '.lcode', 'local.toml'),
       additionalDirs: [sharedDir, otherDir],
+    });
+  });
+
+  it('falls back to the pre-rename .kimi-code/local.toml when .lcode has none', async () => {
+    const root = await makeProject();
+    const sharedDir = join(root, 'shared');
+    await mkdir(sharedDir, { recursive: true });
+    await mkdir(join(root, '.kimi-code'), { recursive: true });
+    await writeFile(
+      join(root, '.kimi-code', 'local.toml'),
+      '[workspace]\nadditional_dir = ["shared"]\n',
+      'utf-8',
+    );
+
+    await expect(readWorkspaceAdditionalDirs(testKaos, join(root, 'packages', 'app'))).resolves.toEqual({
+      projectRoot: root,
+      configPath: join(root, '.kimi-code', 'local.toml'),
+      additionalDirs: [sharedDir],
     });
   });
 
   it('rejects string additional_dir values', async () => {
     const root = await makeProject();
     await mkdir(join(root, 'shared'), { recursive: true });
-    await mkdir(join(root, '.kimi-code'), { recursive: true });
+    await mkdir(join(root, '.lcode'), { recursive: true });
     await writeFile(
-      join(root, '.kimi-code', 'local.toml'),
+      join(root, '.lcode', 'local.toml'),
       '[workspace]\nadditional_dir = "shared"\n',
       'utf-8',
     );
@@ -89,9 +107,9 @@ describe('workspace local config', () => {
 
   it('rejects configured additional_dir that does not exist', async () => {
     const root = await makeProject();
-    await mkdir(join(root, '.kimi-code'), { recursive: true });
+    await mkdir(join(root, '.lcode'), { recursive: true });
     await writeFile(
-      join(root, '.kimi-code', 'local.toml'),
+      join(root, '.lcode', 'local.toml'),
       '[workspace]\nadditional_dir = ["missing"]\n',
       'utf-8',
     );
@@ -110,7 +128,7 @@ describe('workspace local config', () => {
     await mkdir(otherDir, { recursive: true });
 
     const appended = await appendWorkspaceAdditionalDir(testKaos, root, 'shared', []);
-    const configPath = join(root, '.kimi-code', 'local.toml');
+    const configPath = join(root, '.lcode', 'local.toml');
     const before = await readFile(configPath, 'utf-8');
 
     const duplicate = await appendWorkspaceAdditionalDir(testKaos, root, './shared', []);
@@ -153,8 +171,8 @@ describe('workspace local config', () => {
     const otherDir = join(root, 'other');
     await mkdir(sharedDir, { recursive: true });
     await mkdir(otherDir, { recursive: true });
-    await mkdir(join(root, '.kimi-code'), { recursive: true });
-    const configPath = join(root, '.kimi-code', 'local.toml');
+    await mkdir(join(root, '.lcode'), { recursive: true });
+    const configPath = join(root, '.lcode', 'local.toml');
     await writeFile(configPath, '[workspace]\nadditional_dir = ["shared"]\n', 'utf-8');
 
     const result = await appendWorkspaceAdditionalDir(testKaos, root, 'other', []);
@@ -166,8 +184,8 @@ describe('workspace local config', () => {
     const root = await makeProject();
     const sharedDir = join(root, 'shared');
     await mkdir(sharedDir, { recursive: true });
-    await mkdir(join(root, '.kimi-code'), { recursive: true });
-    const configPath = join(root, '.kimi-code', 'local.toml');
+    await mkdir(join(root, '.lcode'), { recursive: true });
+    const configPath = join(root, '.lcode', 'local.toml');
     const before = '[workspace]\nadditional_dir = ["shared"]\n';
     await writeFile(configPath, before, 'utf-8');
 

@@ -74,7 +74,7 @@ describe('goal summary', () => {
 
   it('renders a null goal', () => {
     expect(goalSummaryJson(null).status).toBeNull();
-    expect(formatGoalSummaryText(null)).toContain('no goal');
+    expect(formatGoalSummaryText(null)).toContain('未找到目标');
   });
 });
 
@@ -300,8 +300,8 @@ describe('runPrompt headless goal mode', () => {
     });
 
     expect(stdout.text()).toBe('• 1\n\n• 2\n\n');
-    expect(stderr.text()).toContain('Goal [complete]');
-    expect(stderr.text()).toContain('turns: 2');
+    expect(stderr.text()).toContain('目标 [complete]');
+    expect(stderr.text()).toContain('轮次：2');
   });
 
   it('ignores stale goal checks once a continuation turn has started', async () => {
@@ -348,7 +348,7 @@ describe('runPrompt headless goal mode', () => {
     });
 
     expect(stdout.text()).toBe('• 1\n\n• 2 tail\n\n');
-    expect(stderr.text()).toContain('Goal [complete]');
+    expect(stderr.text()).toContain('目标 [complete]');
   });
 
   it('does not send an invalid goal create prompt as a normal prompt', async () => {

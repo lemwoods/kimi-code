@@ -74,10 +74,11 @@ async function loadAgentsMdForRoots(
   };
 
   // User-level files come first so any project-level AGENTS.md overrides them.
-  // The brand dir follows KIMI_CODE_HOME (default ~/.kimi-code); the generic
-  // .agents dir stays under the real OS home so it can be shared across tools.
+  // The brand dir follows LCODE_HOME (default ~/.lcode, legacy ~/.kimi-code
+  // still honored); the generic .agents dir stays under the real OS home so it
+  // can be shared across tools.
   const realHome = kaos.gethome();
-  const brandDir = brandHome ?? join(realHome, '.kimi-code');
+  const brandDir = brandHome ?? (await resolveBrandHome(kaos, realHome));
   await collect(join(brandDir, 'AGENTS.md'));
 
   // Generic user-level dir (.agents) matches skill discovery.
@@ -96,7 +97,10 @@ async function loadAgentsMdForRoots(
     const dirs = dirsRootToLeaf(rootKaos, rootWorkDir, projectRoot);
 
     for (const dir of dirs) {
-      await collect(join(dir, '.kimi-code', 'AGENTS.md'));
+      // Prefer the renamed project dir; fall back to the pre-rename location.
+      if (!(await collect(join(dir, '.lcode', 'AGENTS.md')))) {
+        await collect(join(dir, '.kimi-code', 'AGENTS.md'));
+      }
       for (const fileName of ['AGENTS.md', 'agents.md']) {
         if (await collect(join(dir, fileName))) break;
       }
@@ -153,6 +157,19 @@ function dirsRootToLeaf(kaos: Kaos, workDir: string, projectRoot: string): strin
   }
 
   return dirs.toReversed();
+}
+
+/**
+ * Resolves the user-level brand dir: `~/.lcode` by default, falling back to
+ * the pre-rename `~/.kimi-code` when it is the one that exists. An explicit
+ * `brandHome` from the caller always wins.
+ */
+async function resolveBrandHome(kaos: Kaos, realHome: string): Promise<string> {
+  const brandDir = join(realHome, '.lcode');
+  if (await pathExists(kaos, brandDir)) return brandDir;
+  const legacyDir = join(realHome, '.kimi-code');
+  if (await pathExists(kaos, legacyDir)) return legacyDir;
+  return brandDir;
 }
 
 interface AgentFile {

@@ -339,8 +339,8 @@ describe('agentsMdReminder path-carrying tools', () => {
   it('discovers the .kimi-code/AGENTS.md variant alongside the plain one', async () => {
     const h = createHarness();
     const subDir = join(workDir, 'packages', 'kap-server');
-    const dotKimi = normalize(join(subDir, '.kimi-code', 'AGENTS.md'));
-    await writeAgentsMd(join(subDir, '.kimi-code'), 'dot kimi instructions');
+    const dotKimi = normalize(join(subDir, '.lcode', 'AGENTS.md'));
+    await writeAgentsMd(join(subDir, '.lcode'), 'dot kimi instructions');
     const plain = await writeAgentsMd(subDir);
 
     const result = await fire(h, didCtx('Read', { path: join(subDir, 'index.ts') }));

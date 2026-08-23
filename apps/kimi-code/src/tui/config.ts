@@ -2,7 +2,7 @@
  * Client-owned preferences.
  *
  * Agent/runtime settings live in core's `config.toml`; this file owns
- * kimi-code client preferences such as terminal UI and update behavior.
+ * lcode client preferences such as terminal UI and update behavior.
  */
 
 import { existsSync } from 'node:fs';
@@ -15,7 +15,7 @@ import { z } from 'zod';
 import { getDataDir } from '#/utils/paths';
 
 export const INVALID_TUI_CONFIG_MESSAGE =
-  'Invalid TUI config in ~/.kimi-code/tui.toml; using defaults.';
+  'Invalid TUI config in ~/.lcode/tui.toml; using defaults.';
 
 export const TuiThemeSchema = z.string();
 
@@ -238,11 +238,11 @@ export function renderTuiConfig(config: TuiConfig): string {
 # items = ${JSON.stringify([...STATUS_LINE_ITEMS])}
 # Or render your own: a command whose first stdout line replaces footer line 1.
 # It receives a JSON snapshot (model, cwd, git, usage, mode) on stdin.
-# command = "~/.kimi-code/statusline.sh"
+# command = "~/.lcode/statusline.sh"
 `;
-  return `# ~/.kimi-code/tui.toml
-# Client preferences for kimi-code.
-# Agent/runtime settings stay in ~/.kimi-code/config.toml.
+  return `# ~/.lcode/tui.toml
+# Client preferences for lcode.
+# Agent/runtime settings stay in ~/.lcode/config.toml.
 
 theme = "${escapeTomlBasicString(config.theme)}" # "auto" | "dark" | "light" | custom theme name
 render_latex = ${String(config.renderLatex !== false)} # false keeps LaTeX math in assistant messages as raw source

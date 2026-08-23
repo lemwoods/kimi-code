@@ -80,14 +80,14 @@ export async function handleProviderAdd(
   const apiKey = resolveApiKey(opts.apiKey, deps.env);
   if (apiKey === undefined) {
     deps.stderr.write(
-      'Missing API key. Pass --api-key <key> or set KIMI_REGISTRY_API_KEY.\n',
+      '缺少 API 密钥。请传入 --api-key <key> 或设置 KIMI_REGISTRY_API_KEY。\n',
     );
     deps.exit(1);
   }
 
   const trimmedUrl = url.trim();
   if (trimmedUrl.length === 0) {
-    deps.stderr.write('Registry URL is required.\n');
+    deps.stderr.write('必须提供注册表 URL。\n');
     deps.exit(1);
   }
 
@@ -105,13 +105,13 @@ export async function handleProviderAdd(
     entries = await fetchCustomRegistry(source, { userAgent: createKimiCodeUserAgent() });
   } catch (error) {
     const suffix = error instanceof CustomRegistryApiError ? ` (HTTP ${String(error.status)})` : '';
-    deps.stderr.write(`Failed to fetch registry${suffix}: ${errorMessage(error)}\n`);
+    deps.stderr.write(`拉取注册表失败${suffix}：${errorMessage(error)}\n`);
     deps.exit(1);
   }
 
   const entryList = Object.values(entries);
   if (entryList.length === 0) {
-    deps.stderr.write(`Registry at ${trimmedUrl} contained no usable providers.\n`);
+    deps.stderr.write(`${trimmedUrl} 的注册表没有任何可用的提供商。\n`);
     deps.exit(1);
   }
 
@@ -142,8 +142,8 @@ export async function handleProviderAdd(
   });
 
   deps.stdout.write(
-    `Imported ${String(addedProviderIds.length)} provider${addedProviderIds.length === 1 ? '' : 's'} ` +
-      `(${String(modelCount)} model${modelCount === 1 ? '' : 's'}) from ${trimmedUrl}:\n`,
+    `已从 ${trimmedUrl} 导入 ${String(addedProviderIds.length)} 个提供商` +
+      `（${String(modelCount)} 个模型）：\n`,
   );
   for (const id of addedProviderIds) {
     deps.stdout.write(`  - ${id}\n`);
@@ -158,11 +158,11 @@ export async function handleProviderRemove(
   await harness.ensureConfigFile();
   const config = await harness.getConfig();
   if (config.providers[providerId] === undefined) {
-    deps.stderr.write(`Provider "${providerId}" not found.\n`);
+    deps.stderr.write(`未找到提供商 "${providerId}"。\n`);
     deps.exit(1);
   }
   await harness.removeProvider(providerId);
-  deps.stdout.write(`Removed provider "${providerId}".\n`);
+  deps.stdout.write(`已移除提供商 "${providerId}"。\n`);
 }
 
 export async function handleProviderList(
@@ -189,7 +189,7 @@ export async function handleProviderList(
 
   const providerIds = Object.keys(config.providers).toSorted();
   if (providerIds.length === 0) {
-    deps.stdout.write('No providers configured.\n');
+    deps.stdout.write('尚未配置任何提供商。\n');
     return;
   }
 
@@ -202,7 +202,7 @@ export async function handleProviderList(
     );
   }
   if (config.defaultModel !== undefined) {
-    deps.stdout.write(`\nDefault model: ${config.defaultModel}\n`);
+    deps.stdout.write(`\n默认模型：${config.defaultModel}\n`);
   }
 }
 
@@ -222,7 +222,7 @@ export async function handleCatalogList(
   if (providerId !== undefined) {
     const entry = catalog[providerId];
     if (entry === undefined) {
-      deps.stderr.write(`Provider "${providerId}" not found in catalog at ${url}.\n`);
+      deps.stderr.write(`在目录 ${url} 中未找到提供商 "${providerId}"。\n`);
       deps.exit(1);
     }
     const models = catalogProviderModels(entry);
@@ -233,7 +233,7 @@ export async function handleCatalogList(
       return;
     }
     if (models.length === 0) {
-      deps.stdout.write(`Provider "${providerId}" lists no usable models in this catalog.\n`);
+      deps.stdout.write(`提供商 "${providerId}" 在此目录中没有可用的模型。\n`);
       return;
     }
     deps.stdout.write(`${entry.name ?? providerId} (${providerId})\n`);
@@ -270,9 +270,9 @@ export async function handleCatalogList(
 
   if (entries.length === 0) {
     if (filter !== undefined) {
-      deps.stdout.write(`No providers in catalog match "${filter}".\n`);
+      deps.stdout.write(`目录中没有匹配 "${filter}" 的提供商。\n`);
     } else {
-      deps.stdout.write('Catalog is empty.\n');
+      deps.stdout.write('目录为空。\n');
     }
     return;
   }
@@ -284,7 +284,7 @@ export async function handleCatalogList(
       resolution.kind === 'invalid'
         ? '?'
         : resolution.guessed
-          ? `${resolution.wire} (guessed)`
+          ? `${resolution.wire}（猜测）`
           : resolution.wire;
     deps.stdout.write(
       `${id}  wire=${wireLabel}  models=${String(modelCount)}  ${entry.name ?? ''}\n`,
@@ -305,7 +305,7 @@ export async function handleCatalogAdd(
   const apiKey = resolveApiKey(opts.apiKey, deps.env);
   if (apiKey === undefined) {
     deps.stderr.write(
-      'Missing API key. Pass --api-key <key> or set KIMI_REGISTRY_API_KEY.\n',
+      '缺少 API 密钥。请传入 --api-key <key> 或设置 KIMI_REGISTRY_API_KEY。\n',
     );
     deps.exit(1);
   }
@@ -315,7 +315,7 @@ export async function handleCatalogAdd(
 
   const entry = catalog[providerId];
   if (entry === undefined) {
-    deps.stderr.write(`Provider "${providerId}" not found in catalog at ${url}.\n`);
+    deps.stderr.write(`在目录 ${url} 中未找到提供商 "${providerId}"。\n`);
     deps.exit(1);
   }
 
@@ -324,20 +324,20 @@ export async function handleCatalogAdd(
     switch (resolution.reason) {
       case 'unknown-explicit-type':
         deps.stderr.write(
-          `Provider "${providerId}" declares protocol "${entry.type}" in the catalog, which this client version does not support.\n`,
+          `提供商 "${providerId}" 在目录中声明的协议 "${entry.type}" 是当前客户端版本不支持的。\n`,
         );
         break;
       case 'proprietary-sdk':
         deps.stderr.write(
-          `Provider "${providerId}" uses a proprietary SDK this client cannot speak (e.g. Amazon Bedrock or Cohere); it cannot be imported from the catalog.\n`,
+          `提供商 "${providerId}" 使用了本客户端无法对接的专有 SDK（如 Amazon Bedrock 或 Cohere），无法从目录导入。\n`,
         );
         break;
       case 'empty-base-url':
-        deps.stderr.write('--base-url cannot be empty.\n');
+        deps.stderr.write('--base-url 不能为空。\n');
         break;
       case 'placeholder-base-url':
         deps.stderr.write(
-          `Base URL "${opts.baseUrl}" contains an env placeholder. Pass --base-url with the resolved value.\n`,
+          `Base URL "${opts.baseUrl}" 含有环境变量占位符。请传入解析后的 --base-url 值。\n`,
         );
         break;
     }
@@ -345,7 +345,7 @@ export async function handleCatalogAdd(
   }
   if (resolution.kind === 'needs-base-url') {
     deps.stderr.write(
-      `The catalog does not declare an endpoint for "${providerId}". Pass --base-url <url> (e.g. the vendor's OpenAI-compatible base URL).\n`,
+      `目录没有为 "${providerId}" 声明端点。请传入 --base-url <url>（例如厂商的 OpenAI 兼容 base URL）。\n`,
     );
     deps.exit(1);
   }
@@ -353,13 +353,13 @@ export async function handleCatalogAdd(
 
   const models = catalogProviderModels(entry);
   if (models.length === 0) {
-    deps.stderr.write(`Provider "${providerId}" lists no usable models in this catalog.\n`);
+    deps.stderr.write(`提供商 "${providerId}" 在此目录中没有可用的模型。\n`);
     deps.exit(1);
   }
 
   if (opts.defaultModel !== undefined && !models.some((m) => m.id === opts.defaultModel)) {
     deps.stderr.write(
-      `Model "${opts.defaultModel}" is not in provider "${providerId}". Run "lcode provider catalog list ${providerId}" to see available ids.\n`,
+      `模型 "${opts.defaultModel}" 不在提供商 "${providerId}" 中。运行 "lcode provider catalog list ${providerId}" 查看可用 id。\n`,
     );
     deps.exit(1);
   }
@@ -423,15 +423,15 @@ export async function handleCatalogAdd(
 
   const displayName = entry.name ?? providerId;
   deps.stdout.write(
-    `Imported ${displayName} (${providerId}) with ${String(models.length)} model${models.length === 1 ? '' : 's'} from ${url}.\n`,
+    `已从 ${url} 导入 ${displayName}（${providerId}），共 ${String(models.length)} 个模型。\n`,
   );
   if (resolution.guessed) {
     deps.stdout.write(
-      `Note: the catalog does not declare a protocol for "${providerId}"; guessed "openai". Edit "type" in config.toml if requests fail.\n`,
+      `注意：目录没有为 "${providerId}" 声明协议，已猜测为 "openai"。如果请求失败，请修改 config.toml 中的 "type"。\n`,
     );
   }
   if (opts.defaultModel !== undefined) {
-    deps.stdout.write(`Default model set to ${providerId}/${opts.defaultModel}.\n`);
+    deps.stdout.write(`默认模型已设为 ${providerId}/${opts.defaultModel}。\n`);
   }
 }
 
@@ -440,13 +440,13 @@ async function loadCatalogOrExit(deps: ProviderDeps, url: string): Promise<Catal
     const loaded = await fetchCatalogOrBuiltIn(url, { userAgent: createKimiCodeUserAgent() });
     if (loaded.fromBuiltIn) {
       deps.stderr.write(
-        `Warning: failed to reach ${url}; using the built-in models.dev catalog snapshot.\n`,
+        `警告：无法访问 ${url}，改用内置的 models.dev 目录快照。\n`,
       );
     }
     return loaded.catalog;
   } catch (error) {
     const suffix = error instanceof CatalogFetchError ? ` (HTTP ${String(error.status)})` : '';
-    deps.stderr.write(`Failed to fetch catalog from ${url}${suffix}: ${errorMessage(error)}\n`);
+    deps.stderr.write(`从 ${url} 拉取目录失败${suffix}：${errorMessage(error)}\n`);
     deps.exit(1);
   }
 }

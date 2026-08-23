@@ -1,15 +1,37 @@
 import { readFile } from 'node:fs/promises';
 import { parse as parseToml } from 'smol-toml';
 
-// Verbatim from packages/kimi-core/src/harness/configs/toml.ts:42
+// Mirrors packages/agent-core/src/config/toml.ts DEFAULT_CONFIG_FILE_TEXT
 export const DEFAULT_CONFIG_FILE_TEXT =
+  '# ~/.lcode/config.toml\n' +
+  '# Runtime settings for lcode.\n' +
+  '# This file starts empty so built-in defaults can apply.\n' +
+  '# Login will populate managed Kimi provider and model entries.\n';
+
+// Pre-rename stub text; still recognized so configs written before the
+// lcode rename keep counting as untouched stubs.
+const LEGACY_CONFIG_FILE_TEXT =
   '# ~/.kimi-code/config.toml\n' +
   '# Runtime settings for Kimi Code.\n' +
   '# This file starts empty so built-in defaults can apply.\n' +
   '# Login will populate managed Kimi provider and model entries.\n';
 
-// Verbatim from apps/kimi-code/src/tui/config.ts:renderTuiConfig(DEFAULT_TUI_CONFIG)
+// Mirrors apps/kimi-code/src/tui/config.ts renderTuiConfig(DEFAULT_TUI_CONFIG)
 export const DEFAULT_TUI_RENDER =
+  '# ~/.lcode/tui.toml\n' +
+  '# Client preferences for lcode.\n' +
+  '# Agent/runtime settings stay in ~/.lcode/config.toml.\n' +
+  '\n' +
+  'theme = "auto" # "auto" | "dark" | "light"\n' +
+  '\n' +
+  '[editor]\n' +
+  'command = "" # Empty uses $VISUAL / $EDITOR\n' +
+  '\n' +
+  '[notifications]\n' +
+  'enabled = true # true | false\n' +
+  'notification_condition = "unfocused" # "unfocused" | "always"\n';
+
+const LEGACY_TUI_RENDER =
   '# ~/.kimi-code/tui.toml\n' +
   '# Terminal UI preferences for kimi-code.\n' +
   '# Agent/runtime settings stay in ~/.kimi-code/config.toml.\n' +
@@ -30,7 +52,7 @@ export async function isConfigStubOrMissing(configPath: string): Promise<boolean
   } catch {
     return true; // missing = ok to overwrite
   }
-  return text === DEFAULT_CONFIG_FILE_TEXT;
+  return text === DEFAULT_CONFIG_FILE_TEXT || text === LEGACY_CONFIG_FILE_TEXT;
 }
 
 export async function isTuiStubOrMissing(tuiPath: string): Promise<boolean> {
@@ -41,6 +63,7 @@ export async function isTuiStubOrMissing(tuiPath: string): Promise<boolean> {
     return true;
   }
   if (text === DEFAULT_TUI_RENDER) return true;
+  if (text === LEGACY_TUI_RENDER) return true;
 
   // Fallback: parse and compare fields semantically
   try {

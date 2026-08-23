@@ -10,7 +10,7 @@ import {
 } from '@lcode-cli/agent-core-v2';
 import { createKimiDeviceId } from '@lcode-cli/lcode-oauth';
 
-const SERVER_TELEMETRY_APP_NAME = 'kimi-code-cli';
+const SERVER_TELEMETRY_APP_NAME = 'lcode-cli';
 const SERVER_TELEMETRY_UI_MODE = 'web';
 const TELEMETRY_DISABLE_ENV = 'KIMI_DISABLE_TELEMETRY';
 const TELEMETRY_DISABLE_ENV_VALUES = new Set(['1', 'true', 't', 'yes', 'y']);

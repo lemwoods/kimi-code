@@ -68,7 +68,7 @@ export async function handleUpgrade(
       currentVersion,
       error,
     });
-    deps.stderr.write(`error: failed to check for updates: ${reason}\n`);
+    deps.stderr.write(`错误：检查更新失败：${reason}\n`);
     return 1;
   }
 
@@ -80,7 +80,7 @@ export async function handleUpgrade(
     logUpgradeInfo(deps.logger, 'manual upgrade no update', {
       currentVersion,
     });
-    deps.stdout.write(`Kimi Code is already up to date (${formatDisplayVersion(currentVersion)}).\n`);
+    deps.stdout.write(`lcode 已是最新版本（${formatDisplayVersion(currentVersion)}）。\n`);
     return 0;
   }
 
@@ -165,7 +165,7 @@ export async function handleUpgrade(
       error,
     });
     deps.stderr.write(
-      `warning: failed to install ${NPM_PACKAGE_NAME}@${target.version}: ` +
+      `警告：安装 ${NPM_PACKAGE_NAME}@${target.version} 失败：` +
         `${formatErrorMessage(error)}\n`,
     );
     return 1;

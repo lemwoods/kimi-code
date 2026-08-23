@@ -12,7 +12,7 @@ import type { Command } from 'commander';
 export function registerMigrateCommand(parent: Command, onMigrate: () => void): void {
   parent
     .command('migrate')
-    .description('将旧版 kimi-cli 安装的数据迁移到 kimi-code。')
+    .description('将旧版 kimi-cli 安装的数据迁移到 lcode。')
     .action(() => {
       onMigrate();
     });

@@ -29,7 +29,7 @@ import {
 } from '@lcode-cli/acp-adapter';
 import { createKimiHarness, type Session, type SkillSummary } from '@lcode-cli/lcode-sdk';
 
-import { KIMI_CODE_HOME_ENV } from '#/constant/app';
+import { KIMI_CODE_HOME_ENV, KIMI_CODE_HOME_ENV_LEGACY } from '#/constant/app';
 import { createKimiCodeHostIdentity, getVersion } from '#/cli/version';
 import { buildSkillSlashCommands } from '#/tui/commands/skills';
 
@@ -70,7 +70,7 @@ export function registerAcpCommand(parent: Command): void {
       // sandboxed test setups (Zed's `agent_servers.*.env.KIMI_CODE_HOME =
       // /tmp/...`). Production runs leave the env unset and the field stays
       // empty.
-      const sandboxHome = process.env[KIMI_CODE_HOME_ENV];
+      const sandboxHome = process.env[KIMI_CODE_HOME_ENV] ?? process.env[KIMI_CODE_HOME_ENV_LEGACY];
       const terminalAuthEnv =
         sandboxHome !== undefined && sandboxHome.length > 0
           ? { [KIMI_CODE_HOME_ENV]: sandboxHome }

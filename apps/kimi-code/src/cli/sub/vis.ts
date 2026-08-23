@@ -76,7 +76,7 @@ export async function handleVis(deps: VisDeps, opts: VisOptions): Promise<void> 
     });
   } catch (error) {
     const msg = error instanceof Error ? error.message : String(error);
-    deps.stderr.write(`Failed to start lcode vis: ${msg}\n`);
+    deps.stderr.write(`启动 lcode vis 失败：${msg}\n`);
     return deps.exit(1);
   }
 
@@ -85,14 +85,14 @@ export async function handleVis(deps: VisDeps, opts: VisOptions): Promise<void> 
       ? server.url
       : `${server.url}sessions/${encodeURIComponent(opts.sessionId)}`;
 
-  deps.stdout.write(`lcode vis is running at ${server.url}\n`);
-  deps.stdout.write('Press Ctrl-C to stop.\n');
+  deps.stdout.write(`lcode vis 正在运行：${server.url}\n`);
+  deps.stdout.write('按 Ctrl-C 停止。\n');
 
   if (opts.open) {
     try {
       await deps.openUrl(target);
     } catch {
-      deps.stderr.write(`Could not open a browser; visit ${target} manually.\n`);
+      deps.stderr.write(`无法打开浏览器；请手动访问 ${target}。\n`);
     }
   }
 

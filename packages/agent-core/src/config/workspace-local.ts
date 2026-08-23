@@ -37,7 +37,7 @@ export async function loadWorkspaceLocalConfig(
   workDir: string,
 ): Promise<WorkspaceLocalConfig> {
   const projectRoot = await findProjectRoot(kaos, workDir);
-  const configPath = getWorkspaceLocalConfigPath(projectRoot);
+  const configPath = await getWorkspaceLocalConfigPath(kaos, projectRoot);
   const file = await readWorkspaceLocalToml(kaos, configPath);
 
   const additionalDirs = file?.parsed.workspace?.additional_dir;
@@ -74,7 +74,7 @@ export async function appendWorkspaceAdditionalDir(
   _currentAdditionalDirs: readonly string[],
 ): Promise<WorkspaceAdditionalDirsLoadResult> {
   const projectRoot = await findProjectRoot(kaos, workDir);
-  const configPath = getWorkspaceLocalConfigPath(projectRoot);
+  const configPath = await getWorkspaceLocalConfigPath(kaos, projectRoot);
   const additionalDir = await resolveAdditionalDir(kaos, workDir, inputPath);
   const file = (await readWorkspaceLocalToml(kaos, configPath)) ?? { raw: {}, parsed: {} };
   const fileAdditionalDirs = file.parsed.workspace?.additional_dir ?? [];
@@ -108,8 +108,18 @@ export function normalizeAdditionalDirs(additionalDirs: readonly string[]): stri
   return normalizedDirs;
 }
 
-function getWorkspaceLocalConfigPath(projectRoot: string): string {
-  return join(projectRoot, '.kimi-code', 'local.toml');
+/**
+ * Resolves the project-local config path: `.lcode/local.toml` after the
+ * lcode rename, falling back to the pre-rename `.kimi-code/local.toml` when
+ * that is the one carrying the user's data (so writes keep landing where the
+ * file already exists).
+ */
+async function getWorkspaceLocalConfigPath(kaos: Kaos, projectRoot: string): Promise<string> {
+  const configPath = join(projectRoot, '.lcode', 'local.toml');
+  if (await pathExists(kaos, configPath)) return configPath;
+  const legacyPath = join(projectRoot, '.kimi-code', 'local.toml');
+  if (await pathExists(kaos, legacyPath)) return legacyPath;
+  return configPath;
 }
 
 async function findProjectRoot(kaos: Kaos, workDir: string): Promise<string> {

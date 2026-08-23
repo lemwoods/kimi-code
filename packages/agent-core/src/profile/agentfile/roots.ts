@@ -17,11 +17,13 @@ export interface AgentRootWarn {
   (message: string, error?: unknown): void;
 }
 
-// Relative to brandHomeDir, which already IS the brand data dir (~/.kimi-code
-// or $KIMI_CODE_HOME) — no '.kimi-code' segment here, or it would nest twice.
+// Relative to brandHomeDir, which already IS the brand data dir (~/.lcode
+// or $LCODE_HOME) — no '.lcode' segment here, or it would nest twice.
 const USER_BRAND_DIRS = ['agents'] as const;
 const USER_GENERIC_DIRS = ['.agents/agents'] as const;
-const PROJECT_BRAND_DIRS = ['.kimi-code/agents'] as const;
+// The legacy `.kimi-code/agents` dir stays as a lower-priority fallback so
+// projects configured before the lcode rename keep discovering their agents.
+const PROJECT_BRAND_DIRS = ['.lcode/agents', '.kimi-code/agents'] as const;
 const PROJECT_GENERIC_DIRS = ['.agents/agents'] as const;
 
 export async function userAgentRoots(

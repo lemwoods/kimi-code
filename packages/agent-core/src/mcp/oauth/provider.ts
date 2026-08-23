@@ -93,7 +93,7 @@ export class McpOAuthClientProvider implements OAuthClientProvider {
     this.storeKey = mcpOAuthStoreKey(options.serverName, this.serverUrl);
     this.serverName = options.serverName;
     this.store = options.store;
-    this.clientLabel = options.clientLabel ?? `kimi-code (${options.serverName})`;
+    this.clientLabel = options.clientLabel ?? `lcode (${options.serverName})`;
     const tokensFile = `${this.storeKey}${TOKENS_SUFFIX}`;
     this.tokenTransaction = new OAuthTokenTransaction({
       key: this.storeKey,

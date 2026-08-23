@@ -50,7 +50,7 @@ export const LEGACY_SERVER_MAX_VERSION = '0.28.0';
 
 /** Deprecation notice printed on every `kimi server kill` run. */
 export const DEPRECATED_KILL_NOTICE =
-  '`kimi server kill` is deprecated: it only stops servers started by a version before 0.28.0. Servers started by `kimi web` run in the foreground — stop them with Ctrl+C.\n';
+  '`kimi server kill` 已弃用：它只能停止 0.28.0 之前版本启动的服务器。由 `kimi web` 启动的服务器在前台运行——用 Ctrl+C 停止即可。\n';
 
 /**
  * The fields of the legacy `<home>/server/lock` this command needs. The full
@@ -104,7 +104,7 @@ export async function handleLegacyKillCommand(deps: LegacyKillDeps): Promise<voi
 
   const lock = await deps.readLock();
   if (lock === undefined) {
-    deps.stdout.write('No running legacy Kimi server.\n');
+    deps.stdout.write('没有正在运行的旧版 Kimi 服务器。\n');
     return;
   }
 
@@ -112,13 +112,13 @@ export async function handleLegacyKillCommand(deps: LegacyKillDeps): Promise<voi
     // Stale lock from a server that died without releasing it; sweep it so the
     // cleanup is done in one run.
     await deps.removeLock().catch(() => {});
-    deps.stdout.write('No running legacy Kimi server.\n');
+    deps.stdout.write('没有正在运行的旧版 Kimi 服务器。\n');
     return;
   }
 
   const outcome = await killLegacyServer(lock, deps);
   await deps.removeLock().catch(() => {});
-  deps.stdout.write(`Legacy Kimi server (pid ${String(lock.pid)}) ${outcome}.\n`);
+  deps.stdout.write(`旧版 Kimi 服务器（pid ${String(lock.pid)}）${outcome}。\n`);
 }
 
 /**
@@ -129,7 +129,7 @@ export async function handleLegacyKillCommand(deps: LegacyKillDeps): Promise<voi
 async function killLegacyServer(
   lock: LegacyServerLock,
   deps: LegacyKillDeps,
-): Promise<'stopped' | 'killed'> {
+): Promise<'已停止' | '已强制终止'> {
   const { pid } = lock;
 
   // 1. API path — best-effort graceful shutdown. Ignore every outcome: an old
@@ -145,17 +145,17 @@ async function killLegacyServer(
   deps.signalPid(pid, 'SIGTERM');
 
   if (await waitForExit(pid, TERM_GRACE_MS, deps)) {
-    return 'stopped';
+    return '已停止';
   }
 
   deps.signalPid(pid, 'SIGKILL');
 
   if (await waitForExit(pid, KILL_GRACE_MS, deps)) {
-    return 'killed';
+    return '已强制终止';
   }
 
   throw new Error(
-    `Failed to stop legacy Kimi server (pid ${String(pid)}); insufficient permissions?`,
+    `停止旧版 Kimi 服务器（pid ${String(pid)}）失败；权限不足？`,
   );
 }
 

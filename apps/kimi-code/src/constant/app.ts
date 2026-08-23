@@ -4,16 +4,16 @@ import { currentKimiProfile } from '#/utils/region';
 
 export const PRODUCT_NAME = 'lcode';
 export const CLI_COMMAND_NAME = 'lcode';
-export const PROCESS_NAME = 'kimi-code';
+export const PROCESS_NAME = 'lcode';
 
 // Used in telemetry app names and HTTP User-Agent headers.
-export const CLI_USER_AGENT_PRODUCT = 'kimi-code-cli';
+export const CLI_USER_AGENT_PRODUCT = 'lcode-cli';
 export const CLI_UI_MODE = 'shell';
-// Telemetry ui_mode for the `kimi web` host. Same product
+// Telemetry ui_mode for the `lcode web` host. Same product
 // as the CLI (CLI_USER_AGENT_PRODUCT); the surface is distinguished by ui_mode.
 export const WEB_UI_MODE = 'web';
-// User-Agent suffix for the `kimi web` host: its requests go out as
-// `kimi-code-cli/<version> (web)` so upstream can tell web-UI traffic
+// User-Agent suffix for the `lcode web` host: its requests go out as
+// `lcode-cli/<version> (web)` so upstream can tell web-UI traffic
 // apart from direct CLI runs without changing the product token or platform.
 export const WEB_USER_AGENT_SUFFIX = 'web';
 
@@ -44,8 +44,11 @@ export const HEADLESS_STDIO_DRAIN_TIMEOUT_MS = 10000;
 export const NPM_PACKAGE_NAME = '@lcode-cli/lcode';
 
 // App-owned data paths. SDK/core runtime config is intentionally not routed here.
-export const KIMI_CODE_HOME_ENV = 'KIMI_CODE_HOME';
-export const KIMI_CODE_DATA_DIR_NAME = '.kimi-code';
+export const KIMI_CODE_HOME_ENV = 'LCODE_HOME';
+/** Pre-rename env var, still honored as a fallback for existing installs. */
+export const KIMI_CODE_HOME_ENV_LEGACY = 'KIMI_CODE_HOME';
+export const KIMI_CODE_DATA_DIR_NAME = '.lcode';
+export const KIMI_CODE_DATA_DIR_NAME_LEGACY = '.kimi-code';
 export const KIMI_CODE_LOG_DIR_NAME = 'logs';
 export const KIMI_CODE_CACHE_DIR_NAME = 'cache';
 export const KIMI_CODE_UPDATE_DIR_NAME = 'updates';
@@ -82,7 +85,7 @@ export function kimiCodeSignupUrl(): string {
 
 // Sent in the feedback `version` field so the backend can distinguish this
 // TypeScript client from clients that send a bare version.
-export const FEEDBACK_VERSION_PREFIX = 'kimi-code-';
+export const FEEDBACK_VERSION_PREFIX = 'lcode-';
 
 // Telemetry event name; keep stable for dashboard queries.
 export const FEEDBACK_TELEMETRY_EVENT = 'feedback_submitted';

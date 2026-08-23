@@ -1,4 +1,5 @@
 import { createHash } from 'node:crypto';
+import { existsSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { join } from 'node:path';
 
@@ -16,6 +17,7 @@ import {
 const originalEnv = { ...process.env };
 
 beforeEach(() => {
+  delete process.env['LCODE_HOME'];
   delete process.env['KIMI_CODE_HOME'];
 });
 
@@ -23,9 +25,25 @@ afterEach(() => {
   process.env = { ...originalEnv };
 });
 
+/** Mirrors the resolution precedence: ~/.lcode, falling back to the
+ * pre-rename ~/.kimi-code when that is the one that exists on this machine. */
+function expectedDefaultDataDir(): string {
+  const home = join(homedir(), '.lcode');
+  if (existsSync(home)) return home;
+  const legacy = join(homedir(), '.kimi-code');
+  if (existsSync(legacy)) return legacy;
+  return home;
+}
+
 describe('getDataDir', () => {
-  it('returns ~/.kimi-code when KIMI_CODE_HOME is not set', () => {
-    expect(getDataDir()).toBe(join(homedir(), '.kimi-code'));
+  it('returns the lcode data dir when no env override is set', () => {
+    expect(getDataDir()).toBe(expectedDefaultDataDir());
+  });
+
+  it('prefers LCODE_HOME over KIMI_CODE_HOME', () => {
+    process.env['KIMI_CODE_HOME'] = '/tmp/kimi-test-data';
+    process.env['LCODE_HOME'] = '/tmp/lcode-test-data';
+    expect(getDataDir()).toBe('/tmp/lcode-test-data');
   });
 
   it('returns KIMI_CODE_HOME when set', () => {
@@ -41,7 +59,7 @@ describe('getDataDir', () => {
 
 describe('getLogDir', () => {
   it('returns <dataDir>/logs', () => {
-    expect(getLogDir()).toBe(join(homedir(), '.kimi-code', 'logs'));
+    expect(getLogDir()).toBe(join(expectedDefaultDataDir(), 'logs'));
   });
 
   it('respects KIMI_CODE_HOME', () => {
@@ -52,7 +70,7 @@ describe('getLogDir', () => {
 
 describe('getBinDir', () => {
   it('returns <dataDir>/bin', () => {
-    expect(getBinDir()).toBe(join(homedir(), '.kimi-code', 'bin'));
+    expect(getBinDir()).toBe(join(expectedDefaultDataDir(), 'bin'));
   });
 
   it('respects KIMI_CODE_HOME', () => {
@@ -63,7 +81,9 @@ describe('getBinDir', () => {
 
 describe('getUpdateStateFile', () => {
   it('returns <dataDir>/updates/latest.json', () => {
-    expect(getUpdateStateFile()).toBe(join(homedir(), '.kimi-code', 'updates', 'latest.json'));
+    expect(getUpdateStateFile()).toBe(
+      join(expectedDefaultDataDir(), 'updates', 'latest.json'),
+    );
   });
 
   it('respects KIMI_CODE_HOME', () => {
@@ -75,7 +95,7 @@ describe('getUpdateStateFile', () => {
 describe('getUpdateInstallStateFile', () => {
   it('returns <dataDir>/updates/install.json', () => {
     expect(getUpdateInstallStateFile()).toBe(
-      join(homedir(), '.kimi-code', 'updates', 'install.json'),
+      join(expectedDefaultDataDir(), 'updates', 'install.json'),
     );
   });
 
@@ -90,7 +110,7 @@ describe('getInputHistoryFile', () => {
     const workDir = '/home/user/project';
     const hash = createHash('md5').update(workDir, 'utf-8').digest('hex');
     expect(getInputHistoryFile(workDir)).toBe(
-      join(homedir(), '.kimi-code', 'user-history', `${hash}.jsonl`),
+      join(expectedDefaultDataDir(), 'user-history', `${hash}.jsonl`),
     );
   });
 

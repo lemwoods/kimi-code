@@ -76,14 +76,14 @@ export async function handleExport(
     resolvedId = requestedId;
   } else {
     if (previousSummary === undefined) {
-      deps.stderr.write('No previous session found to export.\n');
+      deps.stderr.write('没有找到可导出的上一个会话。\n');
       deps.exit(1);
     }
     resolvedId = previousSummary.id;
     if (!opts.yes) {
       const confirmed = await deps.confirmPreviousSession(toPreviousSessionSummary(previousSummary));
       if (!confirmed) {
-        deps.stdout.write('Export cancelled.\n');
+        deps.stdout.write('已取消导出。\n');
         return;
       }
     }
@@ -115,7 +115,7 @@ export function registerExportCommand(parent: Command, deps?: Partial<ExportDeps
     .option('-y, --yes', '跳过上一会话的确认。')
     .option(
       '--no-include-global-log',
-      '不打包当前全局诊断日志（~/.kimi-code/logs/kimi-code.log，不含轮转的 .1 文件）。默认会包含全局日志。',
+      '不打包当前全局诊断日志（~/.lcode/logs/lcode.log，不含轮转的 .1 文件）。默认会包含全局日志。',
     )
     .argument('[sessionId]', '要导出的会话 ID，默认使用最近的会话。')
     .action(
@@ -243,7 +243,7 @@ async function confirmPreviousSession(summary: PreviousSessionSummary): Promise<
   const rl = createInterface({ input: process.stdin, output: process.stderr });
   try {
     const title = summary.title === undefined ? summary.sessionId : `${summary.title} (${summary.sessionId})`;
-    const answer = await rl.question(`Export previous session "${title}"? [Y/n] `);
+    const answer = await rl.question(`导出上一个会话 "${title}"？[Y/n] `);
     const trimmed = answer.trim().toLowerCase();
     return trimmed === '' || trimmed === 'y' || trimmed === 'yes';
   } finally {

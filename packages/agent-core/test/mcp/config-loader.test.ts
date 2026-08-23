@@ -42,6 +42,18 @@ describe('resolveMcpJsonPaths', () => {
 
     expect(paths.user).toBe('/home/user/.kimi-code/mcp.json');
     expect(paths.projectRoot).toBe(join(repoRoot, '.mcp.json'));
+    expect(paths.project).toBe(join(cwd, '.lcode', 'mcp.json'));
+  });
+
+  it('falls back to the pre-rename .kimi-code/mcp.json when .lcode has none', async () => {
+    const repoRoot = makeTempDir();
+    const cwd = join(repoRoot, 'packages', 'agent-core');
+    await mkdir(join(repoRoot, '.git'), { recursive: true });
+    await mkdir(cwd, { recursive: true });
+    await writeJson(join(cwd, '.kimi-code', 'mcp.json'), { mcpServers: {} });
+
+    const paths = await resolveMcpJsonPaths({ cwd });
+
     expect(paths.project).toBe(join(cwd, '.kimi-code', 'mcp.json'));
   });
 });
@@ -72,7 +84,7 @@ describe('loadMcpServers', () => {
         userOnly: { transport: 'stdio', command: 'user-only' },
       },
     });
-    await writeJson(join(cwd, '.kimi-code', 'mcp.json'), {
+    await writeJson(join(cwd, '.lcode', 'mcp.json'), {
       mcpServers: {
         shared: { transport: 'stdio', command: 'shared-project' },
         local: { transport: 'http', url: 'http://localhost:8080/mcp' },
@@ -102,14 +114,14 @@ describe('loadMcpServers', () => {
 
     // Raw JSON text: a `{ __proto__: ... }` object literal would set the
     // prototype instead of owning the key, and the test would never write it.
-    await mkdir(join(cwd, '.kimi-code'), { recursive: true });
+    await mkdir(join(cwd, '.lcode'), { recursive: true });
     await writeFile(
       join(home, 'mcp.json'),
       '{"mcpServers":{"__proto__":{"transport":"stdio","command":"user-proto"}}}',
       'utf-8',
     );
     await writeFile(
-      join(cwd, '.kimi-code', 'mcp.json'),
+      join(cwd, '.lcode', 'mcp.json'),
       '{"mcpServers":{"__proto__":{"transport":"stdio","command":"project-proto"}}}',
       'utf-8',
     );
@@ -120,10 +132,10 @@ describe('loadMcpServers', () => {
       transport: 'stdio',
       command: 'project-proto',
     });
-    expect(detailed.origins['__proto__']).toBe(join(cwd, '.kimi-code', 'mcp.json'));
+    expect(detailed.origins['__proto__']).toBe(join(cwd, '.lcode', 'mcp.json'));
   });
 
-  it('loads root .mcp.json from the repo root and lets project-local .kimi-code/mcp.json override it', async () => {
+  it('loads root .mcp.json from the repo root and lets project-local .lcode/mcp.json override it', async () => {
     const home = makeTempDir();
     const repoRoot = makeTempDir();
     const cwd = join(repoRoot, 'packages', 'agent-core');
@@ -142,7 +154,7 @@ describe('loadMcpServers', () => {
         rootOnly: { command: 'root-only' },
       },
     });
-    await writeJson(join(cwd, '.kimi-code', 'mcp.json'), {
+    await writeJson(join(cwd, '.lcode', 'mcp.json'), {
       mcpServers: {
         shared: { transport: 'stdio', command: 'shared-project' },
         projectOnly: { transport: 'http', url: 'https://mcp.example.com' },

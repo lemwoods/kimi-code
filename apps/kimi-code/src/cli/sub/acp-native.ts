@@ -22,7 +22,7 @@
 import type { Command } from 'commander';
 
 import { getVersion } from '#/cli/version';
-import { KIMI_CODE_HOME_ENV } from '#/constant/app';
+import { KIMI_CODE_HOME_ENV, KIMI_CODE_HOME_ENV_LEGACY } from '#/constant/app';
 import { getDataDir } from '#/utils/paths';
 
 import { parseRegionFlag, runLoginFlow } from './login-flow';
@@ -47,7 +47,7 @@ export function registerNativeAcpCommand(parent: Command): void {
       // Forward `KIMI_CODE_HOME` (if set) into `authMethods[0].env` so the
       // login subprocess clients spawn for terminal-auth writes its token
       // under the same data root the ACP server reads from.
-      const sandboxHome = process.env[KIMI_CODE_HOME_ENV];
+      const sandboxHome = process.env[KIMI_CODE_HOME_ENV] ?? process.env[KIMI_CODE_HOME_ENV_LEGACY];
       const terminalAuthEnv =
         sandboxHome !== undefined && sandboxHome.length > 0
           ? { [KIMI_CODE_HOME_ENV]: sandboxHome }

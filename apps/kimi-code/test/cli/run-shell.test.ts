@@ -303,7 +303,7 @@ describe('runShell', () => {
     expect(mocks.kimiHarnessConstructor).toHaveBeenCalledWith(
       expect.objectContaining({
         identity: expect.objectContaining({
-          productName: 'kimi-code-cli',
+          productName: 'lcode-cli',
           version: '1.2.3-test',
         }),
         sessionStartedProperties: { yolo: true, auto: false, plan: true, afk: false },
@@ -332,7 +332,7 @@ describe('runShell', () => {
       homeDir: '/tmp/kimi-code-test-home',
       deviceId: 'device-1',
       enabled: true,
-      appName: 'kimi-code-cli',
+      appName: 'lcode-cli',
       version: '1.2.3-test',
       uiMode: 'shell',
       model: 'k2',
@@ -889,8 +889,8 @@ describe('runShell', () => {
       });
       expect(mocks.harnessTrack).not.toHaveBeenCalledWith('exit', expect.anything());
       expect(mocks.shutdownTelemetry).toHaveBeenCalledOnce();
-      expect(stdout.text()).toBe(' Bye!\n');
-      expect(stderr.text()).toContain(' To resume this session: kimi -r ses-1');
+      expect(stdout.text()).toBe(' 再见！\n');
+      expect(stderr.text()).toContain(' 恢复此会话：lcode -r ses-1');
     } finally {
       exitSpy.mockRestore();
       stdout.restore();
@@ -937,7 +937,7 @@ describe('runShell', () => {
         ExitCalled,
       );
 
-      expect(stderr.text()).toContain(' To resume this session: kimi -r ses-1');
+      expect(stderr.text()).toContain(' 恢复此会话：lcode -r ses-1');
       expect(stderr.text()).toContain('open ');
       expect(stderr.text()).toContain(openedUrl);
     } finally {

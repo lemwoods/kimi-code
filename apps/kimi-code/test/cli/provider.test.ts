@@ -299,7 +299,7 @@ describe('kimi provider add', () => {
     ]);
 
     const output = stdout.join('');
-    expect(output).toContain('Imported 2 providers (2 models)');
+    expect(output).toContain('导入 2 个提供商（2 个模型）');
     expect(output).toContain('- kohub');
     expect(output).toContain('- kohub-responses');
   });
@@ -408,7 +408,7 @@ describe('kimi provider add', () => {
     await tryRun(() => handleProviderAdd(deps, REGISTRY_URL, {}));
 
     expect(exitCodes).toEqual([1]);
-    expect(stderr.join('')).toMatch(/missing api key/i);
+    expect(stderr.join('')).toContain('缺少 API 密钥');
     expect(fetchMock).not.toHaveBeenCalled();
   });
 
@@ -449,7 +449,7 @@ describe('kimi provider remove', () => {
     expect(exitCodes).toEqual([]);
     expect(removeCalls).toEqual(['kohub']);
     expect(current().providers['kohub']).toBeUndefined();
-    expect(stdout.join('')).toContain('Removed provider "kohub"');
+    expect(stdout.join('')).toContain('已移除提供商 "kohub"');
   });
 
   it('exits 1 when the provider id does not exist', async () => {
@@ -459,7 +459,7 @@ describe('kimi provider remove', () => {
     await tryRun(() => handleProviderRemove(deps, 'nope'));
 
     expect(exitCodes).toEqual([1]);
-    expect(stderr.join('')).toContain('Provider "nope" not found');
+    expect(stderr.join('')).toContain('未找到提供商 "nope"');
   });
 });
 
@@ -512,7 +512,7 @@ describe('kimi provider list', () => {
     expect(out).toMatch(/kohub\s+type=anthropic\s+models=2\s+source=apiJson\(/);
     expect(out).toMatch(/managed:kimi-code\s+type=kimi\s+models=0\s+source=oauth/);
     expect(out).toMatch(/manual\s+type=openai\s+models=1\s+source=inline/);
-    expect(out).toContain('Default model: kohub/a');
+    expect(out).toContain('默认模型：kohub/a');
   });
 
   it('prints a friendly message when nothing is configured', async () => {
@@ -521,7 +521,7 @@ describe('kimi provider list', () => {
 
     await tryRun(() => handleProviderList(deps, { json: false }));
 
-    expect(stdout.join('')).toContain('No providers configured');
+    expect(stdout.join('')).toContain('尚未配置任何提供商');
   });
 
   it('emits parseable JSON with --json', async () => {
@@ -570,7 +570,7 @@ describe('registerProviderCommand', () => {
       }),
     );
     expect(Object.keys(current().providers).toSorted()).toEqual(['kohub', 'kohub-responses']);
-    expect(stdout.join('')).toContain('Imported 2 providers');
+    expect(stdout.join('')).toContain('导入 2 个提供商');
   });
 
   it('reports write failures on stderr and exits 1 instead of crashing', async () => {
@@ -647,7 +647,7 @@ describe('kimi provider catalog list', () => {
     await tryRun(() => handleCatalogList(deps, 'unknown', { json: false }));
 
     expect(exitCodes).toEqual([1]);
-    expect(stderr.join('')).toContain('Provider "unknown" not found in catalog');
+    expect(stderr.join('')).toContain('未找到提供商 "unknown"');
   });
 
   it('emits parseable JSON for the providerId view', async () => {
@@ -721,7 +721,7 @@ describe('kimi provider catalog add', () => {
     expect(finalConfig.thinking?.enabled).toBe(true);
     // The patch sent over `setConfig` must explicitly carry the preserved default.
     expect(setConfigCalls[0]?.defaultModel).toBe('other/main');
-    expect(stdout.join('')).toContain('Imported Anthropic (anthropic)');
+    expect(stdout.join('')).toContain('导入 Anthropic（anthropic）');
   });
 
   it('sets default_model when --default-model is supplied and the model exists', async () => {
@@ -741,7 +741,7 @@ describe('kimi provider catalog add', () => {
     expect(exitCodes).toEqual([]);
     expect(current().defaultModel).toBe('anthropic/claude-opus-4-7');
     expect(setConfigCalls[0]?.defaultModel).toBe('anthropic/claude-opus-4-7');
-    expect(stdout.join('')).toContain('Default model set to anthropic/claude-opus-4-7');
+    expect(stdout.join('')).toContain('默认模型已设为 anthropic/claude-opus-4-7');
   });
 
   it('rejects an unknown --default-model with a helpful hint', async () => {
@@ -758,7 +758,7 @@ describe('kimi provider catalog add', () => {
 
     expect(exitCodes).toEqual([1]);
     const err = stderr.join('');
-    expect(err).toContain('"does-not-exist" is not in provider "anthropic"');
+    expect(err).toContain('模型 "does-not-exist" 不在提供商 "anthropic" 中');
     expect(err).toContain('lcode provider catalog list anthropic');
   });
 
@@ -969,7 +969,7 @@ describe('kimi provider catalog add', () => {
     await tryRun(() => handleCatalogAdd(deps, 'openai', { apiKey: 'sk-o', baseUrl: '   ' }));
 
     expect(exitCodes).toEqual([1]);
-    expect(stderr.join('')).toContain('--base-url cannot be empty');
+    expect(stderr.join('')).toContain('--base-url 不能为空');
     await expect(harness.getConfig().then((c) => c.providers['openai'])).resolves.toBeUndefined();
   });
 
@@ -1009,7 +1009,7 @@ describe('kimi provider catalog add', () => {
     await tryRun(() => handleCatalogAdd(deps, 'anthropic', {}));
 
     expect(exitCodes).toEqual([1]);
-    expect(stderr.join('')).toMatch(/missing api key/i);
+    expect(stderr.join('')).toContain('缺少 API 密钥');
     expect(fetchMock).not.toHaveBeenCalled();
   });
 
@@ -1023,7 +1023,7 @@ describe('kimi provider catalog add', () => {
     );
 
     expect(exitCodes).toEqual([1]);
-    expect(stderr.join('')).toContain('Provider "no-such-id" not found in catalog');
+    expect(stderr.join('')).toContain('未找到提供商 "no-such-id"');
   });
 
   const GUESS_CATALOG_BODY = {
@@ -1087,7 +1087,7 @@ describe('kimi provider catalog add', () => {
       supportEfforts: ['low', 'medium', 'high'],
       offEffort: 'none',
     });
-    expect(stdout.join('')).toContain('guessed "openai"');
+    expect(stdout.join('')).toContain('已猜测为 "openai"');
   });
 
   it('refuses a proprietary SDK (bedrock) instead of guessing', async () => {
@@ -1098,7 +1098,7 @@ describe('kimi provider catalog add', () => {
     await tryRun(() => handleCatalogAdd(deps, 'bedrock', { apiKey: 'sk-x' }));
 
     expect(exitCodes).toEqual([1]);
-    expect(stderr.join('')).toContain('proprietary');
+    expect(stderr.join('')).toContain('专有 SDK');
   });
 
   it('requires --base-url for a vendor with no catalog endpoint (azure shape)', async () => {

@@ -1,4 +1,4 @@
-import { mkdirSync } from 'node:fs';
+import { existsSync, mkdirSync } from 'node:fs';
 import { homedir } from 'node:os';
 
 import { join } from 'pathe';
@@ -162,7 +162,15 @@ export function resolveKimiHome(
   env: NodeJS.ProcessEnv = process.env,
   osHomeDir: string = homedir(),
 ): string {
-  return homeDir ?? env['KIMI_CODE_HOME'] ?? join(osHomeDir, '.kimi-code');
+  if (homeDir !== undefined) return homeDir;
+  const envHome = env['LCODE_HOME'] ?? env['KIMI_CODE_HOME'];
+  if (envHome !== undefined && envHome.length > 0) return envHome;
+  const home = join(osHomeDir, '.lcode');
+  if (!existsSync(home)) {
+    const legacyHome = join(osHomeDir, '.kimi-code');
+    if (existsSync(legacyHome)) return legacyHome;
+  }
+  return home;
 }
 
 export function resolveConfigPath(input: {

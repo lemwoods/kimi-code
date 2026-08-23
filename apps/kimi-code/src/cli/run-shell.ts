@@ -90,7 +90,7 @@ export async function runShell(
     ? createKimiHarnessV2(harnessOptions)
     : createKimiHarness(harnessOptions);
   startupTrace('harness:created');
-  log.info('kimi-code starting', {
+  log.info('lcode starting', {
     version,
     uiMode: CLI_UI_MODE,
     nodeVersion: process.version,
@@ -105,7 +105,7 @@ export async function runShell(
     ignoreMarker: runOptions.migrateOnly,
   });
   if (runOptions.migrateOnly === true && migrationPlan === null) {
-    process.stdout.write('  Nothing to migrate from ~/.kimi/.\n');
+    process.stdout.write('  ~/.kimi/ 下没有可迁移的内容。\n');
     await harness.close();
     return;
   }
@@ -234,10 +234,10 @@ export async function runShell(
     trackLifecycle('exit', { duration_ms: Date.now() - startedAt, tui_mode: tui.state.ui.mode });
     await shutdownTelemetry({ timeoutMs: CLI_SHUTDOWN_TIMEOUT_MS });
     const gutter = ' '.repeat(CHROME_GUTTER);
-    process.stdout.write(`${gutter}Bye!\n`);
+    process.stdout.write(`${gutter}再见！\n`);
     const hints: string[] = [];
     if (sessionId !== '' && hasContent) {
-      hints.push(`${gutter}To resume this session: kimi -r ${sessionId}`);
+      hints.push(`${gutter}恢复此会话：lcode -r ${sessionId}`);
     }
     if (tui.exitOpenUrl !== undefined) {
       hints.push(`${gutter}open ${toTerminalHyperlink(tui.exitOpenUrl, tui.exitOpenUrl)}`);

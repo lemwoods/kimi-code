@@ -264,7 +264,7 @@ describe('kimi export', () => {
     expect(listedWorkDirs).toEqual([tmp]);
     expect(exportInputs).toEqual([]);
     expect(exitCodes).toContain(1);
-    expect(stderr.join('').toLowerCase()).toContain('no previous session');
+    expect(stderr.join('')).toContain('没有找到可导出的上一个会话');
   });
 
   it('surfaces export errors for a named session', async () => {
@@ -309,7 +309,7 @@ describe('kimi export', () => {
 
     expect(exitCodes).toEqual([]);
     expect(exportInputs).toEqual([]);
-    expect(stdout.join('')).toContain('Export cancelled.');
+    expect(stdout.join('')).toContain('已取消导出。');
     expect(summaries).toEqual([
       {
         workDir: tmp,
@@ -427,7 +427,7 @@ describe('kimi export', () => {
       homeDir: '/tmp/kimi-export-home',
       deviceId: 'device-1',
       enabled: true,
-      appName: 'kimi-code-cli',
+      appName: 'lcode-cli',
       version: expect.any(String),
       uiMode: 'shell',
       model: 'k2',

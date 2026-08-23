@@ -103,7 +103,7 @@ describe('kimi acp', () => {
       expect(optsArg).toEqual(
         expect.objectContaining({
           homeDir: KIMI_DEBUG_HOME,
-          terminalAuthEnv: { KIMI_CODE_HOME: KIMI_DEBUG_HOME },
+          terminalAuthEnv: { LCODE_HOME: KIMI_DEBUG_HOME },
         }),
       );
     } finally {

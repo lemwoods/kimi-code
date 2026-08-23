@@ -6,6 +6,7 @@
  */
 
 import { createHash } from 'node:crypto';
+import { existsSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { dirname, join } from 'node:path';
 
@@ -15,7 +16,9 @@ import {
   KIMI_CODE_BIN_DIR_NAME,
   KIMI_CODE_CACHE_DIR_NAME,
   KIMI_CODE_DATA_DIR_NAME,
+  KIMI_CODE_DATA_DIR_NAME_LEGACY,
   KIMI_CODE_HOME_ENV,
+  KIMI_CODE_HOME_ENV_LEGACY,
   KIMI_CODE_INPUT_HISTORY_DIR_NAME,
   KIMI_CODE_LOG_DIR_NAME,
   KIMI_CODE_NATIVE_STAGED_STATE_FILE_NAME,
@@ -29,16 +32,23 @@ import {
 } from '#/constant/app';
 
 /**
- * Return the root data directory for Kimi Code.
+ * Return the root data directory for lcode.
  *
- * Priority: `KIMI_CODE_HOME` env var > `~/.kimi-code`.
+ * Priority: `LCODE_HOME` env var (legacy `KIMI_CODE_HOME`) > `~/.lcode`,
+ * falling back to the pre-rename `~/.kimi-code` when that is the one that
+ * exists so existing installs keep their data without a migration step.
  */
 export function getDataDir(): string {
-  const envDir = process.env[KIMI_CODE_HOME_ENV];
+  const envDir = process.env[KIMI_CODE_HOME_ENV] ?? process.env[KIMI_CODE_HOME_ENV_LEGACY];
   if (envDir) {
     return envDir;
   }
-  return join(homedir(), KIMI_CODE_DATA_DIR_NAME);
+  const home = join(homedir(), KIMI_CODE_DATA_DIR_NAME);
+  if (!existsSync(home)) {
+    const legacyHome = join(homedir(), KIMI_CODE_DATA_DIR_NAME_LEGACY);
+    if (existsSync(legacyHome)) return legacyHome;
+  }
+  return home;
 }
 
 /**

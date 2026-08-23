@@ -1,6 +1,6 @@
-import { homedir } from 'node:os';
 import { join } from 'node:path';
 
+import { resolveKimiHome } from '#/app/bootstrap/bootstrap';
 import { ErrorCodes, Error2 } from '#/errors';
 
 export type RgResolutionSource = 'system-path' | 'share-bin-cached';
@@ -24,9 +24,9 @@ function rgBinaryName(): string {
 }
 
 function getShareDir(): string {
-  const override = process.env['KIMI_CODE_HOME'];
+  const override = process.env['LCODE_HOME'] ?? process.env['KIMI_CODE_HOME'];
   if (override !== undefined && override !== '') return override;
-  return join(homedir(), '.kimi-code');
+  return resolveKimiHome();
 }
 
 export function getShareBinRgPath(): string {

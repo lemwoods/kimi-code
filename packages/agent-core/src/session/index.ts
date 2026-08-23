@@ -11,6 +11,7 @@ import { proxyWithExtraPayload } from '#/rpc/types';
 
 import { Agent, type AgentOptions, type AgentType } from '../agent';
 import { renderPluginSessionStartReminder } from '../agent/injection/plugin-session-start';
+import { resolveKimiHome } from '../config/path';
 import { HookEngine, type HookDef } from './hooks';
 import type { PermissionManagerOptions, PermissionRule } from '../agent/permission';
 import {
@@ -330,7 +331,7 @@ export class Session {
       options.agents?.catalog ??
       new SessionAgentProfileCatalog({
         workDir: options.kaos.getcwd(),
-        brandHomeDir: options.kimiHomeDir ?? join(homedir(), '.kimi-code'),
+        brandHomeDir: options.kimiHomeDir ?? resolveKimiHome(),
         osHomeDir: options.agents?.userHomeDir ?? homedir(),
         extraDirs: options.agents?.extraDirs ?? options.config?.extraAgentDirs,
         explicitFiles: options.agents?.explicitFiles,

@@ -88,7 +88,7 @@ describe('kimi acp', () => {
       const optsArg = vi.mocked(runAcpServer).mock.calls[0]?.[1];
       expect(optsArg).toEqual(
         expect.objectContaining({
-          terminalAuthEnv: { KIMI_CODE_HOME: KIMI_DEBUG_HOME },
+          terminalAuthEnv: { LCODE_HOME: KIMI_DEBUG_HOME },
         }),
       );
     } finally {

@@ -668,18 +668,18 @@ describe('`kimi server kill` (deprecated, legacy servers only)', () => {
     await handleLegacyKillCommand(deps);
 
     const notice = errors.join('');
-    expect(notice).toContain('deprecated');
+    expect(notice).toContain('已弃用');
     expect(notice).toContain('0.28.0');
     expect(notice).toContain('Ctrl+C');
   });
 
-  it('prints "No running legacy Kimi server." and sends no signal when no lock exists', async () => {
+  it('prints the "no running legacy server" notice and sends no signal when no lock exists', async () => {
     const { handleLegacyKillCommand } = await import('#/cli/sub/web/legacy-kill');
     const { deps, writes, signals } = makeLegacyKillDeps({ readLock: async () => undefined });
 
     await handleLegacyKillCommand(deps);
 
-    expect(writes.join('')).toContain('No running legacy Kimi server.');
+    expect(writes.join('')).toContain('没有正在运行的旧版 Kimi 服务器。');
     expect(signals).toEqual([]);
   });
 
@@ -692,7 +692,7 @@ describe('`kimi server kill` (deprecated, legacy servers only)', () => {
 
     await handleLegacyKillCommand(deps);
 
-    expect(writes.join('')).toContain('No running legacy Kimi server.');
+    expect(writes.join('')).toContain('没有正在运行的旧版 Kimi 服务器。');
     expect(signals).toEqual([]);
     expect(state.shutdownCalls).toBe(0);
     expect(state.removeCalls).toBe(1);
@@ -710,7 +710,7 @@ describe('`kimi server kill` (deprecated, legacy servers only)', () => {
     expect(state.shutdownCalls).toBe(1);
     expect(signals).toEqual([{ pid: 1234, signal: 'SIGTERM' }]);
     expect(writes.join('')).toContain('pid 1234');
-    expect(writes.join('')).toContain('stopped.');
+    expect(writes.join('')).toContain('已停止');
     // The lock is removed once the pid is confirmed dead.
     expect(state.removeCalls).toBe(1);
   });
@@ -727,7 +727,7 @@ describe('`kimi server kill` (deprecated, legacy servers only)', () => {
 
     expect(signals.map((s) => s.signal)).toEqual(['SIGTERM', 'SIGKILL']);
     expect(writes.join('')).toContain('pid 5678');
-    expect(writes.join('')).toContain('killed.');
+    expect(writes.join('')).toContain('已强制终止');
   });
 
   it('throws a permissions error when the pid survives SIGKILL', async () => {
@@ -737,7 +737,7 @@ describe('`kimi server kill` (deprecated, legacy servers only)', () => {
       pidAlive: () => true,
     });
 
-    await expect(handleLegacyKillCommand(deps)).rejects.toThrow(/insufficient permissions/);
+    await expect(handleLegacyKillCommand(deps)).rejects.toThrow(/权限不足/);
   });
 
   it('skips the API path when the lock records no port', async () => {

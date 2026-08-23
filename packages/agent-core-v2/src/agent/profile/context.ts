@@ -78,12 +78,24 @@ export interface LoadedAgentsMd {
 
 export const AGENTS_MD_PLAIN_NAMES = ['AGENTS.md', 'agents.md'] as const;
 
+export function dotLcodeAgentsMdPath(dir: string): string {
+  return join(dir, '.lcode', 'AGENTS.md');
+}
+
+/**
+ * Pre-rename project brand path, kept as the lower-priority fallback so
+ * projects configured before the lcode rename keep their AGENTS.md discovery.
+ */
 export function dotKimiAgentsMdPath(dir: string): string {
   return join(dir, '.kimi-code', 'AGENTS.md');
 }
 
 export function agentsMdCandidatePaths(dir: string): string[] {
-  return [dotKimiAgentsMdPath(dir), ...AGENTS_MD_PLAIN_NAMES.map((name) => join(dir, name))];
+  return [
+    dotLcodeAgentsMdPath(dir),
+    dotKimiAgentsMdPath(dir),
+    ...AGENTS_MD_PLAIN_NAMES.map((name) => join(dir, name)),
+  ];
 }
 
 export function extractAgentsMdPathsFromSystemPrompt(systemPrompt: string): string[] {
@@ -110,8 +122,13 @@ export async function findAgentsMdInDir(
   dir: string,
 ): Promise<string[]> {
   const found: string[] = [];
+  const dotLcode = dotLcodeAgentsMdPath(dir);
   const dotKimi = dotKimiAgentsMdPath(dir);
-  if (await isNonEmptyFile(deps, dotKimi)) found.push(dotKimi);
+  if (await isNonEmptyFile(deps, dotLcode)) {
+    found.push(dotLcode);
+  } else if (await isNonEmptyFile(deps, dotKimi)) {
+    found.push(dotKimi);
+  }
   for (const fileName of AGENTS_MD_PLAIN_NAMES) {
     const candidate = join(dir, fileName);
     if (await isNonEmptyFile(deps, candidate)) {
@@ -157,7 +174,7 @@ export async function loadAgentsMdForRoots(
   };
 
   const realHome = deps.homeDir;
-  const brandDir = brandHome ?? join(realHome, '.kimi-code');
+  const brandDir = brandHome ?? (await resolveBrandHome(deps, realHome));
   await collect(join(brandDir, 'AGENTS.md'));
 
   const genericDirs = [join(realHome, '.agents')];
@@ -174,7 +191,9 @@ export async function loadAgentsMdForRoots(
     const dirs = dirsRootToLeaf(rootWorkDir, projectRoot);
 
     for (const dir of dirs) {
-      await collect(dotKimiAgentsMdPath(dir));
+      if (!(await collect(dotLcodeAgentsMdPath(dir)))) {
+        await collect(dotKimiAgentsMdPath(dir));
+      }
       for (const fileName of AGENTS_MD_PLAIN_NAMES) {
         if (await collect(join(dir, fileName))) break;
       }
@@ -206,9 +225,16 @@ export async function agentsMdWatchRoots(
   brandHome?: string,
 ): Promise<readonly AgentsMdWatchRoot[]> {
   const realHome = deps.homeDir;
-  const brandDir = brandHome ?? join(realHome, '.kimi-code');
+  const brandDir = brandHome ?? (await resolveBrandHome(deps, realHome));
+  const legacyBrandDir = join(realHome, '.kimi-code');
   const plan: AgentsMdWatchRoot[] = [
-    { root: brandDir, candidates: [join(brandDir, 'AGENTS.md')] },
+    {
+      root: realHome,
+      candidates: [
+        join(brandDir, 'AGENTS.md'),
+        ...(brandDir === legacyBrandDir ? [] : [join(legacyBrandDir, 'AGENTS.md')]),
+      ],
+    },
     {
       root: realHome,
       candidates: [join(realHome, '.agents', 'AGENTS.md'), join(realHome, '.agents', 'agents.md')],
@@ -219,13 +245,22 @@ export async function agentsMdWatchRoots(
   const projectCandidates: string[] = [];
   for (const dir of dirsRootToLeaf(rootWorkDir, projectRoot)) {
     projectCandidates.push(
-      join(dir, '.kimi-code', 'AGENTS.md'),
+      dotLcodeAgentsMdPath(dir),
+      dotKimiAgentsMdPath(dir),
       join(dir, 'AGENTS.md'),
       join(dir, 'agents.md'),
     );
   }
   plan.push({ root: projectRoot, candidates: projectCandidates });
   return plan;
+}
+
+async function resolveBrandHome(deps: ProfileContextDeps, realHome: string): Promise<string> {
+  const brandDir = join(realHome, '.lcode');
+  if (await pathExists(deps, brandDir)) return brandDir;
+  const legacyDir = join(realHome, '.kimi-code');
+  if (await pathExists(deps, legacyDir)) return legacyDir;
+  return brandDir;
 }
 
 async function loadAdditionalDirsInfo(

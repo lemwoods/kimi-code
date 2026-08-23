@@ -43,8 +43,27 @@ export async function resolveMcpJsonPaths(input: ResolveMcpJsonPathsInput): Prom
   return {
     user: join(resolveKimiHome(input.homeDir), 'mcp.json'),
     projectRoot: join(projectRoot, '.mcp.json'),
-    project: join(input.cwd, '.kimi-code', 'mcp.json'),
+    project: await projectMcpJsonPath(input.cwd),
   };
+}
+
+/**
+ * Project-local MCP config path: `.lcode/mcp.json` after the lcode rename,
+ * falling back to the pre-rename `.kimi-code/mcp.json` when that is the one
+ * that exists.
+ */
+async function projectMcpJsonPath(cwd: string): Promise<string> {
+  const configPath = join(cwd, '.lcode', 'mcp.json');
+  try {
+    await stat(configPath);
+    return configPath;
+  } catch {}
+  const legacyPath = join(cwd, '.kimi-code', 'mcp.json');
+  try {
+    await stat(legacyPath);
+    return legacyPath;
+  } catch {}
+  return configPath;
 }
 
 export interface LoadMcpServersInput {

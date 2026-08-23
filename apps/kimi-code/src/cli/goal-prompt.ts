@@ -96,8 +96,8 @@ export function goalSummaryJson(goal: GoalSnapshot | null): GoalSummary {
 }
 
 export function formatGoalSummaryText(goal: GoalSnapshot | null): string {
-  if (goal === null) return 'Goal: no goal found.';
-  const parts = [`Goal [${goal.status}]`];
+  if (goal === null) return '目标：未找到目标。';
+  const parts = [`目标 [${goal.status}]`];
   if (goal.terminalReason !== undefined) parts.push(goal.terminalReason);
-  return `${parts.join(': ')} (turns: ${goal.turnsUsed}, tokens: ${goal.tokensUsed})`;
+  return `${parts.join('：')}（轮次：${goal.turnsUsed}，token：${goal.tokensUsed}）`;
 }

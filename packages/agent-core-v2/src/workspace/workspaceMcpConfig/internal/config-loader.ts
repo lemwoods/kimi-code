@@ -31,8 +31,25 @@ export async function resolveMcpJsonPaths(input: ResolveMcpJsonPathsInput): Prom
   return {
     user: join(resolveKimiHome(input.homeDir), 'mcp.json'),
     projectRoot: join(projectRoot, '.mcp.json'),
-    project: join(input.cwd, '.kimi-code', 'mcp.json'),
+    project: await projectMcpJsonPath(input.fs, input.cwd),
   };
+}
+
+async function projectMcpJsonPath(fs: IHostFileSystem, cwd: string): Promise<string> {
+  const configPath = join(cwd, '.lcode', 'mcp.json');
+  if (await fileExists(fs, configPath)) return configPath;
+  const legacyPath = join(cwd, '.kimi-code', 'mcp.json');
+  if (await fileExists(fs, legacyPath)) return legacyPath;
+  return configPath;
+}
+
+async function fileExists(fs: IHostFileSystem, path: string): Promise<boolean> {
+  try {
+    await fs.stat(path);
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 export interface LoadMcpServersInput {

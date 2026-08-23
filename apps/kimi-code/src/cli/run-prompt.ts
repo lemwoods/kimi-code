@@ -136,7 +136,7 @@ export async function runPrompt(
     },
     sessionStartedProperties: { yolo: false, plan: false, afk: true },
   });
-  log.info('kimi-code starting', {
+  log.info('lcode starting', {
     version,
     uiMode: PROMPT_UI_MODE,
     nodeVersion: process.version,
@@ -170,7 +170,7 @@ export async function runPrompt(
     await harness.ensureConfigFile();
     const config = await harness.getConfig();
     for (const warning of (await harness.getConfigDiagnostics()).warnings) {
-      stderr.write(`Warning: ${warning}\n`);
+      stderr.write(`警告：${warning}\n`);
     }
     const { session, restorePermission, telemetryModel, goalModel } =
       await resolvePromptSession(
@@ -365,7 +365,7 @@ async function resolvePromptSession(
         goalModel: configuredModel(opts.model, status.model),
       };
     }
-    stderr.write(`No sessions to continue under "${workDir}"; starting a fresh session.\n`);
+    stderr.write(`在 "${workDir}" 下没有可继续的会话；将启动一个全新会话。\n`);
   }
 
   const agentProfile = await resolveAgentProfileSelection(opts, workDir);

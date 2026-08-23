@@ -176,7 +176,7 @@ export async function runV2Print(
   }
   for (const diagnostic of configService.diagnostics()) {
     if (diagnostic.severity === 'warning') {
-      stderr.write(`Warning: ${diagnostic.message}\n`);
+      stderr.write(`警告：${diagnostic.message}\n`);
     }
   }
 
@@ -388,7 +388,7 @@ async function resolveNativeSession(
         goalModel: configuredModel(opts.model, currentModel),
       };
     }
-    stderr.write(`No sessions to continue under "${workDir}"; starting a fresh session.\n`);
+    stderr.write(`在 "${workDir}" 下没有可继续的会话；将启动一个全新会话。\n`);
   }
 
   const model = requireConfiguredModel(opts.model, defaultModel);
@@ -476,7 +476,7 @@ async function runNativeTurn(
           drain: () => drainBackgroundTasks(session, taskConfig?.printWaitCeilingS),
           turnEndings,
           skipTurnId: turn.id,
-          warn: (message) => stderr.write(`Warning: ${message}\n`),
+          warn: (message) => stderr.write(`警告：${message}\n`),
           now: () => Date.now(),
           goalActive: () => goalService.getGoal().goal?.status === 'active',
           cronNextFireAt: () => cronService.getNextFireTime(),
@@ -490,7 +490,7 @@ async function runNativeTurn(
           throw error;
         }
         stderr.write(
-          `Warning: print background policy failed: ${
+          `警告：print 后台策略失败：${
             error instanceof Error ? error.message : String(error)
           }\n`,
         );
