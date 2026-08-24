@@ -37,6 +37,7 @@ import {
   registerProviderDefinition,
   resolveProviderEndpoint,
 } from '#/kosong/provider/providerDefinition';
+import '#/kosong/provider/providers/glm.contrib';
 import '#/kosong/provider/providers/kimi/kimi.contrib';
 import '#/kosong/provider/providers/standard.contrib';
 
@@ -848,6 +849,35 @@ describe('quota-exhausted classification through the real composition (behavior 
     expect(caught).toBeInstanceOf(APIProviderRateLimitError);
     expect(caught).not.toBeInstanceOf(APIProviderQuotaExhaustedError);
     expect(isRetryableGenerateError(caught)).toBe(true);
+  });
+});
+
+describe('GLM thinking dialect', () => {
+  it('uses thinking enabled/disabled, omits reasoning_effort, and reads reasoning_content', async () => {
+    const provider = registry.createChatProvider({
+      protocol: 'openai',
+      providerType: 'glm',
+      modelName: 'glm-4.5',
+      apiKey: 'sk-probe',
+    });
+    const captured: Array<Record<string, unknown>> = [];
+    const client = sdkClient(provider) as { chat: { completions: { create: unknown } } };
+    client.chat.completions.create = vi.fn().mockImplementation((params: unknown) => {
+      captured.push(params as Record<string, unknown>);
+      async function* chunks(): AsyncIterable<unknown> {
+        yield { id: 'chatcmpl-glm', choices: [{ index: 0, delta: { reasoning_content: 'hmm' } }] };
+        yield { id: 'chatcmpl-glm', choices: [{ index: 0, delta: { content: 'ok' }, finish_reason: 'stop' }] };
+      }
+      return { withResponse: () => Promise.resolve({ data: chunks(), response: { headers: new Headers() } }) };
+    });
+
+    const parts: unknown[] = [];
+    for await (const part of await provider.generate('', [], PROBE_HISTORY, { thinking: { effort: 'high' } })) {
+      parts.push(part);
+    }
+    expect(captured[0]).toMatchObject({ thinking: { type: 'enabled' } });
+    expect(captured[0]).not.toHaveProperty('reasoning_effort');
+    expect(parts).toEqual([{ type: 'think', think: 'hmm' }, { type: 'text', text: 'ok' }]);
   });
 });
 

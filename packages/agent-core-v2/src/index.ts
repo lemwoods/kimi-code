@@ -205,6 +205,7 @@ import '#/kosong/provider/bases/anthropic/index';
 import '#/kosong/provider/bases/google-genai/index';
 import '#/kosong/provider/bases/openai/index';
 import '#/kosong/provider/providers/kimi/kimi.contrib';
+import '#/kosong/provider/providers/glm.contrib';
 import '#/kosong/provider/providers/standard.contrib';
 export * from '#/app/agentProfileCatalog/agentProfileCatalog';
 export * from '#/app/agentProfileCatalog/agentProfileContribution';

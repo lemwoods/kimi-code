@@ -1,5 +1,11 @@
 # @lcode-cli/lcode
 
+## 0.40.0
+
+### Minor Changes
+
+- Add GLM provider support with structured thinking output.
+
 ## 0.39.5
 
 ### Patch Changes
